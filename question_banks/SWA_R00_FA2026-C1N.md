@@ -90,11 +90,11 @@ Negative grammar cases and reasons:
 - `SWA1001-N-065-H45-F-W`: design number `1` is not listed.
 - `SWA1000-N-065-H45-F-X`: option `X` is not listed.
 
-### 2.3 Source-first inventory and initial dispositions
+### 2.3 Source-first inventory and WP4 coverage dispositions
 
-`HIGH` and `MEDIUM` items remain open until their mapped questions and construction
-audits are complete. The disposition column identifies the planned Work Package and
-does not claim coverage in advance.
+`HIGH` and `MEDIUM` items are mapped to tested questions or given an explicit scoped
+disposition. The WP4 construction audit checks that every mapping resolves to an
+existing question and that no high-value testable object remains unresolved.
 
 | Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
 |---|---|---|---|---|---|---|
@@ -117,13 +117,13 @@ does not claim coverage in advance.
 | SWA-SI-017 | 21 / 713 | Configuration example > SWA-N with VWM | DRAWING + TEXT | HIGH | D/C locating-pin arrangement, rough-guide design, SWA vertical orientation, and mandatory Lift N selection | `SWA-Q-0011`, `SWA-Q-0021` |
 | SWA-SI-018 | 22 / 714 | Pneumatic-circuit examples | STATE_DIAGRAM + TABLE + TEXT | HIGH | One/two-solenoid circuits, VWM-before-SWA sequence, speed-control fallback, sensor-per-clamp rule, sensing states, and failure consequences | `SWA-Q-0021` |
 | SWA-SI-019 | 23 / 715 | Design cautions > unpowered state and seating | TEXT + DRAWING | HIGH | Spring-clamped zero-pressure state, release-air requirement for loading, Z datum, full-seat contact, and seating confirmation | Unpowered state in `SWA-Q-0005`; release/clamp procedure in `SWA-Q-0019`; seating risks in `SWA-Q-0022` |
-| SWA-SI-020 | 23 / 715 | Design cautions > force and workpiece constraints | TEXT + DRAWING | HIGH | Trial clamping, insufficient-force drop risk, hole size/depth/taper/hardness limits, thin-wall deformation, and continuous cleaning/sensing air | `SWA-Q-0022`; continuous-air rule retained in source disposition for WP4 audit |
+| SWA-SI-020 | 23 / 715 | Design cautions > force and workpiece constraints | TEXT + DRAWING | HIGH | Trial clamping, insufficient-force drop risk, hole size/depth/taper/hardness limits, thin-wall deformation, and continuous cleaning/sensing air | `SWA-Q-0022` covers hole-design constraints; `SWA-Q-0028` covers thin-wall trial clamping; `SWA-Q-0024` covers continuous cleaning/sensing air |
 | SWA-SI-021 | 24 / 716 | Handling cautions > horizontal and manual loading | TEXT + DRAWING | HIGH | Pre-clamping for horizontal use, no tilted/floating loading, fully released loading, small support clearance, and rough guides | `SWA-Q-0023`; horizontal pre-clamp is a documented application-specific addition |
 | SWA-SI-022 | 24 / 716 | Robot handling | TEXT + DRAWING | HIGH | Perpendicular insertion/removal, complete withdrawal before coordinate motion, controlled insertion speed, and motion interlock | `SWA-Q-0023` |
 | SWA-SI-023 | 25 / 717 | Installation > air, cleaning, tape, bolts, and ports | TEXT + TABLE | HIGH | Filtered dry air/no lubrication, pre-cleaning, tape practice, M5 class 12.9 at 6.3 N-m, port identities, and phi 6/4 minimum tubing | `SWA-Q-0024` |
-| SWA-SI-024 | 25 / 717 | Operation safety | TEXT | HIGH | Qualified operator, anti-drop/anti-motion controls, zero-energy disassembly, cooling, restart inspection, pinch avoidance, no modification, and spring hazard | `SWA-Q-0026`; product-local rules control over common appendix |
+| SWA-SI-024 | 25 / 717 | Operation safety | TEXT | HIGH | Qualified operator, anti-drop/anti-motion controls, zero-energy disassembly, cooling, restart inspection, pinch avoidance, no modification, and spring hazard | `SWA-Q-0027`; spring-disassembly hazard in `SWA-Q-0026`; product-local rules control over common appendix |
 | SWA-SI-025 | 26 / 718 | SWA maintenance and claw replacement | TEXT + TABLE | HIGH | Cleaning clamp/seat surfaces, contamination consequences, manufacturer overhaul, wear replacement, and 1,000,000/500,000-cycle reference values | `SWA-Q-0012`, `SWA-Q-0026` |
-| SWA-SI-026 | 27 / 925 | Common pneumatic appendix > operation and maintenance | TEXT | MEDIUM | Shared zero-energy safety, cleaning, leak/sound/motion checks, storage, and overhaul rules | No separate question: shared safety rules are duplicated and more locally bound in `SWA-Q-0026`; appendix retained as corroboration only |
+| SWA-SI-026 | 27 / 925 | Common pneumatic appendix > operation and maintenance | TEXT | MEDIUM | Shared zero-energy safety, cleaning, leak/sound/motion checks, storage, and overhaul rules | No separate question: shared safety rules are duplicated and more locally bound in `SWA-Q-0026` and `SWA-Q-0027`; appendix retained as corroboration only |
 | SWA-SI-027 | 28 / 926 | Common appendix > warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; low-value commercial policy |
 | SWA-SI-028 | 29 / 927 | Common appendix > surface roughness notation | TABLE | MEDIUM | 2021 old/new JIS notation mapping | `SWA-Q-0013` (`DOCUMENT_COMMON`) |
 | SWA-SI-029 | 30 / 928 | Common appendix > O-ring notation | TABLE + MODEL | MEDIUM | New/old notation mapping and field meanings | `SWA-Q-0014` (`DOCUMENT_COMMON`) |
@@ -131,7 +131,7 @@ does not claim coverage in advance.
 
 ## 3. Question Statistics
 
-- Total: 26
+- Total: 28
 - FACT: 4
 - SPEC_LOOKUP: 2
 - TABLE: 5
@@ -139,7 +139,7 @@ does not claim coverage in advance.
 - CALCULATION: 2
 - CHART: 2
 - PROCEDURE: 4
-- CAUTION: 4
+- CAUTION: 6
 
 ## 4. Questions
 
@@ -170,17 +170,18 @@ Lift `N` 组合。SWA1000 的 `060`/`065` 无下拉型号最高使用压力为 0
 
 ### Scoring Standard
 
-- P1 [10]: 正确识别主体尺寸 `1` 对应 SWA1000 及 phi 6-9 mm 范围。
-- P2 [5]: 正确识别设计编号为 `0`。
-- P3 [10]: 正确解释 `N` 为无工件提升功能。
-- P4 [10]: 正确解释 `065` 为直孔 phi 6.5 mm。
-- P5 [10]: 正确给出 Lift `N` 下的孔公差 +0.7/-0.3 mm。
-- P6 [10]: 正确解释 `H45` 为 45 mm 着座高度。
-- P7 [10]: 正确解释 `F` 为直孔用无锯齿涨爪。
-- P8 [10]: 正确解释 `W` 为无下拉功能。
-- P9 [10]: 明确 `W` 必须与 Lift `N` 组合。
-- P10 [10]: 正确给出最高使用压力 0.5 MPa。
-- P11 [5]: 明确得出完整字段组合合法的结论。
+- P1 [5]: 正确识别主体尺寸 `1` 对应 SWA1000。
+- P2 [5]: 正确给出 SWA1000 的直孔范围 phi 6-9 mm。
+- P3 [5]: 正确识别设计编号为 `0`。
+- P4 [10]: 正确解释 `N` 为无工件提升功能。
+- P5 [10]: 正确解释 `065` 为直孔 phi 6.5 mm。
+- P6 [10]: 正确给出 Lift `N` 下的孔公差 +0.7/-0.3 mm。
+- P7 [10]: 正确解释 `H45` 为 45 mm 着座高度。
+- P8 [10]: 正确解释 `F` 为直孔用无锯齿涨爪。
+- P9 [10]: 正确解释 `W` 为无下拉功能。
+- P10 [10]: 明确 `W` 必须与 Lift `N` 组合。
+- P11 [10]: 正确给出最高使用压力 0.5 MPa。
+- P12 [5]: 明确得出完整字段组合合法的结论。
 
 ### Accepted Variants
 
@@ -289,8 +290,9 @@ SWA1000 的直孔孔径范围为 phi 6-9 mm，SWA2000 为 phi 9-13 mm，孔径�
 - P2 [20]: 正确给出 SWA2000 的直孔范围 phi 9-13 mm。
 - P3 [15]: 正确给出孔径增量 0.5 mm。
 - P4 [15]: 正确给出标准着座高度 30 mm。
-- P5 [20]: 正确列出指定高度 35-60 mm、每 5 mm 一档。
-- P6 [10]: 明确标准 30 mm 使用空白字段而不是 `H30`。
+- P5 [10]: 正确列出指定高度 35-60 mm。
+- P6 [10]: 正确说明指定高度每 5 mm 一档。
+- P7 [10]: 明确标准 30 mm 使用空白字段而不是 `H30`。
 
 ### Accepted Variants
 
@@ -345,8 +347,10 @@ SWA 全型号附带防护帽。微小滑动间隙可防止切削粉尘等异物�
 - P2 [20]: 正确说明微小滑动间隙用于防止切削粉尘等异物侵入。
 - P3 [15]: 正确说明微小间隙提高喷气清洁效果。
 - P4 [20]: 正确说明少量空气流量也可有效防止冷却液侵入。
-- P5 [15]: 正确说明搬运时工件与涨爪不接触、可顺畅搬入/搬出。
-- P6 [15]: 正确说明粗导销通常可省略，但需结合搬入速度等条件判断。
+- P5 [8]: 正确说明搬运时工件与涨爪不接触。
+- P6 [7]: 正确说明无接触结构使工件可顺畅搬入/搬出。
+- P7 [8]: 正确说明粗导销通常可省略。
+- P8 [7]: 正确保留是否省略仍需结合搬入速度等实际条件判断的限定。
 
 ### Accepted Variants
 
@@ -396,11 +400,14 @@ SWA 全型号附带防护帽。微小滑动间隙可防止切削粉尘等异物�
 
 ### Scoring Standard
 
-- P1 [20]: 正确指出标准型内置提升弹簧。
+- P1 [15]: 正确指出标准型内置提升弹簧。
 - P2 [20]: 正确指出标准型涨紧后把工件下拉到着座面。
 - P3 [20]: 正确指出夹紧弹簧在零气压时提供自锁保持。
-- P4 [20]: 正确指出 W 型无提升弹簧、以扩径力夹紧。
-- P5 [20]: 正确指出 W 型轴向下拉最多 0.1 mm，且仍有夹紧弹簧自锁。
+- P4 [10]: 正确指出 W 型无提升弹簧。
+- P5 [10]: 正确指出 W 型只以扩径力夹紧。
+- P6 [10]: 正确指出 W 型轴向下拉最多 0.1 mm。
+- P7 [7]: 正确指出 W 型仍有夹紧弹簧。
+- P8 [8]: 正确指出 W 型在零气压时仍可自锁保持。
 
 ### Accepted Variants
 
@@ -460,10 +467,13 @@ phi 12.5 mm。`H55` 表示着座高度 55 mm。终端 `T` 表示锥孔用有锯�
 - P5 [10]: 正确给出提升行程 0.2 mm。
 - P6 [10]: 正确解释 `125` 为 phi 12.5 mm 锥孔。
 - P7 [10]: 正确解释 `H55` 为 55 mm 着座高度。
-- P8 [10]: 正确解释 `T` 为锥孔用有锯齿涨爪且无 F/W 字段。
-- P9 [10]: 正确给出最高使用压力 0.7 MPa。
-- P10 [10]: 判定组合合法，并说明孔公差仍依赖勾配角查表。
-- P11 [5]: 字段解读保持锥孔型号的印刷顺序。
+- P8 [5]: 正确解释 `T` 为锥孔用有锯齿涨爪。
+- P9 [3]: 正确说明锥孔型号没有 `F` 字段。
+- P10 [2]: 正确说明锥孔型号没有 `W` 字段。
+- P11 [10]: 正确给出最高使用压力 0.7 MPa。
+- P12 [5]: 正确判定完整字段组合合法。
+- P13 [5]: 正确说明孔公差仍依赖勾配角查表。
+- P14 [5]: 字段解读保持锥孔型号的印刷顺序。
 
 ### Accepted Variants
 
@@ -526,7 +536,8 @@ phi 12.5 mm。`H55` 表示着座高度 55 mm。终端 `T` 表示锥孔用有锯�
 - P4 [15]: 正确给出 SWA1000-090、2.8 度的 +0.3/0 mm。
 - P5 [15]: 正确给出 SWA2000-125、2.5 度的 +/-0.3 mm。
 - P6 [15]: 正确给出 SWA2000-125、2.8 度的 +0.3/-0.15 mm。
-- P7 [10]: 正确说明不足 1 度需垂询 KOSMEK、不得外推。
+- P7 [5]: 正确说明勾配角不足 1 度时需垂询 KOSMEK。
+- P8 [5]: 正确说明不得从表内区间自行外推不足 1 度的公差。
 
 ### Accepted Variants
 
@@ -580,12 +591,14 @@ SWA1000 的容许偏心量为 +/-0.3 mm，SWA2000 为 +/-0.5 mm。标准型工�
 ### Scoring Standard
 
 - P1 [10]: 正确给出两种主体尺寸的对象工件硬度为 HB250 以下。
-- P2 [20]: 正确区分容许偏心量：SWA1000 +/-0.3 mm、SWA2000 +/-0.5 mm。
-- P3 [15]: 正确给出共同全行程 4.2 mm。
-- P4 [15]: 正确给出标准型下拉行程 1.0 mm。
-- P5 [15]: 正确给出 W 型下拉行程 0.1 mm 以下。
-- P6 [10]: 正确给出 A 型提升行程 0.2 mm。
-- P7 [15]: 正确区分提升力：SWA1000 0.09 kN、SWA2000 0.15 kN。
+- P2 [10]: 正确给出 SWA1000 容许偏心量 +/-0.3 mm。
+- P3 [10]: 正确给出 SWA2000 容许偏心量 +/-0.5 mm。
+- P4 [15]: 正确给出共同全行程 4.2 mm。
+- P5 [15]: 正确给出标准型下拉行程 1.0 mm。
+- P6 [15]: 正确给出 W 型下拉行程 0.1 mm 以下。
+- P7 [10]: 正确给出 A 型提升行程 0.2 mm。
+- P8 [7]: 正确给出 SWA1000 提升力 0.09 kN。
+- P9 [8]: 正确给出 SWA2000 提升力 0.15 kN。
 
 ### Accepted Variants
 
@@ -701,7 +714,8 @@ H 尺寸与重量，并给出 `H60` 对应的 AA 尺寸。
 - P5 [15]: 正确给出 SWA1000 H60 重量 0.75 kg。
 - P6 [15]: 正确给出 SWA2000 标准高度重量 1.0 kg。
 - P7 [15]: 正确给出 SWA2000 H60 重量 1.1 kg。
-- P8 [5]: H/AA 使用 mm、重量使用 kg。
+- P8 [3]: H 与 AA 尺寸使用 mm。
+- P9 [2]: 重量使用 kg。
 
 ### Accepted Variants
 
@@ -815,8 +829,10 @@ A2017 铝材的参考值为夹紧动作 100 万次，SCM435 H 材质为 50 万�
 
 - P1 [30]: 正确给出 A2017 铝材 100 万次参考值。
 - P2 [30]: 正确给出 SCM435 H 材质 50 万次参考值。
-- P3 [20]: 明确次数受压力、材质、孔形状等使用条件影响，不是固定寿命。
-- P4 [20]: 明确发现磨损必须更换，原因是夹紧力会降低。
+- P3 [10]: 明确参考次数受压力、材质、孔形状等使用条件影响。
+- P4 [10]: 明确参考次数不是无条件固定寿命。
+- P5 [10]: 明确发现涨爪磨损时必须更换。
+- P6 [10]: 正确说明更换原因是磨损会降低夹紧力。
 
 ### Accepted Variants
 
@@ -873,7 +889,8 @@ Rz 100 的 Ra 参考值，以及各自对应的旧 JIS Rmax 范围。
 - P4 [15]: 正确给出 Rz 25 的旧范围 12.5S-25S。
 - P5 [15]: 正确给出 Rz 100 的 Ra 参考值 25。
 - P6 [15]: 正确给出 Rz 100 的旧范围 50S-100S。
-- P7 [10]: 正确区分新旧标准为 2013 版与 1982 版。
+- P7 [5]: 正确给出新标示依据 JIS B 0601:2013。
+- P8 [5]: 正确给出旧标示依据 JIS B 0601:1982。
 
 ### Accepted Variants
 
@@ -925,11 +942,12 @@ Rz 100 的 Ra 参考值，以及各自对应的旧 JIS Rmax 范围。
 
 - P1 [15]: 正确转换为旧标示 `1BP5`。
 - P2 [20]: 正确说明 `NBR-90` 对应旧材料符号 `1B`。
-- P3 [15]: 正确说明材料为一般用丁腈橡胶、A 型硬度 90。
-- P4 [15]: 正确说明 `P` 表示滑动用。
-- P5 [15]: 正确说明 `5` 为公称号。
-- P6 [15]: 正确说明末尾 `N` 为一般用品质等级。
-- P7 [5]: 保持材料、种类、公称号和品质等级的字段顺序与绑定。
+- P3 [10]: 正确说明材料为一般用丁腈橡胶。
+- P4 [5]: 正确说明材料的 A 型硬度为 90。
+- P5 [15]: 正确说明 `P` 表示滑动用。
+- P6 [15]: 正确说明 `5` 为公称号。
+- P7 [15]: 正确说明末尾 `N` 为一般用品质等级。
+- P8 [5]: 保持材料、种类、公称号和品质等级的字段顺序与绑定。
 
 ### Accepted Variants
 
@@ -987,8 +1005,11 @@ SWA2000 标准有锯齿直孔型或 T 锥孔型的夹紧力公式为
 - P2 [15]: 正确代入 `P = 0.46 MPa`。
 - P3 [20]: 正确得到未舍入值 `0.7578 kN`。
 - P4 [20]: 按 `ROUND_HALF_UP` 正确得到最终值 `0.76 kN`。
-- P5 [10]: 最终结果明确使用 kN，输入明确使用 MPa。
-- P6 [20]: 用 0.4/0.5 MPa 表值正确回代，确认结果位于 0.65-0.80 kN 之间。
+- P5 [5]: 输入气压明确使用 MPa。
+- P6 [5]: 最终夹紧力明确使用 kN。
+- P7 [6]: 正确使用 0.4 MPa 对应 0.65 kN 的表值。
+- P8 [6]: 正确使用 0.5 MPa 对应 0.80 kN 的表值。
+- P9 [8]: 正确确认计算结果位于 0.65-0.80 kN 之间。
 
 ### Accepted Variants
 
@@ -1045,9 +1066,12 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 - P2 [15]: 正确代入 `P = 0.48 MPa`。
 - P3 [20]: 正确得到未舍入值 `1.8008 kN`。
 - P4 [20]: 按 `ROUND_HALF_UP` 正确得到最终值 `1.80 kN`。
-- P5 [10]: 正确使用 MPa 和 kN 单位。
-- P6 [10]: 正确判断 0.48 MPa 未超过 `065` 型号的 0.5 MPa 上限。
-- P7 [10]: 正确用 1.6/1.9 kN 相邻表值检查结果。
+- P5 [5]: 输入气压明确使用 MPa。
+- P6 [5]: 最终扩径力明确使用 kN。
+- P7 [10]: 正确判断 0.48 MPa 未超过 `065` 型号的 0.5 MPa 上限。
+- P8 [4]: 正确使用 0.4 MPa 对应 1.6 kN 的表值。
+- P9 [4]: 正确使用 0.5 MPa 对应 1.9 kN 的表值。
+- P10 [2]: 正确确认计算结果位于两个相邻表值之间。
 
 ### Accepted Variants
 
@@ -1099,12 +1123,14 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 
 ### Scoring Standard
 
-- P1 [15]: 正确识别横轴为供给气压 MPa、纵轴为夹紧力 kN。
-- P2 [15]: 正确选中 SWA2000/SWA2000-T 实线系列。
-- P3 [25]: 对该系列给出容差内的约 0.74 kN 读数。
-- P4 [15]: 正确选中 SWA1000-F 虚线系列。
-- P5 [20]: 对该系列给出容差内的约 0.14 kN 读数。
-- P6 [10]: 正确判断 SWA2000/SWA2000-T 更大，差值约 0.60 kN。
+- P1 [8]: 正确识别横轴为供给气压 MPa。
+- P2 [7]: 正确识别纵轴为夹紧力 kN。
+- P3 [15]: 正确选中 SWA2000/SWA2000-T 实线系列。
+- P4 [25]: 对该系列给出容差内的约 0.74 kN 读数。
+- P5 [15]: 正确选中 SWA1000-F 虚线系列。
+- P6 [20]: 对该系列给出容差内的约 0.14 kN 读数。
+- P7 [5]: 正确判断 SWA2000/SWA2000-T 的读数更大。
+- P8 [5]: 正确给出两条曲线读数差约 0.60 kN。
 
 ### Accepted Variants
 
@@ -1154,12 +1180,14 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 
 ### Scoring Standard
 
-- P1 [15]: 正确识别横轴为供给气压 MPa、纵轴为扩径力 kN。
-- P2 [15]: 正确识别上方曲线为 SWA2000-W。
-- P3 [25]: 给出容差内的约 2.50 kN 读数。
-- P4 [15]: 正确识别下方曲线为 SWA1000-W。
-- P5 [20]: 给出容差内的约 1.72 kN 读数。
-- P6 [10]: 正确判断 SWA2000-W 更高，差值约 0.78 kN。
+- P1 [8]: 正确识别横轴为供给气压 MPa。
+- P2 [7]: 正确识别纵轴为扩径力 kN。
+- P3 [15]: 正确识别上方曲线为 SWA2000-W。
+- P4 [25]: 给出容差内的约 2.50 kN 读数。
+- P5 [15]: 正确识别下方曲线为 SWA1000-W。
+- P6 [20]: 给出容差内的约 1.72 kN 读数。
+- P7 [5]: 正确判断 SWA2000-W 的读数更高。
+- P8 [5]: 正确给出两条曲线读数差约 0.78 kN。
 
 ### Accepted Variants
 
@@ -1213,12 +1241,17 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 ### Scoring Standard
 
 - P1 [15]: 正确说明释放时向释放用供气口供气。
-- P2 [15]: 正确说明活塞杆上升、涨爪缩径。
-- P3 [10]: 正确说明 A 型释放时产生 0.2 mm 提升间隙。
-- P4 [15]: 正确说明夹紧时向夹紧用供气口供气。
-- P5 [15]: 正确说明活塞杆下降、涨爪沿平面锥形部分扩径。
-- P6 [15]: 正确说明起升弹簧使涨爪初期不下移。
-- P7 [15]: 正确说明下拉力超过起升弹簧力后涨爪下移并压紧着座面。
+- P2 [8]: 正确说明释放时活塞杆上升。
+- P3 [7]: 正确说明释放时涨爪缩径。
+- P4 [10]: 正确说明 A 型释放时产生 0.2 mm 提升间隙。
+- P5 [15]: 正确说明夹紧时向夹紧用供气口供气。
+- P6 [8]: 正确说明夹紧时活塞杆下降。
+- P7 [7]: 正确说明涨爪沿平面锥形部分扩径。
+- P8 [15]: 正确说明起升弹簧使涨爪初期不下移。
+- P9 [5]: 正确说明涨爪下移的阈值是下拉力超过起升弹簧力。
+- P10 [5]: 正确说明达到阈值后涨爪向下移动。
+- P11 [2]: 正确说明工件最终被压紧。
+- P12 [3]: 正确说明工件最终与着座面密接。
 
 ### Accepted Variants
 
@@ -1329,9 +1362,10 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 - P1 [25]: 正确说明 VWM 动作完成后 SWA 才开始动作。
 - P2 [20]: 正确说明优先用电磁阀控制动作顺序。
 - P3 [20]: 正确说明无电磁阀时在图示单个指定位置用速度控制阀调整。
-- P4 [15]: 正确指出错误顺序会对 SWA 产生推力并可能损伤设备。
-- P5 [10]: 正确指出错误顺序可能造成定位精度不良。
-- P6 [10]: 正确说明高精度作业需每个夹紧器独立空气传感器。
+- P4 [7]: 正确指出错误顺序会使 VWM 对 SWA 产生推力。
+- P5 [8]: 正确指出该推力可能损伤设备。
+- P6 [10]: 正确指出错误顺序可能造成定位精度不良。
+- P7 [10]: 正确说明高精度作业需每个夹紧器独立空气传感器。
 
 ### Accepted Variants
 
@@ -1371,8 +1405,7 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 ### Question
 
 请把以下五种工件设计偏差分别与 PDF 给出的主要后果对应：工件孔过大、
-工件孔过小、工件孔过浅、锥孔勾配角过大、工件孔硬度过高。另说明孔周边
-为薄壁时应采取的验证措施和风险。
+工件孔过小、工件孔过浅、锥孔勾配角过大、工件孔硬度过高。
 
 ### Standard Answer
 
@@ -1381,18 +1414,19 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 - 孔过浅：会造成着座异常，并可能损坏气动夹紧器。
 - 勾配角过大：夹紧负载集中在涨爪顶端，可能导致涨爪破损。
 - 硬度过高：涨爪不能充分嵌入工件，无法充分夹紧。
-孔周边为薄壁时，夹紧可能使孔变形并使夹紧力/扩径力达不到规定值；使用前
-必须进行夹紧试验并将供给气压调整到合适状态，否则可能发生工件脱落。
 
 ### Scoring Standard
 
-- P1 [15]: 正确对应孔过大与扩径量/夹紧力不足。
-- P2 [15]: 正确对应孔过小与装卸困难、夹紧器破损。
-- P3 [15]: 正确对应孔过浅与着座异常、设备破损。
-- P4 [15]: 正确对应勾配角过大与负载集中在涨爪顶端、涨爪破损。
-- P5 [15]: 正确对应硬度过高与涨爪无法充分嵌入、夹紧不足。
-- P6 [15]: 正确说明薄壁可能变形并使力达不到规定值。
-- P7 [10]: 正确说明需先做夹紧试验并调整压力，避免工件脱落。
+- P1 [10]: 正确对应孔过大与扩径量不足。
+- P2 [10]: 正确对应孔过大与夹紧力/扩径力达不到规格值。
+- P3 [10]: 正确对应孔过小与工件装卸困难。
+- P4 [10]: 正确对应孔过小与夹紧器破损风险。
+- P5 [10]: 正确对应孔过浅与着座异常。
+- P6 [10]: 正确对应孔过浅与气动夹紧器破损风险。
+- P7 [10]: 正确对应勾配角过大与负载集中在涨爪顶端。
+- P8 [10]: 正确对应勾配角过大与涨爪破损风险。
+- P9 [10]: 正确对应硬度过高与涨爪无法充分嵌入。
+- P10 [10]: 正确对应硬度过高与夹紧不足。
 
 ### Accepted Variants
 
@@ -1402,8 +1436,7 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 ### Forbidden Errors
 
 - 交换孔过大与孔过小的后果。
-- 声称提高压力即可无条件补偿薄壁、硬度或勾配角问题。
-- 省略试夹验证并直接投入运行。
+- 声称提高压力即可无条件补偿孔径、孔深、硬度或勾配角问题。
 
 ### Tolerance
 
@@ -1414,10 +1447,10 @@ SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa �
 - PDF: SWA_R00_FA2026-C1N.pdf
 - Physical page: 23
 - Printed page: 715
-- Section: 设计方面的注意事项 > 工件孔尺寸、勾配角、硬度 / 工件孔周边壁厚
-- Local scope path: 项目 6 后果表 > 五类偏差；项目 7 > 薄壁变形 / 夹紧试验 / 脱落风险
+- Section: 设计方面的注意事项 > 工件孔尺寸、勾配角和硬度
+- Local scope path: 项目 6 后果表 > 五类工件孔设计偏差
 - Evidence type: TEXT + DRAWING
-- Evidence: 注意事项页按偏差类型逐行给出后果，并对薄壁条件规定试夹和压力调整。
+- Evidence: 注意事项页按孔径、孔深、勾配角和硬度偏差类型逐行给出对应后果。
 
 ## SWA-Q-0023
 
@@ -1445,12 +1478,17 @@ SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后�
 
 ### Scoring Standard
 
-- P1 [20]: 正确说明插入和退出均保持 SWA 垂直于工件孔。
-- P2 [20]: 正确说明完全退出后才移动到下一坐标。
-- P3 [15]: 正确说明有接触风险时控制插入速度。
-- P4 [20]: 正确说明使用传感器/延迟继电器等联锁，动作完成后机器人才能移动。
-- P5 [10]: 正确说明动作中移动可能导致工件脱落。
-- P6 [15]: 正确说明尽量减小工件与放置台间隙，防止倾斜卡滞和损坏。
+- P1 [10]: 正确说明插入时保持 SWA 垂直于工件孔。
+- P2 [10]: 正确说明退出时保持 SWA 垂直于工件孔。
+- P3 [20]: 正确说明完全退出后才移动到下一坐标。
+- P4 [15]: 正确说明有接触风险时控制插入速度。
+- P5 [10]: 正确说明使用传感器、延迟继电器等设置动作联锁。
+- P6 [10]: 正确说明夹紧或释放动作完成后机器人才能移动。
+- P7 [10]: 正确说明动作中移动可能导致工件脱落。
+- P8 [7]: 正确说明应尽量减小工件与放置台的间隙。
+- P9 [3]: 正确说明减小间隙用于防止工件倾斜。
+- P10 [3]: 正确说明减小间隙用于防止工件卡滞。
+- P11 [2]: 正确说明减小间隙用于防止 SWA 损坏。
 
 ### Accepted Variants
 
@@ -1490,7 +1528,8 @@ SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后�
 ### Question
 
 请列出安装 SWA 前必须满足的气源与配管清洁要求、密封胶带缠绕规则、
-本体螺栓规格和紧固力矩，以及喷气清洁回路的最小管径要求。
+本体螺栓规格和紧固力矩、喷气清洁回路的最小管径要求，并说明运行时
+喷气清洁口和着座/异常确认口的供气要求。
 
 ### Standard Answer
 
@@ -1499,17 +1538,26 @@ SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后�
 动作不良。缠绕密封胶带时应在螺纹顶端留出 1-2 圈丝口，避免断头进入回路。
 本体使用附带的强度等级 12.9、`M5x0.8` 螺栓，以 `6.3 N-m` 均匀紧固，
 不得使机器倾斜。喷气清洁回路建议至少使用外径 phi 6 mm、内径 phi 4 mm
-的管路。
+的管路。运行时必须始终向喷气清洁口以及着座确认/夹紧异常确认口供气；
+切断这些端口的供气会使异物侵入夹紧器内部并导致动作不良。
 
 ### Scoring Standard
 
-- P1 [15]: 正确要求过滤后的干燥空气。
+- P1 [10]: 正确要求过滤后的干燥空气。
 - P2 [10]: 明确禁止通过油雾器供油。
-- P3 [15]: 正确要求配管、接头和空气通路孔预先彻底清洗。
-- P4 [15]: 正确说明密封胶带在螺纹顶端留 1-2 圈。
-- P5 [15]: 正确给出 M5x0.8、强度等级 12.9 螺栓。
-- P6 [15]: 正确给出 6.3 N-m 并要求均匀紧固、不使机器倾斜。
-- P7 [15]: 正确给出喷气清洁管路外径 phi 6 / 内径 phi 4 mm 以上。
+- P3 [4]: 正确要求配管预先彻底清洗。
+- P4 [3]: 正确要求管接头预先彻底清洗。
+- P5 [3]: 正确要求夹具空气通路孔预先彻底清洗。
+- P6 [15]: 正确说明密封胶带在螺纹顶端留 1-2 圈。
+- P7 [8]: 正确给出 M5x0.8 螺栓规格。
+- P8 [7]: 正确给出螺栓强度等级 12.9。
+- P9 [8]: 正确给出紧固力矩 6.3 N-m。
+- P10 [4]: 正确要求各螺栓均匀紧固。
+- P11 [3]: 正确要求安装时不得使机器倾斜。
+- P12 [8]: 正确给出喷气清洁管路最小外径 phi 6 mm。
+- P13 [7]: 正确给出喷气清洁管路最小内径 phi 4 mm。
+- P14 [5]: 正确要求喷气清洁口在运行中始终保持供气。
+- P15 [5]: 正确要求着座/异常确认口在运行中始终保持供气。
 
 ### Accepted Variants
 
@@ -1522,6 +1570,7 @@ SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后�
 - 将胶带一直缠到螺纹最前端。
 - 使用错误力矩或省略螺栓强度等级。
 - 将管径上下限方向写反。
+- 允许在运行中切断喷气清洁口或着座/异常确认口的供气。
 
 ### Tolerance
 
@@ -1530,12 +1579,12 @@ SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后�
 ### Source
 
 - PDF: SWA_R00_FA2026-C1N.pdf
-- Physical page: 25
-- Printed page: 717
-- Section: 安装施工方面的注意事项
-- Local scope path: 项目 1-4 / 6 > 使用流体 / 配管前处置 / 密封胶带 / 本体安装 / 喷气清洁管路
+- Physical page: 23, 25
+- Printed page: 715, 717
+- Section: 设计方面的注意事项 / 安装施工方面的注意事项
+- Local scope path: 设计注意事项项目 8 > 喷气清洁口与着座/异常确认口持续供气；安装项目 1-4 / 6 > 使用流体 / 配管前处置 / 密封胶带 / 本体安装 / 喷气清洁管路
 - Evidence type: TEXT + TABLE
-- Evidence: 安装页逐项规定干燥空气、禁止供油、预清洁、胶带留牙、附带螺栓和力矩以及最小管径。
+- Evidence: 设计注意事项要求喷气清洁口及着座/异常确认口始终供气，并说明断气会导致异物侵入和动作不良；安装页规定干燥空气、禁止供油、预清洁、胶带留牙、附带螺栓和力矩以及最小管径。
 
 ## SWA-Q-0025
 
@@ -1560,9 +1609,11 @@ W 型没有把工件压向着座面的下拉夹紧力，仅靠扩径力夹紧。
 
 ### Scoring Standard
 
-- P1 [30]: 正确说明 W 型没有下拉夹紧力、仅靠扩径力。
-- P2 [30]: 正确说明直接承受横向剪切载荷可能造成机器破损或工件变形。
-- P3 [40]: 正确要求另设支撑来承受横向剪切载荷。
+- P1 [15]: 正确说明 W 型没有下拉夹紧力。
+- P2 [15]: 正确说明 W 型仅靠扩径力夹紧。
+- P3 [15]: 正确说明直接承受横向剪切载荷可能造成机器破损。
+- P4 [15]: 正确说明直接承受横向剪切载荷可能造成工件变形。
+- P5 [40]: 正确要求另设支撑来承受横向剪切载荷。
 
 ### Accepted Variants
 
@@ -1597,32 +1648,33 @@ W 型没有把工件压向着座面的下拉夹紧力，仅靠扩径力夹紧。
 
 - Binding: PRODUCT_SERIES
 - Product: SWA 气动涨紧下拉夹紧器
-- Model / Scope: SWA 清扫、故障判断、拆卸和分解大修安全
+- Model / Scope: SWA 日常清扫、故障判断和分解大修边界
 
 ### Question
 
-请说明 SWA 日常清扫与装卡前检查要求、带污运行的后果、外部清扫后仍异常
-时的处理，以及拆卸或分解大修前后的安全措施。
+请说明 SWA 日常清扫与装卡前检查要求、带污运行的后果，以及外部清扫后
+仍不能正常动作时应如何判断和处理。
 
 ### Standard Answer
 
 应定期清扫夹紧部位和着座面，并在装卡前确认没有切屑、淤渣等异物堆积。
 带污运行会造成夹紧力不足、动作异常和漏气，可能导致工件脱落。外部清扫后
 仍不能正常动作时，应怀疑内部混入异物或元件损坏，并委托 KOSMEK 分解大修，
-不得自行拆解，因为产品内置强劲弹簧。拆卸前必须采取防坠落和防误动作措施，
-切断压力源和电源并确认回路压力为零；设备应完全冷却。重新启动前应检查
-螺栓和连接部位是否异常。
+不得自行拆解，因为产品内置强劲弹簧。
 
 ### Scoring Standard
 
-- P1 [15]: 正确要求定期清扫夹紧部位和着座面、装卡前确认无异物。
-- P2 [15]: 正确说明带污会导致夹紧力不足。
-- P3 [15]: 正确说明还会导致动作异常、漏气和工件脱落风险。
-- P4 [15]: 正确说明外部清扫无效时怀疑内部异物或元件损坏。
-- P5 [15]: 正确要求委托 KOSMEK 大修、不得因强弹簧而自行拆解。
-- P6 [15]: 正确要求防坠落/防误动作、切断压力和电源并确认零压力。
-- P7 [5]: 正确要求设备完全冷却后拆卸。
-- P8 [5]: 正确要求重启前检查螺栓和连接部位。
+- P1 [10]: 正确要求定期清扫夹紧部位。
+- P2 [10]: 正确要求定期清扫着座面。
+- P3 [10]: 正确要求装卡前确认无异物。
+- P4 [15]: 正确说明带污会导致夹紧力不足。
+- P5 [10]: 正确说明带污会导致动作异常。
+- P6 [10]: 正确说明带污会导致漏气。
+- P7 [10]: 正确说明带污运行存在工件脱落风险。
+- P8 [5]: 正确说明外部清扫无效时怀疑内部混入异物。
+- P9 [5]: 正确说明外部清扫无效时怀疑内部元件损坏。
+- P10 [10]: 正确要求委托 KOSMEK 分解大修。
+- P11 [5]: 正确说明内置强弹簧，因此不得自行拆解。
 
 ### Accepted Variants
 
@@ -1633,8 +1685,6 @@ W 型没有把工件压向着座面的下拉夹紧力，仅靠扩径力夹紧。
 
 - 仅依赖喷气清洁而不做定期人工检查。
 - 外部清扫无效后继续运行或自行拆解。
-- 只切断电源而保留气压，或未采取防坠落措施。
-- 在设备尚未冷却时拆卸。
 
 ### Tolerance
 
@@ -1643,9 +1693,125 @@ W 型没有把工件压向着座面的下拉夹紧力，仅靠扩径力夹紧。
 ### Source
 
 - PDF: SWA_R00_FA2026-C1N.pdf
-- Physical page: 25-27
-- Printed page: 717-718, 925
-- Section: 操作方面的注意事项 / 保养・检查
-- Local scope path: SWA 保养项目 2/4 > 清扫 / 异常 / 制造商大修；操作安全项目 2 > 防坠落 / 零能量 / 冷却 / 重启检查
+- Physical page: 26
+- Printed page: 718
+- Section: 保养・检查
+- Local scope path: SWA 保养项目 2/4 > 清扫 / 异常 / 制造商分解大修 / 强弹簧警告
 - Evidence type: TEXT
-- Evidence: SWA 本地保养页规定清扫、污染后果和制造商大修；相邻操作及共通注意事项补充零能量、冷却和重启检查要求。
+- Evidence: SWA 本地保养页规定清扫、污染后果、异常判断和制造商分解大修，并警告产品内置强劲弹簧，不得自行拆解。
+
+## SWA-Q-0027
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA 操作、拆卸和重新启动安全
+
+### Question
+
+SWA 的操作、拆卸和重新启动必须采取哪些人员、设备运动、能源隔离、温度、
+夹伤和改造方面的安全措施？
+
+### Standard Answer
+
+操作人员必须经过充分培训并具备相应知识。拆卸前必须采取防止工件或设备
+坠落以及防止设备误动作的措施，切断压力源和电源，并确认回路压力为零。
+设备完全冷却后才可拆卸。重新启动前必须检查螺栓和连接部位是否异常。
+运行中不得接近或触碰夹紧器，避免夹伤；不得擅自改造产品。
+
+### Scoring Standard
+
+- P1 [15]: 正确要求操作人员经过培训并具备相应知识。
+- P2 [10]: 正确要求拆卸前采取防坠落措施。
+- P3 [10]: 正确要求拆卸前采取防误动作措施。
+- P4 [10]: 正确要求切断压力源。
+- P5 [10]: 正确要求切断电源。
+- P6 [10]: 正确要求确认回路压力为零。
+- P7 [10]: 正确要求设备完全冷却后再拆卸。
+- P8 [5]: 正确要求重启前检查螺栓。
+- P9 [5]: 正确要求重启前检查连接部位。
+- P10 [5]: 正确要求运行中避免接近或触碰夹紧器以防夹伤。
+- P11 [10]: 正确要求不得擅自改造产品。
+
+### Accepted Variants
+
+- `确认回路压力为零` 可写为 `泄压到零`。
+- `防误动作` 可写为 `防止设备意外启动或移动`。
+
+### Forbidden Errors
+
+- 只切断电源而保留气压，或未确认回路压力为零。
+- 未采取防坠落、防误动作措施便拆卸。
+- 在设备尚未冷却时拆卸。
+- 允许未培训人员操作或允许擅自改造产品。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 25
+- Printed page: 717
+- Section: 操作方面的注意事项
+- Local scope path: 操作安全项目 1-5 > 人员资格 / 防坠落与防误动作 / 零能量 / 冷却 / 重启检查 / 夹伤 / 禁止改造
+- Evidence type: TEXT
+- Evidence: SWA 产品本地操作注意事项逐项规定人员资格、防坠落、防误动作、压力与电源隔离、零压力确认、冷却、重启检查、夹伤防止和禁止改造。
+
+## SWA-Q-0028
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA 工件孔周边薄壁条件的试夹与压力调整
+
+### Question
+
+当 SWA 对象工件的孔周边存在薄壁部位时，夹紧会产生什么风险？投入使用前
+必须执行什么验证和调整，若夹紧力或扩径力不足会造成什么后果？
+
+### Standard Answer
+
+孔周边为薄壁时，夹紧动作可能使工件孔变形，并使夹紧力或扩径力达不到
+规定值。投入使用前必须进行夹紧试验，并把供给气压调整到最合适的夹紧
+状态。若在夹紧力或扩径力不足的状态下使用，可能发生工件脱落事故。
+
+### Scoring Standard
+
+- P1 [20]: 正确说明薄壁条件可能使工件孔变形。
+- P2 [20]: 正确说明薄壁条件可能使夹紧力或扩径力达不到规定值。
+- P3 [20]: 正确要求投入使用前进行夹紧试验。
+- P4 [20]: 正确要求依据试夹结果调整供给气压到合适状态。
+- P5 [20]: 正确说明力不足时存在工件脱落风险。
+
+### Accepted Variants
+
+- `夹紧试验` 可写为 `试夹`。
+- `供给气压调整到合适状态` 可写为 `根据试夹结果优化工作压力`。
+
+### Forbidden Errors
+
+- 省略试夹验证并直接投入运行。
+- 声称提高压力即可无条件消除薄壁变形。
+- 声称夹紧力或扩径力不足不会导致工件脱落。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 23
+- Printed page: 715
+- Section: 设计方面的注意事项 > 工件孔周边壁厚
+- Local scope path: 项目 7 > 薄壁变形 / 夹紧力与扩径力不足 / 夹紧试验 / 供给气压调整 / 脱落风险
+- Evidence type: TEXT + DRAWING
+- Evidence: 薄壁注意事项明确关联孔变形、力不足、试夹、压力调整和工件脱落风险。
