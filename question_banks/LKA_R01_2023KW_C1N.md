@@ -88,8 +88,8 @@ and `MEDIUM` item has a final disposition.
 | LKA-SI-004 | 5 / 753 | Table of contents | TEXT | NON-TEST | Navigation map for LKA product, common cautions, valves, and manifold blocks | Navigation only |
 | LKA-SI-005 | 6 / 754 | LKA features and cross-section | TEXT + DRAWING | HIGH | Compact body, integrated fulcrum, coolant protection, eccentric-load allowance, arm directions, and direct speed-control mounting | Compactness, fulcrum, and sealing facts in `LKA-Q-0002`; eccentricity and operating controls in `LKA-Q-0020`, `LKA-Q-0021`, and `LKA-Q-0022` |
 | LKA-SI-006 | 7 / 755 | Model designation | TABLE + DRAWING | HIGH | Six-field order, legal body/piping/arm/confirmation/option values, and H-option size restriction | `LKA-Q-0001`, `LKA-Q-0005`, and `LKA-Q-0006`; deterministic grammar cases cover field order, allowlists, invalid fields, and the H-option body-size boundary |
-| LKA-SI-007 | 8 / 756 | Specifications | TABLE + FORMULA | HIGH | Clamp area, clamp-force formula, capacities, strokes, pressure, temperature, fluid, and weight for eight body sizes and confirmation variants | Representative lookup and common limits in `LKA-Q-0003`, `LKA-Q-0004`; deterministic calculation in `LKA-Q-0017` |
-| LKA-SI-008 | 9-12 / 757-760 | Clamp-force capability curves | CHART + FORMULA | HIGH | Pressure/arm-length/clamp-force relationships with and without action confirmation | Deterministic comparison in `LKA-Q-0017`; genuine curve read in `LKA-Q-0018` |
+| LKA-SI-007 | 8 / 756 | Specifications | TABLE + FORMULA | HIGH | Clamp area, clamp-force formula, capacities, strokes, pressure, temperature, fluid, and weight for eight body sizes and confirmation variants | Representative lookup and common limits in `LKA-Q-0003`, `LKA-Q-0004`; `LKA-Q-0003` and deterministic `LKA-Q-0017` freeze the LKA0480 denominator offset `(L - 18.5)` |
+| LKA-SI-008 | 9-12 / 757-760 | Clamp-force capability curves | CHART + FORMULA | HIGH | Pressure/arm-length/clamp-force relationships with and without action confirmation | Corrected deterministic comparison in `LKA-Q-0017`; genuine LKA0480 standard-curve read of about 1.1 kN in `LKA-Q-0018`; other clamp-force references were checked for the same denominator-offset propagation error |
 | LKA-SI-009 | 13-16 / 761-764 | Allowable eccentricity curves | CHART + DRAWING | HIGH | Standard versus high-strength-link eccentricity limits and consequences of exceeding them | Genuine visual eccentricity read in `LKA-Q-0021`; limit consequence in `LKA-Q-0020` |
 | LKA-SI-010 | 17-18 / 765-766 | Standard model dimensions and dimension table | DRAWING + TABLE | HIGH | External, mounting, port, arm, and interference dimensions | Representative LKA0480 stroke/mounting/port lookup in `LKA-Q-0012`; high-consequence mounting controls in `LKA-Q-0020` |
 | LKA-SI-011 | 19-20 / 767-768 | Probe dual-rod confirmation type `D` | DRAWING + TABLE | HIGH | Model-specific construction, confirmation interface, and dimensions | `D` semantics in `LKA-Q-0005`; repeated body-size dimension grids are retained as lookup evidence rather than numeric-swap questions |
@@ -103,7 +103,7 @@ and `MEDIUM` item has a final disposition.
 | LKA-SI-019 | 30 / 778 | Blank arm and fastening kit | DRAWING + TABLE + TEXT | MEDIUM | Blank-arm selection, machining, fastener kit, and compatibility constraints | Representative LKA0480 selection and exact fastening kit in `LKA-Q-0009`; remaining repeated sizes are fabrication context rather than separate questions |
 | LKA-SI-020 | 31 / 943 | Lever-clamp design and installation cautions, including LKA | TEXT + DRAWING + TABLE | HIGH | Hydraulic circuit, simultaneous pressure prohibition, axial loading, eccentricity, contamination, parallel clamping, pins, mounting, and sensor references | High-consequence LKA design and installation controls in `LKA-Q-0020` |
 | LKA-SI-021 | 32 / 944 | Lever-clamp operation and adjustment, including LKA | TEXT + DRAWING + TABLE | HIGH | Quick-change fastening, action time, air bleeding, speed adjustment, fulcrum adjustment, and probe installation | LKA speed-adjustment procedure in `LKA-Q-0022`; exact quick-change fastening data already appears in `LKA-Q-0009`; specialized fulcrum/probe rows remain variant-local reference |
-| LKA-SI-022 | 33 / 945 | Common hydraulic installation cautions | TEXT + DRAWING | HIGH | Oil selection, cleaning, sealing tape, air bleeding, and fastener checks | Page-bounded common installation and air-bleed procedure in `LKA-Q-0023` |
+| LKA-SI-022 | 33 / 945 | Common hydraulic installation cautions | TEXT + DRAWING | HIGH | Oil selection, cleaning, sealing tape, air bleeding, and fastener checks | Page-bounded common installation and air-bleed procedure in `LKA-Q-0023`, including the exact 2 MPa-or-below pressure limit before loosening the fitting |
 | LKA-SI-023 | 34 / 946 | Common hydraulic speed-control circuits | STATE_DIAGRAM + TEXT | HIGH | Single/double-acting circuit differences, meter-out/meter-in behavior, air instability, circuit separation, and back pressure | Page-bounded common circuit controls in `LKA-Q-0024` |
 | LKA-SI-024 | 35 / 947 | Common operation and maintenance cautions | TEXT | HIGH | Qualified staff, energy isolation, restart checks, moving-part avoidance, modification prohibition, inspection, storage, and overhaul | Page-bounded safety and maintenance controls in `LKA-Q-0025` |
 | LKA-SI-025 | 36 / 948 | Warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; commercial policy |
@@ -275,18 +275,18 @@ LKA 的法兰安装面下部相对本公司传统产品最多缩小 40%，有助
 ### Standard Answer
 
 无动作确认的 LKA0480 夹紧侧受压面积为 7.07 cm2，夹紧力公式为
-`F = (11.76 x P) / L` kN，夹紧侧/释放侧油量为 16.6/13.0 cm3。
+`F = (11.76 x P) / (L - 18.5)` kN，夹紧侧/释放侧油量为 16.6/13.0 cm3。
 带动作确认的 LKA0480 夹紧侧受压面积为 5.53 cm2，夹紧力公式为
-`F = (9.20 x P) / L` kN，夹紧侧/释放侧油量为 13.0/13.0 cm3。
+`F = (9.20 x P) / (L - 18.5)` kN，夹紧侧/释放侧油量为 13.0/13.0 cm3。
 
 ### Scoring Standard
 
 - P1 [10]: 正确给出无动作确认型受压面积 7.07 cm2。
-- P2 [15]: 正确给出无动作确认型公式 `F = (11.76 x P) / L`。
+- P2 [15]: 正确给出无动作确认型公式 `F = (11.76 x P) / (L - 18.5)`。
 - P3 [10]: 正确给出无动作确认型夹紧侧油量 16.6 cm3。
 - P4 [10]: 正确给出无动作确认型释放侧油量 13.0 cm3。
 - P5 [10]: 正确给出带动作确认型受压面积 5.53 cm2。
-- P6 [15]: 正确给出带动作确认型公式 `F = (9.20 x P) / L`。
+- P6 [15]: 正确给出带动作确认型公式 `F = (9.20 x P) / (L - 18.5)`。
 - P7 [10]: 正确给出带动作确认型夹紧侧油量 13.0 cm3。
 - P8 [10]: 正确给出带动作确认型释放侧油量 13.0 cm3。
 - P9 [10]: 明确区分两种配置，未交换任一组数据。
@@ -295,13 +295,13 @@ LKA 的法兰安装面下部相对本公司传统产品最多缩小 40%，有助
 
 - `x` 可写为 `×` 或乘号表达。
 - `cm2`、`cm3` 可写为 `cm²`、`cm³`。
-- 公式可等价写为 `11.76P/L` 和 `9.20P/L`。
+- 公式可等价写为 `11.76P/(L-18.5)` 和 `9.20P/(L-18.5)`。
 
 ### Forbidden Errors
 
 - 以夹紧侧受压面积直接代替 PDF 给出的夹紧力公式系数。
 - 交换无动作确认和带动作确认两组数据。
-- 省略公式中的压板长度 `L` 或将其放在分子。
+- 省略分母中的 `18.5 mm` 偏移量、直接使用 `/L`，或将压板长度放在分子。
 - 将油量单位写成 L 或 mm3。
 
 ### Tolerance
@@ -316,7 +316,7 @@ LKA 的法兰安装面下部相对本公司传统产品最多缩小 40%，有助
 - Section: 规格
 - Local scope path: 规格表 > LKA0480 列 > 动作确认方式无符号与选择时 > 夹紧侧受压面积 / 夹紧力 / 油量
 - Evidence type: TABLE + FORMULA
-- Evidence: 规格表在 LKA0480 列中分别列出无动作确认和带动作确认的受压面积、公式系数以及夹紧侧/释放侧油量。
+- Evidence: 规格表在 LKA0480 列中分别列出无动作确认和带动作确认的受压面积、完整公式 `11.76P/(L-18.5)` 与 `9.20P/(L-18.5)`，以及夹紧侧/释放侧油量。
 
 ## LKA-Q-0004
 
@@ -1087,44 +1087,48 @@ LKA0480 的确认。
 ### Question
 
 LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计算
-标准无动作确认型和带 D/M/N 动作确认型的夹紧力 `F`。结果以 kN 表示，
-采用 `ROUND_HALF_UP` 保留两位小数；同时说明使用的两个公式系数。
+标准无动作确认型和带 D/M/N/NC/NL/NR 动作确认型的夹紧力 `F`。结果以
+kN 表示，采用 `ROUND_HALF_UP` 保留两位小数；同时说明使用的完整公式。
 
 ### Standard Answer
 
-标准无动作确认型使用 `F = 11.76 x P / L`，所以
-`11.76 x 5.0 / 60 = 0.980 kN`，保留两位小数为 `0.98 kN`。
+标准无动作确认型使用 `F = (11.76 x P) / (L - 18.5)`，所以
+`11.76 x 5.0 / (60 - 18.5) = 1.416867... kN`，采用 `ROUND_HALF_UP`
+保留两位小数为 `1.42 kN`。
 
-带 D/M/N/NC/NL/NR 动作确认型使用 `F = 9.20 x P / L`，所以
-`9.20 x 5.0 / 60 = 0.766666... kN`，采用 `ROUND_HALF_UP` 保留两位
-小数为 `0.77 kN`。在相同压力和压板长度下，本题的标准无动作确认型夹紧力
-更大。
+带 D/M/N/NC/NL/NR 动作确认型使用 `F = (9.20 x P) / (L - 18.5)`，所以
+`9.20 x 5.0 / (60 - 18.5) = 1.108433... kN`，采用 `ROUND_HALF_UP`
+保留两位小数为 `1.11 kN`。在相同压力和压板长度下，本题的标准无动作确认型
+夹紧力更大。
 
 ### Scoring Standard
 
-- P1 [15]: 正确给出标准无动作确认型系数 11.76。
-- P2 [15]: 正确计算标准型未舍入结果 0.980 kN。
-- P3 [15]: 正确给出 D/M/N/NC/NL/NR 动作确认型系数 9.20。
-- P4 [15]: 正确计算动作确认型未舍入结果 0.766666... kN。
-- P5 [15]: 按 `ROUND_HALF_UP` 正确得到标准型最终结果 0.98 kN。
-- P6 [15]: 按 `ROUND_HALF_UP` 正确得到动作确认型最终结果 0.77 kN。
-- P7 [10]: 正确判断相同输入下标准无动作确认型夹紧力更大。
+- P1 [10]: 正确给出标准无动作确认型系数 11.76。
+- P2 [10]: 正确使用标准型分母 `(L - 18.5)`。
+- P3 [10]: 正确计算标准型未舍入结果 1.416867... kN。
+- P4 [10]: 正确给出 D/M/N/NC/NL/NR 动作确认型系数 9.20。
+- P5 [10]: 正确使用动作确认型分母 `(L - 18.5)`。
+- P6 [10]: 正确计算动作确认型未舍入结果 1.108433... kN。
+- P7 [15]: 按 `ROUND_HALF_UP` 正确得到标准型最终结果 1.42 kN。
+- P8 [15]: 按 `ROUND_HALF_UP` 正确得到动作确认型最终结果 1.11 kN。
+- P9 [10]: 正确判断相同输入下标准无动作确认型夹紧力更大。
 
 ### Accepted Variants
 
 - 乘号可写为 `x`、`×` 或 `*`。
-- 未舍入结果可给出更多或更少循环小数位，但必须足以确定 0.77 kN 的舍入结果。
+- 未舍入结果可给出更多或更少小数位，但必须足以确定 1.42 kN 和 1.11 kN 的舍入结果。
 
 ### Forbidden Errors
 
 - 使用夹紧面积代替本页给定的夹紧力公式。
 - 交换 11.76 与 9.20 两个系数的适用对象。
+- 省略分母中的 `18.5 mm` 偏移量或直接除以 `L`。
 - 将压板长度 60 mm 换算成 0.06 m 后仍直接代入以 mm 定义的公式。
-- 使用截断法把动作确认型结果写成 0.76 kN。
+- 使用截断法把最终结果写成 1.41 kN 或 1.10 kN。
 
 ### Tolerance
 
-- Deterministic calculation: inputs and units are exact; final values must be 0.98 kN and 0.77 kN under `ROUND_HALF_UP` to two decimal places.
+- Deterministic calculation: inputs and units are exact; final values must be 1.42 kN and 1.11 kN under `ROUND_HALF_UP` to two decimal places.
 
 ### Source
 
@@ -1134,7 +1138,7 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 - Section: 规格 > 夹紧力计算公式
 - Local scope path: LKA0480 列 > 标准无动作确认型公式；D/M/N 动作确认型公式
 - Evidence type: FORMULA + TABLE
-- Evidence: LKA0480 的两列公式分别给出 11.76 和 9.20 的系数，并定义 F 为 kN、P 为 MPa、L 为 mm；Gold 由 Decimal 脚本按指定舍入规则计算。
+- Evidence: LKA0480 的两列公式分别给出 `11.76P/(L-18.5)` 和 `9.20P/(L-18.5)`，并定义 F 为 kN、P 为 MPa、L 为 mm；Gold 由 Decimal 脚本按指定舍入规则计算。
 
 ## LKA-Q-0018
 
@@ -1154,18 +1158,18 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 ### Standard Answer
 
 应选择 LKA0480 图中的 `L = 60` 曲线，在 `P = 4.0 MPa` 处读取约
-`0.8 kN` 的夹紧力。
+`1.1 kN` 的夹紧力。
 
 ### Scoring Standard
 
 - P1 [20]: 明确选择 LKA0480 标准无动作确认型曲线组。
 - P2 [20]: 明确选择 `L = 60` 曲线。
 - P3 [20]: 在横轴使用 `P = 4.0 MPa`。
-- P4 [40]: 从纵轴读出约 0.8 kN，且结果落入规定图读容差。
+- P4 [40]: 从纵轴读出约 1.1 kN，且结果落入规定图读容差。
 
 ### Accepted Variants
 
-- `约 0.8 kN` 可写为容差范围内更精细的图读值。
+- `约 1.1 kN` 可写为容差范围内更精细的图读值。
 
 ### Forbidden Errors
 
@@ -1176,7 +1180,7 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 
 ### Tolerance
 
-- CHART: accept 0.70-0.90 kN for the visual read at P = 4.0 MPa and L = 60 mm.
+- CHART: accept 1.0-1.2 kN for the visual read at P = 4.0 MPa and L = 60 mm.
 
 ### Source
 
@@ -1186,7 +1190,7 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 - Section: 能力曲线图（动作确认方式：无符号：标准型）
 - Local scope path: LKA0480 图 > L=60 曲线 > P=4.0 MPa 交点
 - Evidence type: CHART
-- Evidence: Gold 直接由页面右侧 LKA0480 能力曲线的轴、L=60 曲线和交点进行视觉读取；公式仅用于独立合理性检查，不作为 Chart Gold 来源。
+- Evidence: Gold 直接由页面右侧 LKA0480 能力曲线的轴、L=60 曲线和 P=4.0 MPa 交点视觉读取为约 1.1 kN；正确公式给出的约 1.13 kN 仅用于独立合理性检查，不作为 Chart Gold 来源。
 
 ## LKA-Q-0019
 
@@ -1439,7 +1443,8 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 ### Standard Answer
 
 投入使用前必须彻底清洁配管、管接头和配件油孔，并在清洁环境中正确施工；
-密封带不得让碎片残留在回路内。需要排气时，先降低回路供油压力，再将离
+密封带不得让碎片残留在回路内。需要排气时，先将回路供油压力调至不超过
+`2 MPa`（`2 MPa` 以下），再将离
 夹紧器或支撑器最近的管接头螺母稍微旋松，左右摇动配管排出混有空气的
 液压油，空气排净后重新紧固。优先在回路最高端和最末端附近排气；板式配管
 应在回路最高端附近设置排气阀。
@@ -1448,7 +1453,7 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 
 - P1 [15]: 正确要求彻底清洁配管、管接头和配件油孔。
 - P2 [15]: 正确要求避免密封带碎片或其他异物残留在回路内。
-- P3 [15]: 正确说明排气前降低回路供油压力。
+- P3 [15]: 正确说明排气前必须将回路供油压力调至不超过 2 MPa。
 - P4 [15]: 正确说明稍微旋松最靠近夹紧器或支撑器的管接头螺母。
 - P5 [8]: 正确说明摇动配管以排出含气液压油。
 - P6 [7]: 正确说明空气排净后重新紧固接头。
@@ -1458,17 +1463,18 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 ### Accepted Variants
 
 - `左右摇动配管` 可写为 `轻轻移动配管使连接处松动并排气`。
+- `2 MPa 以下` 可写为 `不超过 2 MPa` 或 `2 MPa or below`。
 
 ### Forbidden Errors
 
-- 在高压状态下直接大幅拆松管接头。
+- 在供油压力超过 2 MPa 时松开管接头，或在高压状态下直接大幅拆松接头。
 - 允许密封带碎片留在回路中。
 - 排气后不重新紧固接头。
 - 将最低点描述为唯一推荐排气位置。
 
 ### Tolerance
 
-- N/A
+- Exact safety limit: supply pressure must be 2 MPa or below before loosening the fitting.
 
 ### Source
 
@@ -1478,7 +1484,7 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 - Section: 安装施工方面的注意事项（油压系列通用）
 - Local scope path: 配管前的处理 / 密封胶带的缠绕方法 / 排净油压回路内的空气
 - Evidence type: TEXT + DRAWING
-- Evidence: 页面连续给出清洁和密封带控制，并以图文步骤说明降低压力、松开最近接头、摇动排气、重新紧固及最高端/最末端排气位置。
+- Evidence: 页面连续给出清洁和密封带控制，并以图文步骤要求将供油压力调至不超过 2 MPa、松开最近接头、摇动排气、重新紧固及在最高端/最末端附近排气。
 
 ## LKA-Q-0024
 
