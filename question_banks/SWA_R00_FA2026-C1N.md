@@ -101,29 +101,29 @@ does not claim coverage in advance.
 | SWA-SI-001 | 1 / 693 | Product introduction > operating principle | TEXT + DRAWING | HIGH | Expand against the workpiece-hole wall, then pull the workpiece down for clamping | `SWA-Q-0002` |
 | SWA-SI-002 | 2 / 694 | Features > fixture and machining benefits | TEXT + DRAWING | MEDIUM | Shorter tool overhang, improved machining accuracy, compact fixture/rotary-table examples | No separate question: application-benefit examples are derivative outcomes, not stable operating or selection rules |
 | SWA-SI-003 | 3 / 695 | Features > body and application range | TEXT + TABLE + DRAWING | HIGH | SWA/SWE/SWH installation-size boundary; two body sizes; variable seat height and hole diameter | `SWA-Q-0003`; product-comparison illustration is contextual only |
-| SWA-SI-004 | 4 / 696 | Features > seating and no-pull-down applications | TEXT + DRAWING | HIGH | Seating reference, positioning behavior, and W-form deformation-control use | `SWA-Q-0005`; transverse-load caution remains WP3 |
-| SWA-SI-005 | 5 / 697 | Features > protection and cleaning | TEXT + DRAWING | HIGH | Protective cap, small sliding clearance, air-cleaning effect, replaceable claw, and rough-guide conditions | `SWA-Q-0004`; handling qualifications remain WP3 |
-| SWA-SI-006 | 6 / 698 | Features > self-lock and pull-down mechanism | TEXT + DRAWING | HIGH | Spring clamp/self-lock at zero pressure, pull-down travel, and simplified internal structure | `SWA-Q-0005`; operating consequences remain WP3 |
-| SWA-SI-007 | 7 / 699 | Features > workpiece lift and confirmation | TEXT + DRAWING | HIGH | Lift-option dependency, lift travel, action confirmation, excessive lift, and broken-rod states | Lift dependency covered by `SWA-Q-0001` and `SWA-Q-0006`; state diagnosis remains WP3 |
-| SWA-SI-008 | 8 / 700 | Operating principle and sensing states | STATE_DIAGRAM + TEXT | HIGH | Release/clamp sequences, pull-down threshold, seating confirmation, continuous air supply, and abnormal-state detection | WP3 `PROCEDURE` / `CAUTION` |
+| SWA-SI-004 | 4 / 696 | Features > seating and no-pull-down applications | TEXT + DRAWING | HIGH | Seating reference, positioning behavior, and W-form deformation-control use | `SWA-Q-0005`, `SWA-Q-0025` |
+| SWA-SI-005 | 5 / 697 | Features > protection and cleaning | TEXT + DRAWING | HIGH | Protective cap, small sliding clearance, air-cleaning effect, replaceable claw, and rough-guide conditions | `SWA-Q-0004`; detailed handling controls in `SWA-Q-0023` |
+| SWA-SI-006 | 6 / 698 | Features > self-lock and pull-down mechanism | TEXT + DRAWING | HIGH | Spring clamp/self-lock at zero pressure, pull-down travel, and simplified internal structure | `SWA-Q-0005`, `SWA-Q-0019` |
+| SWA-SI-007 | 7 / 699 | Features > workpiece lift and confirmation | TEXT + DRAWING | HIGH | Lift-option dependency, lift travel, action confirmation, excessive lift, and broken-rod states | Lift dependency in `SWA-Q-0001`/`0006`; state diagnosis in `SWA-Q-0020` |
+| SWA-SI-008 | 8 / 700 | Operating principle and sensing states | STATE_DIAGRAM + TEXT | HIGH | Release/clamp sequences, pull-down threshold, seating confirmation, continuous air supply, and abnormal-state detection | `SWA-Q-0019`, `SWA-Q-0020` |
 | SWA-SI-009 | 9-10 / 701-702 | Model designation > straight-hole form | TABLE + DRAWING | HIGH | Seven-field order, body/lift/hole/height/claw/option meanings, body-hole ranges, and W dependencies | `SWA-Q-0001`, `SWA-Q-0003` |
 | SWA-SI-010 | 11-12 / 703-704 | Model designation > tapered-hole form | TABLE + DRAWING | HIGH | Six-field order, terminal T, legal holes, angle-dependent tolerances, serration rule, and unavailable options | `SWA-Q-0006`, `SWA-Q-0007` |
 | SWA-SI-011 | 13 / 705 | Specifications > straight-hole form | TABLE | HIGH | A/N hole tolerances, eccentric allowance, travel, lift force, air volume, pressure, temperature, fluid, and special pressure limits | `SWA-Q-0001`, `SWA-Q-0008`, `SWA-Q-0009` |
 | SWA-SI-012 | 14 / 706 | Specifications > tapered-hole form | TABLE | HIGH | Taper angle/tolerance binding, eccentric allowance, travel, capacity, pressure, and unavailable 060 code | `SWA-Q-0006` through `SWA-Q-0009` |
-| SWA-SI-013 | 15 / 707 | Standard form > clamping-force table, formula, and chart | FORMULA + CHART + TABLE | HIGH | Force-pressure relationships for serrated/T and F forms, spring force at 0 MPa, and restricted pressure ranges | WP3 `CALCULATION` / `CHART` |
-| SWA-SI-014 | 16 / 708 | W form > expansion-force table, formula, and chart | FORMULA + CHART + TABLE | HIGH | Expansion-force relationships, friction assumption, 0 MPa spring force, 0.1 mm maximum pull-down, and pressure limits | WP3 `CALCULATION` / `CHART` |
-| SWA-SI-015 | 17-18 / 709-710 | SWA1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | Representative dimension lookup in `SWA-Q-0010`; machining cautions remain WP3 |
-| SWA-SI-016 | 19-20 / 711-712 | SWA2000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | Representative dimension lookup in `SWA-Q-0010`; machining cautions remain WP3 |
-| SWA-SI-017 | 21 / 713 | Configuration example > SWA-N with VWM | DRAWING + TEXT | HIGH | D/C locating-pin arrangement, rough-guide design, SWA vertical orientation, and mandatory Lift N selection | `SWA-Q-0011`; sequencing remains WP3 |
-| SWA-SI-018 | 22 / 714 | Pneumatic-circuit examples | STATE_DIAGRAM + TABLE + TEXT | HIGH | One/two-solenoid circuits, VWM-before-SWA sequence, speed-control fallback, sensor-per-clamp rule, sensing states, and failure consequences | WP3 `PROCEDURE` / `CAUTION` |
-| SWA-SI-019 | 23 / 715 | Design cautions > unpowered state and seating | TEXT + DRAWING | HIGH | Spring-clamped zero-pressure state, release-air requirement for loading, Z datum, full-seat contact, and seating confirmation | WP3 `CAUTION` |
-| SWA-SI-020 | 23 / 715 | Design cautions > force and workpiece constraints | TEXT + DRAWING | HIGH | Trial clamping, insufficient-force drop risk, hole size/depth/taper/hardness limits, thin-wall deformation, and continuous cleaning/sensing air | WP3 `CAUTION` / `PROCEDURE` |
-| SWA-SI-021 | 24 / 716 | Handling cautions > horizontal and manual loading | TEXT + DRAWING | HIGH | Pre-clamping for horizontal use, no tilted/floating loading, fully released loading, small support clearance, and rough guides | WP3 `CAUTION` / `PROCEDURE` |
-| SWA-SI-022 | 24 / 716 | Robot handling | TEXT + DRAWING | HIGH | Perpendicular insertion/removal, complete withdrawal before coordinate motion, controlled insertion speed, and motion interlock | WP3 `PROCEDURE` / `CAUTION` |
-| SWA-SI-023 | 25 / 717 | Installation > air, cleaning, tape, bolts, and ports | TEXT + TABLE | HIGH | Filtered dry air/no lubrication, pre-cleaning, tape practice, M5 class 12.9 at 6.3 N-m, port identities, and phi 6/4 minimum tubing | WP3 `PROCEDURE` / `CAUTION` |
-| SWA-SI-024 | 25 / 717 | Operation safety | TEXT | HIGH | Qualified operator, anti-drop/anti-motion controls, zero-energy disassembly, cooling, restart inspection, pinch avoidance, no modification, and spring hazard | WP3 `CAUTION`; bind as product-local safety |
-| SWA-SI-025 | 26 / 718 | SWA maintenance and claw replacement | TEXT + TABLE | HIGH | Cleaning clamp/seat surfaces, contamination consequences, manufacturer overhaul, wear replacement, and 1,000,000/500,000-cycle reference values | Replacement table in `SWA-Q-0012`; maintenance procedure remains WP3 |
-| SWA-SI-026 | 27 / 925 | Common pneumatic appendix > operation and maintenance | TEXT | MEDIUM | Shared zero-energy safety, cleaning, leak/sound/motion checks, storage, and overhaul rules | WP3 `CAUTION` / `PROCEDURE`; bind as `DOCUMENT_COMMON` and avoid duplication |
+| SWA-SI-013 | 15 / 707 | Standard form > clamping-force table, formula, and chart | FORMULA + CHART + TABLE | HIGH | Force-pressure relationships for serrated/T and F forms, spring force at 0 MPa, and restricted pressure ranges | `SWA-Q-0015`, `SWA-Q-0017` |
+| SWA-SI-014 | 16 / 708 | W form > expansion-force table, formula, and chart | FORMULA + CHART + TABLE | HIGH | Expansion-force relationships, friction assumption, 0 MPa spring force, 0.1 mm maximum pull-down, and pressure limits | `SWA-Q-0016`, `SWA-Q-0018` |
+| SWA-SI-015 | 17-18 / 709-710 | SWA1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | `SWA-Q-0010`; thin-wall/interference risks consolidated in `SWA-Q-0022` |
+| SWA-SI-016 | 19-20 / 711-712 | SWA2000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | `SWA-Q-0010`; thin-wall/interference risks consolidated in `SWA-Q-0022` |
+| SWA-SI-017 | 21 / 713 | Configuration example > SWA-N with VWM | DRAWING + TEXT | HIGH | D/C locating-pin arrangement, rough-guide design, SWA vertical orientation, and mandatory Lift N selection | `SWA-Q-0011`, `SWA-Q-0021` |
+| SWA-SI-018 | 22 / 714 | Pneumatic-circuit examples | STATE_DIAGRAM + TABLE + TEXT | HIGH | One/two-solenoid circuits, VWM-before-SWA sequence, speed-control fallback, sensor-per-clamp rule, sensing states, and failure consequences | `SWA-Q-0021` |
+| SWA-SI-019 | 23 / 715 | Design cautions > unpowered state and seating | TEXT + DRAWING | HIGH | Spring-clamped zero-pressure state, release-air requirement for loading, Z datum, full-seat contact, and seating confirmation | Unpowered state in `SWA-Q-0005`; release/clamp procedure in `SWA-Q-0019`; seating risks in `SWA-Q-0022` |
+| SWA-SI-020 | 23 / 715 | Design cautions > force and workpiece constraints | TEXT + DRAWING | HIGH | Trial clamping, insufficient-force drop risk, hole size/depth/taper/hardness limits, thin-wall deformation, and continuous cleaning/sensing air | `SWA-Q-0022`; continuous-air rule retained in source disposition for WP4 audit |
+| SWA-SI-021 | 24 / 716 | Handling cautions > horizontal and manual loading | TEXT + DRAWING | HIGH | Pre-clamping for horizontal use, no tilted/floating loading, fully released loading, small support clearance, and rough guides | `SWA-Q-0023`; horizontal pre-clamp is a documented application-specific addition |
+| SWA-SI-022 | 24 / 716 | Robot handling | TEXT + DRAWING | HIGH | Perpendicular insertion/removal, complete withdrawal before coordinate motion, controlled insertion speed, and motion interlock | `SWA-Q-0023` |
+| SWA-SI-023 | 25 / 717 | Installation > air, cleaning, tape, bolts, and ports | TEXT + TABLE | HIGH | Filtered dry air/no lubrication, pre-cleaning, tape practice, M5 class 12.9 at 6.3 N-m, port identities, and phi 6/4 minimum tubing | `SWA-Q-0024` |
+| SWA-SI-024 | 25 / 717 | Operation safety | TEXT | HIGH | Qualified operator, anti-drop/anti-motion controls, zero-energy disassembly, cooling, restart inspection, pinch avoidance, no modification, and spring hazard | `SWA-Q-0026`; product-local rules control over common appendix |
+| SWA-SI-025 | 26 / 718 | SWA maintenance and claw replacement | TEXT + TABLE | HIGH | Cleaning clamp/seat surfaces, contamination consequences, manufacturer overhaul, wear replacement, and 1,000,000/500,000-cycle reference values | `SWA-Q-0012`, `SWA-Q-0026` |
+| SWA-SI-026 | 27 / 925 | Common pneumatic appendix > operation and maintenance | TEXT | MEDIUM | Shared zero-energy safety, cleaning, leak/sound/motion checks, storage, and overhaul rules | No separate question: shared safety rules are duplicated and more locally bound in `SWA-Q-0026`; appendix retained as corroboration only |
 | SWA-SI-027 | 28 / 926 | Common appendix > warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; low-value commercial policy |
 | SWA-SI-028 | 29 / 927 | Common appendix > surface roughness notation | TABLE | MEDIUM | 2021 old/new JIS notation mapping | `SWA-Q-0013` (`DOCUMENT_COMMON`) |
 | SWA-SI-029 | 30 / 928 | Common appendix > O-ring notation | TABLE + MODEL | MEDIUM | New/old notation mapping and field meanings | `SWA-Q-0014` (`DOCUMENT_COMMON`) |
@@ -131,11 +131,15 @@ does not claim coverage in advance.
 
 ## 3. Question Statistics
 
-- Total: 14
+- Total: 26
 - FACT: 4
 - SPEC_LOOKUP: 2
 - TABLE: 5
 - MODEL: 3
+- CALCULATION: 2
+- CHART: 2
+- PROCEDURE: 4
+- CAUTION: 4
 
 ## 4. Questions
 
@@ -953,3 +957,695 @@ Rz 100 的 Ra 参考值，以及各自对应的旧 JIS Rmax 范围。
 - Local scope path: 共通附录 > O 形密封圈新旧标示比较 > OR NBR-90 P5-N / 1BP5；字段说明 1-4
 - Evidence type: TABLE + MODEL
 - Evidence: 对照表将新标示与旧 JIS 标示逐行映射，字段图解释材料识别、种类、公称号和品质等级。
+
+## SWA-Q-0015
+
+**Type: CALCULATION**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA2000 标准有锯齿直孔型及 T 锥孔型夹紧力公式
+
+### Question
+
+SWA2000 标准有锯齿直孔型或 T 锥孔型的夹紧力公式为
+`Fc = 1.43P + 0.1`，其中 `Fc` 的单位为 kN，供给气压 `P` 的单位为 MPa。
+当 `P = 0.46 MPa` 时，计算夹紧力；中间值保留完整精度，最终使用
+`ROUND_HALF_UP` 四舍五入到小数点后两位，并用表中相邻压力值做回代检查。
+
+### Standard Answer
+
+代入得 `Fc = 1.43 * 0.46 + 0.1 = 0.7578 kN`。使用 `ROUND_HALF_UP`
+保留两位小数，最终为 `0.76 kN`。表中 0.4 MPa 对应 0.65 kN、0.5 MPa
+对应 0.80 kN；0.76 kN 位于两者之间，与压力单调增加关系一致。
+
+### Scoring Standard
+
+- P1 [15]: 使用正确公式 `Fc = 1.43P + 0.1`。
+- P2 [15]: 正确代入 `P = 0.46 MPa`。
+- P3 [20]: 正确得到未舍入值 `0.7578 kN`。
+- P4 [20]: 按 `ROUND_HALF_UP` 正确得到最终值 `0.76 kN`。
+- P5 [10]: 最终结果明确使用 kN，输入明确使用 MPa。
+- P6 [20]: 用 0.4/0.5 MPa 表值正确回代，确认结果位于 0.65-0.80 kN 之间。
+
+### Accepted Variants
+
+- 计算过程可使用等价的高精度十进制实现。
+- 回代检查可表述为 `0.65 < 0.76 < 0.80 kN`。
+
+### Forbidden Errors
+
+- 使用 SWA1000 的 `0.93P + 0.1` 公式。
+- 在乘法前提前舍入输入或系数。
+- 将结果写成 N、MPa 或无单位数值。
+- 将两位小数规则错误解释为 +/-0.01 的容差。
+
+### Tolerance
+
+- Final result must be exactly 0.76 kN after `ROUND_HALF_UP` to two decimal places; raw value must be 0.7578 kN.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 15
+- Printed page: 707
+- Section: 能力曲线图（选配项无符号：标准）
+- Local scope path: 夹紧力表 > SWA2000 / SWA2000-T 列 > 夹紧力计算公式和 0.4/0.5 MPa 行
+- Evidence type: FORMULA + TABLE
+- Evidence: 页面将 SWA2000 有锯齿/T 系列绑定到 `Fc=1.43P+0.1`，并给出相邻压力的离散夹紧力值。
+
+## SWA-Q-0016
+
+**Type: CALCULATION**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA1000-N-065 W 无下拉型扩径力与压力限制
+
+### Question
+
+孔径代码为 `065` 的 SWA1000 W 无下拉型使用扩径力公式
+`FH = 2.71P + 0.5`。当供给气压为 `0.48 MPa` 时，计算扩径力；中间值
+保留完整精度，最终使用 `ROUND_HALF_UP` 四舍五入到小数点后两位。
+同时判断该压力对 `065` 型号是否合法，并用相邻表值检查结果。
+
+### Standard Answer
+
+`FH = 2.71 * 0.48 + 0.5 = 1.8008 kN`，两位小数结果为 `1.80 kN`。
+SWA1000 W 型的 `060/065` 代码最高只能使用 0.5 MPa，因此 0.48 MPa 合法。
+表中 0.4 MPa 为 1.6 kN、0.5 MPa 为 1.9 kN，1.80 kN 位于两者之间。
+
+### Scoring Standard
+
+- P1 [15]: 使用正确公式 `FH = 2.71P + 0.5`。
+- P2 [15]: 正确代入 `P = 0.48 MPa`。
+- P3 [20]: 正确得到未舍入值 `1.8008 kN`。
+- P4 [20]: 按 `ROUND_HALF_UP` 正确得到最终值 `1.80 kN`。
+- P5 [10]: 正确使用 MPa 和 kN 单位。
+- P6 [10]: 正确判断 0.48 MPa 未超过 `065` 型号的 0.5 MPa 上限。
+- P7 [10]: 正确用 1.6/1.9 kN 相邻表值检查结果。
+
+### Accepted Variants
+
+- `1.80 kN` 可在说明两位小数规则后显示为数值 `1.80`，但不得省略单位。
+- 合法性可写为 `0.48 <= 0.5 MPa`。
+
+### Forbidden Errors
+
+- 使用夹紧力公式而不是 W 型扩径力公式。
+- 将 0.5 MPa 上限忽略或写成 0.7 MPa。
+- 将最终值写成 1.8 MPa。
+- 以公式替代相邻表值回代检查。
+
+### Tolerance
+
+- Final result must be exactly 1.80 kN after `ROUND_HALF_UP` to two decimal places; raw value must be 1.8008 kN.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 16
+- Printed page: 708
+- Section: 能力曲线图（选配项 W：无下拉功能）
+- Local scope path: 扩径力表 > SWA1000-W 列 > 计算公式 / 0.4/0.5 MPa 行；注 5 > 060/065 压力限制
+- Evidence type: FORMULA + TABLE
+- Evidence: 页面将 SWA1000 W 系列绑定到 `FH=2.71P+0.5`，给出相邻表值，并限制 060/065 代码不得超过 0.5 MPa。
+
+## SWA-Q-0017
+
+**Type: CHART**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: 标准型夹紧力曲线中的 SWA2000/SWA2000-T 与 SWA1000-F 系列
+
+### Question
+
+只按 PDF 第 707 页夹紧力曲线做视觉读数：当供给气压为 `0.45 MPa` 时，
+分别读取 `SWA2000/SWA2000-T` 实线和 `SWA1000-F` 虚线的夹紧力，并比较
+两者大小。不得用离散表值直接冒充图表读数。
+
+### Standard Answer
+
+从横轴 0.45 MPa 向上读取，`SWA2000/SWA2000-T` 曲线约为 `0.74 kN`，
+`SWA1000-F` 曲线约为 `0.14 kN`。前者明显大于后者，约高 `0.60 kN`。
+这些 Gold 值来自曲线视觉读取；公式计算仅用于确认读数数量级合理。
+
+### Scoring Standard
+
+- P1 [15]: 正确识别横轴为供给气压 MPa、纵轴为夹紧力 kN。
+- P2 [15]: 正确选中 SWA2000/SWA2000-T 实线系列。
+- P3 [25]: 对该系列给出容差内的约 0.74 kN 读数。
+- P4 [15]: 正确选中 SWA1000-F 虚线系列。
+- P5 [20]: 对该系列给出容差内的约 0.14 kN 读数。
+- P6 [10]: 正确判断 SWA2000/SWA2000-T 更大，差值约 0.60 kN。
+
+### Accepted Variants
+
+- 允许读数在下述 CHART 容差内。
+- 差值可写为约 0.6 kN，不要求多余小数位。
+
+### Forbidden Errors
+
+- 交换两条曲线或把虚线当作 SWA2000/SWA2000-T。
+- 报告离散表中 0.4 或 0.5 MPa 的值而未读取 0.45 MPa。
+- 将扩径力曲线页的 W 型数值用于本题。
+
+### Tolerance
+
+- CHART: SWA2000/SWA2000-T 0.74 kN +/-0.05 kN; SWA1000-F 0.14 kN +/-0.05 kN; input pressure is exactly 0.45 MPa.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 15
+- Printed page: 707
+- Section: 能力曲线图（选配项无符号：标准）
+- Local scope path: 夹紧力曲线图 > 横轴 0.45 MPa > SWA2000/SWA2000-T 实线与 SWA1000-F 虚线
+- Evidence type: CHART
+- Evidence: 曲线图明确标示供给气压和夹紧力坐标轴及四条系列线；0.45 MPa 位于 0.4 与 0.5 网格线中间。
+
+## SWA-Q-0018
+
+**Type: CHART**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: W 无下拉型扩径力曲线中的 SWA2000-W 与 SWA1000-W 系列
+
+### Question
+
+只按 PDF 第 708 页 W 型扩径力曲线做视觉读数：供给气压为 `0.45 MPa` 时，
+分别读取 `SWA2000-W` 和 `SWA1000-W` 的扩径力，并说明哪条曲线更高。
+
+### Standard Answer
+
+在 0.45 MPa 处，`SWA2000-W` 的扩径力约为 `2.50 kN`，`SWA1000-W`
+约为 `1.72 kN`；SWA2000-W 曲线更高，差值约 `0.78 kN`。Gold 来自图表
+视觉读取，公式只用于 sanity check。
+
+### Scoring Standard
+
+- P1 [15]: 正确识别横轴为供给气压 MPa、纵轴为扩径力 kN。
+- P2 [15]: 正确识别上方曲线为 SWA2000-W。
+- P3 [25]: 给出容差内的约 2.50 kN 读数。
+- P4 [15]: 正确识别下方曲线为 SWA1000-W。
+- P5 [20]: 给出容差内的约 1.72 kN 读数。
+- P6 [10]: 正确判断 SWA2000-W 更高，差值约 0.78 kN。
+
+### Accepted Variants
+
+- 允许读数在下述 CHART 容差内。
+- 差值可写为约 0.8 kN。
+
+### Forbidden Errors
+
+- 交换 SWA1000-W 与 SWA2000-W 曲线。
+- 把纵轴解释为标准型夹紧力。
+- 直接采用 0.4 或 0.5 MPa 离散表值代替 0.45 MPa 图读数。
+
+### Tolerance
+
+- CHART: SWA2000-W 2.50 kN +/-0.10 kN; SWA1000-W 1.72 kN +/-0.10 kN; input pressure is exactly 0.45 MPa.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 16
+- Printed page: 708
+- Section: 能力曲线图（选配项 W：无下拉功能）
+- Local scope path: 扩径力曲线图 > 横轴 0.45 MPa > SWA2000-W / SWA1000-W
+- Evidence type: CHART
+- Evidence: 曲线图分别标识两种主体尺寸的 W 型扩径力曲线；0.45 MPa 位于 0.4 和 0.5 网格线中间。
+
+## SWA-Q-0019
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: 具有 A 工件提升功能的标准下拉型释放与夹紧动作顺序
+
+### Question
+
+请按动作原理图说明具有 `A` 工件提升功能的 SWA 标准下拉型从释放到夹紧
+完成的气口供气和内部动作顺序，包括何时产生 0.2 mm 间隙、涨爪何时开始
+下移，以及完成夹紧的判据。
+
+### Standard Answer
+
+释放时先向释放用供气口供气，活塞杆上升并使涨爪缩径；A 型的工件提升面
+同时将工件从着座面提升 0.2 mm，形成间隙。夹紧时改向夹紧用供气口供气，
+活塞杆下降，涨爪沿平面锥形部分扩径。此时起升弹簧先将涨爪举起，涨爪不
+立即下移。涨爪嵌入工件后，当下拉力超过起升弹簧力，涨爪才向下移动，将
+工件压紧并与着座面密接，完成夹紧。
+
+### Scoring Standard
+
+- P1 [15]: 正确说明释放时向释放用供气口供气。
+- P2 [15]: 正确说明活塞杆上升、涨爪缩径。
+- P3 [10]: 正确说明 A 型释放时产生 0.2 mm 提升间隙。
+- P4 [15]: 正确说明夹紧时向夹紧用供气口供气。
+- P5 [15]: 正确说明活塞杆下降、涨爪沿平面锥形部分扩径。
+- P6 [15]: 正确说明起升弹簧使涨爪初期不下移。
+- P7 [15]: 正确说明下拉力超过起升弹簧力后涨爪下移并压紧着座面。
+
+### Accepted Variants
+
+- `起升弹簧` 可写为 `提升弹簧`。
+- `密接` 可写为 `完全贴合着座面`。
+
+### Forbidden Errors
+
+- 在释放阶段向夹紧口供气或使涨爪扩径。
+- 声称涨爪一开始扩径就立即下移。
+- 省略下拉力必须超过起升弹簧力的条件。
+- 将 W 无下拉型套用到本题 A 标准下拉型。
+
+### Tolerance
+
+- Exact 0.2 mm lift and action order are required.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 8
+- Printed page: 700
+- Section: 动作原理 > 释放状态 / 夹紧状态
+- Local scope path: 状态剖面图 > 释放供气 / 活塞杆上升与缩径；夹紧供气 / 扩径 / 起升弹簧 / 下拉阈值
+- Evidence type: STATE_DIAGRAM + TEXT
+- Evidence: 页面按编号给出释放和夹紧动作，并将 0.2 mm 提升、起升弹簧与下拉阈值绑定到 A 标准下拉型。
+
+## SWA-Q-0020
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: 带着座确认的标准下拉型异常检测状态
+
+### Question
+
+对于带着座确认的 SWA 标准下拉型，出现“释放气压 OFF、夹紧气压 ON、
+着座确认 OFF”时，图中把它判为什么状态？列出 PDF 指定的四类可能原因。
+
+### Standard Answer
+
+该信号组合表示异常检测状态，而不是正常夹紧完成。可能原因是：工件孔径
+大于可对应范围或夹紧器空动作；活塞杆或涨爪破损；活塞运行到全行程底面
+限位；装卡时工件上浮 1 mm 以上。
+
+### Scoring Standard
+
+- P1 [30]: 正确判定信号组合为异常检测状态。
+- P2 [20]: 正确列出孔径过大或空动作。
+- P3 [20]: 正确列出活塞杆或涨爪破损。
+- P4 [15]: 正确列出活塞全行程到底面限位。
+- P5 [15]: 正确列出工件上浮 1 mm 以上。
+
+### Accepted Variants
+
+- `着座确认 OFF` 可写为 `空气传感器未确认密接`。
+- `活塞到底` 可写为 `活塞到达全行程机械限位`。
+
+### Forbidden Errors
+
+- 将该组合判为正常夹紧完成；正常夹紧的着座确认应为 ON。
+- 将工件上浮阈值写成 0.2 mm。
+- 把 W 型无着座确认功能的常态直接套用到本题标准型。
+
+### Tolerance
+
+- Exact 1 mm threshold and signal states are required.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 8
+- Printed page: 700
+- Section: 动作原理 > 异常检测状态（空动作时）
+- Local scope path: 异常状态剖面与信号表 > 释放 OFF / 夹紧 ON / 着座确认 OFF > 四类异常原因
+- Evidence type: STATE_DIAGRAM + TEXT
+- Evidence: 异常状态图将该三信号组合与孔径/空动作、破损、到底限位和 1 mm 以上上浮逐项关联。
+
+## SWA-Q-0021
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA-N 与 VWM 组合的气压回路动作顺序和传感器配置
+
+### Question
+
+在 SWA-N 与 VWM 扩径定位销组合回路中，正确动作顺序是什么？若不能用
+电磁阀控制顺序，应如何调整？说明顺序错误的后果，以及高精度作业时空气
+传感器的配置原则。
+
+### Standard Answer
+
+必须先让 VWM 的定位动作结束，再使 SWA 开始夹紧动作。优先用电磁阀控制
+该顺序；若不能用电磁阀，应在图示的单个指定位置设置速度控制阀等设施来
+调整顺序。若 SWA 先完成而 VWM 随后动作，VWM 会对 SWA 产生推力，可能
+造成机器设备损伤或定位精度不良。需要空气传感器进行高精度作业时，应为
+每个夹紧器分别设置一个空气传感器。
+
+### Scoring Standard
+
+- P1 [25]: 正确说明 VWM 动作完成后 SWA 才开始动作。
+- P2 [20]: 正确说明优先用电磁阀控制动作顺序。
+- P3 [20]: 正确说明无电磁阀时在图示单个指定位置用速度控制阀调整。
+- P4 [15]: 正确指出错误顺序会对 SWA 产生推力并可能损伤设备。
+- P5 [10]: 正确指出错误顺序可能造成定位精度不良。
+- P6 [10]: 正确说明高精度作业需每个夹紧器独立空气传感器。
+
+### Accepted Variants
+
+- `速度控制阀` 可写为 `流量/速度调节阀`，但必须用于动作顺序调整。
+- `每个夹紧器独立传感器` 可写为 `一夹紧器一传感器`。
+
+### Forbidden Errors
+
+- 让 SWA 先夹紧、VWM 后定位。
+- 将速度控制阀放置数量写成多个任意位置。
+- 多个夹紧器共用一个空气传感器并声称仍满足高精度规则。
+
+### Tolerance
+
+- Exact sequence direction is required.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 22
+- Printed page: 714
+- Section: 气压回路参考范例
+- Local scope path: 一/二电磁阀回路图 > 红色 VWM 必须回路；注意事项 1-2 > 顺序 / 速度控制阀 / 传感器
+- Evidence type: STATE_DIAGRAM + TEXT
+- Evidence: 回路页明确规定 VWM 完成后 SWA 动作，给出无电磁阀时的速度阀位置、逆序后果和逐夹紧器传感器要求。
+
+## SWA-Q-0022
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA 工件孔尺寸、勾配角、硬度和薄壁设计风险
+
+### Question
+
+请把以下五种工件设计偏差分别与 PDF 给出的主要后果对应：工件孔过大、
+工件孔过小、工件孔过浅、锥孔勾配角过大、工件孔硬度过高。另说明孔周边
+为薄壁时应采取的验证措施和风险。
+
+### Standard Answer
+
+- 孔过大：扩径量不足，夹紧力/扩径力达不到规格值。
+- 孔过小：工件装卸困难，并可能使夹紧器破损。
+- 孔过浅：会造成着座异常，并可能损坏气动夹紧器。
+- 勾配角过大：夹紧负载集中在涨爪顶端，可能导致涨爪破损。
+- 硬度过高：涨爪不能充分嵌入工件，无法充分夹紧。
+孔周边为薄壁时，夹紧可能使孔变形并使夹紧力/扩径力达不到规定值；使用前
+必须进行夹紧试验并将供给气压调整到合适状态，否则可能发生工件脱落。
+
+### Scoring Standard
+
+- P1 [15]: 正确对应孔过大与扩径量/夹紧力不足。
+- P2 [15]: 正确对应孔过小与装卸困难、夹紧器破损。
+- P3 [15]: 正确对应孔过浅与着座异常、设备破损。
+- P4 [15]: 正确对应勾配角过大与负载集中在涨爪顶端、涨爪破损。
+- P5 [15]: 正确对应硬度过高与涨爪无法充分嵌入、夹紧不足。
+- P6 [15]: 正确说明薄壁可能变形并使力达不到规定值。
+- P7 [10]: 正确说明需先做夹紧试验并调整压力，避免工件脱落。
+
+### Accepted Variants
+
+- `勾配角` 可写为 `锥度角`。
+- `涨爪` 可写为 `卡爪`。
+
+### Forbidden Errors
+
+- 交换孔过大与孔过小的后果。
+- 声称提高压力即可无条件补偿薄壁、硬度或勾配角问题。
+- 省略试夹验证并直接投入运行。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 23
+- Printed page: 715
+- Section: 设计方面的注意事项 > 工件孔尺寸、勾配角、硬度 / 工件孔周边壁厚
+- Local scope path: 项目 6 后果表 > 五类偏差；项目 7 > 薄壁变形 / 夹紧试验 / 脱落风险
+- Evidence type: TEXT + DRAWING
+- Evidence: 注意事项页按偏差类型逐行给出后果，并对薄壁条件规定试夹和压力调整。
+
+## SWA-Q-0023
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: 机器人搬运中的 SWA 前端插拔、坐标移动和动作联锁
+
+### Question
+
+请给出机器人使用 SWA 装卸工件时，防止夹紧器前端和工件损坏的完整动作
+规则，包括插拔方向、退出后的坐标移动、可能接触时的插入速度、机器人与
+夹紧/释放动作的联锁，以及工件与放置台间隙。
+
+### Standard Answer
+
+SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后应先让 SWA
+前端完全退出工件孔，再移动到下一个坐标。若插入时可能与工件接触，应控制
+插入速度以避免碰撞。应使用传感器、延迟继电器等联锁，使机器人在 SWA
+夹紧或释放动作完成后才移动；动作过程中移动可能造成工件脱落。装卸时应
+尽量减小工件与放置台之间的间隙，避免工件倾斜、卡滞和 SWA 损坏。
+
+### Scoring Standard
+
+- P1 [20]: 正确说明插入和退出均保持 SWA 垂直于工件孔。
+- P2 [20]: 正确说明完全退出后才移动到下一坐标。
+- P3 [15]: 正确说明有接触风险时控制插入速度。
+- P4 [20]: 正确说明使用传感器/延迟继电器等联锁，动作完成后机器人才能移动。
+- P5 [10]: 正确说明动作中移动可能导致工件脱落。
+- P6 [15]: 正确说明尽量减小工件与放置台间隙，防止倾斜卡滞和损坏。
+
+### Accepted Variants
+
+- `延迟继电器` 可写为 `定时继电器`。
+- `完全退出` 可写为 `前端完全脱离工件孔`。
+
+### Forbidden Errors
+
+- 允许斜向插拔或在前端仍位于孔内时平移到下一坐标。
+- 允许机器人在夹紧/释放过程中继续移动。
+- 建议增大工件与放置台间隙。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 24
+- Printed page: 716
+- Section: 注意事项 > 机器人搬运作业中夹紧器前端部的破损防止
+- Local scope path: 项目 13 > 垂直插拔 / 完全退出 / 插入速度 / 机器人联锁；装卸图 > 放置台间隙
+- Evidence type: TEXT + DRAWING
+- Evidence: 页面以正确/错误图和文字规定机器人插拔、坐标移动、速度、联锁与放置间隙。
+
+## SWA-Q-0024
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA 安装施工的气源、配管、密封胶带、螺栓和喷气清洁管路
+
+### Question
+
+请列出安装 SWA 前必须满足的气源与配管清洁要求、密封胶带缠绕规则、
+本体螺栓规格和紧固力矩，以及喷气清洁回路的最小管径要求。
+
+### Standard Answer
+
+动作流体必须是经过过滤器处理的干燥空气，不得通过油雾器供油。配管、
+管接头和夹具空气通路孔在使用前必须彻底清洗，避免切屑等异物造成漏气或
+动作不良。缠绕密封胶带时应在螺纹顶端留出 1-2 圈丝口，避免断头进入回路。
+本体使用附带的强度等级 12.9、`M5x0.8` 螺栓，以 `6.3 N-m` 均匀紧固，
+不得使机器倾斜。喷气清洁回路建议至少使用外径 phi 6 mm、内径 phi 4 mm
+的管路。
+
+### Scoring Standard
+
+- P1 [15]: 正确要求过滤后的干燥空气。
+- P2 [10]: 明确禁止通过油雾器供油。
+- P3 [15]: 正确要求配管、接头和空气通路孔预先彻底清洗。
+- P4 [15]: 正确说明密封胶带在螺纹顶端留 1-2 圈。
+- P5 [15]: 正确给出 M5x0.8、强度等级 12.9 螺栓。
+- P6 [15]: 正确给出 6.3 N-m 并要求均匀紧固、不使机器倾斜。
+- P7 [15]: 正确给出喷气清洁管路外径 phi 6 / 内径 phi 4 mm 以上。
+
+### Accepted Variants
+
+- `M5x0.8` 可写为 `M5 x 0.8`。
+- `外径 phi 6、内径 phi 4` 可写为 `OD 6 mm / ID 4 mm`。
+
+### Forbidden Errors
+
+- 要求油雾润滑或使用未过滤湿空气。
+- 将胶带一直缠到螺纹最前端。
+- 使用错误力矩或省略螺栓强度等级。
+- 将管径上下限方向写反。
+
+### Tolerance
+
+- Exact 1-2 thread clearance, M5x0.8, class 12.9, 6.3 N-m, and phi 6/4 mm minimum are required.
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 25
+- Printed page: 717
+- Section: 安装施工方面的注意事项
+- Local scope path: 项目 1-4 / 6 > 使用流体 / 配管前处置 / 密封胶带 / 本体安装 / 喷气清洁管路
+- Evidence type: TEXT + TABLE
+- Evidence: 安装页逐项规定干燥空气、禁止供油、预清洁、胶带留牙、附带螺栓和力矩以及最小管径。
+
+## SWA-Q-0025
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: W 无下拉型承受垂直于夹紧器轴心的横向剪切载荷
+
+### Question
+
+当 SWA W 无下拉型应用会受到垂直于夹紧器轴心的横向剪切载荷时，为什么
+不能让夹紧器直接承受该载荷？PDF 要求采取什么设计措施？
+
+### Standard Answer
+
+W 型没有把工件压向着座面的下拉夹紧力，仅靠扩径力夹紧。若让它直接承受
+横向剪切载荷，可能造成机器破损或工件变形。因此必须另行设置支撑，由支撑
+承受该横向剪切载荷。
+
+### Scoring Standard
+
+- P1 [30]: 正确说明 W 型没有下拉夹紧力、仅靠扩径力。
+- P2 [30]: 正确说明直接承受横向剪切载荷可能造成机器破损或工件变形。
+- P3 [40]: 正确要求另设支撑来承受横向剪切载荷。
+
+### Accepted Variants
+
+- `横向剪切载荷` 可写为 `垂直于 SWA 轴线的侧向载荷`。
+- `另设支撑` 可写为 `增加独立承载支承`。
+
+### Forbidden Errors
+
+- 声称 W 型的扩径力等同于下拉夹紧力。
+- 允许 SWA 本体无支撑地承受全部横向剪切载荷。
+- 用提高供给压力替代独立支撑。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 4
+- Printed page: 696
+- Section: 特点 > 无下拉功能型的使用实例 / 注意事项
+- Local scope path: W 无下拉功能型 > 翘曲方向应用 > 横向剪切载荷注意事项
+- Evidence type: TEXT + DRAWING
+- Evidence: 页面说明 W 型无夹紧力，横向剪切载荷会导致机器破损或工件变形，并要求另设支撑承载。
+
+## SWA-Q-0026
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: SWA 气动涨紧下拉夹紧器
+- Model / Scope: SWA 清扫、故障判断、拆卸和分解大修安全
+
+### Question
+
+请说明 SWA 日常清扫与装卡前检查要求、带污运行的后果、外部清扫后仍异常
+时的处理，以及拆卸或分解大修前后的安全措施。
+
+### Standard Answer
+
+应定期清扫夹紧部位和着座面，并在装卡前确认没有切屑、淤渣等异物堆积。
+带污运行会造成夹紧力不足、动作异常和漏气，可能导致工件脱落。外部清扫后
+仍不能正常动作时，应怀疑内部混入异物或元件损坏，并委托 KOSMEK 分解大修，
+不得自行拆解，因为产品内置强劲弹簧。拆卸前必须采取防坠落和防误动作措施，
+切断压力源和电源并确认回路压力为零；设备应完全冷却。重新启动前应检查
+螺栓和连接部位是否异常。
+
+### Scoring Standard
+
+- P1 [15]: 正确要求定期清扫夹紧部位和着座面、装卡前确认无异物。
+- P2 [15]: 正确说明带污会导致夹紧力不足。
+- P3 [15]: 正确说明还会导致动作异常、漏气和工件脱落风险。
+- P4 [15]: 正确说明外部清扫无效时怀疑内部异物或元件损坏。
+- P5 [15]: 正确要求委托 KOSMEK 大修、不得因强弹簧而自行拆解。
+- P6 [15]: 正确要求防坠落/防误动作、切断压力和电源并确认零压力。
+- P7 [5]: 正确要求设备完全冷却后拆卸。
+- P8 [5]: 正确要求重启前检查螺栓和连接部位。
+
+### Accepted Variants
+
+- `KOSMEK` 可写为 `制造商` 或 `本公司`。
+- `确认回路压力为零` 可写为 `泄压到零`。
+
+### Forbidden Errors
+
+- 仅依赖喷气清洁而不做定期人工检查。
+- 外部清扫无效后继续运行或自行拆解。
+- 只切断电源而保留气压，或未采取防坠落措施。
+- 在设备尚未冷却时拆卸。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 25-27
+- Printed page: 717-718, 925
+- Section: 操作方面的注意事项 / 保养・检查
+- Local scope path: SWA 保养项目 2/4 > 清扫 / 异常 / 制造商大修；操作安全项目 2 > 防坠落 / 零能量 / 冷却 / 重启检查
+- Evidence type: TEXT
+- Evidence: SWA 本地保养页规定清扫、污染后果和制造商大修；相邻操作及共通注意事项补充零能量、冷却和重启检查要求。
