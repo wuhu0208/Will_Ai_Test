@@ -87,7 +87,7 @@ does not claim coverage in advance.
 | LKA-SI-003 | 3-4 / 751-752 | Product lineup and accessory overview | TABLE + DRAWING | MEDIUM | Product-type boundaries, variant selection, and accessory relationships | No separate question: broader product-comparison context is not an LKA operating rule; LKA-specific selection is covered by `LKA-Q-0002`, `LKA-Q-0005`, and `LKA-Q-0006` |
 | LKA-SI-004 | 5 / 753 | Table of contents | TEXT | NON-TEST | Navigation map for LKA product, common cautions, valves, and manifold blocks | Navigation only |
 | LKA-SI-005 | 6 / 754 | LKA features and cross-section | TEXT + DRAWING | HIGH | Compact body, integrated fulcrum, coolant protection, eccentric-load allowance, arm directions, and direct speed-control mounting | Compactness, fulcrum, and sealing facts in `LKA-Q-0002`; eccentricity and operating controls in `LKA-Q-0020`, `LKA-Q-0021`, and `LKA-Q-0022` |
-| LKA-SI-006 | 7 / 755 | Model designation | TABLE + DRAWING | HIGH | Six-field order, legal body/piping/arm/confirmation/option values, and H-option size restriction | `LKA-Q-0001`, `LKA-Q-0005`, `LKA-Q-0006`; grammar audit remains WP4 |
+| LKA-SI-006 | 7 / 755 | Model designation | TABLE + DRAWING | HIGH | Six-field order, legal body/piping/arm/confirmation/option values, and H-option size restriction | `LKA-Q-0001`, `LKA-Q-0005`, and `LKA-Q-0006`; deterministic grammar cases cover field order, allowlists, invalid fields, and the H-option body-size boundary |
 | LKA-SI-007 | 8 / 756 | Specifications | TABLE + FORMULA | HIGH | Clamp area, clamp-force formula, capacities, strokes, pressure, temperature, fluid, and weight for eight body sizes and confirmation variants | Representative lookup and common limits in `LKA-Q-0003`, `LKA-Q-0004`; deterministic calculation in `LKA-Q-0017` |
 | LKA-SI-008 | 9-12 / 757-760 | Clamp-force capability curves | CHART + FORMULA | HIGH | Pressure/arm-length/clamp-force relationships with and without action confirmation | Deterministic comparison in `LKA-Q-0017`; genuine curve read in `LKA-Q-0018` |
 | LKA-SI-009 | 13-16 / 761-764 | Allowable eccentricity curves | CHART + DRAWING | HIGH | Standard versus high-strength-link eccentricity limits and consequences of exceeding them | Genuine visual eccentricity read in `LKA-Q-0021`; limit consequence in `LKA-Q-0020` |
@@ -144,7 +144,7 @@ does not claim coverage in advance.
 
 请按 PDF 的型号字段顺序解读 `LKA0480-CR--`：说明主体尺寸、设计编号、
 配管方式、从配管口正面观察时的压板方向、动作确认方式和选配项，并判断
-该型号表示是否合法。
+`LKA0480-CR--` 的型号表示是否合法。
 
 ### Standard Answer
 
@@ -160,11 +160,12 @@ does not claim coverage in advance.
 - P2 [10]: 正确说明设计编号为 `0`。
 - P3 [15]: 正确说明 `C` 为板式连接型。
 - P4 [10]: 正确说明 `C` 型附带 G 螺纹堵头。
-- P5 [10]: 正确说明可另购直装式速度控制阀，且推荐 BZL-B。
-- P6 [15]: 正确说明 `R` 是从配管口正面观察时向右夹紧。
-- P7 [10]: 正确说明空白动作确认字段表示无动作确认的标准型。
-- P8 [10]: 正确说明空白选配字段表示无选配的标准型。
-- P9 [5]: 明确判断该型号字段顺序和取值合法。
+- P5 [5]: 正确说明 `C` 型可安装另购的直装式速度控制阀。
+- P6 [5]: 正确给出推荐速度控制阀 BZL-B。
+- P7 [15]: 正确说明 `R` 是从配管口正面观察时向右夹紧。
+- P8 [10]: 正确说明空白动作确认字段表示无动作确认的标准型。
+- P9 [10]: 正确说明空白选配字段表示无选配的标准型。
+- P10 [5]: 明确判断 `LKA0480-CR--` 的字段顺序和取值合法。
 
 ### Accepted Variants
 
@@ -261,7 +262,7 @@ LKA 的法兰安装面下部相对本公司传统产品最多缩小 40%，有助
 
 ### Target
 
-- Binding: EXACT_MODEL
+- Binding: MODEL_FAMILY
 - Product: LKA 油压杠杆式夹紧器
 - Model / Scope: LKA0480 标准无动作确认型与带动作确认型
 
@@ -609,7 +610,7 @@ LKA0360、LKA0400、LKA0480、LKA0550 选择 `BZS0100`；LKA0650、LKA0750
 
 ### Target
 
-- Binding: EXACT_MODEL
+- Binding: MODEL_FAMILY
 - Product: LKA 油压杠杆式夹紧器
 - Model / Scope: LKA0480 标准压板附件与 LKA0480-A 快换压板安装组件
 
@@ -788,7 +789,7 @@ Rz 100 对应的 Ra 参考值和旧标示范围。
 
 ### Target
 
-- Binding: EXACT_MODEL
+- Binding: MODEL_FAMILY
 - Product: LKA 油压杠杆式夹紧器
 - Model / Scope: LKA0480 标准外形、安装和配管接口
 
@@ -870,8 +871,9 @@ LKA 快换压板 `A` 选配在型号、压板安装销、本体尺寸和快换�
 - P3 [20]: 正确说明 `A` 型夹紧器本体尺寸与空白/H/K 型一致。
 - P4 [15]: 正确说明快换组件包含安装螺栓。
 - P5 [10]: 正确说明快换组件包含活塞杆销。
-- P6 [10]: 正确说明快换组件包含压板销且组件另售。
-- P7 [10]: 正确给出 LKA0480-A 对应 `LZK0480-W`。
+- P6 [5]: 正确说明快换组件包含压板销。
+- P7 [5]: 正确说明快换组件需另行购买，不随夹紧器本体交付。
+- P8 [10]: 正确给出 LKA0480-A 对应 `LZK0480-W`。
 
 ### Accepted Variants
 
@@ -923,12 +925,13 @@ LKA 快换压板 `A` 选配在型号、压板安装销、本体尺寸和快换�
 ### Scoring Standard
 
 - P1 [10]: 正确说明 `OR` 表示 O 形密封圈。
-- P2 [20]: 正确说明 `NBR-90` 是一般用丁腈橡胶、A 型硬度 90。
-- P3 [15]: 正确说明 `NBR-90` 对应旧材料识别符号 `1B`。
-- P4 [15]: 正确说明 `P` 表示运动用。
-- P5 [15]: 正确说明 `22A` 是公称号。
-- P6 [10]: 正确说明末尾 `N` 是一般用品质等级。
-- P7 [15]: 正确给出完整旧标示 `1BP22A`。
+- P2 [10]: 正确说明 `NBR` 表示一般用丁腈橡胶。
+- P3 [10]: 正确说明 `90` 表示 A 型硬度 90。
+- P4 [15]: 正确说明 `NBR-90` 对应旧材料识别符号 `1B`。
+- P5 [15]: 正确说明 `P` 表示运动用。
+- P6 [15]: 正确说明 `22A` 是公称号。
+- P7 [10]: 正确说明末尾 `N` 是一般用品质等级。
+- P8 [15]: 正确给出完整旧标示 `1BP22A`。
 
 ### Accepted Variants
 
@@ -1079,7 +1082,7 @@ LKA0480 的确认。
 
 - Binding: MODEL_FAMILY
 - Product: LKA 油压杠杆式夹紧器
-- Model / Scope: LKA0480 标准无动作确认型与 D/M/N 动作确认型的夹紧力计算
+- Model / Scope: LKA0480 标准无动作确认型与 D/M/N/NC/NL/NR 动作确认型的夹紧力计算
 
 ### Question
 
@@ -1092,7 +1095,7 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 标准无动作确认型使用 `F = 11.76 x P / L`，所以
 `11.76 x 5.0 / 60 = 0.980 kN`，保留两位小数为 `0.98 kN`。
 
-带 D/M/N 动作确认型使用 `F = 9.20 x P / L`，所以
+带 D/M/N/NC/NL/NR 动作确认型使用 `F = 9.20 x P / L`，所以
 `9.20 x 5.0 / 60 = 0.766666... kN`，采用 `ROUND_HALF_UP` 保留两位
 小数为 `0.77 kN`。在相同压力和压板长度下，本题的标准无动作确认型夹紧力
 更大。
@@ -1100,11 +1103,12 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 ### Scoring Standard
 
 - P1 [15]: 正确给出标准无动作确认型系数 11.76。
-- P2 [20]: 正确计算标准型未舍入结果 0.980 kN。
-- P3 [15]: 正确给出 D/M/N 动作确认型系数 9.20。
-- P4 [20]: 正确计算动作确认型未舍入结果 0.766666... kN。
-- P5 [20]: 按 `ROUND_HALF_UP` 正确得到 0.98 kN 和 0.77 kN。
-- P6 [10]: 正确判断相同输入下标准无动作确认型夹紧力更大。
+- P2 [15]: 正确计算标准型未舍入结果 0.980 kN。
+- P3 [15]: 正确给出 D/M/N/NC/NL/NR 动作确认型系数 9.20。
+- P4 [15]: 正确计算动作确认型未舍入结果 0.766666... kN。
+- P5 [15]: 按 `ROUND_HALF_UP` 正确得到标准型最终结果 0.98 kN。
+- P6 [15]: 按 `ROUND_HALF_UP` 正确得到动作确认型最终结果 0.77 kN。
+- P7 [10]: 正确判断相同输入下标准无动作确认型夹紧力更大。
 
 ### Accepted Variants
 
@@ -1138,7 +1142,7 @@ LKA0480 在供油压力 `P = 5.0 MPa`、压板长度 `L = 60 mm` 时，分别计
 
 ### Target
 
-- Binding: EXACT_MODEL
+- Binding: MODEL_FAMILY
 - Product: LKA 油压杠杆式夹紧器
 - Model / Scope: LKA0480 标准无动作确认型夹紧力能力曲线
 
@@ -1217,8 +1221,9 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 - P4 [15]: 正确说明夹紧端和释放端排气口必须向大气开放。
 - P5 [10]: 正确说明必须防止冷却液、切屑等异物进入排气口。
 - P6 [15]: 正确说明活塞杆标记不得与法兰标记反向 180 度。
-- P7 [10]: 正确说明 M 型 O 形密封圈需要适量润滑脂，润滑不足会扭曲或损坏。
-- P8 [15]: 正确说明润滑脂过量可能堵塞检测孔并导致无法检测。
+- P7 [5]: 正确说明 M 型 O 形密封圈需要涂适量润滑脂。
+- P8 [5]: 正确说明润滑不足可能使 O 形密封圈扭曲或损坏。
+- P9 [15]: 正确说明润滑脂过量可能堵塞检测孔并导致无法检测。
 
 ### Accepted Variants
 
@@ -1275,10 +1280,13 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 
 - P1 [15]: 正确禁止同时向夹紧侧和释放侧供压。
 - P2 [15]: 正确禁止向活塞杆施加非轴向力。
-- P3 [20]: 正确要求偏心载荷处于容许范围并禁止偏心压板。
-- P4 [15]: 正确要求夹紧面与安装面保持平行。
-- P5 [15]: 正确要求保护活塞杆滑动面免受焊接飞溅。
-- P6 [20]: 正确要求使用全部安装孔并按型号规定力矩紧固，且不允许过大力矩。
+- P3 [10]: 正确要求偏心载荷处于容许偏心量范围。
+- P4 [10]: 正确禁止使用偏心压板。
+- P5 [15]: 正确要求夹紧面与安装面保持平行。
+- P6 [15]: 正确要求保护活塞杆滑动面免受焊接飞溅。
+- P7 [7]: 正确要求使用全部安装螺栓孔。
+- P8 [7]: 正确要求按对应型号规定力矩紧固。
+- P9 [6]: 正确说明过大紧固力矩会导致安装故障。
 
 ### Accepted Variants
 
@@ -1312,7 +1320,7 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 
 ### Target
 
-- Binding: EXACT_MODEL
+- Binding: MODEL_FAMILY
 - Product: LKA 油压杠杆式夹紧器
 - Model / Scope: LKA0480 标准连接板、无 H 高强度选配的容许偏心量曲线
 
@@ -1442,9 +1450,10 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 - P2 [15]: 正确要求避免密封带碎片或其他异物残留在回路内。
 - P3 [15]: 正确说明排气前降低回路供油压力。
 - P4 [15]: 正确说明稍微旋松最靠近夹紧器或支撑器的管接头螺母。
-- P5 [15]: 正确说明摇动配管排出含气液压油，并在排净后重新紧固。
-- P6 [15]: 正确说明最高端和最末端附近是更有效的排气位置。
-- P7 [10]: 正确说明板式配管应在回路最高端附近设置排气阀。
+- P5 [8]: 正确说明摇动配管以排出含气液压油。
+- P6 [7]: 正确说明空气排净后重新紧固接头。
+- P7 [15]: 正确说明最高端和最末端附近是更有效的排气位置。
+- P8 [10]: 正确说明板式配管应在回路最高端附近设置排气阀。
 
 ### Accepted Variants
 
@@ -1561,11 +1570,14 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 - P1 [15]: 正确要求由具备知识和经验的人员操作与维护。
 - P2 [15]: 正确要求拆卸前落实防坠落和防误动作措施。
 - P3 [15]: 正确要求切断压力源和电源并确认回路压力为零。
-- P4 [10]: 正确说明刚停机设备需等待完全降温，重启前检查连接部位。
-- P5 [10]: 正确禁止接触动作中的夹紧器。
-- P6 [10]: 正确禁止擅自解体或改造。
-- P7 [15]: 正确包含清洁以及松动、油液、异音或动作状态的定期检查。
-- P8 [10]: 正确说明阴凉干燥存放且解体大修委托制造商。
+- P4 [5]: 正确说明刚停机设备需等待完全降温。
+- P5 [5]: 正确说明重启前检查螺栓等连接部位。
+- P6 [10]: 正确禁止接触动作中的夹紧器。
+- P7 [10]: 正确禁止擅自解体或改造。
+- P8 [5]: 正确要求定期清洁活塞杆、柱塞或定位基准面。
+- P9 [10]: 正确要求检查松动、油液老化、异音或动作状态。
+- P10 [5]: 正确说明产品应存放在阴凉干燥处。
+- P11 [5]: 正确说明解体大修应委托制造商。
 
 ### Accepted Variants
 
@@ -1620,14 +1632,16 @@ BZS 内部没有过滤网，必须防止切屑、密封带碎片等异物进入�
 
 ### Scoring Standard
 
-- P1 [15]: 正确说明 BZS 无内部过滤网并要求防止异物进入。
-- P2 [10]: 正确说明内部损伤后清除异物也可能无法恢复。
-- P3 [15]: 正确说明过大供给流量可能阻止顺序动作。
-- P4 [15]: 正确说明应按夹紧器容量和配管条件进行流量控制。
-- P5 [10]: 正确说明回路必须排气。
-- P6 [15]: 正确说明出厂压力未设定，并应使用压力表按实际回路设定。
-- P7 [10]: 正确说明多台一致动作需观察动作并逐阀微调。
-- P8 [10]: 正确说明设定后至少锁紧一侧旋转防止套件。
+- P1 [7]: 正确说明 BZS 内部没有过滤网。
+- P2 [8]: 正确要求防止切屑、密封带碎片等异物进入。
+- P3 [10]: 正确说明内部损伤后清除异物也可能无法恢复。
+- P4 [15]: 正确说明过大供给流量可能阻止顺序动作。
+- P5 [15]: 正确说明应按夹紧器容量和配管条件进行流量控制。
+- P6 [10]: 正确说明回路必须排气。
+- P7 [5]: 正确说明阀门出厂时顺序压力未设定。
+- P8 [10]: 正确说明应使用压力表按实际回路设定压力。
+- P9 [10]: 正确说明多台一致动作需观察动作并逐阀微调。
+- P10 [10]: 正确说明设定后至少锁紧一侧旋转防止套件。
 
 ### Accepted Variants
 
@@ -1683,10 +1697,12 @@ BZS 内部没有过滤网，必须防止切屑、密封带碎片等异物进入�
 ### Scoring Standard
 
 - P1 [20]: 正确说明夹紧确认口在大部分夹紧行程保持低压。
-- P2 [20]: 正确说明接近夹紧端时压力上升并越过设定压力后输出夹紧确认。
-- P3 [20]: 正确说明释放确认口在大部分释放行程保持低压。
-- P4 [20]: 正确说明接近释放端时压力上升并越过设定压力后输出释放确认。
-- P5 [20]: 正确说明输出行程位置会随传感器设定压力变化。
+- P2 [10]: 正确说明接近夹紧端时夹紧确认口压力上升。
+- P3 [10]: 正确说明越过设定压力后输出夹紧确认。
+- P4 [20]: 正确说明释放确认口在大部分释放行程保持低压。
+- P5 [10]: 正确说明接近释放端时释放确认口压力上升。
+- P6 [10]: 正确说明越过设定压力后输出释放确认。
+- P7 [20]: 正确说明输出行程位置会随传感器设定压力变化。
 
 ### Accepted Variants
 
