@@ -82,51 +82,51 @@ does not claim coverage in advance.
 
 | Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
 |---|---|---|---|---|---|---|
-| LKA-SI-001 | 1 / 749 | Product family introduction > LKA identity and operating principle | TEXT + DRAWING | HIGH | LKA position in the link-clamp family, release/clamp motion, and representative applications | LKA product identity and structural features are represented by `LKA-Q-0002`; the release/clamp motion is a state sequence reserved for WP3 `PROCEDURE` |
+| LKA-SI-001 | 1 / 749 | Product family introduction > LKA identity and operating principle | TEXT + DRAWING | HIGH | LKA position in the link-clamp family, release/clamp motion, and representative applications | LKA product identity and structure are represented by `LKA-Q-0002`; the qualitative release/clamp end-state drawing is retained as operating context because it supplies no additional stable setpoint or procedure |
 | LKA-SI-002 | 2 / 750 | Product-family examples | TEXT + DRAWING | LOW | Contextual examples of other link-clamp models | Context only; exclude facts not bound to LKA |
 | LKA-SI-003 | 3-4 / 751-752 | Product lineup and accessory overview | TABLE + DRAWING | MEDIUM | Product-type boundaries, variant selection, and accessory relationships | No separate question: broader product-comparison context is not an LKA operating rule; LKA-specific selection is covered by `LKA-Q-0002`, `LKA-Q-0005`, and `LKA-Q-0006` |
 | LKA-SI-004 | 5 / 753 | Table of contents | TEXT | NON-TEST | Navigation map for LKA product, common cautions, valves, and manifold blocks | Navigation only |
-| LKA-SI-005 | 6 / 754 | LKA features and cross-section | TEXT + DRAWING | HIGH | Compact body, integrated fulcrum, coolant protection, eccentric-load allowance, arm directions, and direct speed-control mounting | Compactness, fulcrum, and sealing facts in `LKA-Q-0002`; eccentricity and operating cautions remain WP3 |
+| LKA-SI-005 | 6 / 754 | LKA features and cross-section | TEXT + DRAWING | HIGH | Compact body, integrated fulcrum, coolant protection, eccentric-load allowance, arm directions, and direct speed-control mounting | Compactness, fulcrum, and sealing facts in `LKA-Q-0002`; eccentricity and operating controls in `LKA-Q-0020`, `LKA-Q-0021`, and `LKA-Q-0022` |
 | LKA-SI-006 | 7 / 755 | Model designation | TABLE + DRAWING | HIGH | Six-field order, legal body/piping/arm/confirmation/option values, and H-option size restriction | `LKA-Q-0001`, `LKA-Q-0005`, `LKA-Q-0006`; grammar audit remains WP4 |
 | LKA-SI-007 | 8 / 756 | Specifications | TABLE + FORMULA | HIGH | Clamp area, clamp-force formula, capacities, strokes, pressure, temperature, fluid, and weight for eight body sizes and confirmation variants | Representative lookup and common limits in `LKA-Q-0003`, `LKA-Q-0004`; deterministic calculation in `LKA-Q-0017` |
 | LKA-SI-008 | 9-12 / 757-760 | Clamp-force capability curves | CHART + FORMULA | HIGH | Pressure/arm-length/clamp-force relationships with and without action confirmation | Deterministic comparison in `LKA-Q-0017`; genuine curve read in `LKA-Q-0018` |
-| LKA-SI-009 | 13-16 / 761-764 | Allowable eccentricity curves | CHART + DRAWING | HIGH | Standard versus high-strength-link eccentricity limits and consequences of exceeding them | WP3 `CHART` / `CAUTION` |
-| LKA-SI-010 | 17-18 / 765-766 | Standard model dimensions and dimension table | DRAWING + TABLE | HIGH | External, mounting, port, arm, and interference dimensions | Representative LKA0480 stroke/mounting/port lookup in `LKA-Q-0012`; installation cautions remain WP3 |
-| LKA-SI-011 | 19-20 / 767-768 | Probe dual-rod confirmation type `D` | DRAWING + TABLE | HIGH | Model-specific construction, confirmation interface, and dimensions | `D` semantics in `LKA-Q-0005`; body-size dimension grid is retained as lookup evidence but not repeated as numeric-swap questions; installation remains WP3 |
-| LKA-SI-012 | 21-22 / 769-770 | Air-sensor manifold confirmation type `M` | DRAWING + TABLE | HIGH | Model-specific air interface, construction, and dimensions | `M` semantics in `LKA-Q-0005`; dimension grid is retained without repetitive body-size questions; air connection procedure remains WP3 |
-| LKA-SI-013 | 23-24 / 771-772 | Air-sensor external-piping types `N/NC/NL/NR` | DRAWING + TABLE | HIGH | Four port phases, external piping, and dimensions | Four-phase model semantics in `LKA-Q-0005`; dimension grid is retained without repetitive phase questions; air connection procedure remains WP3 |
-| LKA-SI-014 | 25-26 / 773-774 | Quick-change arm option `A` | DRAWING + TABLE + TEXT | HIGH | Quick-change construction, dimensions, installation, and fastening | Option/attachment facts in `LKA-Q-0013` and `LKA-Q-0009`; installation remains WP3 |
+| LKA-SI-009 | 13-16 / 761-764 | Allowable eccentricity curves | CHART + DRAWING | HIGH | Standard versus high-strength-link eccentricity limits and consequences of exceeding them | Genuine visual eccentricity read in `LKA-Q-0021`; limit consequence in `LKA-Q-0020` |
+| LKA-SI-010 | 17-18 / 765-766 | Standard model dimensions and dimension table | DRAWING + TABLE | HIGH | External, mounting, port, arm, and interference dimensions | Representative LKA0480 stroke/mounting/port lookup in `LKA-Q-0012`; high-consequence mounting controls in `LKA-Q-0020` |
+| LKA-SI-011 | 19-20 / 767-768 | Probe dual-rod confirmation type `D` | DRAWING + TABLE | HIGH | Model-specific construction, confirmation interface, and dimensions | `D` semantics in `LKA-Q-0005`; repeated body-size dimension grids are retained as lookup evidence rather than numeric-swap questions |
+| LKA-SI-012 | 21-22 / 769-770 | Air-sensor manifold confirmation type `M` | DRAWING + TABLE | HIGH | Model-specific air interface, construction, and dimensions | `M` semantics in `LKA-Q-0005`; connection and installation procedure in `LKA-Q-0019`; repeated dimensions are retained as lookup evidence |
+| LKA-SI-013 | 23-24 / 771-772 | Air-sensor external-piping types `N/NC/NL/NR` | DRAWING + TABLE | HIGH | Four port phases, external piping, and dimensions | Four-phase model semantics in `LKA-Q-0005`; connection procedure in `LKA-Q-0019`; repeated dimensions are retained without numeric-swap questions |
+| LKA-SI-014 | 25-26 / 773-774 | Quick-change arm option `A` | DRAWING + TABLE + TEXT | HIGH | Quick-change construction, dimensions, installation, and fastening | Option/attachment and delivery controls in `LKA-Q-0013` and `LKA-Q-0009`; fastening data already included there and is not repeated as an operational numeric swap |
 | LKA-SI-015 | 18, 20, 22, 24, 26 / 766, 768, 770, 772, 774 | Repeated option notes and model/dimension tables | DRAWING + TABLE + TEXT | HIGH | `H`/`K` option construction, A-type differences, and confirmation-variant dimension grids | `H`/`K` model boundaries in `LKA-Q-0006`; A-type differences in `LKA-Q-0013`; repeated dimension grids are retained as source rather than converted into numeric-swap questions |
 | LKA-SI-016 | 27 / 775 | Air-sensor connection and confirmation | TEXT + DRAWING + TABLE | HIGH | Differential-pressure confirmation, sensor connection limit, exhaust protection, arm alignment, and O-ring grease controls | Connection and installation controls in `LKA-Q-0019` |
-| LKA-SI-017 | 28 / 776 | Air-sensor circuit and process charts | STATE_DIAGRAM + CHART | HIGH | Clamp/release sensing sequence, pressure/stroke states, and sensor-output conditions | Circuit limit and sensing context in `LKA-Q-0019`; detailed state timing remains WP3 |
-| LKA-SI-018 | 29 / 777 | Clamp-arm design | DRAWING + FORMULA + CHART | HIGH | Arm dimensions, clamp-point distance, force-curve selection, and geometric limits | WP3 `CALCULATION` / `PROCEDURE` / `CAUTION` |
-| LKA-SI-019 | 30 / 778 | Blank arm and fastening kit | DRAWING + TABLE + TEXT | MEDIUM | Blank-arm selection, machining, fastener kit, and compatibility constraints | Representative LKA0480 selection in `LKA-Q-0009`; machining and installation remain WP3 |
+| LKA-SI-017 | 28 / 776 | Air-sensor circuit and process charts | STATE_DIAGRAM + CHART | HIGH | Clamp/release sensing sequence, pressure/stroke states, and sensor-output conditions | Circuit limit in `LKA-Q-0019`; clamp/release detection-port state sequence in `LKA-Q-0027` |
+| LKA-SI-018 | 29 / 777 | Clamp-arm design | DRAWING + FORMULA + CHART | HIGH | Arm dimensions, clamp-point distance, force-curve selection, and geometric limits | Force/arm-length decision in `LKA-Q-0017` and eccentricity decision in `LKA-Q-0021`; geometry table remains fabrication lookup because no single custom arm target is specified |
+| LKA-SI-019 | 30 / 778 | Blank arm and fastening kit | DRAWING + TABLE + TEXT | MEDIUM | Blank-arm selection, machining, fastener kit, and compatibility constraints | Representative LKA0480 selection and exact fastening kit in `LKA-Q-0009`; remaining repeated sizes are fabrication context rather than separate questions |
 | LKA-SI-020 | 31 / 943 | Lever-clamp design and installation cautions, including LKA | TEXT + DRAWING + TABLE | HIGH | Hydraulic circuit, simultaneous pressure prohibition, axial loading, eccentricity, contamination, parallel clamping, pins, mounting, and sensor references | High-consequence LKA design and installation controls in `LKA-Q-0020` |
-| LKA-SI-021 | 32 / 944 | Lever-clamp operation and adjustment, including LKA | TEXT + DRAWING + TABLE | HIGH | Quick-change fastening, action time, air bleeding, speed adjustment, fulcrum adjustment, and probe installation | WP3 `PROCEDURE` / `CAUTION` |
-| LKA-SI-022 | 33 / 945 | Common hydraulic installation cautions | TEXT + DRAWING | HIGH | Oil selection, cleaning, sealing tape, air bleeding, and fastener checks | WP3 `PROCEDURE` / `CAUTION`; bind as page-bounded `DOCUMENT_COMMON` |
-| LKA-SI-023 | 34 / 946 | Common hydraulic speed-control circuits | STATE_DIAGRAM + TEXT | HIGH | Single/double-acting circuit differences, meter-out/meter-in behavior, air instability, circuit separation, and back pressure | WP3 `PROCEDURE` / `CAUTION`; bind as page-bounded `DOCUMENT_COMMON` |
-| LKA-SI-024 | 35 / 947 | Common operation and maintenance cautions | TEXT | HIGH | Qualified staff, energy isolation, restart checks, moving-part avoidance, modification prohibition, inspection, storage, and overhaul | WP3 `CAUTION` / `PROCEDURE`; bind as page-bounded `DOCUMENT_COMMON` |
+| LKA-SI-021 | 32 / 944 | Lever-clamp operation and adjustment, including LKA | TEXT + DRAWING + TABLE | HIGH | Quick-change fastening, action time, air bleeding, speed adjustment, fulcrum adjustment, and probe installation | LKA speed-adjustment procedure in `LKA-Q-0022`; exact quick-change fastening data already appears in `LKA-Q-0009`; specialized fulcrum/probe rows remain variant-local reference |
+| LKA-SI-022 | 33 / 945 | Common hydraulic installation cautions | TEXT + DRAWING | HIGH | Oil selection, cleaning, sealing tape, air bleeding, and fastener checks | Page-bounded common installation and air-bleed procedure in `LKA-Q-0023` |
+| LKA-SI-023 | 34 / 946 | Common hydraulic speed-control circuits | STATE_DIAGRAM + TEXT | HIGH | Single/double-acting circuit differences, meter-out/meter-in behavior, air instability, circuit separation, and back pressure | Page-bounded common circuit controls in `LKA-Q-0024` |
+| LKA-SI-024 | 35 / 947 | Common operation and maintenance cautions | TEXT | HIGH | Qualified staff, energy isolation, restart checks, moving-part avoidance, modification prohibition, inspection, storage, and overhaul | Page-bounded safety and maintenance controls in `LKA-Q-0025` |
 | LKA-SI-025 | 36 / 948 | Warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; commercial policy |
 | LKA-SI-026 | 37-38 / 1729-1730 | Common notation references | TABLE | MEDIUM | Surface-roughness and O-ring old/new notation mappings | Surface-roughness mapping in `LKA-Q-0010`; O-ring grammar/mapping in `LKA-Q-0014`; both page-bounded `DOCUMENT_COMMON` |
 | LKA-SI-027 | 39 / 1257 | Control-valve family introduction | TEXT + DRAWING | MEDIUM | BZL/BZT/BZX/JZG/BZS family purpose and direct-mount relationship | Family roles covered by `LKA-Q-0011`; ancillary scope |
 | LKA-SI-028 | 40 / 1258 | Control-valve type comparison | TABLE + DRAWING | MEDIUM | Pressure classes and functions of speed, exhaust, plug, and sequence-valve types | `LKA-Q-0011` |
-| LKA-SI-029 | 41-44 / 1259-1262 | BZL/BZT speed-control valves | TABLE + CHART + DRAWING | MEDIUM | Model grammar, specifications, compatible threads, flow curves, dimensions, and circuit cautions | Representative BZL lookup in `LKA-Q-0007`; curves and cautions remain WP3 |
-| LKA-SI-030 | 45-48 / 1265-1268 | BZX exhaust valves and JZG plugs | TABLE + DRAWING + TEXT | MEDIUM | Model grammar, pressure/specification limits, compatibility, dimensions, and exhaust safety | Family function/pressure in `LKA-Q-0011`; LKA size mapping repeats the same G-thread size groups already tested by `LKA-Q-0008` and is not duplicated; exhaust/install safety remains WP3 |
-| LKA-SI-031 | 49-52 / 1269-1272 | BZS direct-mounted sequence valves | TABLE + CHART + DRAWING + TEXT | HIGH | Model grammar, operating/setting pressure, compatibility, dimensions, pressure-flow behavior, contamination, air, and adjustment cautions | LKA compatibility in `LKA-Q-0008`; representative specifications in `LKA-Q-0016`; flow behavior and operation/cautions remain WP3 |
-| LKA-SI-032 | 53-56 / 1697-1700 | Manifold blocks | TABLE + DRAWING + TEXT | MEDIUM | WHZ/LZY/LZ/TMZ/DZ families, applicable models, dimensions, machining, height adjustment, and bolt cautions | Representative LKA plate-seat selection in `LKA-Q-0015`; other product families are contextual; machining/bolt cautions remain WP3 |
+| LKA-SI-029 | 41-44 / 1259-1262 | BZL/BZT speed-control valves | TABLE + CHART + DRAWING | MEDIUM | Model grammar, specifications, compatible threads, flow curves, dimensions, and circuit cautions | Representative BZL lookup in `LKA-Q-0007`; sizing curves are ancillary valve-selection evidence and are not converted into repeated LKA questions without a specified circuit flow target |
+| LKA-SI-030 | 45-48 / 1265-1268 | BZX exhaust valves and JZG plugs | TABLE + DRAWING + TEXT | MEDIUM | Model grammar, pressure/specification limits, compatibility, dimensions, and exhaust safety | Family function/pressure in `LKA-Q-0011`; LKA size mapping repeats G-thread groups already tested by `LKA-Q-0008`; product-specific exhaust installation is ancillary and excluded from the core LKA operating bank |
+| LKA-SI-031 | 49-52 / 1269-1272 | BZS direct-mounted sequence valves | TABLE + CHART + DRAWING + TEXT | HIGH | Model grammar, operating/setting pressure, compatibility, dimensions, pressure-flow behavior, contamination, air, and adjustment cautions | LKA compatibility in `LKA-Q-0008`, representative specifications in `LKA-Q-0016`, and high-consequence setup/operation controls in `LKA-Q-0026` |
+| LKA-SI-032 | 53-56 / 1697-1700 | Manifold blocks | TABLE + DRAWING + TEXT | MEDIUM | WHZ/LZY/LZ/TMZ/DZ families, applicable models, dimensions, machining, height adjustment, and bolt cautions | Representative LKA plate-seat selection in `LKA-Q-0015`; other families and custom machining/bolt details are accessory-fabrication context without a specified installation target |
 | LKA-SI-033 | 57-58 / unnumbered | Sales addresses and network | TEXT + DRAWING | NON-TEST | Contact details, sales geography, and certification marks | Exclude; not durable LKA technical knowledge |
 
 ## 3. Question Statistics
 
-- Total: 20
+- Total: 27
 - FACT: 2
 - SPEC_LOOKUP: 3
 - TABLE: 7
 - MODEL: 4
 - CALCULATION: 1
-- CHART: 1
-- PROCEDURE: 1
-- CAUTION: 1
+- CHART: 2
+- PROCEDURE: 5
+- CAUTION: 3
 
 ## 4. Questions
 
@@ -1305,3 +1305,411 @@ O 形圈扭曲或损坏，过量则可能堵塞检测孔并导致无法检测。
 - Local scope path: 回路设计禁令；活塞杆受力和偏心压板图；平行夹紧图；焊接夹具说明；本体安装说明
 - Evidence type: TEXT + DRAWING + TABLE
 - Evidence: 页面逐项给出同时供压、非轴向力、偏心、平行度、焊接飞溅和安装螺栓的禁止或强制要求，并在页面型号范围中包含 LKA。
+
+## LKA-Q-0021
+
+**Type: CHART**
+
+### Target
+
+- Binding: EXACT_MODEL
+- Product: LKA 油压杠杆式夹紧器
+- Model / Scope: LKA0480 标准连接板、无 H 高强度选配的容许偏心量曲线
+
+### Question
+
+从 LKA0480 标准连接板的容许偏心量曲线读取：供油压力为 `5.0 MPa`、
+压板长度为 `90 mm` 时，容许偏心量 `H` 约为多少 mm？
+
+### Standard Answer
+
+应选择 LKA0480 标准型图中的 `5 MPa` 曲线，在压板长度 `L = 90 mm`
+处读取容许偏心量约 `14 mm`。
+
+### Scoring Standard
+
+- P1 [20]: 明确选择 LKA0480 标准连接板而非 H 高强度连接板曲线组。
+- P2 [20]: 明确选择 `5 MPa` 曲线。
+- P3 [20]: 在横轴使用压板长度 `L = 90 mm`。
+- P4 [40]: 从纵轴读出约 14 mm，且结果落入规定图读容差。
+
+### Accepted Variants
+
+- `约 14 mm` 可写为容差范围内更精细的图读值。
+
+### Forbidden Errors
+
+- 使用 LKA0480-H 高强度连接板曲线代替标准曲线。
+- 将 90 mm 当作容许偏心量而非压板长度。
+- 选择 5 MPa 以外的压力曲线。
+- 将曲线读数解释为可超过的推荐偏心量。
+
+### Tolerance
+
+- CHART: accept 13-15 mm for the visual read at P = 5.0 MPa and L = 90 mm.
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 13
+- Printed page: 761
+- Section: 容许偏心量曲线图（选配件：无符号：标准型）
+- Local scope path: LKA0480 标准型图 > 5 MPa 曲线 > L=90 mm 交点
+- Evidence type: CHART
+- Evidence: Gold 由 LKA0480 标准型曲线的压板长度横轴、偏心量纵轴和 5 MPa 系列交点直接视觉读取；90 mm 不是离散表格列。
+
+## LKA-Q-0022
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: LKA 油压杠杆式夹紧器
+- Model / Scope: LKA 系列动作速度调整
+
+### Question
+
+调整 LKA 的动作速度时，全部动作时间应满足什么下限？调整前和调整过程中
+应按什么顺序操作速度控制阀，过快动作会产生什么后果？
+
+### Standard Answer
+
+应将全部动作时间调整为超过 `1 秒`。调整前必须排净油压回路中的空气，
+否则无法准确调整速度。开始调整时应把速度控制阀置于低速侧的小流量状态，
+然后缓慢向高速侧的大流量方向增加。动作过快会加速各部件磨耗或造成损伤。
+
+### Scoring Standard
+
+- P1 [25]: 正确说明全部动作时间必须超过 1 秒。
+- P2 [25]: 正确说明调整前必须排净回路空气。
+- P3 [20]: 正确说明从低速侧的小流量状态开始。
+- P4 [15]: 正确说明应缓慢向高速侧的大流量方向增加。
+- P5 [15]: 正确说明过快会加速磨耗或造成部件损伤。
+
+### Accepted Variants
+
+- `超过 1 秒` 可写为 `大于 1 s`，但不可写成等于 1 秒即可。
+
+### Forbidden Errors
+
+- 在回路仍混有空气时进行最终速度设定。
+- 从全开或最大流量开始试调。
+- 将 1 秒写成最大允许动作时间。
+- 为缩短节拍而允许瞬时高速冲击。
+
+### Tolerance
+
+- Exact lower-bound direction and adjustment sequence are required.
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 32
+- Printed page: 944
+- Section: 杠杆式夹紧器 > 注意事项 > 速度调整
+- Local scope path: 速度调整条目 > 全部动作时间 / 排气 / 低速侧至高速侧调整
+- Evidence type: TEXT
+- Evidence: 页面要求全部动作时间超过 1 秒，调整前排气，并从低速小流量缓慢转向高速大流量，同时说明过快会造成磨耗或损伤。
+
+## LKA-Q-0023
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: KOSMEK 液压系列通用安装
+- Model / Scope: LKA_R01_2023KW_C1N.pdf :: physical page 33, printed page 945, piping cleanliness and hydraulic-circuit air bleeding
+
+### Question
+
+根据该 PDF 的液压系列通用安装页，配管施工时如何防止异物和密封带进入
+回路？配管结束或油箱变空导致进气后，应如何完成排气并选择更有效的排气
+位置？
+
+### Standard Answer
+
+投入使用前必须彻底清洁配管、管接头和配件油孔，并在清洁环境中正确施工；
+密封带不得让碎片残留在回路内。需要排气时，先降低回路供油压力，再将离
+夹紧器或支撑器最近的管接头螺母稍微旋松，左右摇动配管排出混有空气的
+液压油，空气排净后重新紧固。优先在回路最高端和最末端附近排气；板式配管
+应在回路最高端附近设置排气阀。
+
+### Scoring Standard
+
+- P1 [15]: 正确要求彻底清洁配管、管接头和配件油孔。
+- P2 [15]: 正确要求避免密封带碎片或其他异物残留在回路内。
+- P3 [15]: 正确说明排气前降低回路供油压力。
+- P4 [15]: 正确说明稍微旋松最靠近夹紧器或支撑器的管接头螺母。
+- P5 [15]: 正确说明摇动配管排出含气液压油，并在排净后重新紧固。
+- P6 [15]: 正确说明最高端和最末端附近是更有效的排气位置。
+- P7 [10]: 正确说明板式配管应在回路最高端附近设置排气阀。
+
+### Accepted Variants
+
+- `左右摇动配管` 可写为 `轻轻移动配管使连接处松动并排气`。
+
+### Forbidden Errors
+
+- 在高压状态下直接大幅拆松管接头。
+- 允许密封带碎片留在回路中。
+- 排气后不重新紧固接头。
+- 将最低点描述为唯一推荐排气位置。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 33
+- Printed page: 945
+- Section: 安装施工方面的注意事项（油压系列通用）
+- Local scope path: 配管前的处理 / 密封胶带的缠绕方法 / 排净油压回路内的空气
+- Evidence type: TEXT + DRAWING
+- Evidence: 页面连续给出清洁和密封带控制，并以图文步骤说明降低压力、松开最近接头、摇动排气、重新紧固及最高端/最末端排气位置。
+
+## LKA-Q-0024
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: KOSMEK 液压夹紧器通用回路
+- Model / Scope: LKA_R01_2023KW_C1N.pdf :: physical page 34, printed page 946, double-acting clamp speed-control circuit
+
+### Question
+
+根据该 PDF 的夹紧器速度控制回路页，复动夹紧器通常应如何设置夹紧侧和
+释放侧的节流方式？为什么进油节流容易不稳定，同时使用单动和复动夹紧器时
+应如何隔离回路，并应如何防止回油节流导致的回路压力上升？
+
+### Standard Answer
+
+复动夹紧器通常应在夹紧侧和释放侧都使用回油节流。进油节流容易受到回路
+混入空气的影响，速度难以稳定控制；但产品专页明确规定的例外必须按专用
+回路执行。单动和复动夹紧器同时使用时，原则上不要在同一回路中进行速度
+控制，应将控制回路分开；通向油箱的管路存在背压时还可能造成动作次序异常。
+回油节流时，供油量可能使动作中的回路压力上升，应预先用流量调节阀减少
+供油量，尤其要防止压力超过顺序阀或动作确认压力开关的设定值。
+
+### Scoring Standard
+
+- P1 [20]: 正确说明复动夹紧器通常两侧均采用回油节流。
+- P2 [15]: 正确说明进油节流受混入空气影响而难以稳定控制速度。
+- P3 [10]: 正确保留产品专页规定例外，不将通用规则绝对化。
+- P4 [20]: 正确说明单动和复动夹紧器原则上应分开速度控制回路。
+- P5 [10]: 正确说明油箱回路背压可能造成动作次序异常。
+- P6 [15]: 正确说明回油节流时供油量可能导致动作中回路压力上升。
+- P7 [10]: 正确说明用流量调节阀减少供油量以限制压力上升。
+
+### Accepted Variants
+
+- `回油节流` 可写为 `meter-out`，`进油节流` 可写为 `meter-in`。
+
+### Forbidden Errors
+
+- 将复动夹紧器的通用设置写成两侧均进油节流。
+- 忽略混入空气对进油节流稳定性的影响。
+- 建议单动和复动夹紧器不加分析地共用同一速度控制回路。
+- 将压力上升处理方式写成继续增加供油量。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 34
+- Printed page: 946
+- Section: 夹紧器的速度控制回路及注意事项
+- Local scope path: 复动夹紧器的速度控制回路；单动/复动混合回路；回油节流压力上升说明
+- Evidence type: TEXT + STATE_DIAGRAM
+- Evidence: 页面用文字和回路图规定复动两侧回油节流、说明进油节流的空气影响，并给出混合回路隔离、背压和供油量导致压力上升的控制要求。
+
+## LKA-Q-0025
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: KOSMEK 液压/气动装置通用安全与维护
+- Model / Scope: LKA_R01_2023KW_C1N.pdf :: physical page 35, printed page 947, operation safety and maintenance checklist
+
+### Question
+
+根据该 PDF 的通用注意事项，在操作、拆卸、重新启动和维护液压/气动夹紧
+装置时，人员资格、能量隔离、运动部件、擅自改造、清洁检查和长期存放方面
+有哪些关键要求？
+
+### Standard Answer
+
+操作和维护必须由具备相关知识与经验的人员进行。拆卸前必须落实防坠落和
+防误动作措施，切断压力源和电源，并确认液压/气压回路压力为零；刚停机的
+设备还须等待完全降温。重新启动前应检查螺栓等连接部位。严禁接触动作中的
+夹紧器，也不得擅自解体或改造产品。维护时应定期清洁活塞杆、柱塞及定位
+基准面，检查配管和紧固件松动、液压油老化、异音及动作顺畅性。产品应存放
+在阴凉干燥处，解体大修应委托制造商。
+
+### Scoring Standard
+
+- P1 [15]: 正确要求由具备知识和经验的人员操作与维护。
+- P2 [15]: 正确要求拆卸前落实防坠落和防误动作措施。
+- P3 [15]: 正确要求切断压力源和电源并确认回路压力为零。
+- P4 [10]: 正确说明刚停机设备需等待完全降温，重启前检查连接部位。
+- P5 [10]: 正确禁止接触动作中的夹紧器。
+- P6 [10]: 正确禁止擅自解体或改造。
+- P7 [15]: 正确包含清洁以及松动、油液、异音或动作状态的定期检查。
+- P8 [10]: 正确说明阴凉干燥存放且解体大修委托制造商。
+
+### Accepted Variants
+
+- `压力为零` 可写为 `完全卸压`。
+- `制造商` 可写为 `KOSMEK` 或 `本公司`。
+
+### Forbidden Errors
+
+- 仅切断电源而不切断压力源或确认零压。
+- 在夹紧器动作时接触运动部位。
+- 允许未经授权的产品改造。
+- 将潮湿高温环境描述为推荐存放条件。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 35
+- Printed page: 947
+- Section: 操作方面的注意事项 / 保养、检查
+- Local scope path: 人员资格与安全措施；拆卸和重启；运动部件与改造；清洁、检查、存放和大修
+- Evidence type: TEXT + DRAWING
+- Evidence: 页面左栏给出操作与拆卸安全禁令，右栏给出零压、重启、清洁、松动/油液/动作检查、存放和制造商大修要求。
+
+## LKA-Q-0026
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: BZS 直装式顺序阀
+- Model / Scope: BZS0100/BZS0200/BZS0300 回路设计、压力设定和投运控制
+
+### Question
+
+在 LKA 的 C 配管上使用 BZS 直装式顺序阀时，如何控制异物、供给流量、
+回路空气和压力设定？多台夹紧器需要一致动作时如何调整，压力设定结束后
+还必须完成什么锁定？
+
+### Standard Answer
+
+BZS 内部没有过滤网，必须防止切屑、密封带碎片等异物进入；内部零件一旦
+受损，即使清除异物也可能无法恢复正常。过大的供给流量可能使顺序阀不能
+按序动作，应根据夹紧器容量及配管直径、长度考虑流量控制。回路混入空气会
+造成动作不良，投运前必须排气。阀门出厂时顺序压力未设定，应在实际回路中
+使用压力表按需要设定。多台夹紧器需要一致动作时，应观察各夹紧器动作并
+微调相应顺序阀。设定完成后，至少锁紧一侧旋转防止套件。
+
+### Scoring Standard
+
+- P1 [15]: 正确说明 BZS 无内部过滤网并要求防止异物进入。
+- P2 [10]: 正确说明内部损伤后清除异物也可能无法恢复。
+- P3 [15]: 正确说明过大供给流量可能阻止顺序动作。
+- P4 [15]: 正确说明应按夹紧器容量和配管条件进行流量控制。
+- P5 [10]: 正确说明回路必须排气。
+- P6 [15]: 正确说明出厂压力未设定，并应使用压力表按实际回路设定。
+- P7 [10]: 正确说明多台一致动作需观察动作并逐阀微调。
+- P8 [10]: 正确说明设定后至少锁紧一侧旋转防止套件。
+
+### Accepted Variants
+
+- `旋转防止套件` 可写为 `防转锁定件`。
+- `压力表` 可写为 `压力计`。
+
+### Forbidden Errors
+
+- 假定 BZS 自带过滤网，可容忍切屑或密封带碎片。
+- 用增加供给流量解决不能顺序动作的问题。
+- 不排气就进行最终压力和同步调整。
+- 将出厂状态当作已完成压力设定，或设定后不锁定防转件。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 52
+- Printed page: 1272
+- Section: 直装式顺序阀 > 注意事项 / 动作说明
+- Local scope path: 过滤与异物；供给流量；排气；出厂未设定压力；多台同步微调；旋转防止套件
+- Evidence type: TEXT + STATE_DIAGRAM
+- Evidence: 页面注意事项明确无过滤网、流量和排气风险，并要求以压力表设定、逐阀微调及最终锁紧防转件；动作图说明顺序阀达到设定压力后的开闭次序。
+
+## LKA-Q-0027
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: LKA-M/N 空气传感器动作确认型
+- Model / Scope: 单台 LKA 的夹紧确认口与释放确认口检测时序
+
+### Question
+
+根据 LKA 空气传感器流程图，从释放状态开始夹紧、以及从夹紧状态开始释放
+时，夹紧确认口和释放确认口的检测气压分别在行程的什么阶段上升？空气
+传感器何时输出对应端状态，设定压力变化会产生什么影响？
+
+### Standard Answer
+
+从释放状态开始夹紧时，夹紧确认口的检测气压在大部分夹紧行程保持较低，
+接近夹紧端时迅速上升；超过空气传感器元件设定压力后，输出夹紧端确认。
+从夹紧状态开始释放时，释放确认口的检测气压在大部分释放行程保持较低，
+接近释放端时迅速上升；超过设定压力后，输出释放端确认。传感器输出发生的
+具体行程位置会随传感器设定压力而变化，不能把图中的转折位置当成与设定
+无关的固定机械位置。
+
+### Scoring Standard
+
+- P1 [20]: 正确说明夹紧确认口在大部分夹紧行程保持低压。
+- P2 [20]: 正确说明接近夹紧端时压力上升并越过设定压力后输出夹紧确认。
+- P3 [20]: 正确说明释放确认口在大部分释放行程保持低压。
+- P4 [20]: 正确说明接近释放端时压力上升并越过设定压力后输出释放确认。
+- P5 [20]: 正确说明输出行程位置会随传感器设定压力变化。
+
+### Accepted Variants
+
+- `低压` 可写为 `低于传感器元件设定压力`。
+- `输出确认` 可写为 `传感器 ON`，但必须绑定到正确的夹紧端或释放端。
+
+### Forbidden Errors
+
+- 声称夹紧确认口在释放端输出夹紧确认。
+- 声称释放确认口在夹紧端输出释放确认。
+- 把供给气压水平直接当作全过程的检测输出压力。
+- 声称设定压力变化不会改变输出发生的行程位置。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 28
+- Printed page: 776
+- Section: 空气传感器流程图 > 连接 1 台夹紧器时
+- Local scope path: 夹紧检测口气压曲线；释放检测口气压曲线；空气传感器元件设定压力；注意事项
+- Evidence type: STATE_DIAGRAM + CHART
+- Evidence: 两条带动作方向箭头的曲线分别显示对应检测口仅在接近夹紧端或释放端时越过设定压力；页下注明信号输出位置随传感器设定而异。
