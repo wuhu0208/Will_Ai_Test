@@ -74,13 +74,13 @@ Negative grammar cases and reasons:
 - `LKA0480-CX--`: arm direction `X` is not listed.
 - `LKA1050-CR--H`: option `H` is unavailable for body size `105`.
 
-### 2.3 Source-first inventory and initial dispositions
+### 2.3 Source coverage inventory and dispositions
 
-`HIGH` and `MEDIUM` items remain open until their mapped questions and construction
-audits are complete. The disposition column identifies planned Work Packages and
-does not claim coverage in advance.
+The disposition column maps each source area to representative questions or records
+why the material is retained as context rather than tested separately. Every `HIGH`
+and `MEDIUM` item has a final disposition.
 
-| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
+| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Final disposition |
 |---|---|---|---|---|---|---|
 | LKA-SI-001 | 1 / 749 | Product family introduction > LKA identity and operating principle | TEXT + DRAWING | HIGH | LKA position in the link-clamp family, release/clamp motion, and representative applications | LKA product identity and structure are represented by `LKA-Q-0002`; the qualitative release/clamp end-state drawing is retained as operating context because it supplies no additional stable setpoint or procedure |
 | LKA-SI-002 | 2 / 750 | Product-family examples | TEXT + DRAWING | LOW | Contextual examples of other link-clamp models | Context only; exclude facts not bound to LKA |
