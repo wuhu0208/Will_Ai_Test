@@ -1,0 +1,25 @@
+name: Product decision
+description: A user decision is required before work can continue
+title: "[Decision] "
+labels: ["product-decision", "blocked"]
+body:
+  - type: textarea
+    id: decision
+    attributes: {label: Decision Required}
+    validations: {required: true}
+  - type: textarea
+    id: context
+    attributes: {label: Context and Evidence}
+    validations: {required: true}
+  - type: textarea
+    id: options
+    attributes: {label: Options and Tradeoffs}
+    validations: {required: true}
+  - type: textarea
+    id: impact
+    attributes: {label: Impact of Delay or Change}
+    validations: {required: true}
+  - type: input
+    id: owner
+    attributes: {label: Decision Owner}
+    validations: {required: true}

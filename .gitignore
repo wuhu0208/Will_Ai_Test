@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.cache/
+.work/
+build/
+tmp/
+page_cache/
+render_cache/
+browser-data/
+browser_data/
+screenshots/
+*.zip
+.env
+.env.*
+*.cookie
+cookies/
+*token*
+!.github/
+
+# Canonical inputs and outputs are intentionally tracked:
+!doc/*.pdf
+!question_banks/*.md
