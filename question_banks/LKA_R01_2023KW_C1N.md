@@ -81,21 +81,21 @@ does not claim coverage in advance.
 
 | Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
 |---|---|---|---|---|---|---|
-| LKA-SI-001 | 1 / 749 | Product family introduction > LKA identity and operating principle | TEXT + DRAWING | HIGH | LKA position in the link-clamp family, release/clamp motion, and representative applications | WP2 `FACT`; WP3 `PROCEDURE` |
+| LKA-SI-001 | 1 / 749 | Product family introduction > LKA identity and operating principle | TEXT + DRAWING | HIGH | LKA position in the link-clamp family, release/clamp motion, and representative applications | LKA product identity and structural features are represented by `LKA-Q-0002`; the release/clamp motion is a state sequence reserved for WP3 `PROCEDURE` |
 | LKA-SI-002 | 2 / 750 | Product-family examples | TEXT + DRAWING | LOW | Contextual examples of other link-clamp models | Context only; exclude facts not bound to LKA |
-| LKA-SI-003 | 3-4 / 751-752 | Product lineup and accessory overview | TABLE + DRAWING | MEDIUM | Product-type boundaries, variant selection, and accessory relationships | WP2 `FACT` / `TABLE`; retain only LKA-relevant facts |
+| LKA-SI-003 | 3-4 / 751-752 | Product lineup and accessory overview | TABLE + DRAWING | MEDIUM | Product-type boundaries, variant selection, and accessory relationships | No separate question: broader product-comparison context is not an LKA operating rule; LKA-specific selection is covered by `LKA-Q-0002`, `LKA-Q-0005`, and `LKA-Q-0006` |
 | LKA-SI-004 | 5 / 753 | Table of contents | TEXT | NON-TEST | Navigation map for LKA product, common cautions, valves, and manifold blocks | Navigation only |
 | LKA-SI-005 | 6 / 754 | LKA features and cross-section | TEXT + DRAWING | HIGH | Compact body, integrated fulcrum, coolant protection, eccentric-load allowance, arm directions, and direct speed-control mounting | Compactness, fulcrum, and sealing facts in `LKA-Q-0002`; eccentricity and operating cautions remain WP3 |
 | LKA-SI-006 | 7 / 755 | Model designation | TABLE + DRAWING | HIGH | Six-field order, legal body/piping/arm/confirmation/option values, and H-option size restriction | `LKA-Q-0001`, `LKA-Q-0005`, `LKA-Q-0006`; grammar audit remains WP4 |
 | LKA-SI-007 | 8 / 756 | Specifications | TABLE + FORMULA | HIGH | Clamp area, clamp-force formula, capacities, strokes, pressure, temperature, fluid, and weight for eight body sizes and confirmation variants | Representative lookup and common limits in `LKA-Q-0003`, `LKA-Q-0004`; calculations remain WP3 |
 | LKA-SI-008 | 9-12 / 757-760 | Clamp-force capability curves | CHART + FORMULA | HIGH | Pressure/arm-length/clamp-force relationships with and without action confirmation | WP3 `CHART` / `CALCULATION` |
 | LKA-SI-009 | 13-16 / 761-764 | Allowable eccentricity curves | CHART + DRAWING | HIGH | Standard versus high-strength-link eccentricity limits and consequences of exceeding them | WP3 `CHART` / `CAUTION` |
-| LKA-SI-010 | 17 / 765 | Standard model dimensions | DRAWING + TABLE | HIGH | External, mounting, port, arm, and interference dimensions | WP2 `TABLE` / `SPEC_LOOKUP`; WP3 `CAUTION` |
-| LKA-SI-011 | 18-19 / 766-767 | Probe dual-rod confirmation type `D` | DRAWING + TABLE | HIGH | Model-specific construction, confirmation interface, and dimensions | WP2 `FACT` / `TABLE` |
-| LKA-SI-012 | 20-21 / 768-769 | Air-sensor manifold confirmation type `M` | DRAWING + TABLE | HIGH | Model-specific air interface, construction, and dimensions | WP2 `FACT` / `TABLE`; WP3 `PROCEDURE` |
-| LKA-SI-013 | 22-23 / 770-771 | Air-sensor external-piping types `N/NC/NL/NR` | DRAWING + TABLE | HIGH | Four port phases, external piping, and dimensions | WP2 `MODEL` / `TABLE`; WP3 `PROCEDURE` |
-| LKA-SI-014 | 24-25 / 772-773 | Quick-change arm option `A` | DRAWING + TABLE + TEXT | HIGH | Quick-change construction, dimensions, installation, and fastening | WP2 `FACT` / `TABLE`; WP3 `PROCEDURE` |
-| LKA-SI-015 | 26 / 774 | Link-plate and flanged-pin options | DRAWING + TABLE + TEXT | HIGH | Option-specific model and dimensional constraints for `H` and `K` | WP2 `MODEL` / `TABLE`; WP3 `CAUTION` |
+| LKA-SI-010 | 17-18 / 765-766 | Standard model dimensions and dimension table | DRAWING + TABLE | HIGH | External, mounting, port, arm, and interference dimensions | Representative LKA0480 stroke/mounting/port lookup in `LKA-Q-0012`; installation cautions remain WP3 |
+| LKA-SI-011 | 19-20 / 767-768 | Probe dual-rod confirmation type `D` | DRAWING + TABLE | HIGH | Model-specific construction, confirmation interface, and dimensions | `D` semantics in `LKA-Q-0005`; body-size dimension grid is retained as lookup evidence but not repeated as numeric-swap questions; installation remains WP3 |
+| LKA-SI-012 | 21-22 / 769-770 | Air-sensor manifold confirmation type `M` | DRAWING + TABLE | HIGH | Model-specific air interface, construction, and dimensions | `M` semantics in `LKA-Q-0005`; dimension grid is retained without repetitive body-size questions; air connection procedure remains WP3 |
+| LKA-SI-013 | 23-24 / 771-772 | Air-sensor external-piping types `N/NC/NL/NR` | DRAWING + TABLE | HIGH | Four port phases, external piping, and dimensions | Four-phase model semantics in `LKA-Q-0005`; dimension grid is retained without repetitive phase questions; air connection procedure remains WP3 |
+| LKA-SI-014 | 25-26 / 773-774 | Quick-change arm option `A` | DRAWING + TABLE + TEXT | HIGH | Quick-change construction, dimensions, installation, and fastening | Option/attachment facts in `LKA-Q-0013` and `LKA-Q-0009`; installation remains WP3 |
+| LKA-SI-015 | 18, 20, 22, 24, 26 / 766, 768, 770, 772, 774 | Repeated option notes and model/dimension tables | DRAWING + TABLE + TEXT | HIGH | `H`/`K` option construction, A-type differences, and confirmation-variant dimension grids | `H`/`K` model boundaries in `LKA-Q-0006`; A-type differences in `LKA-Q-0013`; repeated dimension grids are retained as source rather than converted into numeric-swap questions |
 | LKA-SI-016 | 27 / 775 | Air-sensor connection and confirmation | TEXT + DRAWING + TABLE | HIGH | Differential-pressure confirmation, sensor connection limit, exhaust protection, arm alignment, and O-ring grease controls | WP3 `PROCEDURE` / `CAUTION` |
 | LKA-SI-017 | 28 / 776 | Air-sensor circuit and process charts | STATE_DIAGRAM + CHART | HIGH | Clamp/release sensing sequence, pressure/stroke states, and sensor-output conditions | WP3 `PROCEDURE` / `CHART` |
 | LKA-SI-018 | 29 / 777 | Clamp-arm design | DRAWING + FORMULA + CHART | HIGH | Arm dimensions, clamp-point distance, force-curve selection, and geometric limits | WP3 `CALCULATION` / `PROCEDURE` / `CAUTION` |
@@ -106,22 +106,22 @@ does not claim coverage in advance.
 | LKA-SI-023 | 34 / 782 | Common hydraulic speed-control circuits | STATE_DIAGRAM + TEXT | HIGH | Single/double-acting circuit differences, meter-out/meter-in behavior, air instability, circuit separation, and back pressure | WP3 `PROCEDURE` / `CAUTION`; bind as page-bounded `DOCUMENT_COMMON` |
 | LKA-SI-024 | 35 / 783 | Common operation and maintenance cautions | TEXT | HIGH | Qualified staff, energy isolation, restart checks, moving-part avoidance, modification prohibition, inspection, storage, and overhaul | WP3 `CAUTION` / `PROCEDURE`; bind as page-bounded `DOCUMENT_COMMON` |
 | LKA-SI-025 | 36 / 784 | Warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; commercial policy |
-| LKA-SI-026 | 37-38 / 1729-1730 | Common notation references | TABLE | MEDIUM | Surface-roughness and O-ring old/new notation mappings | Surface-roughness mapping in `LKA-Q-0010`; O-ring mapping remains WP2; bind as page-bounded `DOCUMENT_COMMON` |
+| LKA-SI-026 | 37-38 / 1729-1730 | Common notation references | TABLE | MEDIUM | Surface-roughness and O-ring old/new notation mappings | Surface-roughness mapping in `LKA-Q-0010`; O-ring grammar/mapping in `LKA-Q-0014`; both page-bounded `DOCUMENT_COMMON` |
 | LKA-SI-027 | 39 / 1257 | Control-valve family introduction | TEXT + DRAWING | MEDIUM | BZL/BZT/BZX/JZG/BZS family purpose and direct-mount relationship | Family roles covered by `LKA-Q-0011`; ancillary scope |
 | LKA-SI-028 | 40 / 1258 | Control-valve type comparison | TABLE + DRAWING | MEDIUM | Pressure classes and functions of speed, exhaust, plug, and sequence-valve types | `LKA-Q-0011` |
 | LKA-SI-029 | 41-44 / 1259-1262 | BZL/BZT speed-control valves | TABLE + CHART + DRAWING | MEDIUM | Model grammar, specifications, compatible threads, flow curves, dimensions, and circuit cautions | Representative BZL lookup in `LKA-Q-0007`; curves and cautions remain WP3 |
-| LKA-SI-030 | 45-48 / 1265-1268 | BZX exhaust valves and JZG plugs | TABLE + DRAWING + TEXT | MEDIUM | Model grammar, pressure/specification limits, compatibility, dimensions, and exhaust safety | Family-level roles in `LKA-Q-0011`; detailed selection remains WP2 and safety remains WP3 |
-| LKA-SI-031 | 49-52 / 1269-1272 | BZS direct-mounted sequence valves | TABLE + CHART + DRAWING + TEXT | HIGH | Model grammar, operating/setting pressure, compatibility, dimensions, pressure-flow behavior, contamination, air, and adjustment cautions | LKA compatibility mapping in `LKA-Q-0008`; detailed specifications remain WP2 and operation/cautions remain WP3 |
-| LKA-SI-032 | 53-56 / 1697-1700 | Manifold blocks | TABLE + DRAWING + TEXT | MEDIUM | WHZ/LZY/LZ/TMZ/DZ families, applicable models, dimensions, machining, height adjustment, and bolt cautions | WP2 `MODEL` / `TABLE`; WP3 `CAUTION`; ancillary scope |
+| LKA-SI-030 | 45-48 / 1265-1268 | BZX exhaust valves and JZG plugs | TABLE + DRAWING + TEXT | MEDIUM | Model grammar, pressure/specification limits, compatibility, dimensions, and exhaust safety | Family function/pressure in `LKA-Q-0011`; LKA size mapping repeats the same G-thread size groups already tested by `LKA-Q-0008` and is not duplicated; exhaust/install safety remains WP3 |
+| LKA-SI-031 | 49-52 / 1269-1272 | BZS direct-mounted sequence valves | TABLE + CHART + DRAWING + TEXT | HIGH | Model grammar, operating/setting pressure, compatibility, dimensions, pressure-flow behavior, contamination, air, and adjustment cautions | LKA compatibility in `LKA-Q-0008`; representative specifications in `LKA-Q-0016`; flow behavior and operation/cautions remain WP3 |
+| LKA-SI-032 | 53-56 / 1697-1700 | Manifold blocks | TABLE + DRAWING + TEXT | MEDIUM | WHZ/LZY/LZ/TMZ/DZ families, applicable models, dimensions, machining, height adjustment, and bolt cautions | Representative LKA plate-seat selection in `LKA-Q-0015`; other product families are contextual; machining/bolt cautions remain WP3 |
 | LKA-SI-033 | 57-58 / 947-948 | Sales addresses and network | TEXT + DRAWING | NON-TEST | Contact details, sales geography, and certification marks | Exclude; not durable LKA technical knowledge |
 
 ## 3. Question Statistics
 
-- Total: 11
-- FACT: 1
-- SPEC_LOOKUP: 2
-- TABLE: 5
-- MODEL: 3
+- Total: 16
+- FACT: 2
+- SPEC_LOOKUP: 3
+- TABLE: 7
+- MODEL: 4
 
 ## 4. Questions
 
@@ -776,3 +776,292 @@ Rz 100 对应的 Ra 参考值和旧标示范围。
 - Local scope path: 控制阀种类列表 > BZL / BZT / BZX / JZG / BZS 产品名称与最高使用压力
 - Evidence type: TABLE + DRAWING
 - Evidence: 类型比较页逐项列出五个系列的产品功能，并在各产品说明中标示 7 MPa 或 35 MPa 的最高使用压力。
+
+## LKA-Q-0012
+
+**Type: TABLE**
+
+### Target
+
+- Binding: EXACT_MODEL
+- Product: LKA 油压杠杆式夹紧器
+- Model / Scope: LKA0480 标准外形、安装和配管接口
+
+### Question
+
+请给出 LKA0480 标准外形尺寸表中的全行程、夹紧行程和行程余量，并说明
+本体安装螺纹、`C` 板式连接的 G 螺纹尺寸、`S` 外配管连接的 Rc 螺纹尺寸，
+以及 `C` 型夹紧/释放油口使用的 O 形密封圈型号。
+
+### Standard Answer
+
+LKA0480 的全行程为 23.5 mm，夹紧行程为 20.5 mm，行程余量为 3 mm。
+本体安装螺纹 `CA` 为 M5 x 0.8。`C` 板式连接的夹紧和释放油口均为
+G1/8；`S` 外配管连接的夹紧和释放油口均为 Rc1/8。`C` 型两个油口均使用
+`OR NBR-90 P5-N` O 形密封圈。
+
+### Scoring Standard
+
+- P1 [15]: 正确给出全行程 23.5 mm。
+- P2 [15]: 正确给出夹紧行程 20.5 mm。
+- P3 [10]: 正确给出行程余量 3 mm。
+- P4 [15]: 正确给出本体安装螺纹 M5 x 0.8。
+- P5 [15]: 正确给出 `C` 型夹紧/释放油口均为 G1/8。
+- P6 [15]: 正确给出 `S` 型夹紧/释放油口均为 Rc1/8。
+- P7 [15]: 正确给出 `C` 型两个油口的密封圈均为 `OR NBR-90 P5-N`。
+
+### Accepted Variants
+
+- `M5 x 0.8` 可写为 `M5×0.8`。
+- `OR NBR-90 P5-N` 可保留或省略字段间空格，但字段顺序不得变化。
+
+### Forbidden Errors
+
+- 交换全行程、夹紧行程和行程余量。
+- 将 `C` 型写成 Rc 螺纹，或将 `S` 型写成 G 螺纹。
+- 将 O 形密封圈型号写成 NBR-70-1、P7 或其他公称号。
+- 将耐压或夹紧力数据当作尺寸表字段。
+
+### Tolerance
+
+- Exact dimensions, thread designations, and O-ring model are required.
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 17-18
+- Printed page: 765-766
+- Section: 外形尺寸（标准型） / 外形尺寸表及安装部位加工尺寸表
+- Local scope path: LKA0480 列 > 全行程 / 夹紧行程 / 行程余量 / CA / C型夹紧释放油口 / S型夹紧释放油口 / O形密封圈
+- Evidence type: DRAWING + TABLE
+- Evidence: 标准外形图定义 C/S 配管接口，随后尺寸表在 LKA0480 列绑定行程、安装螺纹、两类油口螺纹和 C 型密封圈型号。
+
+## LKA-Q-0013
+
+**Type: FACT**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: LKA 油压杠杆式夹紧器
+- Model / Scope: LKA0360-A 至 LKA1050-A 快换压板 A 型
+
+### Question
+
+LKA 快换压板 `A` 选配在型号、压板安装销、本体尺寸和快换安装组件交付方面
+与标准/H/K 选配有何区别？以 LKA0480-A 为例说明所需安装组件型号。
+
+### Standard Answer
+
+快换压板型在选配字段使用 `A`。与选配字段为空、`H` 或 `K` 的形式不同，
+选择 `A` 时不附带压板安装用销钉；但杠杆夹紧器本体尺寸与空白/H/K 型一致。
+快换压板安装所需的安装螺栓、活塞杆销和压板销组成另售的快换安装组件，
+不是随夹紧器本体交付。LKA0480-A 对应的组件型号为 `LZK0480-W`。
+
+### Scoring Standard
+
+- P1 [15]: 正确说明快换压板选配代码为 `A`。
+- P2 [20]: 正确说明 `A` 型不附带压板安装用销钉。
+- P3 [20]: 正确说明 `A` 型夹紧器本体尺寸与空白/H/K 型一致。
+- P4 [15]: 正确说明快换组件包含安装螺栓。
+- P5 [10]: 正确说明快换组件包含活塞杆销。
+- P6 [10]: 正确说明快换组件包含压板销且组件另售。
+- P7 [10]: 正确给出 LKA0480-A 对应 `LZK0480-W`。
+
+### Accepted Variants
+
+- `快换安装组件` 可写为 `快换套件` 或 `quick-change mounting kit`。
+- `另售` 可写为 `需另行购买`。
+
+### Forbidden Errors
+
+- 声称 `A` 型随本体附带全部快换安装组件。
+- 声称 `A` 型本体尺寸与标准/H/K 型完全不同。
+- 将 `LZK0480-L` 毛坯压板误写成 LKA0480-A 的快换安装组件。
+- 将 `A` 解释为空气传感器动作确认代码。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 25-26, 30
+- Printed page: 773-774, 778
+- Section: 快换压板 A 型 / 附件：快换压板 A 型用紧固件
+- Local scope path: A 型号表示注释 > 销钉与本体尺寸；外形页注意事项 > 快换组件另售；附件表 > LZK0480-W
+- Evidence type: TEXT + TABLE + DRAWING
+- Evidence: A 型型号页注明不附带压板安装销且本体尺寸与空白/H/K 一致；外形和附件页定义另售组件内容及 LKA0480-A 对应型号。
+
+## LKA-Q-0014
+
+**Type: MODEL**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: KOSMEK 液压产品目录公共参考
+- Model / Scope: LKA_R01_2023KW_C1N.pdf :: physical page 38, printed page 1730, O-ring notation grammar and mapping
+
+### Question
+
+请解读新标示 `OR NBR-90 P22A-N` 的材料识别、种类、公称号和品质等级，
+并给出它在同页新旧标示对照表中的旧标示。
+
+### Standard Answer
+
+`OR` 表示 O 形密封圈。`NBR-90` 是一般用丁腈橡胶、A 型硬度 90，对应
+旧材料识别符号 `1B`。`P` 是运动用种类标记，`22A` 是公称号，末尾 `N`
+是一般用品质等级。完整新标示 `OR NBR-90 P22A-N` 对应旧标示 `1BP22A`。
+
+### Scoring Standard
+
+- P1 [10]: 正确说明 `OR` 表示 O 形密封圈。
+- P2 [20]: 正确说明 `NBR-90` 是一般用丁腈橡胶、A 型硬度 90。
+- P3 [15]: 正确说明 `NBR-90` 对应旧材料识别符号 `1B`。
+- P4 [15]: 正确说明 `P` 表示运动用。
+- P5 [15]: 正确说明 `22A` 是公称号。
+- P6 [10]: 正确说明末尾 `N` 是一般用品质等级。
+- P7 [15]: 正确给出完整旧标示 `1BP22A`。
+
+### Accepted Variants
+
+- `丁腈橡胶` 可写为 `NBR` 或 `nitrile rubber`。
+- `A 型硬度 90` 可写为 `durometer A 90`。
+
+### Forbidden Errors
+
+- 将 `90` 解释为公称号或尺寸。
+- 将 `P` 解释为固定用或品质等级。
+- 将 `N` 解释为材料代码。
+- 将旧标示写成 `1AP22A`；`1A` 对应 NBR-70-1，不对应 NBR-90。
+
+### Tolerance
+
+- Exact field meanings and old/new mapping are required.
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 38
+- Printed page: 1730
+- Section: O 形密封圈的标示更改 > 新旧标示比较 / 新标示字段说明
+- Local scope path: OR NBR-90 P22A-N 字段图；对照表 > OR NBR-90 P22A-N / 1BP22A 行
+- Evidence type: TABLE + MODEL
+- Evidence: 字段图定义材料、种类、公称号和品质等级，对照表将该完整新标示与 1BP22A 逐行绑定。
+
+## LKA-Q-0015
+
+**Type: TABLE**
+
+### Target
+
+- Binding: EXACT_MODEL
+- Product: LZY-MD 板式安装座
+- Model / Scope: LZY0480-MD 用于 LKA0480
+
+### Question
+
+为 LKA0480 选择 LZY-MD 板式安装座时，应使用什么型号？请同时给出其
+设计编号、材料和表面处理、附带 O 形密封圈、重量，以及适用型号表对
+LKA0480 的确认。
+
+### Standard Answer
+
+应选择 `LZY0480-MD`，其设计编号为 `0`。材料为 S45C，表面处理为黑色
+氧化皮膜。附带 O 形密封圈为 `OR NBR-90 P5-N`，重量为 0.3 kg。
+适用机器型号表在 `LZY0480-MD` 列明确列出 LKA0480。
+
+### Scoring Standard
+
+- P1 [20]: 正确选择 `LZY0480-MD`。
+- P2 [10]: 正确给出设计编号 `0`。
+- P3 [15]: 正确给出材料 S45C。
+- P4 [15]: 正确给出黑色氧化皮膜表面处理。
+- P5 [15]: 正确给出 O 形密封圈 `OR NBR-90 P5-N`。
+- P6 [10]: 正确给出重量 0.3 kg。
+- P7 [15]: 明确适用型号表将 LZY0480-MD 与 LKA0480 绑定。
+
+### Accepted Variants
+
+- `黑色氧化皮膜` 可写为 `black oxide coating`。
+- O 形密封圈字段间空格可省略，但字段顺序不得变化。
+
+### Forbidden Errors
+
+- 将 LKA0480 选择为 WHZ0480-MD、LZ-MS 或 LZ-MP。
+- 将设计编号写为 `1`。
+- 将密封圈材料或公称号写成 NBR-70-1 或 P7。
+- 将 0.3 kg 写成 0.3 g。
+
+### Tolerance
+
+- Exact model, material, O-ring, and weight are required.
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 54-55
+- Printed page: 1698-1699
+- Section: 板式安装座 > 适用型号 / LZY-MD 型号表示与外形尺寸
+- Local scope path: 适用型号表 > LZY-MD / LKA；LZY0480-MD 列 > 设计编号 / O形密封圈 / 重量；页下注释 1
+- Evidence type: TABLE + MODEL
+- Evidence: 适用型号页将 LZY-MD 分配给 LKA，规格页在 LZY0480-MD 列列出 LKA0480、P5 密封圈和 0.3 kg，并在注释中给出 S45C 与黑色氧化皮膜。
+
+## LKA-Q-0016
+
+**Type: SPEC_LOOKUP**
+
+### Target
+
+- Binding: EXACT_MODEL
+- Product: BZS 直装式顺序阀
+- Model / Scope: BZS0100
+
+### Question
+
+请解读 `BZS0100` 的 G 螺纹尺寸和设计编号，并给出使用压力范围、开启压力
+范围、耐压、本体推荐紧固力矩和重量。
+
+### Standard Answer
+
+`10` 表示 G1/8A，设计编号为 `0`。使用压力范围为 1.0-6.0 MPa，开启压力
+范围为 2.0-7.0 MPa，耐压为 10.5 MPa。本体推荐紧固力矩为 10 N-m，
+重量为 35 g。
+
+### Scoring Standard
+
+- P1 [10]: 正确说明 `10` 对应 G1/8A。
+- P2 [10]: 正确说明设计编号为 `0`。
+- P3 [20]: 正确给出使用压力范围 1.0-6.0 MPa。
+- P4 [20]: 正确给出开启压力范围 2.0-7.0 MPa。
+- P5 [15]: 正确给出耐压 10.5 MPa。
+- P6 [15]: 正确给出推荐紧固力矩 10 N-m。
+- P7 [10]: 正确给出重量 35 g。
+
+### Accepted Variants
+
+- 范围连接符可写为 `~`、`-` 或 `至`。
+- `N-m` 可写为 `N·m`。
+
+### Forbidden Errors
+
+- 交换使用压力范围和开启压力范围。
+- 将 10.5 MPa 耐压当作持续使用压力上限。
+- 将 G1/8A 写成 G1/4A 或 G3/8A。
+- 将重量 35 g 与紧固力矩 10 N-m 互换。
+
+### Tolerance
+
+- Exact ranges, values, and units are required.
+
+### Source
+
+- PDF: LKA_R01_2023KW_C1N.pdf
+- Physical page: 49
+- Printed page: 1269
+- Section: 直装式顺序阀 > 型号表示 / 规格
+- Local scope path: BZS0100 型号字段 > 10 / 0；规格表 > BZS0100 列
+- Evidence type: TABLE + MODEL
+- Evidence: 型号表示定义 G 螺纹和设计编号，规格表在 BZS0100 列列出使用/开启压力范围、耐压、紧固力矩和重量。
