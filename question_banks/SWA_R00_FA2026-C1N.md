@@ -90,33 +90,33 @@ Negative grammar cases and reasons:
 - `SWA1001-N-065-H45-F-W`: design number `1` is not listed.
 - `SWA1000-N-065-H45-F-X`: option `X` is not listed.
 
-### 2.3 Source-first inventory and WP4 coverage dispositions
+### 2.3 Source Coverage
 
-`HIGH` and `MEDIUM` items are mapped to tested questions or given an explicit scoped
-disposition. The WP4 construction audit checks that every mapping resolves to an
-existing question and that no high-value testable object remains unresolved.
+Every `HIGH` and `MEDIUM` item is mapped to one or more questions or given an
+explicit scope decision. Mapped question IDs identify the testable coverage for
+the source object; exclusions state why no separate question is required.
 
-| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
+| Coverage ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Question coverage / scope decision |
 |---|---|---|---|---|---|---|
 | SWA-SI-001 | 1 / 693 | Product introduction > operating principle | TEXT + DRAWING | HIGH | Expand against the workpiece-hole wall, then pull the workpiece down for clamping | `SWA-Q-0002` |
 | SWA-SI-002 | 2 / 694 | Features > fixture and machining benefits | TEXT + DRAWING | MEDIUM | Shorter tool overhang, improved machining accuracy, compact fixture/rotary-table examples | No separate question: application-benefit examples are derivative outcomes, not stable operating or selection rules |
 | SWA-SI-003 | 3 / 695 | Features > body and application range | TEXT + TABLE + DRAWING | HIGH | SWA/SWE/SWH installation-size boundary; two body sizes; variable seat height and hole diameter | `SWA-Q-0003`; product-comparison illustration is contextual only |
 | SWA-SI-004 | 4 / 696 | Features > seating and no-pull-down applications | TEXT + DRAWING | HIGH | Seating reference, positioning behavior, and W-form deformation-control use | `SWA-Q-0005`, `SWA-Q-0025` |
-| SWA-SI-005 | 5 / 697 | Features > protection and cleaning | TEXT + DRAWING | HIGH | Protective cap, small sliding clearance, air-cleaning effect, replaceable claw, and rough-guide conditions | `SWA-Q-0004`; detailed handling controls in `SWA-Q-0023` |
+| SWA-SI-005 | 5 / 697 | Features > protection and cleaning | TEXT + DRAWING | HIGH | Protective cap, small sliding clearance, air-cleaning effect, replaceable claw, and rough-guide conditions | `SWA-Q-0004` covers protection, cleaning, and rough-guide conditions; `SWA-Q-0012` covers claw replacement |
 | SWA-SI-006 | 6 / 698 | Features > self-lock and pull-down mechanism | TEXT + DRAWING | HIGH | Spring clamp/self-lock at zero pressure, pull-down travel, and simplified internal structure | `SWA-Q-0005`, `SWA-Q-0019` |
 | SWA-SI-007 | 7 / 699 | Features > workpiece lift and confirmation | TEXT + DRAWING | HIGH | Lift-option dependency, lift travel, action confirmation, excessive lift, and broken-rod states | Lift dependency in `SWA-Q-0001`/`0006`; state diagnosis in `SWA-Q-0020` |
-| SWA-SI-008 | 8 / 700 | Operating principle and sensing states | STATE_DIAGRAM + TEXT | HIGH | Release/clamp sequences, pull-down threshold, seating confirmation, continuous air supply, and abnormal-state detection | `SWA-Q-0019`, `SWA-Q-0020` |
+| SWA-SI-008 | 8 / 700 | Operating principle and sensing states | STATE_DIAGRAM + TEXT | HIGH | Release/clamp sequences, pull-down threshold, seating confirmation, continuous air supply, and abnormal-state detection | `SWA-Q-0019`, `SWA-Q-0020`; continuous cleaning/sensing-air requirement in `SWA-Q-0024` |
 | SWA-SI-009 | 9-10 / 701-702 | Model designation > straight-hole form | TABLE + DRAWING | HIGH | Seven-field order, body/lift/hole/height/claw/option meanings, body-hole ranges, and W dependencies | `SWA-Q-0001`, `SWA-Q-0003` |
 | SWA-SI-010 | 11-12 / 703-704 | Model designation > tapered-hole form | TABLE + DRAWING | HIGH | Six-field order, terminal T, legal holes, angle-dependent tolerances, serration rule, and unavailable options | `SWA-Q-0006`, `SWA-Q-0007` |
 | SWA-SI-011 | 13 / 705 | Specifications > straight-hole form | TABLE | HIGH | A/N hole tolerances, eccentric allowance, travel, lift force, air volume, pressure, temperature, fluid, and special pressure limits | `SWA-Q-0001`, `SWA-Q-0008`, `SWA-Q-0009` |
 | SWA-SI-012 | 14 / 706 | Specifications > tapered-hole form | TABLE | HIGH | Taper angle/tolerance binding, eccentric allowance, travel, capacity, pressure, and unavailable 060 code | `SWA-Q-0006` through `SWA-Q-0009` |
 | SWA-SI-013 | 15 / 707 | Standard form > clamping-force table, formula, and chart | FORMULA + CHART + TABLE | HIGH | Force-pressure relationships for serrated/T and F forms, spring force at 0 MPa, and restricted pressure ranges | `SWA-Q-0015`, `SWA-Q-0017` |
 | SWA-SI-014 | 16 / 708 | W form > expansion-force table, formula, and chart | FORMULA + CHART + TABLE | HIGH | Expansion-force relationships, friction assumption, 0 MPa spring force, 0.1 mm maximum pull-down, and pressure limits | `SWA-Q-0016`, `SWA-Q-0018` |
-| SWA-SI-015 | 17-18 / 709-710 | SWA1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | `SWA-Q-0010`; thin-wall/interference risks consolidated in `SWA-Q-0022` |
-| SWA-SI-016 | 19-20 / 711-712 | SWA2000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | `SWA-Q-0010`; thin-wall/interference risks consolidated in `SWA-Q-0022` |
+| SWA-SI-015 | 17-18 / 709-710 | SWA1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | `SWA-Q-0010` covers representative H/AA/mass selection; `SWA-Q-0022` and `SWA-Q-0028` cover interference and thin-wall risks; remaining coordinate rows are excluded as low-value numeric swaps within the same drawing |
+| SWA-SI-016 | 19-20 / 711-712 | SWA2000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece/mounting-hole machining, height variants, ports, mass, and interference cautions | `SWA-Q-0010` covers representative H/AA/mass selection; `SWA-Q-0022` and `SWA-Q-0028` cover interference and thin-wall risks; remaining coordinate rows are excluded as low-value numeric swaps within the same drawing |
 | SWA-SI-017 | 21 / 713 | Configuration example > SWA-N with VWM | DRAWING + TEXT | HIGH | D/C locating-pin arrangement, rough-guide design, SWA vertical orientation, and mandatory Lift N selection | `SWA-Q-0011`, `SWA-Q-0021` |
 | SWA-SI-018 | 22 / 714 | Pneumatic-circuit examples | STATE_DIAGRAM + TABLE + TEXT | HIGH | One/two-solenoid circuits, VWM-before-SWA sequence, speed-control fallback, sensor-per-clamp rule, sensing states, and failure consequences | `SWA-Q-0021` |
-| SWA-SI-019 | 23 / 715 | Design cautions > unpowered state and seating | TEXT + DRAWING | HIGH | Spring-clamped zero-pressure state, release-air requirement for loading, Z datum, full-seat contact, and seating confirmation | Unpowered state in `SWA-Q-0005`; release/clamp procedure in `SWA-Q-0019`; seating risks in `SWA-Q-0022` |
+| SWA-SI-019 | 23 / 715 | Design cautions > unpowered state and seating | TEXT + DRAWING | HIGH | Spring-clamped zero-pressure state, release-air requirement for loading, Z datum, full-seat contact, and seating confirmation | `SWA-Q-0005` covers the unpowered state; `SWA-Q-0019` covers release/clamp and full-seat contact; the Z-datum label is not a separate question because it identifies that same seating surface |
 | SWA-SI-020 | 23 / 715 | Design cautions > force and workpiece constraints | TEXT + DRAWING | HIGH | Trial clamping, insufficient-force drop risk, hole size/depth/taper/hardness limits, thin-wall deformation, and continuous cleaning/sensing air | `SWA-Q-0022` covers hole-design constraints; `SWA-Q-0028` covers thin-wall trial clamping; `SWA-Q-0024` covers continuous cleaning/sensing air |
 | SWA-SI-021 | 24 / 716 | Handling cautions > horizontal and manual loading | TEXT + DRAWING | HIGH | Pre-clamping for horizontal use, no tilted/floating loading, fully released loading, small support clearance, and rough guides | `SWA-Q-0023`; horizontal pre-clamp is a documented application-specific addition |
 | SWA-SI-022 | 24 / 716 | Robot handling | TEXT + DRAWING | HIGH | Perpendicular insertion/removal, complete withdrawal before coordinate motion, controlled insertion speed, and motion interlock | `SWA-Q-0023` |
