@@ -83,8 +83,8 @@ coverage or the next Work Package; it does not claim audit completion in advance
 | VFH-SI-003 | 2 / 1310 | Features > expansion amount and automation clearance | TEXT + DRAWING | HIGH | 1.1 mm expansion; VFH1000 0.7 mm; release-state clearance | Covered by `VFH-Q-0002` and `VFH-Q-0004`; audit in WP4 |
 | VFH-SI-004 | 2 / 1310 | Features > concentric nose measurement | TEXT + DRAWING | MEDIUM | VFH2000/3000 allow installation-spacing measurement; VFH1000 does not | Covered by `VFH-Q-0005`; audit in WP4 |
 | VFH-SI-005 | 2 / 1310 | Features > air cleaning | TEXT + DRAWING | HIGH | Air path and contamination-prevention purpose | Covered by `VFH-Q-0030`; audit in WP4 |
-| VFH-SI-006 | 3-5 / 1311-1313 | Application and system examples | DRAWING | MEDIUM | Robot/gantry handling and D/C two-pin fixture arrangement | Fixture arrangement covered by `VFH-Q-0006`; robot/gantry images are illustrative and need no separate numeric-swap question |
-| VFH-SI-007 | 4 / 1312 | Product family comparison | TABLE + DRAWING | MEDIUM | VFL/VFM/VFH/VFJ/VFK class, control, pressure, action, and use-case differences | Nearest VFM/VFH selection comparison covered by `VFH-Q-0007`; non-VFH product rows are outside this product bank |
+| VFH-SI-006 | 3-5 / 1311-1313 | Application and system examples | DRAWING | MEDIUM | Robot/gantry handling and D/C two-pin fixture arrangement | Covered by `VFH-Q-0006`; robot/gantry images are excluded as illustrative application examples without a separate testable VFH claim |
+| VFH-SI-007 | 4 / 1312 | Product family comparison | TABLE + DRAWING | MEDIUM | VFL/VFM/VFH/VFJ/VFK class, control, pressure, action, and use-case differences | Covered by `VFH-Q-0007` for the nearest VFM/VFH selection boundary; remaining non-VFH rows are excluded as outside this product bank |
 | VFH-SI-008 | 6 / 1314 | Necessary items > locating workpiece holes | TEXT + DRAWING | HIGH | Hole range phi 5-15 mm and the two tolerance bands | Covered by `VFH-Q-0008`; audit in WP4 |
 | VFH-SI-009 | 6 / 1314 | Necessary items > VFH-C installation phase | TEXT + DRAWING | HIGH | VFH-D datum role, VFH-C Y-axis role, and required phase orientation | Covered by `VFH-Q-0006` and `VFH-Q-0032`; audit in WP4 |
 | VFH-SI-010 | 6 / 1314 | Necessary items > seating and workpiece clamp | TEXT + DRAWING | HIGH | No built-in Z datum seat and no clamping function | Covered by `VFH-Q-0031`; audit in WP4 |
@@ -95,15 +95,15 @@ coverage or the next Work Package; it does not claim audit completion in advance
 | VFH-SI-015 | 8 / 1316 | Shear load/displacement > VFH1000 | CHART | HIGH | Visual displacement reads for 050/060/070/080 series | Covered by `VFH-Q-0021`; audit in WP4 |
 | VFH-SI-016 | 8 / 1316 | Shear load/displacement > VFH2000 | CHART | HIGH | Visual displacement reads for 090/100/110/120/130 series | Covered by `VFH-Q-0022`; audit in WP4 |
 | VFH-SI-017 | 8 / 1316 | Shear load/displacement > VFH3000 | CHART | HIGH | Visual displacement reads for 140/150 series | Covered by `VFH-Q-0023`; audit in WP4 |
-| VFH-SI-018 | 9-10 / 1317-1318 | VFH1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Representative selection covered by `VFH-Q-0015`; audit in WP4 |
-| VFH-SI-019 | 11-12 / 1319-1320 | VFH2000/3000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Representative selection covered by `VFH-Q-0016`; audit in WP4 |
-| VFH-SI-020 | 9-12 / 1317-1320 | Installation notes attached to dimension drawings | TEXT + DRAWING | HIGH | Bolt class, washer prohibition, O-ring order, lifting, port placement, and hole-depth risks | Covered by `VFH-Q-0024` and `VFH-Q-0035`; audit in WP4 |
-| VFH-SI-021 | 13 / 1321 | Design cautions > pressure, circuit, air, clamp, phase, seat | TEXT + DRAWING | HIGH | Preconditions and failure consequences for core fixture design | Covered by `VFH-Q-0030`-`VFH-Q-0032`; audit in WP4 |
+| VFH-SI-018 | 9-10 / 1317-1318 | VFH1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Covered by representative `VFH-Q-0015`; remaining size rows and port coordinates are excluded as low-value numeric swaps within the same VFH1000 drawing |
+| VFH-SI-019 | 11-12 / 1319-1320 | VFH2000/3000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Covered by representative `VFH-Q-0016`; remaining size/height rows and port coordinates are excluded as low-value numeric swaps within the same drawing |
+| VFH-SI-020 | 9-12 / 1317-1320 | Installation notes attached to dimension drawings | TEXT + DRAWING | HIGH | Bolt class, washer prohibition, O-ring order, lifting, port placement, and hole-depth risks | Covered by `VFH-Q-0024` and `VFH-Q-0035`; lifting-thread use and model-specific port placement are excluded as lower-value drawing details after core installation risks are covered |
+| VFH-SI-021 | 13 / 1321 | Design cautions > pressure, circuit, air, clamp, phase, seat | TEXT + DRAWING | HIGH | Preconditions and failure consequences for core fixture design | Covered by `VFH-Q-0011`, `VFH-Q-0026`, and `VFH-Q-0030`-`VFH-Q-0032`; audit in WP4 |
 | VFH-SI-022 | 13 / 1321 | Design cautions > vertical use and tilt | TEXT + DRAWING | HIGH | Pre-clamping, wear checks, 4/100-5/100 tilt limit, and rough guide pin | Covered by `VFH-Q-0033` and `VFH-Q-0034`; audit in WP4 |
 | VFH-SI-023 | 13 / 1321 | Design cautions > wall, spacing, and hole depth | TEXT + DRAWING | HIGH | Thin-wall deformation, eccentricity-aware spacing, and insufficient-expansion/damage risk | Covered by `VFH-Q-0035`; audit in WP4 |
 | VFH-SI-024 | 14 / 1322 | Installation > fluid, cleaning, tape, bolts, O-ring | TEXT + TABLE + DRAWING | HIGH | Fluid selection, contamination control, tape practice, 6.3 N-m bolt torque, and seal installation | Covered by `VFH-Q-0024` and `VFH-Q-0025`; audit in WP4 |
 | VFH-SI-025 | 14 / 1322 | Hydraulic reference circuits | STATE_DIAGRAM + TEXT | HIGH | VFH-before-actuator sequence, independent/shared circuits, back-pressure check valve, and surge avoidance | Covered by `VFH-Q-0026`; audit in WP4 |
-| VFH-SI-026 | 15 / 1725 | Common hydraulic appendix > oil and air bleeding | TABLE + PROCEDURE | MEDIUM | ISO-VG-32 examples and the five-step air-bleeding process | Covered by `VFH-Q-0027`; audit in WP4 |
+| VFH-SI-026 | 15 / 1725 | Common hydraulic appendix > oil and air bleeding | TABLE + PROCEDURE | MEDIUM | ISO-VG-32 examples and the five-step air-bleeding process | Covered by `VFH-Q-0011` and `VFH-Q-0027`; individual oil-brand examples are excluded as non-durable procurement examples |
 | VFH-SI-027 | 16 / 1726 | Common hydraulic appendix > speed control | STATE_DIAGRAM + TEXT | MEDIUM | Single/double-acting meter-in/meter-out circuit constraints | Covered by `VFH-Q-0028`; audit in WP4 |
 | VFH-SI-028 | 17 / 1727 | Common hydraulic appendix > operation safety | TEXT | HIGH | Qualified operation, zero-energy disassembly, pinch avoidance, and no modification | Covered by `VFH-Q-0036`; audit in WP4 |
 | VFH-SI-029 | 17 / 1727 | Common hydraulic appendix > maintenance | TEXT | HIGH | Cleaning, datum-surface care, air bleeding, fastening, oil, sound/motion, storage, and overhaul | Covered by `VFH-Q-0029`; audit in WP4 |
@@ -118,8 +118,8 @@ coverage or the next Work Package; it does not claim audit completion in advance
 - FACT: 3
 - SPEC_LOOKUP: 5
 - MODEL: 3
-- TABLE: 7
-- CALCULATION: 2
+- TABLE: 6
+- CALCULATION: 3
 - CHART: 3
 - PROCEDURE: 6
 - CAUTION: 7
@@ -264,7 +264,8 @@ VFH1000 的重复定位精度为 30 um；VFH2000 和 VFH3000 均为 10 um。该�
 - P1 [30]: 正确给出 VFH1000 的重复定位精度为 30 um。
 - P2 [30]: 正确给出 VFH2000 的重复定位精度为 10 um。
 - P3 [30]: 正确给出 VFH3000 的重复定位精度为 10 um。
-- P4 [10]: 正确说明测量条件为同一条件且无载荷。
+- P4 [5]: 正确说明测量时保持同一条件。
+- P5 [5]: 正确说明测量时无载荷。
 
 ### Accepted Variants
 
@@ -406,10 +407,12 @@ VFH-D 相当于圆销，承担基准定位；VFH-C 相当于削边销，承担�
 
 ### Scoring Standard
 
-- P1 [30]: 正确说明 VFH-D 相当于圆销并承担基准定位。
-- P2 [30]: 正确说明 VFH-C 相当于削边销并承担单个方向定位。
-- P3 [20]: 正确说明涨紧下拉式夹紧器用于固定工件。
-- P4 [20]: 正确说明粗导销用于搬入、搬出时的粗导向。
+- P1 [15]: 正确说明 VFH-D 相当于圆销。
+- P2 [15]: 正确说明 VFH-D 承担基准定位。
+- P3 [15]: 正确说明 VFH-C 相当于削边销。
+- P4 [15]: 正确说明 VFH-C 承担单个方向定位。
+- P5 [20]: 正确说明涨紧下拉式夹紧器用于固定工件。
+- P6 [20]: 正确说明粗导销用于搬入、搬出时的粗导向。
 
 ### Accepted Variants
 
@@ -515,9 +518,10 @@ VFH 定位用工件孔的公称孔径指定范围是什么？phi 5-8 mm 与 phi 
 
 ### Scoring Standard
 
-- P1 [20]: 正确给出指定范围为 phi 5-15 mm 且按 1 mm 递增。
-- P2 [40]: 正确给出 phi 5-8 mm 的孔公差为 ±0.3 mm。
-- P3 [40]: 正确给出 phi 9-15 mm 的孔公差为 +0.7/-0.3 mm。
+- P1 [10]: 正确给出指定范围为 phi 5-15 mm。
+- P2 [10]: 正确说明公称孔径按 1 mm 递增。
+- P3 [40]: 正确给出 phi 5-8 mm 的孔公差为 ±0.3 mm。
+- P4 [40]: 正确给出 phi 9-15 mm 的孔公差为 +0.7/-0.3 mm。
 
 ### Accepted Variants
 
@@ -850,53 +854,64 @@ VFH1000：释放时 0.16 cm3，夹紧时 0.07 cm3；VFH2000：释放时 0.21 cm3
 
 ## VFH-Q-0015
 
-**Type: TABLE**
+**Type: CALCULATION**
 
 ### Target
 
 - Binding: EXACT_MODEL
 - Product: VFH 大扩径量型通用扩径定位销
-- Model / Scope: VFH1000-080-D-H20 locating-pin geometry
+- Model / Scope: VFH1000-080-D-H20 workpiece-hole and locating-pin diameter limits
 
 ### Question
 
-对 `VFH1000-080-D-H20`，给出释放时定位销直径上限、全行程时定位销直径
-下限和定位销行程。
+`VFH1000-080-D-H20` 对应的工件孔为 phi 8 ±0.3 mm，释放时定位销直径
+不大于 phi 7.6 mm，全行程时不小于 phi 8.3 mm。用这些边界计算：最小
+工件孔与最大释放直径组合时，至少有多少直径方向间隙？最大工件孔与最小
+全行程直径组合时，剩余间隙是什么关系？说明两种结果的定位含义。
 
 ### Standard Answer
 
-释放时定位销直径为 phi 7.6 mm 以下；全行程时为 phi 8.3 mm 以上；定位销
-行程为 2.1 mm。
+工件孔范围为 phi 7.7-8.3 mm。释放状态的最小直径方向间隙为
+`7.7 - 7.6 = 0.1 mm`，且由于 7.6 mm 是定位销直径上限，实际间隙可以
+更大。全行程状态以最大工件孔和最小定位销直径比较：`8.3 - 8.3 = 0 mm`；
+定位销还可能更大，因此剩余间隙不大于 0 mm，即达到零间隙接触或过盈，
+与释放时便于装卸、扩径后零间隙定位的功能一致。
 
 ### Scoring Standard
 
-- P1 [35]: 正确给出释放时定位销直径为 phi 7.6 mm 以下。
-- P2 [35]: 正确给出全行程时定位销直径为 phi 8.3 mm 以上。
-- P3 [30]: 正确给出定位销行程为 2.1 mm。
+- P1 [15]: 根据 phi 8 ±0.3 mm 得到最小工件孔为 7.7 mm。
+- P2 [15]: 根据 phi 8 ±0.3 mm 得到最大工件孔为 8.3 mm。
+- P3 [10]: 使用释放时定位销直径上限 7.6 mm。
+- P4 [15]: 正确回代释放状态间隙式 `7.7 - 7.6`。
+- P5 [15]: 得出释放状态至少有 0.1 mm 直径方向间隙。
+- P6 [10]: 使用全行程定位销直径下限 8.3 mm。
+- P7 [10]: 得出最大孔组合下的剩余间隙不大于 0 mm。
+- P8 [10]: 正确解释为释放时保留装卸间隙、扩径后实现零间隙接触或过盈。
 
 ### Accepted Variants
 
-- `以下` 可写为 `<=`；`以上` 可写为 `>=`。
-- `phi` 可写为 `φ`、`Φ` 或 `直径`。
+- `至少 0.1 mm` 可写为 `>= 0.1 mm`，但必须说明这是直径方向间隙。
+- 全行程关系可写为 `间隙 <= 0 mm`、`零间隙或过盈`。
 
 ### Forbidden Errors
 
-- 对调释放时上限与全行程时下限。
-- 将 2.1 mm 行程写成直径值。
+- 将直径方向间隙除以 2 后作为本题答案。
+- 将释放状态的 0.1 mm 错写成固定间隙，而忽略 7.6 mm 是直径上限。
+- 声称最大孔与最小全行程直径组合后仍有正间隙。
 
 ### Tolerance
 
-- Exact source limits and units are required; no additional numerical tolerance.
+- Deterministic Decimal arithmetic at 0.1 mm input precision; exact subtraction, no rounding. Released diametral clearance must be >= 0.1 mm and full-stroke remaining clearance must be <= 0 mm.
 
 ### Source
 
 - PDF: VFH_R00_2023KW_C1N.pdf
-- Physical page: 10
-- Printed page: 1318
-- Section: 外形尺寸表以及安装部加工尺寸表
-- Local scope path: VFH1000 表 > 工件孔径符号 080 列 > 定位销直径与定位销行程
-- Evidence type: TABLE
-- Evidence: 080 列列出释放时 phi 7.6 mm 以下、全行程时 phi 8.3 mm 以上；定位销行程公共行为 2.1 mm。
+- Physical page: 7, 10
+- Printed page: 1315, 1318
+- Section: 规格 / 外形尺寸表以及安装部加工尺寸表
+- Local scope path: 规格 > 080 工件孔 phi 8 ±0.3 mm；VFH1000 表 > 080 列 > 释放时与全行程时定位销直径
+- Evidence type: TABLE + DRAWING
+- Evidence: 规格表把 080 定义为 phi 8 ±0.3 mm；VFH1000 尺寸表规定释放时定位销直径不大于 phi 7.6 mm、全行程时不小于 phi 8.3 mm。
 
 ## VFH-Q-0016
 
@@ -1022,10 +1037,11 @@ JIS B 0601:1982 的 Rmax 范围分别是什么？
 ### Scoring Standard
 
 - P1 [25]: 正确转换为旧标示 `1BP5`。
-- P2 [25]: 正确解释 `NBR-90`/`1B` 为一般用丁腈橡胶、A 型硬度 90。
-- P3 [15]: 正确解释 `P` 为滑动用种类标记。
-- P4 [15]: 正确解释 `5` 为公称号。
-- P5 [20]: 正确解释末尾 `N` 为一般用品质等级。
+- P2 [15]: 正确解释 `NBR-90`/`1B` 为一般用丁腈橡胶。
+- P3 [10]: 正确解释其 A 型硬度为 90。
+- P4 [15]: 正确解释 `P` 为滑动用种类标记。
+- P5 [15]: 正确解释 `5` 为公称号。
+- P6 [20]: 正确解释末尾 `N` 为一般用品质等级。
 
 ### Accepted Variants
 
@@ -1075,10 +1091,12 @@ JIS B 0601:1982 的 Rmax 范围分别是什么？
 
 ### Scoring Standard
 
-- P1 [25]: 使用水平安装公式且包含摩擦系数分母。
-- P2 [25]: 正确代入 340 N、0.25、0.20 和 9.8。
-- P3 [25]: 正确得到未舍入结果约 43.3673 kg。
-- P4 [25]: 按 ROUND_HALF_UP 给出 43.37 kg。
+- P1 [15]: 选择 PDF 的水平安装公式。
+- P2 [15]: 在公式分母中使用着座面摩擦系数。
+- P3 [20]: 正确回代 340 N、0.25、0.20 和 9.8。
+- P4 [20]: 正确得到未舍入结果约 43.3673。
+- P5 [20]: 按 ROUND_HALF_UP 给出最终数值 43.37。
+- P6 [10]: 最终结果明确使用 kg 作为单位。
 
 ### Accepted Variants
 
@@ -1128,10 +1146,12 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 ### Scoring Standard
 
-- P1 [25]: 使用垂直安装公式且不引入摩擦系数。
-- P2 [25]: 正确代入 810 N、9.8 和 0.25。
-- P3 [25]: 正确得到未舍入结果约 20.6633 kg。
-- P4 [25]: 按 ROUND_HALF_UP 给出 20.66 kg。
+- P1 [20]: 选择 PDF 的垂直安装公式。
+- P2 [10]: 未在垂直公式中引入摩擦系数。
+- P3 [20]: 正确回代 810 N、9.8 和 0.25。
+- P4 [20]: 正确得到未舍入结果约 20.6633。
+- P5 [20]: 按 ROUND_HALF_UP 给出最终数值 20.66。
+- P6 [10]: 最终结果明确使用 kg 作为单位。
 
 ### Accepted Variants
 
@@ -1179,7 +1199,8 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 - P1 [40]: 读取 VFH1000 图中的 `VFH1000-080` 曲线。
 - P2 [30]: 在横轴 100 N 位置读取变位。
-- P3 [30]: 给出约 0.030 mm 且单位正确。
+- P3 [20]: 给出约 0.030 的图表读数。
+- P4 [10]: 变位读数明确使用 mm 作为单位。
 
 ### Accepted Variants
 
@@ -1210,37 +1231,41 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 ### Target
 
-- Binding: EXACT_MODEL
+- Binding: MODEL_FAMILY
 - Product: VFH 大扩径量型通用扩径定位销
-- Model / Scope: VFH2000-120-D-H20 shear-load/displacement chart
+- Model / Scope: VFH2000-090-D versus VFH2000-120-D shear-load/displacement chart
 
 ### Question
 
-按剪切载荷/变位曲线图读取：径向夹紧状态下，`VFH2000-120-D-H20`
-承受 800 N、方向垂直于 VFH 轴心的静态剪切载荷时，变位约为多少 mm？
+按剪切载荷/变位曲线图读取：在 800 N、方向垂直于 VFH 轴心的静态剪切
+载荷下，分别给出 `VFH2000-090` 与 `VFH2000-120` 的变位，计算两者读数
+之差，并判断哪个型号的变位较小。
 
 ### Standard Answer
 
-图上读数约为 `0.042 mm`。
+`VFH2000-090` 约为 `0.050 mm`，`VFH2000-120` 约为 `0.042 mm`；两者
+相差约 `0.008 mm`，`VFH2000-120` 的变位较小。
 
 ### Scoring Standard
 
-- P1 [40]: 读取 VFH2000 图中的 `VFH2000-120` 曲线。
-- P2 [30]: 在横轴 800 N 位置读取变位。
-- P3 [30]: 给出约 0.042 mm 且单位正确。
+- P1 [25]: 将 VFH2000-090 在 800 N 处读为约 0.050 mm。
+- P2 [25]: 将 VFH2000-120 在 800 N 处读为约 0.042 mm。
+- P3 [25]: 正确计算两者读数之差约为 0.008 mm。
+- P4 [25]: 正确判断 VFH2000-120 的变位较小。
 
 ### Accepted Variants
 
-- 接受 0.039-0.045 mm 范围内的图表读数。
+- VFH2000-090 接受 0.047-0.053 mm。
+- VFH2000-120 接受 0.039-0.045 mm；读数差接受 0.004-0.012 mm。
 
 ### Forbidden Errors
 
-- 套用图中文字示例中 VFH2000-090 的 0.050 mm。
-- 使用 VFH2000-130 曲线。
+- 对调 VFH2000-090 与 VFH2000-120 的读数。
+- 只给出一个型号的读数而不完成同载荷比较。
 
 ### Tolerance
 
-- Chart reading tolerance: 0.042 ± 0.003 mm.
+- Chart reading tolerance: each curve value ± 0.003 mm; derived difference ± 0.004 mm.
 
 ### Source
 
@@ -1248,9 +1273,9 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 - Physical page: 8
 - Printed page: 1316
 - Section: 剪切载荷 / 变位曲线图
-- Local scope path: 剪切载荷/变位曲线图 > VFH2000 > VFH2000-120 曲线 > 800 N
+- Local scope path: 剪切载荷/变位曲线图 > VFH2000 > VFH2000-090 与 VFH2000-120 曲线 > 800 N
 - Evidence type: CHART
-- Evidence: VFH2000 图中紫色 VFH2000-120 曲线在 800 N 附近对应约 0.042 mm 变位。
+- Evidence: VFH2000 图中 VFH2000-090 在 800 N 处约为 0.050 mm，紫色 VFH2000-120 曲线在同一载荷处约为 0.042 mm，后者更低。
 
 ## VFH-Q-0023
 
@@ -1325,10 +1350,13 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 ### Scoring Standard
 
-- P1 [25]: 指定随附 M5×0.8、强度等级 12.9 的内六角螺栓。
-- P2 [25]: 指定 6.3 N·m 并均匀紧固。
-- P3 [20]: 明确禁止弹簧垫圈和齿形垫圈。
-- P4 [30]: 明确先装夹具侧 O 形密封圈，再装本体。
+- P1 [15]: 指定随附 M5×0.8 内六角螺栓。
+- P2 [15]: 指定螺栓强度等级 12.9。
+- P3 [20]: 指定紧固扭矩 6.3 N·m。
+- P4 [10]: 要求各螺栓均匀紧固。
+- P5 [10]: 明确禁止弹簧垫圈。
+- P6 [10]: 明确禁止齿形垫圈。
+- P7 [20]: 明确先装夹具侧 O 形密封圈，再装本体。
 
 ### Accepted Variants
 
@@ -1376,10 +1404,13 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 ### Scoring Standard
 
-- P1 [30]: 要求彻底清洗管路、管接头和夹具内部流体通路。
-- P2 [20]: 说明清洗目的是防止异物或切削屑进入液压系统。
-- P3 [25]: 指定密封胶带端部保留 1-2 个螺纹牙。
-- P4 [25]: 说明污染或胶带残留会导致漏油、动作不良或故障。
+- P1 [10]: 要求彻底清洗管路。
+- P2 [10]: 要求彻底清洗管接头。
+- P3 [10]: 要求彻底清洗夹具内部流体通路。
+- P4 [20]: 说明清洗目的是防止异物或切削屑进入液压系统。
+- P5 [25]: 指定密封胶带端部保留 1-2 个螺纹牙。
+- P6 [15]: 说明污染或胶带残留会导致漏油。
+- P7 [10]: 说明污染或胶带残留会导致动作不良或故障。
 
 ### Accepted Variants
 
@@ -1428,9 +1459,12 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 ### Scoring Standard
 
 - P1 [25]: 明确 VFH 先定位、其他执行元件后动作。
-- P2 [20]: 说明错误顺序可能导致精度下降或设备损伤。
-- P3 [25]: 背压时设置止回阀且推荐开启压力低于 0.04 MPa。
-- P4 [30]: 要求调整流量以避免浪涌压力。
+- P2 [10]: 说明错误顺序可能导致定位精度下降。
+- P3 [10]: 说明错误顺序可能导致设备损伤。
+- P4 [20]: 回流侧存在背压时设置止回阀。
+- P5 [15]: 指定止回阀推荐开启压力低于 0.04 MPa。
+- P6 [10]: 要求调整回路流量。
+- P7 [10]: 说明流量调整用于避免浪涌压力。
 
 ### Accepted Variants
 
@@ -1479,11 +1513,14 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 ### Scoring Standard
 
-- P1 [20]: 将供给压力调至 2 MPa 以下。
-- P2 [20]: 将最靠近执行元件的接头螺母松开约一圈。
-- P3 [20]: 左右摇动配管并排出含空气的液压油。
-- P4 [20]: 空气排尽后重新拧紧接头螺母。
-- P5 [20]: 优先在回路最高且最远端排气，或在该处设置排气阀。
+- P1 [15]: 将供给压力调至 2 MPa 以下。
+- P2 [10]: 选择最靠近执行元件的接头螺母。
+- P3 [10]: 将该接头螺母松开约一圈。
+- P4 [10]: 左右摇动配管使连接部位松动。
+- P5 [15]: 排出含空气的液压油。
+- P6 [15]: 空气排尽后重新拧紧接头螺母。
+- P7 [15]: 优先在回路最高且最远端排气。
+- P8 [10]: 板式配管可在该位置设置排气阀。
 
 ### Accepted Variants
 
@@ -1533,10 +1570,14 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 ### Scoring Standard
 
-- P1 [25]: 说明一般复动夹紧器两侧均采用回油节流。
-- P2 [25]: 完整列出八个进油节流例外型号。
-- P3 [25]: 说明例外型号误用回油节流可导致异常高压、漏油或损坏。
-- P4 [25]: 说明混合速度控制会使单动侧释放异常或过慢。
+- P1 [20]: 说明一般复动夹紧器两侧均采用回油节流。
+- P2 [20]: 完整列出八个例外型号。
+- P3 [15]: 说明八个例外型号两侧采用进油节流。
+- P4 [15]: 说明例外型号误用回油节流可导致异常高压。
+- P5 [5]: 说明异常高压可能引起漏油。
+- P6 [5]: 说明异常高压可能造成设备损坏。
+- P7 [10]: 说明单动与复动执行元件原则上不共用同一速度控制回路。
+- P8 [10]: 说明混用会使单动侧释放异常或释放过慢。
 
 ### Accepted Variants
 
@@ -1587,9 +1628,11 @@ ROUND_HALF_UP 保留两位小数，单位为 kg。
 
 - P1 [20]: 定期清洁定位设备各基准面。
 - P2 [20]: 自动对接方式下定期排净回路空气。
-- P3 [20]: 检查配管和各紧固件有无松动并及时加固。
-- P4 [20]: 检查液压油是否老化。
-- P5 [20]: 检查异常声音及动作是否正常、顺畅。
+- P3 [15]: 检查配管和各紧固件有无松动。
+- P4 [5]: 发现松动时及时加固。
+- P5 [20]: 检查液压油是否老化。
+- P6 [10]: 检查装置是否存在异常声音。
+- P7 [10]: 检查装置动作是否正常、顺畅。
 
 ### Accepted Variants
 
@@ -1788,7 +1831,8 @@ VFH 内部产生不均匀磨损，因此要定期检查定位精度；超出允�
 - P1 [30]: 要求设置外部预夹紧机构。
 - P2 [25]: 说明预夹紧用于防止释放时工件下落或倾倒。
 - P3 [25]: 说明垂直使用会造成内部不均匀磨损。
-- P4 [20]: 要求定期检查精度并在超差时更换。
+- P4 [10]: 要求定期检查定位精度。
+- P5 [10]: 定位精度超差时更换产品。
 
 ### Accepted Variants
 
@@ -1838,7 +1882,8 @@ VFH 内部产生不均匀磨损，因此要定期检查定位精度；超出允�
 - P1 [30]: 给出允许倾斜量 4/100-5/100。
 - P2 [25]: 给出约等角度 2-3°。
 - P3 [25]: 要求使用粗导销先行导向。
-- P4 [20]: 明确避免超限或工件直接斜压定位销。
+- P4 [10]: 明确不得超过规定倾斜范围。
+- P5 [10]: 避免工件直接斜压定位销。
 
 ### Accepted Variants
 
@@ -1890,7 +1935,8 @@ D/C 两销间距必须计入 VFH-C 的容许偏心量，避免过约束或无法
 - P2 [20]: 要求采用前试验确认定位精度。
 - P3 [20]: 说明两销间距设计需计入 VFH-C 容许偏心量。
 - P4 [20]: 要求安装孔深度正确。
-- P5 [20]: 说明孔深错误会造成扩径不足或产品损坏。
+- P5 [10]: 说明孔深错误会造成扩径不足。
+- P6 [10]: 说明孔深错误可能造成产品损坏。
 
 ### Accepted Variants
 
@@ -1939,11 +1985,16 @@ D/C 两销间距必须计入 VFH-C 的容许偏心量，避免过约束或无法
 
 ### Scoring Standard
 
-- P1 [20]: 先采取防坠落和防误动作措施。
-- P2 [20]: 切断压力源和电源并确认回路压力为零。
-- P3 [20]: 高温设备完全冷却后再拆卸。
-- P4 [20]: 重新启动前确认连接部位无异常。
-- P5 [20]: 不触摸运动部件且不擅自解体或改造。
+- P1 [10]: 先采取防止被驱动物体坠落的措施。
+- P2 [10]: 先采取防止设备误动作的措施。
+- P3 [5]: 切断压力源。
+- P4 [5]: 切断电源。
+- P5 [5]: 确认油压回路压力为零。
+- P6 [5]: 确认气压回路压力为零。
+- P7 [15]: 高温设备完全冷却后再拆卸。
+- P8 [15]: 重新启动前确认连接部位无异常。
+- P9 [15]: 不触摸运动中的夹紧器或机构。
+- P10 [15]: 不擅自解体或改造产品。
 
 ### Accepted Variants
 
