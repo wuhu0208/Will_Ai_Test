@@ -121,9 +121,9 @@ the source object; exclusions state why no separate question is required.
 | SWA-SI-021 | 24 / 716 | Handling cautions > horizontal and manual loading | TEXT + DRAWING | HIGH | Pre-clamping for horizontal use, no tilted/floating loading, fully released loading, small support clearance, and rough guides | `SWA-Q-0023`; horizontal pre-clamp is a documented application-specific addition |
 | SWA-SI-022 | 24 / 716 | Robot handling | TEXT + DRAWING | HIGH | Perpendicular insertion/removal, complete withdrawal before coordinate motion, controlled insertion speed, and motion interlock | `SWA-Q-0023` |
 | SWA-SI-023 | 25 / 717 | Installation > air, cleaning, tape, bolts, and ports | TEXT + TABLE | HIGH | Filtered dry air/no lubrication, pre-cleaning, tape practice, M5 class 12.9 at 6.3 N-m, port identities, and phi 6/4 minimum tubing | `SWA-Q-0024` |
-| SWA-SI-024 | 25 / 717 | Operation safety | TEXT | HIGH | Qualified operator, anti-drop/anti-motion controls, zero-energy disassembly, cooling, restart inspection, pinch avoidance, no modification, and spring hazard | `SWA-Q-0027`; spring-disassembly hazard in `SWA-Q-0026`; product-local rules control over common appendix |
+| SWA-SI-024 | 25 / 717 | Operation safety | TEXT | HIGH | Operator knowledge and professional experience, anti-drop/anti-motion controls, zero-energy disassembly, cooling, restart inspection, no contact with the moving workpiece/pallet or clamp, no modification, and spring hazard | `SWA-Q-0027`; spring-disassembly hazard in `SWA-Q-0026`; product-local rules control where they are more specific than the common appendix |
 | SWA-SI-025 | 26 / 718 | SWA maintenance and claw replacement | TEXT + TABLE | HIGH | Cleaning clamp/seat surfaces, contamination consequences, manufacturer overhaul, wear replacement, and 1,000,000/500,000-cycle reference values | `SWA-Q-0012`, `SWA-Q-0026` |
-| SWA-SI-026 | 27 / 925 | Common pneumatic appendix > operation and maintenance | TEXT | MEDIUM | Shared zero-energy safety, cleaning, leak/sound/motion checks, storage, and overhaul rules | No separate question: shared safety rules are duplicated and more locally bound in `SWA-Q-0026` and `SWA-Q-0027`; appendix retained as corroboration only |
+| SWA-SI-026 | 27 / 925 | Common pneumatic appendix > operation and maintenance | TEXT | MEDIUM | Shared zero-energy safety, transport-area drop-risk control, cleaning, leak/sound/motion checks, storage, and overhaul rules | `SWA-Q-0029` covers the distinct transport-area control; remaining shared zero-energy and maintenance rules corroborate the more locally bound `SWA-Q-0026` and `SWA-Q-0027` |
 | SWA-SI-027 | 28 / 926 | Common appendix > warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; low-value commercial policy |
 | SWA-SI-028 | 29 / 927 | Common appendix > surface roughness notation | TABLE | MEDIUM | 2021 old/new JIS notation mapping | `SWA-Q-0013` (`DOCUMENT_COMMON`) |
 | SWA-SI-029 | 30 / 928 | Common appendix > O-ring notation | TABLE + MODEL | MEDIUM | New/old notation mapping and field meanings | `SWA-Q-0014` (`DOCUMENT_COMMON`) |
@@ -131,7 +131,7 @@ the source object; exclusions state why no separate question is required.
 
 ## 3. Question Statistics
 
-- Total: 28
+- Total: 29
 - FACT: 4
 - SPEC_LOOKUP: 2
 - TABLE: 5
@@ -139,7 +139,7 @@ the source object; exclusions state why no separate question is required.
 - CALCULATION: 2
 - CHART: 2
 - PROCEDURE: 4
-- CAUTION: 6
+- CAUTION: 7
 
 ## 4. Questions
 
@@ -1537,7 +1537,7 @@ SWA 前端插入或退出工件孔时必须保持与工件孔垂直。装卸后�
 管接头和夹具空气通路孔在使用前必须彻底清洗，避免切屑等异物造成漏气或
 动作不良。缠绕密封胶带时应在螺纹顶端留出 1-2 圈丝口，避免断头进入回路。
 本体使用附带的强度等级 12.9、`M5x0.8` 螺栓，以 `6.3 N-m` 均匀紧固，
-不得使机器倾斜。喷气清洁回路建议至少使用外径 phi 6 mm、内径 phi 4 mm
+不得使机器倾斜。喷气清洁回路必须保证使用外径 phi 6 mm、内径 phi 4 mm
 的管路。运行时必须始终向喷气清洁口以及着座确认/夹紧异常确认口供气；
 切断这些端口的供气会使异物侵入夹紧器内部并导致动作不良。
 
@@ -1679,7 +1679,6 @@ W 型没有把工件压向着座面的下拉夹紧力，仅靠扩径力夹紧。
 ### Accepted Variants
 
 - `KOSMEK` 可写为 `制造商` 或 `本公司`。
-- `确认回路压力为零` 可写为 `泄压到零`。
 
 ### Forbidden Errors
 
@@ -1717,14 +1716,14 @@ SWA 的操作、拆卸和重新启动必须采取哪些人员、设备运动、�
 
 ### Standard Answer
 
-操作人员必须经过充分培训并具备相应知识。拆卸前必须采取防止工件或设备
+操作人员必须具备丰富知识和专业经验。拆卸前必须采取防止工件或设备
 坠落以及防止设备误动作的措施，切断压力源和电源，并确认回路压力为零。
 设备完全冷却后才可拆卸。重新启动前必须检查螺栓和连接部位是否异常。
-运行中不得接近或触碰夹紧器，避免夹伤；不得擅自改造产品。
+运行中不得触碰动作中的工件（托盘）或夹紧器，避免夹伤；不得擅自改造产品。
 
 ### Scoring Standard
 
-- P1 [15]: 正确要求操作人员经过培训并具备相应知识。
+- P1 [15]: 正确要求操作人员具备丰富知识和专业经验。
 - P2 [10]: 正确要求拆卸前采取防坠落措施。
 - P3 [10]: 正确要求拆卸前采取防误动作措施。
 - P4 [10]: 正确要求切断压力源。
@@ -1733,20 +1732,23 @@ SWA 的操作、拆卸和重新启动必须采取哪些人员、设备运动、�
 - P7 [10]: 正确要求设备完全冷却后再拆卸。
 - P8 [5]: 正确要求重启前检查螺栓。
 - P9 [5]: 正确要求重启前检查连接部位。
-- P10 [5]: 正确要求运行中避免接近或触碰夹紧器以防夹伤。
-- P11 [10]: 正确要求不得擅自改造产品。
+- P10 [3]: 正确要求不得触碰动作中的工件（托盘）。
+- P11 [2]: 正确要求不得触碰动作中的夹紧器。
+- P12 [10]: 正确要求不得擅自改造产品。
 
 ### Accepted Variants
 
 - `确认回路压力为零` 可写为 `泄压到零`。
 - `防误动作` 可写为 `防止设备意外启动或移动`。
+- `工件（托盘）` 可写为 `移动中的工件或托盘`。
 
 ### Forbidden Errors
 
 - 只切断电源而保留气压，或未确认回路压力为零。
 - 未采取防坠落、防误动作措施便拆卸。
 - 在设备尚未冷却时拆卸。
-- 允许未培训人员操作或允许擅自改造产品。
+- 允许缺乏相应知识或专业经验的人员操作，或允许擅自改造产品。
+- 允许触碰动作中的工件（托盘）或夹紧器。
 
 ### Tolerance
 
@@ -1815,3 +1817,53 @@ SWA 的操作、拆卸和重新启动必须采取哪些人员、设备运动、�
 - Local scope path: 项目 7 > 薄壁变形 / 夹紧力与扩径力不足 / 夹紧试验 / 供给气压调整 / 脱落风险
 - Evidence type: TEXT + DRAWING
 - Evidence: 薄壁注意事项明确关联孔变形、力不足、试夹、压力调整和工件脱落风险。
+
+## SWA-Q-0029
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: SWA 文档通用气动装置安全附录
+- Model / Scope: SWA_R00_FA2026-C1N.pdf :: 通用注意事项第 925 页 > 工具或工件搬送区域安全
+
+### Question
+
+按照 SWA 文档的通用气动装置安全附录，在搬送工具或工件时，为防范工具或
+工件脱落风险，搬送区域必须采取什么人员安全措施？
+
+### Standard Answer
+
+搬送工具或工件时，必须针对工具或工件脱落风险采取安全措施，例如确认搬送
+区域周边没有人员，避免脱落物造成人身伤害。
+
+### Scoring Standard
+
+- P1 [25]: 正确限定为工具或工件搬送作业期间。
+- P2 [25]: 正确识别工具或工件脱落风险。
+- P3 [30]: 正确要求针对该脱落风险采取安全措施。
+- P4 [20]: 正确给出确认搬送区域周边没有人员这一措施。
+
+### Accepted Variants
+
+- `周边没有人员` 可写为 `清空搬送区域` 或 `确保人员远离搬送区域`。
+
+### Forbidden Errors
+
+- 允许人员停留在工具或工件可能脱落的搬送区域内。
+- 只要求固定工具或工件，却省略搬送区域的人员安全措施。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SWA_R00_FA2026-C1N.pdf
+- Physical page: 27
+- Printed page: 925
+- Section: 通用注意事项 > 操作方面的注意事项
+- Local scope path: 操作方面的注意事项项目 4 > 工具或工件脱落风险 / 工件搬送作业 / 周边无人措施
+- Evidence type: TEXT
+- Evidence: 通用气动装置安全附录要求在工件搬送作业时，为防范工具或工件脱落风险，实施确保周边没有人员等安全措施。
