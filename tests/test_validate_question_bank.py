@@ -12,7 +12,7 @@ SOURCE_ROOT = ROOT / "fixtures/valid"
 class QuestionBankValidationTests(unittest.TestCase):
     def invalid_errors(self, fixture: str) -> list[str]:
         path = ROOT / f"fixtures/invalid/{fixture}/SAMPLE.md"
-        return validate_question_bank(path)
+        return validate_question_bank(path, SOURCE_ROOT)
 
     def test_valid_fixture_passes(self):
         self.assertEqual(validate_question_bank(VALID, SOURCE_ROOT), [])
@@ -36,6 +36,28 @@ class QuestionBankValidationTests(unittest.TestCase):
     def test_missing_source_fails(self):
         errors = self.invalid_errors("missing_source")
         self.assertTrue(any("missing section Source" in error for error in errors))
+
+    def test_valid_looking_wrong_source_hash_fails(self):
+        errors = self.invalid_errors("wrong_hash")
+        self.assertTrue(any("does not match actual source PDF" in error for error in errors))
+
+    def test_missing_product_fails(self):
+        errors = self.invalid_errors("missing_product")
+        self.assertTrue(any("requires non-empty Product" in error for error in errors))
+
+    def test_missing_model_scope_fails(self):
+        errors = self.invalid_errors("missing_model_scope")
+        self.assertTrue(any("requires non-empty Model / Scope" in error for error in errors))
+
+    def test_ambiguous_document_common_fails(self):
+        errors = self.invalid_errors("ambiguous_document_common")
+        self.assertTrue(
+            any("DOCUMENT_COMMON Model / Scope" in error for error in errors)
+        )
+
+    def test_workflow_status_front_matter_fails(self):
+        errors = self.invalid_errors("workflow_status")
+        self.assertTrue(any("workflow field is forbidden" in error for error in errors))
 
 
 if __name__ == "__main__":

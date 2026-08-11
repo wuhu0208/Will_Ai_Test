@@ -1,11 +1,10 @@
 name: Agent task
 description: Executable work for the Codex Developer Agent
 title: "[Agent] "
-labels: ["agent-ready"]
 body:
   - type: markdown
     attributes:
-      value: "Complete every field. Work begins only when workflow labels permit it."
+      value: "Complete every field. This template adds no workflow-state label; an authorized state transition must explicitly make the Issue executable."
   - type: textarea
     id: goal
     attributes: {label: Goal}

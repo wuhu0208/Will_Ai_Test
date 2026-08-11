@@ -17,6 +17,10 @@ agent-ready
 
 Only one principal product Issue may be `agent-ready` at a time.
 
+GitHub Issue and PR labels are the sole authoritative workflow state. Generic
+Issue templates add no workflow-state label. Only an explicit state transition
+may add one.
+
 ## Repair path
 
 ```text
@@ -34,6 +38,8 @@ waiting-review
 - `product-decision`: a user decision on product scope or policy is required. Stop.
 - `accepted`: reviewed work is merged and its Issue is closed.
 
-Labels describe workflow state, not confidence. Do not apply `agent-ready` while
-`blocked` remains. Do not start a subsequent product Issue before the current PR
-passes independent review and merges.
+Labels describe workflow state, not confidence. `agent-ready` must never coexist
+with `blocked` or `product-decision`; remove and verify stop labels before an
+authorized transition adds `agent-ready`. Do not start a subsequent product
+Issue before the current PR passes independent review and merges. Do not mirror
+label transitions into tracked Markdown or create lifecycle-only bookkeeping PRs.

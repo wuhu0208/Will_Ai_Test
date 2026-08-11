@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import re
 from pathlib import Path
 
@@ -15,8 +16,8 @@ FRONT_MATTER_KEYS = (
     "source_pages",
     "question_bank_version",
     "product_scope",
-    "status",
 )
+FORBIDDEN_WORKFLOW_KEYS = ("status", "workflow_status", "lifecycle_status")
 DOCUMENT_SECTIONS = (
     "## 1. Source Information",
     "## 2. Scope",
@@ -45,6 +46,16 @@ SOURCE_FIELDS = (
 QUESTION_ID_RE = re.compile(r"(?m)^## ([A-Z0-9_-]+-Q-\d{4})\s*$")
 POINT_RE = re.compile(r"(?m)^- P(\d+) \[(\d+)]\s*:\s*(\S.*)$")
 HASH_RE = re.compile(r"^[0-9a-f]{64}$")
+TARGET_BINDINGS = "EXACT_MODEL|MODEL_FAMILY|PRODUCT_SERIES|DOCUMENT_COMMON"
+PLACEHOLDER_VALUES = {"n/a", "na", "none", "tbd", "..."}
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def parse_front_matter(text: str) -> tuple[dict[str, str], str, list[str]]:
@@ -91,6 +102,11 @@ def validate_question_bank(
     for key in FRONT_MATTER_KEYS:
         if not front.get(key):
             errors.append(f"missing front matter field: {key}")
+    for key in FORBIDDEN_WORKFLOW_KEYS:
+        if key in front:
+            errors.append(
+                f"front matter workflow field is forbidden: {key}; use GitHub labels"
+            )
 
     if front.get("schema_version") not in (None, "will-ai-question-bank/v1"):
         errors.append("schema_version must be will-ai-question-bank/v1")
@@ -102,17 +118,25 @@ def validate_question_bank(
                 raise ValueError
         except ValueError:
             errors.append("source_pages must be a positive integer")
-    if front.get("status") not in (None, "DRAFT", "WAITING_REVIEW", "APPROVED"):
-        errors.append("status must be DRAFT, WAITING_REVIEW, or APPROVED")
-
     source_pdf = front.get("source_pdf")
     if source_pdf:
         if not source_pdf.endswith(".pdf"):
             errors.append("source_pdf must end in .pdf")
         if path.stem != Path(source_pdf).stem:
             errors.append("question-bank filename stem must match source_pdf stem")
-        if source_root is not None and not (source_root / source_pdf).is_file():
-            errors.append(f"source PDF does not exist: {source_root / source_pdf}")
+        if source_root is not None:
+            source_path = source_root / source_pdf
+            if not source_path.is_file():
+                errors.append(f"source PDF does not exist: {source_path}")
+            elif front.get("source_sha256") and HASH_RE.fullmatch(
+                front["source_sha256"]
+            ):
+                actual_sha256 = sha256_file(source_path)
+                if front["source_sha256"] != actual_sha256:
+                    errors.append(
+                        "source_sha256 does not match actual source PDF: "
+                        f"expected {front['source_sha256']}, actual {actual_sha256}"
+                    )
 
     positions = []
     for section in DOCUMENT_SECTIONS:
@@ -148,11 +172,40 @@ def validate_question_bank(
                 section_bodies[heading] = section_body
 
         target = section_bodies.get("Target", "")
-        if target and not re.search(
-            r"(?m)^- Binding:\s*(EXACT_MODEL|MODEL_FAMILY|PRODUCT_SERIES|DOCUMENT_COMMON)\s*$",
-            target,
-        ):
-            errors.append(f"{question_id}: Target requires a valid Binding")
+        if target:
+            binding_match = re.search(
+                rf"(?m)^- Binding:\s*({TARGET_BINDINGS})\s*$", target
+            )
+            if not binding_match:
+                errors.append(f"{question_id}: Target requires a valid Binding")
+
+            target_values: dict[str, str] = {}
+            for field in ("Product", "Model / Scope"):
+                field_match = re.search(
+                    rf"(?m)^- {re.escape(field)}:\s*(\S.*)$", target
+                )
+                if not field_match:
+                    errors.append(f"{question_id}: Target requires non-empty {field}")
+                    continue
+                value = field_match.group(1).strip()
+                if value.lower() in PLACEHOLDER_VALUES:
+                    errors.append(f"{question_id}: Target {field} cannot be a placeholder")
+                target_values[field] = value
+
+            if binding_match and binding_match.group(1) == "DOCUMENT_COMMON":
+                model_scope = target_values.get("Model / Scope", "")
+                document, separator, scope = model_scope.partition("::")
+                if (
+                    not separator
+                    or not source_pdf
+                    or document.strip() != source_pdf
+                    or not scope.strip()
+                    or scope.strip().lower() in PLACEHOLDER_VALUES
+                ):
+                    errors.append(
+                        f"{question_id}: DOCUMENT_COMMON Model / Scope must be "
+                        "<source_pdf> :: <document or local scope>"
+                    )
 
         scoring = section_bodies.get("Scoring Standard", "")
         if scoring:

@@ -21,11 +21,16 @@ source_sha256: 64-lowercase-hex-characters
 source_pages: 22
 question_bank_version: V1
 product_scope: VFH
-status: DRAFT
 ---
 ```
 
-Allowed status values are `DRAFT`, `WAITING_REVIEW`, and `APPROVED`.
+Front matter contains stable business and source metadata only. Workflow status
+fields such as `status: DRAFT`, `WAITING_REVIEW`, or `APPROVED` are forbidden.
+GitHub Issue and PR labels are the sole authoritative workflow state; the
+canonical business file does not control whether an Agent may execute work.
+
+The declared `source_sha256` must equal the deterministic SHA-256 of
+`doc/<source_pdf>`. A correctly formatted but incorrect digest is invalid.
 
 ## 3. Document structure
 
@@ -104,6 +109,11 @@ questions or conversational context.
 - `PRODUCT_SERIES`: when a fact applies to the entire product series.
 - `DOCUMENT_COMMON`: for genuinely document-wide material or a common appendix.
 
+`Target` must contain non-empty `Binding`, `Product`, and `Model / Scope` fields.
+For `DOCUMENT_COMMON`, `Model / Scope` must use
+`<source_pdf> :: <document-wide or local section/appendix scope>` so the target
+cannot become ambiguous when multiple PDFs are available.
+
 Do not use ambiguous phrases such as “该型号”, “这个产品”, or “这种情况下”.
 Do not force a specific model when the source fact applies more broadly.
 
@@ -131,3 +141,6 @@ execution method.
 After independent approval, question text, standard answer, scoring, tolerance,
 forbidden errors, source, and ID are baseline data. Any later change requires a
 dedicated Issue and review.
+
+Approval and execution state remain in GitHub labels. A merged canonical file
+does not require a follow-up metadata edit or bookkeeping PR to become usable.

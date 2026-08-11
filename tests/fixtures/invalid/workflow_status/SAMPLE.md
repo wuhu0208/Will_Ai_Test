@@ -5,6 +5,7 @@ source_sha256: 192e64c1e117a0be5335ec815634bca06886b1abc64852af00cdc954157fa218
 source_pages: 1
 question_bank_version: V1
 product_scope: SAMPLE
+status: DRAFT
 ---
 
 # SAMPLE 题库与判定标准
@@ -56,3 +57,13 @@ The documented value is 10 kN.
 ### Tolerance
 
 - Exact value and unit; no numerical tolerance.
+
+### Source
+
+- PDF: SAMPLE.pdf
+- Physical page: 1
+- Printed page: N/A
+- Section: Fixture
+- Local scope path: Fixture > Value
+- Evidence type: TEXT
+- Evidence: The fixture states 10 kN for the series.

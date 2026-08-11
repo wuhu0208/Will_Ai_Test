@@ -1,11 +1,10 @@
 ---
 schema_version: will-ai-question-bank/v1
 source_pdf: SAMPLE.pdf
-source_sha256: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+source_sha256: 192e64c1e117a0be5335ec815634bca06886b1abc64852af00cdc954157fa218
 source_pages: 1
 question_bank_version: V1
 product_scope: SAMPLE
-status: DRAFT
 ---
 
 # SAMPLE 题库与判定标准

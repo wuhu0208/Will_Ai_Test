@@ -9,7 +9,9 @@
    that same branch and PR.
 4. Otherwise select one `agent-ready` Issue. If none exists, output `NO_ACTION`
    and stop.
-5. Verify there is not another principal `agent-working` product task. If there
+5. If an Issue has `agent-ready` together with `blocked` or `product-decision`,
+   treat the stop label as controlling, report the invalid transition, and stop.
+6. Verify there is not another principal `agent-working` product task. If there
    is a state conflict, apply `blocked`, report the evidence, and stop.
 
 ## Work cycle
@@ -38,3 +40,5 @@ all acceptance criteria are satisfied.
 - Do not start work labeled `blocked` or `product-decision`.
 - Do not change source scope, delivery format, or core scoring rules without a
   user decision.
+- Do not write workflow status into canonical question-bank front matter or the
+  Source Catalog; GitHub labels are authoritative.

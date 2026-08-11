@@ -21,9 +21,10 @@ not issue a final result from a partial sample.
 
 ## Outcomes
 
-- `PASS`: approve and merge; mark the Issue `accepted` and close it; update the
-  Source Catalog; then create or activate only the next source Issue as
-  `agent-ready`.
+- `PASS`: approve and merge; remove workflow-incompatible labels, mark the Issue
+  `accepted`, and close it; then create or activate only the next source Issue as
+  `agent-ready`. Do not edit `main` after merge to mirror lifecycle state in a
+  Markdown file, and do not create a bookkeeping PR for label transitions.
 - `PARTIAL_PASS` or `FAIL`: do not merge; give concrete findings, evidence, and
   repair requirements; remove `waiting-review`; apply `repair-needed`; keep the
   same Issue, branch, and PR.
@@ -33,6 +34,14 @@ not issue a final result from a partial sample.
 
 The Review Agent must not quietly change implementation or product rules while
 acting as the independent reviewer.
+
+## Lifecycle authority
+
+GitHub Issue and PR labels are the sole authoritative workflow state. Before
+adding `agent-ready`, remove `blocked` and `product-decision`, verify neither is
+present, and verify there is no other principal `agent-ready` product Issue.
+`agent-ready` must never coexist with either stop label. Canonical question-bank
+front matter and the Source Catalog contain no mutable workflow status.
 
 ## Bootstrap handoff
 

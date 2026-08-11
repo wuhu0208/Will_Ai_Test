@@ -28,9 +28,9 @@ Fixture scope.
 
 ### Target
 
-- Binding: PRODUCT_SERIES
+- Binding: DOCUMENT_COMMON
 - Product: SAMPLE
-- Model / Scope: Entire series
+- Model / Scope: Entire document
 
 ### Question
 
@@ -56,3 +56,13 @@ The documented value is 10 kN.
 ### Tolerance
 
 - Exact value and unit; no numerical tolerance.
+
+### Source
+
+- PDF: SAMPLE.pdf
+- Physical page: 1
+- Printed page: N/A
+- Section: Fixture
+- Local scope path: Fixture > Value
+- Evidence type: TEXT
+- Evidence: The fixture states 10 kN for the series.
