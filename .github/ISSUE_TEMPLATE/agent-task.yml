@@ -1,0 +1,52 @@
+name: Agent task
+description: Executable work for the Codex Developer Agent
+title: "[Agent] "
+labels: ["agent-ready"]
+body:
+  - type: markdown
+    attributes:
+      value: "Complete every field. Work begins only when workflow labels permit it."
+  - type: textarea
+    id: goal
+    attributes: {label: Goal}
+    validations: {required: true}
+  - type: textarea
+    id: authoritative-inputs
+    attributes: {label: Authoritative Inputs, description: "Repository paths, hashes, and baseline refs."}
+    validations: {required: true}
+  - type: textarea
+    id: scope
+    attributes: {label: Scope}
+    validations: {required: true}
+  - type: textarea
+    id: requirements
+    attributes: {label: Requirements}
+    validations: {required: true}
+  - type: textarea
+    id: non-goals
+    attributes: {label: Non-goals}
+    validations: {required: true}
+  - type: textarea
+    id: acceptance-criteria
+    attributes: {label: Acceptance Criteria, description: "Use checkboxes with observable outcomes."}
+    validations: {required: true}
+  - type: textarea
+    id: tests
+    attributes: {label: Tests}
+    validations: {required: true}
+  - type: textarea
+    id: resources
+    attributes: {label: Resource Constraints}
+    validations: {required: true}
+  - type: input
+    id: cycles
+    attributes: {label: Estimated Cycles, description: "Expected number of 40-50 minute cycles."}
+    validations: {required: true}
+  - type: textarea
+    id: work-packages
+    attributes: {label: Work Package Plan, description: "Coherent packages sized for the cadence policy."}
+    validations: {required: true}
+  - type: textarea
+    id: review-handoff
+    attributes: {label: Review Handoff}
+    validations: {required: true}
