@@ -17,7 +17,7 @@ product_scope: VFH
 - Product: KOSMEK VFH 大扩径量型通用扩径定位销
 - Product printed pages: 1309-1322
 - Included common-reference printed pages: 1725-1730, 1749-1750
-- Evidence paths used for construction: PDF page images for visual truth and local OCR text for navigation; OCR alone is not treated as source truth.
+- Source-evidence policy: PDF page images control visual facts; OCR is a navigation aid and is not source truth.
 
 ## 2. Scope
 
@@ -25,13 +25,13 @@ product_scope: VFH
 
 This bank covers the VFH hydraulic double-acting locating-pin series described by
 this PDF: product purpose and mechanism, VFH1000/VFH2000/VFH3000 families,
-D/C functional variants, legal model construction, specifications, workpiece-hole
+D/C functional variants, legal model designation, specifications, workpiece-hole
 requirements, selection calculations, displacement charts, dimensions, installation,
 hydraulic circuits, cautions, maintenance, and applicable common hydraulic reference
 material included in the source PDF.
 
-Sales addresses and the sales-network map on physical pages 21-22 are retained in
-the source inventory but excluded from product capability questions because they are
+Sales addresses and the sales-network map on physical pages 21-22 are listed in
+the Source Coverage table but excluded from product capability questions because they are
 contact metadata rather than durable VFH technical knowledge.
 
 ### 2.2 Model Grammar
@@ -70,47 +70,47 @@ Negative grammar cases and reasons:
 - `VFH2000-090-X-H20`: function code `X` is not listed.
 - `VFH2000-090-D-H30`: seat height `H30` is not listed.
 
-### 2.3 Source-first inventory and initial dispositions
+### 2.3 Source Coverage
 
-`HIGH` and `MEDIUM` items remain open until their mapped questions and later
-construction audits are complete. The disposition column records current question
-coverage or the next Work Package; it does not claim audit completion in advance.
+This table maps the document's technical scope to representative questions or
+explicit scope decisions. It lets a recipient verify coverage without relying on
+separate files.
 
-| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
-|---|---|---|---|---|---|---|
-| VFH-SI-001 | 1 / 1309 | Product introduction > locating principle | TEXT + DRAWING | HIGH | Expansion/retraction mechanism, zero-clearance positioning, and D/C pin roles | Covered by `VFH-Q-0002` and `VFH-Q-0006`; audit in WP4 |
-| VFH-SI-002 | 1 / 1309 | Product introduction > family performance | TEXT | HIGH | VFH1000 30 um and VFH2000/3000 10 um repeatability | Covered by `VFH-Q-0003`; audit in WP4 |
-| VFH-SI-003 | 2 / 1310 | Features > expansion amount and automation clearance | TEXT + DRAWING | HIGH | 1.1 mm expansion; VFH1000 0.7 mm; release-state clearance | Covered by `VFH-Q-0002` and `VFH-Q-0004`; audit in WP4 |
-| VFH-SI-004 | 2 / 1310 | Features > concentric nose measurement | TEXT + DRAWING | MEDIUM | VFH2000/3000 allow installation-spacing measurement; VFH1000 does not | Covered by `VFH-Q-0005`; audit in WP4 |
-| VFH-SI-005 | 2 / 1310 | Features > air cleaning | TEXT + DRAWING | HIGH | Air path and contamination-prevention purpose | Covered by `VFH-Q-0030`; audit in WP4 |
-| VFH-SI-006 | 3-5 / 1311-1313 | Application and system examples | DRAWING | MEDIUM | Robot/gantry handling and D/C two-pin fixture arrangement | Covered by `VFH-Q-0006`; robot/gantry images are excluded as illustrative application examples without a separate testable VFH claim |
-| VFH-SI-007 | 4 / 1312 | Product family comparison | TABLE + DRAWING | MEDIUM | VFL/VFM/VFH/VFJ/VFK class, control, pressure, action, and use-case differences | Covered by `VFH-Q-0007` for the nearest VFM/VFH selection boundary; remaining non-VFH rows are excluded as outside this product bank |
-| VFH-SI-008 | 6 / 1314 | Necessary items > locating workpiece holes | TEXT + DRAWING | HIGH | Hole range phi 5-15 mm and the two tolerance bands | Covered by `VFH-Q-0008`; audit in WP4 |
-| VFH-SI-009 | 6 / 1314 | Necessary items > VFH-C installation phase | TEXT + DRAWING | HIGH | VFH-D datum role, VFH-C Y-axis role, and required phase orientation | Covered by `VFH-Q-0006` and `VFH-Q-0032`; audit in WP4 |
-| VFH-SI-010 | 6 / 1314 | Necessary items > seating and workpiece clamp | TEXT + DRAWING | HIGH | No built-in Z datum seat and no clamping function | Covered by `VFH-Q-0031`; audit in WP4 |
-| VFH-SI-011 | 7 / 1315 | Model designation | TABLE + DRAWING | HIGH | Field order, legal values, family/hole pairing, D/C, and seat-height grammar | Covered by `VFH-Q-0001` and `VFH-Q-0009`; grammar validation remains WP4 |
-| VFH-SI-012 | 7 / 1315 | Specification table | TABLE | HIGH | Repeatability, eccentricity, expansion force, shear load, capacity, oil volume, pressure, temperature, and fluid | Covered by `VFH-Q-0003` and `VFH-Q-0010`-`VFH-Q-0014`; audit in WP4 |
-| VFH-SI-013 | 8 / 1316 | Workpiece weight formula > horizontal mounting | FORMULA | HIGH | Weight bound using expansion force, efficiency, friction coefficient, and 9.8 | Covered by `VFH-Q-0019`; audit in WP4 |
-| VFH-SI-014 | 8 / 1316 | Workpiece weight formula > vertical mounting | FORMULA | HIGH | Weight bound using expansion force, 9.8, and efficiency | Covered by `VFH-Q-0020`; audit in WP4 |
-| VFH-SI-015 | 8 / 1316 | Shear load/displacement > VFH1000 | CHART | HIGH | Visual displacement reads for 050/060/070/080 series | Covered by `VFH-Q-0021`; audit in WP4 |
-| VFH-SI-016 | 8 / 1316 | Shear load/displacement > VFH2000 | CHART | HIGH | Visual displacement reads for 090/100/110/120/130 series | Covered by `VFH-Q-0022`; audit in WP4 |
-| VFH-SI-017 | 8 / 1316 | Shear load/displacement > VFH3000 | CHART | HIGH | Visual displacement reads for 140/150 series | Covered by `VFH-Q-0023`; audit in WP4 |
-| VFH-SI-018 | 9-10 / 1317-1318 | VFH1000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Covered by representative `VFH-Q-0015`; remaining size rows and port coordinates are excluded as low-value numeric swaps within the same VFH1000 drawing |
-| VFH-SI-019 | 11-12 / 1319-1320 | VFH2000/3000 outline and mounting dimensions | DRAWING + TABLE | HIGH | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Covered by representative `VFH-Q-0016`; remaining size/height rows and port coordinates are excluded as low-value numeric swaps within the same drawing |
-| VFH-SI-020 | 9-12 / 1317-1320 | Installation notes attached to dimension drawings | TEXT + DRAWING | HIGH | Bolt class, washer prohibition, O-ring order, lifting, port placement, and hole-depth risks | Covered by `VFH-Q-0024` and `VFH-Q-0035`; lifting-thread use and model-specific port placement are excluded as lower-value drawing details after core installation risks are covered |
-| VFH-SI-021 | 13 / 1321 | Design cautions > pressure, circuit, air, clamp, phase, seat | TEXT + DRAWING | HIGH | Preconditions and failure consequences for core fixture design | Covered by `VFH-Q-0011`, `VFH-Q-0026`, and `VFH-Q-0030`-`VFH-Q-0032`; audit in WP4 |
-| VFH-SI-022 | 13 / 1321 | Design cautions > vertical use and tilt | TEXT + DRAWING | HIGH | Pre-clamping, wear checks, 4/100-5/100 tilt limit, and rough guide pin | Covered by `VFH-Q-0033` and `VFH-Q-0034`; audit in WP4 |
-| VFH-SI-023 | 13 / 1321 | Design cautions > wall, spacing, and hole depth | TEXT + DRAWING | HIGH | Thin-wall deformation, eccentricity-aware spacing, and insufficient-expansion/damage risk | Covered by `VFH-Q-0035`; audit in WP4 |
-| VFH-SI-024 | 14 / 1322 | Installation > fluid, cleaning, tape, bolts, O-ring | TEXT + TABLE + DRAWING | HIGH | Fluid selection, contamination control, tape practice, 6.3 N-m bolt torque, and seal installation | Covered by `VFH-Q-0024` and `VFH-Q-0025`; audit in WP4 |
-| VFH-SI-025 | 14 / 1322 | Hydraulic reference circuits | STATE_DIAGRAM + TEXT | HIGH | VFH-before-actuator sequence, independent/shared circuits, back-pressure check valve, and surge avoidance | Covered by `VFH-Q-0026`; audit in WP4 |
-| VFH-SI-026 | 15 / 1725 | Common hydraulic appendix > oil and air bleeding | TABLE + PROCEDURE | MEDIUM | ISO-VG-32 examples and the five-step air-bleeding process | Covered by `VFH-Q-0011` and `VFH-Q-0027`; individual oil-brand examples are excluded as non-durable procurement examples |
-| VFH-SI-027 | 16 / 1726 | Common hydraulic appendix > speed control | STATE_DIAGRAM + TEXT | MEDIUM | Single/double-acting meter-in/meter-out circuit constraints | Covered by `VFH-Q-0028`; audit in WP4 |
-| VFH-SI-028 | 17 / 1727 | Common hydraulic appendix > operation safety | TEXT | HIGH | Qualified operation, zero-energy disassembly, pinch avoidance, and no modification | Covered by `VFH-Q-0036`; audit in WP4 |
-| VFH-SI-029 | 17 / 1727 | Common hydraulic appendix > maintenance | TEXT | HIGH | Cleaning, datum-surface care, air bleeding, fastening, oil, sound/motion, storage, and overhaul | Covered by `VFH-Q-0029`; audit in WP4 |
-| VFH-SI-030 | 18 / 1728 | Common hydraulic appendix > warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; low-value commercial policy |
-| VFH-SI-031 | 19 / 1729 | Common appendix > surface roughness notation | TABLE | MEDIUM | 2021 old/new JIS notation mapping | Covered by `VFH-Q-0017`; audit in WP4 |
-| VFH-SI-032 | 20 / 1730 | Common appendix > O-ring notation | TABLE + MODEL | MEDIUM | New/old notation mapping and field meanings | Covered by `VFH-Q-0018`; audit in WP4 |
-| VFH-SI-033 | 21-22 / 1749-1750 | Sales addresses and network | TEXT + DRAWING | NON-TEST | Contact details and geographic sales map | Exclude; not durable VFH technical knowledge |
+| Coverage ID | Physical / printed page | Local scope | Evidence type | Testable object | Question coverage / scope decision |
+|---|---|---|---|---|---|
+| VFH-SI-001 | 1 / 1309 | Product introduction > locating principle | TEXT + DRAWING | Expansion/retraction mechanism, zero-clearance positioning, and D/C pin roles | Covered by `VFH-Q-0002` and `VFH-Q-0006` |
+| VFH-SI-002 | 1 / 1309 | Product introduction > family performance | TEXT | VFH1000 30 um and VFH2000/3000 10 um repeatability | Covered by `VFH-Q-0003` |
+| VFH-SI-003 | 2 / 1310 | Features > expansion amount and automation clearance | TEXT + DRAWING | 1.1 mm expansion; VFH1000 0.7 mm; release-state clearance | Covered by `VFH-Q-0002` and `VFH-Q-0004` |
+| VFH-SI-004 | 2 / 1310 | Features > concentric nose measurement | TEXT + DRAWING | VFH2000/3000 allow installation-spacing measurement; VFH1000 does not | Covered by `VFH-Q-0005` |
+| VFH-SI-005 | 2 / 1310 | Features > air cleaning | TEXT + DRAWING | Air path and contamination-prevention purpose | Covered by `VFH-Q-0030` |
+| VFH-SI-006 | 3-5 / 1311-1313 | Application and system examples | DRAWING | Robot/gantry handling and D/C two-pin fixture arrangement | Covered by `VFH-Q-0006`; robot/gantry images are excluded as illustrative application examples without a separate testable VFH claim |
+| VFH-SI-007 | 4 / 1312 | Product family comparison | TABLE + DRAWING | VFL/VFM/VFH/VFJ/VFK class, control, pressure, action, and use-case differences | Covered by `VFH-Q-0007` for the nearest VFM/VFH selection boundary; remaining non-VFH rows are excluded as outside this product bank |
+| VFH-SI-008 | 6 / 1314 | Necessary items > locating workpiece holes | TEXT + DRAWING | Hole range phi 5-15 mm and the two tolerance bands | Covered by `VFH-Q-0008` |
+| VFH-SI-009 | 6 / 1314 | Necessary items > VFH-C installation phase | TEXT + DRAWING | VFH-D datum role, VFH-C Y-axis role, and required phase orientation | Covered by `VFH-Q-0006` and `VFH-Q-0032` |
+| VFH-SI-010 | 6 / 1314 | Necessary items > seating and workpiece clamp | TEXT + DRAWING | No built-in Z datum seat and no clamping function | Covered by `VFH-Q-0031` |
+| VFH-SI-011 | 7 / 1315 | Model designation | TABLE + DRAWING | Field order, legal values, family/hole pairing, D/C, and seat-height grammar | Covered by `VFH-Q-0001` and `VFH-Q-0009` |
+| VFH-SI-012 | 7 / 1315 | Specification table | TABLE | Repeatability, eccentricity, expansion force, shear load, capacity, oil volume, pressure, temperature, and fluid | Covered by `VFH-Q-0003` and `VFH-Q-0010`-`VFH-Q-0014` |
+| VFH-SI-013 | 8 / 1316 | Workpiece weight formula > horizontal mounting | FORMULA | Weight bound using expansion force, efficiency, friction coefficient, and 9.8 | Covered by `VFH-Q-0019` |
+| VFH-SI-014 | 8 / 1316 | Workpiece weight formula > vertical mounting | FORMULA | Weight bound using expansion force, 9.8, and efficiency | Covered by `VFH-Q-0020` |
+| VFH-SI-015 | 8 / 1316 | Shear load/displacement > VFH1000 | CHART | Visual displacement reads for 050/060/070/080 series | Covered by `VFH-Q-0021` |
+| VFH-SI-016 | 8 / 1316 | Shear load/displacement > VFH2000 | CHART | Visual displacement reads for 090/100/110/120/130 series | Covered by `VFH-Q-0022` |
+| VFH-SI-017 | 8 / 1316 | Shear load/displacement > VFH3000 | CHART | Visual displacement reads for 140/150 series | Covered by `VFH-Q-0023` |
+| VFH-SI-018 | 9-10 / 1317-1318 | VFH1000 outline and mounting dimensions | DRAWING + TABLE | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Covered by representative `VFH-Q-0015`; remaining size rows and port coordinates are excluded as low-value numeric swaps within the same VFH1000 drawing |
+| VFH-SI-019 | 11-12 / 1319-1320 | VFH2000/3000 outline and mounting dimensions | DRAWING + TABLE | Released/full-stroke geometry, workpiece-hole machining, mounting ports, dimensions, and mass | Covered by representative `VFH-Q-0016`; remaining size/height rows and port coordinates are excluded as low-value numeric swaps within the same drawing |
+| VFH-SI-020 | 9-12 / 1317-1320 | Installation notes attached to dimension drawings | TEXT + DRAWING | Bolt class, washer prohibition, O-ring order, lifting, port placement, and hole-depth risks | Covered by `VFH-Q-0024` and `VFH-Q-0035`; lifting-thread use and model-specific port placement are excluded as lower-value drawing details after core installation risks are covered |
+| VFH-SI-021 | 13 / 1321 | Design cautions > pressure, circuit, air, clamp, phase, seat | TEXT + DRAWING | Preconditions and failure consequences for core fixture design | Covered by `VFH-Q-0011`, `VFH-Q-0026`, and `VFH-Q-0030`-`VFH-Q-0032` |
+| VFH-SI-022 | 13 / 1321 | Design cautions > vertical use and tilt | TEXT + DRAWING | Pre-clamping, wear checks, 4/100-5/100 tilt limit, and rough guide pin | Covered by `VFH-Q-0033` and `VFH-Q-0034` |
+| VFH-SI-023 | 13 / 1321 | Design cautions > wall, spacing, and hole depth | TEXT + DRAWING | Thin-wall deformation, eccentricity-aware spacing, and insufficient-expansion/damage risk | Covered by `VFH-Q-0035` |
+| VFH-SI-024 | 14 / 1322 | Installation > fluid, cleaning, tape, bolts, O-ring | TEXT + TABLE + DRAWING | Fluid selection, contamination control, tape practice, 6.3 N-m bolt torque, and seal installation | Covered by `VFH-Q-0024` and `VFH-Q-0025` |
+| VFH-SI-025 | 14 / 1322 | Hydraulic reference circuits | STATE_DIAGRAM + TEXT | VFH-before-actuator sequence, independent/shared circuits, back-pressure check valve, and surge avoidance | Covered by `VFH-Q-0026` |
+| VFH-SI-026 | 15 / 1725 | Common hydraulic appendix > oil and air bleeding | TABLE + PROCEDURE | ISO-VG-32 examples and the five-step air-bleeding process | Covered by `VFH-Q-0011` and `VFH-Q-0027`; individual oil-brand examples are excluded as non-durable procurement examples |
+| VFH-SI-027 | 16 / 1726 | Common hydraulic appendix > speed control | STATE_DIAGRAM + TEXT | Single/double-acting meter-in/meter-out circuit constraints | Covered by `VFH-Q-0028` |
+| VFH-SI-028 | 17 / 1727 | Common hydraulic appendix > operation safety | TEXT | Qualified operation, zero-energy disassembly, pinch avoidance, and no modification | Covered by `VFH-Q-0036` |
+| VFH-SI-029 | 17 / 1727 | Common hydraulic appendix > maintenance | TEXT | Cleaning, datum-surface care, air bleeding, fastening, oil, sound/motion, storage, and overhaul | Covered by `VFH-Q-0029` |
+| VFH-SI-030 | 18 / 1728 | Common hydraulic appendix > warranty | TEXT | Warranty term, coverage, and exclusions | Excluded: low-value commercial policy |
+| VFH-SI-031 | 19 / 1729 | Common appendix > surface roughness notation | TABLE | 2021 old/new JIS notation mapping | Covered by `VFH-Q-0017` |
+| VFH-SI-032 | 20 / 1730 | Common appendix > O-ring notation | TABLE + MODEL | New/old notation mapping and field meanings | Covered by `VFH-Q-0018` |
+| VFH-SI-033 | 21-22 / 1749-1750 | Sales addresses and network | TEXT + DRAWING | Contact details and geographic sales map | Excluded: not durable VFH technical knowledge |
 
 ## 3. Question Statistics
 
