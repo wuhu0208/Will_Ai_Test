@@ -6,7 +6,7 @@ must remain blocked until the Bootstrap PR passes independent review and merges.
 
 | Source PDF | SHA-256 | Pages | Product Scope | Canonical Question Bank Path | Status | Issue | PR | Notes |
 |---|---|---:|---|---|---|---|---|---|
-| `VFH_R00_2023KW_C1N.pdf` | `009d801e20543b0f2ad14cb10b0b0e4e86474c63548f6e4bac9af3f64696a772` | 22 | VFH | `question_banks/VFH_R00_2023KW_C1N.md` | PENDING | To be created blocked by Bootstrap | - | First planned product task; do not execute before Bootstrap merge. |
+| `VFH_R00_2023KW_C1N.pdf` | `009d801e20543b0f2ad14cb10b0b0e4e86474c63548f6e4bac9af3f64696a772` | 22 | VFH | `question_banks/VFH_R00_2023KW_C1N.md` | PENDING | #2 (blocked by PR #1) | - | First planned product task; do not execute before Bootstrap merge. |
 | `SWA_R00_FA2026-C1N.pdf` | `91f032cd253112733c358f45d78c24847a5b7dbe35105f1028b39252d65f87ac` | 32 | SWA | `question_banks/SWA_R00_FA2026-C1N.md` | PENDING | - | - | Queued. |
 | `LKA_R01_2023KW_C1N.pdf` | `9fb2ad70cb85984c8d3e76f52b0b7e7072635c8e120685fa1af71bdaaa9082c5` | 58 | LKA | `question_banks/LKA_R01_2023KW_C1N.md` | PENDING | - | - | Queued. |
 | `FV_R00_2023KW_C1N.pdf` | `7f94436a3a95d3a49ced9b73c4639b6e0744ee305f63cdff7a92cdd0342a6178` | 48 | FV | `question_banks/FV_R00_2023KW_C1N.md` | PENDING | - | - | Queued. |
