@@ -17,45 +17,40 @@ product_scope: LSA/LSE
 - Product: KOSMEK LSA/LSE 油压复动式侧向夹紧器
 - Product printed pages: 947-958
 - Included common-reference printed pages: 1725-1730
-- Included control-valve printed pages: 1257-1262 and 1265-1272
-- Included sales-reference physical pages: 33-34 (unnumbered)
-- Source-evidence policy: PDF page images control visual facts; extracted text is a navigation aid and is not source truth.
+- Included control-valve printed pages: 1257-1262、1265-1272
+- Included sales-reference physical pages: 33-34（无印刷页码）
+- Source-evidence policy: PDF 页面图像是视觉事实的最终依据；抽取文本仅用于导航，不能作为来源真值。
 
 ## 2. Scope
 
 ### 2.1 Product and document scope
 
-This bank covers the LSA standard side-clamp family and LSE high-power side-clamp
-family: product positioning, model grammar, specifications, clamp-force and holding-
-force relationships, dimensions, mounting, hydraulic circuits, speed adjustment,
-installation, maintenance, safety, and the applicable direct-mounted valves included
-in the PDF.
+本题库覆盖 LSA 标准侧向夹紧器系列和 LSE 高能力侧向夹紧器系列，包括产品定位、
+型号语法、规格、夹紧力与保持力关系、尺寸、安装、液压回路、速度调整、保养、
+安全事项，以及本 PDF 收录的适用直装式控制阀。
 
-Commercial warranty and sales-network material remain in the source inventory but
-are excluded from core capability questions. Common hydraulic installation,
-speed-control, operation, maintenance, notation, and ancillary-valve facts must use
-page-bounded local scope and the appropriate binding so they cannot be confused with
-LSA/LSE-local requirements.
+商业质保和销售网络资料保留在来源清单中，但不纳入核心能力题。液压
+安装、速度控制、操作、保养、符号和附属控制阀等通用事实必须采用限定到具体
+页面的本地范围和正确的绑定类型，避免与 LSA/LSE 产品本地要求混淆。
 
 ### 2.2 Model Grammar
 
-The LSA and LSE printed field order is:
+LSA 和 LSE 的印刷字段顺序为：
 
-`<Family><BodySize><DesignNo>-<Piping><PlateDirection>`
+`<系列><主体尺寸><设计编号>-<配管方式><压板方向>`
 
-| Field | Legal values | Meaning and constraint |
+| 字段 | 合法值 | 含义与约束 |
 |---|---|---|
-| Family | `LSA`, `LSE` | `LSA` is the standard side-clamp family; `LSE` is the high-power side-clamp family with a mechanical self-lock mechanism. |
-| BodySize | `036` | Clamp-body outside-diameter class, phi 36 mm. |
-| DesignNo | `0` | Product version/design number listed by this PDF. |
-| Piping | `C` | Manifold/plate piping with supplied G-thread plugs; a separately purchased direct-mounted speed-control valve can be installed. |
-| PlateDirection | `L`, `C`, `R` | Left, center, or right plate direction when facing the oil-supply ports. |
+| 系列 | `LSA`、`LSE` | `LSA` 是标准侧向夹紧器系列；`LSE` 是带机械自锁机构的高能力侧向夹紧器系列。 |
+| 主体尺寸 | `036` | 夹紧器本体夹紧部分外径等级为 φ36 mm。 |
+| 设计编号 | `0` | 本 PDF 列出的产品版本/设计编号。 |
+| 配管方式 | `C` | 板式配管型，附带 G 螺纹堵头，可安装另购的直装式速度控制阀。 |
+| 压板方向 | `L`、`C`、`R` | 面向供油口观察时，压板方向分别为左、中央或右。 |
 
-The two families share body-size, design, piping, and direction grammar, but they
-do not share all operating limits or speed-control rules. In particular, the PDF
-requires an inlet-metering BZL-A valve for LSE.
+两个系列共用主体尺寸、设计编号、配管方式和方向字段语法，但使用限制和速度控制
+规则并非全部相同。尤其是 LSE 必须使用进油节流型 BZL-A 速度控制阀。
 
-Positive grammar cases:
+合法示例：
 
 - `LSA0360-CL`
 - `LSA0360-CC`
@@ -64,43 +59,41 @@ Positive grammar cases:
 - `LSE0360-CC`
 - `LSE0360-CR`
 
-Negative grammar cases and reasons:
+非法示例及原因：
 
-- `LSA0400-CR`: body-size code `040` is not listed for LSA in this PDF.
-- `LSE0361-CR`: design number `1` is not listed.
-- `LSA0360-SR`: piping value `S` is not listed.
-- `LSE0360-CB`: plate direction `B` is not listed.
-- `LSA0360-RC`: piping and direction fields are out of order.
-- `LSE0360-CR-A`: the BZL control method is not a suffix of the LSE product model.
+- `LSA0400-CR`：本 PDF 未列出 LSA 主体尺寸代码 `040`。
+- `LSE0361-CR`：本 PDF 未列出设计编号 `1`。
+- `LSA0360-SR`：本 PDF 未列出配管方式 `S`。
+- `LSE0360-CB`：本 PDF 未列出压板方向 `B`。
+- `LSA0360-RC`：配管方式与压板方向字段顺序错误。
+- `LSE0360-CR-A`：BZL 控制方式不是 LSE 产品型号的后缀字段。
 
 ### 2.3 Source-first inventory and initial dispositions
 
-`HIGH` and `MEDIUM` items remain open until their mapped questions and construction
-audits are complete. The disposition column identifies planned work and does not
-claim coverage in advance. Each physical-page pair is one repeated two-page printed
-spread; the inventory records the pair once rather than treating the duplicate render
-as new evidence.
+`HIGH` 和 `MEDIUM` 项在对应问题及构建审计完成前均保持未完成状态。处置列仅标明
+计划工作，不提前声明已覆盖。每一对物理页是同一印刷跨页的重复呈现；Inventory
+只记录一次，不将重复页面视为新证据。
 
-| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
+| Inventory ID | 物理页 / 印刷页 | 本地范围 | 证据类型 | 优先级 | 可测试对象 | 初始处置 |
 |---|---|---|---|---|---|---|
-| LSA-LSE-SI-001 | 1-2 / 947-948 | LSA overview and features | TEXT + DRAWING | HIGH | Side-push positioning, zero top interference, installation commonality, 2.8 kN headline force, and direct speed-control mounting | WP2 `FACT`; preserve drawing-local claims |
-| LSA-LSE-SI-002 | 3-4 / 949-950 | LSA model, specifications, and force relationship | MODEL + TABLE + FORMULA + CHART | HIGH | Four-field grammar, phi 36 body, stroke/capacity/pressure/temperature/fluid/mass, `F = 0.394 x P`, pressure-force table, and unusable-range consequence | Grammar and `LSA-LSE-Q-0001`; WP2 `TABLE`; WP3 `CALCULATION` / `CHART` |
-| LSA-LSE-SI-003 | 5-6 / 951-952 | LSA dimensions, design, installation, and speed control | DRAWING + TABLE + TEXT | HIGH | Ports, mounting geometry, simultaneous-pressure prohibition, welding/dry-environment controls, M4 torque, pin handling, and speed adjustment | WP2 `TABLE`; WP3 `PROCEDURE` / `CAUTION`; repeated dimensions remain direct lookup evidence |
-| LSA-LSE-SI-004 | 7-8 / 953-954 | LSE overview and high-power mechanism | TEXT + DRAWING | HIGH | Side-push positioning, 1.5-times LSA force comparison, mechanical self-lock, holding-force role, and BZL-A requirement | WP2 `FACT`; WP3 `CAUTION`; visual mechanism retained for selective verification |
-| LSA-LSE-SI-005 | 9-10 / 955-956 | LSE model, specifications, and force/holding relationships | MODEL + TABLE + FORMULA + CHART | HIGH | Shared four-field grammar, stroke/capacity/pressure limits, `F = 0.601 x P`, `Fk = 0.953 x P`, 3.62 kN holding cap, and reaction-force cautions | Grammar and `LSA-LSE-Q-0001`; WP2 `TABLE`; WP3 `CALCULATION` / `CHART` / `CAUTION` |
-| LSA-LSE-SI-006 | 11-12 / 957-958 | LSE dimensions, design, installation, and speed control | DRAWING + TABLE + TEXT | HIGH | Direction variants, mounting geometry, simultaneous-pressure prohibition, M4 torque, inlet-metering adjustment, air removal, multi-clamp control, and loaded release | WP2 `TABLE`; WP3 `PROCEDURE` / `CAUTION`; preserve LSE-local circuit exceptions |
-| LSA-LSE-SI-007 | 13-14 / 1725-1726 | Common hydraulic installation and speed-control circuits | TEXT + TABLE + STATE_DIAGRAM | HIGH | ISO-VG32 oil list, cleanliness, sealing tape, air bleeding, tightening checks, single/double-acting circuit rules, and LSE exception | WP3 `PROCEDURE` / `CAUTION`; page-bounded `DOCUMENT_COMMON` |
-| LSA-LSE-SI-008 | 15-16 / 1727-1728 | Common operation, maintenance, and warranty | TEXT + DRAWING | HIGH | Personnel qualifications, isolation/zero pressure/cooldown, restart checks, no-touch/no-modification, cleaning, inspection, storage, and overhaul | WP3 `CAUTION`; warranty content LOW and excluded; page-bounded scope |
-| LSA-LSE-SI-009 | 17-18 / 1729-1730 | Common notation references | TABLE | MEDIUM | Surface-roughness notation and O-ring material/hardness notation mappings | WP2 `TABLE`; page-bounded `DOCUMENT_COMMON` |
-| LSA-LSE-SI-010 | 19-20 / 1257-1258 | Direct-mounted control-valve family overview | TEXT + DRAWING + TABLE | MEDIUM | BZL/BZT/BZX/JZG/BZS purposes, direct-mount relationship, and pressure classes | WP2 `FACT` / `TABLE`; ancillary product scope |
-| LSA-LSE-SI-011 | 21-22 / 1259-1260 | BZL low-pressure speed-control models and compatibility | MODEL + TABLE + TEXT | HIGH | Thread/design/control-method grammar, A/B circuit meanings, pressure/temperature/torque values, compatibility, reuse warning, and LSA/LSE mapping | WP2 `MODEL` / `TABLE`; WP3 `CAUTION` |
-| LSA-LSE-SI-012 | 23-24 / 1261-1262 | BZL flow curves, dimensions, and cautions | CHART + DRAWING + TEXT | MEDIUM | Adjusted/pre-adjustment flow versus turns and pressure loss, port orientation, low-pressure air bleeding, and machining dimensions | WP3 `CHART` / `CAUTION`; genuine visual read required |
-| LSA-LSE-SI-013 | 25-26 / 1265-1266 | BZX exhaust valve | MODEL + TABLE + DRAWING + TEXT | MEDIUM | Thread grammar, 35 MPa limit, torque, compatibility, plug-loosening limit, and low-pressure bleeding | WP2 `MODEL` / `TABLE`; WP3 `CAUTION`; ancillary scope |
-| LSA-LSE-SI-014 | 27-28 / 1267-1268 | JZG G-thread plug with bleeding function | MODEL + TABLE + DRAWING + TEXT | MEDIUM | Thread grammar, 35 MPa limit, torque/material rule, compatibility, and low-pressure bleeding | WP2 `MODEL` / `TABLE`; WP3 `CAUTION`; ancillary scope |
-| LSA-LSE-SI-015 | 29-30 / 1269-1270 | BZS direct-mounted sequence valve model and specifications | MODEL + TABLE + DRAWING + TEXT | HIGH | Thread/design grammar, pressure ranges, paths, torque, compatibility, contamination, pressure-difference, reuse, and flow controls | WP2 `MODEL` / `TABLE`; WP3 `CAUTION` |
-| LSA-LSE-SI-016 | 31-32 / 1271-1272 | BZS dimensions, setup, and operating sequence | DRAWING + TABLE + CHART + PROCEDURE | HIGH | Adjustment range, port directions, pressure setting, locking torque, operating sequence, multiple-valve differential, air, and commissioning | WP3 `PROCEDURE` / `CHART` / `CAUTION`; selective visual verification only where layout matters |
-| LSA-LSE-SI-017 | 33-34 / unnumbered | Sales addresses and network | TEXT + DRAWING | NON-TEST | Contact details and sales geography | Exclude; not durable LSA/LSE technical knowledge |
-| LSA-LSE-SI-018 | 1-32 / all included printed pages | Repeated navigation and paired spread renders | TEXT | NON-TEST | Sidebar navigation, section tabs, page duplication, and cross-reference chrome | Exclude as navigation/render duplication; inventory follows local technical content |
+| LSA-LSE-SI-001 | 1-2 / 947-948 | LSA 概述与特点 | TEXT + DRAWING | HIGH | 侧推定位、上方零干涉、安装尺寸通用性、2.8 kN 标称夹紧力及直装式速度控制阀 | WP2 `FACT`；保留图示本地限定 |
+| LSA-LSE-SI-002 | 3-4 / 949-950 | LSA 型号、规格与夹紧力关系 | MODEL + TABLE + FORMULA + CHART | HIGH | 四字段语法、φ36 本体、行程/容量/压力/温度/流体/重量、`F = 0.394 x P`、压力-夹紧力表及不可使用范围后果 | 型号语法及 `LSA-LSE-Q-0001`；WP2 `TABLE`；WP3 `CALCULATION` / `CHART` |
+| LSA-LSE-SI-003 | 5-6 / 951-952 | LSA 尺寸、设计、安装与速度控制 | DRAWING + TABLE + TEXT | HIGH | 油口、安装几何、禁止同时供压、焊接/干燥环境控制、M4 力矩、销轴操作和速度调整 | WP2 `TABLE`；WP3 `PROCEDURE` / `CAUTION`；重复尺寸保留为直接查询证据 |
+| LSA-LSE-SI-004 | 7-8 / 953-954 | LSE 概述与高能力机构 | TEXT + DRAWING | HIGH | 侧推定位、相对 LSA 的 1.5 倍夹紧力、机械自锁、保持力作用及 BZL-A 要求 | WP2 `FACT`；WP3 `CAUTION`；机构图留待选择性视觉核验 |
+| LSA-LSE-SI-005 | 9-10 / 955-956 | LSE 型号、规格及夹紧力/保持力关系 | MODEL + TABLE + FORMULA + CHART | HIGH | 共用四字段语法、行程/容量/压力限制、`F = 0.601 x P`、`Fk = 0.953 x P`、3.62 kN 保持力上限及反作用力注意事项 | 型号语法及 `LSA-LSE-Q-0001`；WP2 `TABLE`；WP3 `CALCULATION` / `CHART` / `CAUTION` |
+| LSA-LSE-SI-006 | 11-12 / 957-958 | LSE 尺寸、设计、安装与速度控制 | DRAWING + TABLE + TEXT | HIGH | 方向变型、安装几何、禁止同时供压、M4 力矩、进油节流调整、排气、多夹紧器控制及带负荷释放 | WP2 `TABLE`；WP3 `PROCEDURE` / `CAUTION`；保留 LSE 本地回路例外 |
+| LSA-LSE-SI-007 | 13-14 / 1725-1726 | 液压安装与速度控制回路通用事项 | TEXT + TABLE + STATE_DIAGRAM | HIGH | ISO-VG32 油品表、清洁、密封胶带、排气、紧固检查、单/复动回路规则及 LSE 例外 | WP3 `PROCEDURE` / `CAUTION`；限定页面的 `DOCUMENT_COMMON` |
+| LSA-LSE-SI-008 | 15-16 / 1727-1728 | 操作、保养与质保通用事项 | TEXT + DRAWING | HIGH | 人员资格、隔离/零压/冷却、重启检查、禁止接触/改造、清洁、检查、存放及大修 | WP3 `CAUTION`；质保内容为 LOW 并排除；限定页面范围 |
+| LSA-LSE-SI-009 | 17-18 / 1729-1730 | 通用符号参考 | TABLE | MEDIUM | 表面粗糙度及 O 形圈材质/硬度的新旧符号对应关系 | WP2 `TABLE`；限定页面的 `DOCUMENT_COMMON` |
+| LSA-LSE-SI-010 | 19-20 / 1257-1258 | 直装式控制阀系列概述 | TEXT + DRAWING + TABLE | MEDIUM | BZL/BZT/BZX/JZG/BZS 的用途、直装关系和压力等级 | WP2 `FACT` / `TABLE`；附属产品范围 |
+| LSA-LSE-SI-011 | 21-22 / 1259-1260 | BZL 低压速度控制阀型号与兼容性 | MODEL + TABLE + TEXT | HIGH | 螺纹/设计/控制方式语法、A/B 回路含义、压力/温度/力矩、兼容性、禁止重复使用及 LSA/LSE 对应关系 | WP2 `MODEL` / `TABLE`；WP3 `CAUTION` |
+| LSA-LSE-SI-012 | 23-24 / 1261-1262 | BZL 流量曲线、尺寸与注意事项 | CHART + DRAWING + TEXT | MEDIUM | 调整前后流量与圈数/压力损失关系、油口方向、低压排气和加工尺寸 | WP3 `CHART` / `CAUTION`；必须进行真实视觉读图 |
+| LSA-LSE-SI-013 | 25-26 / 1265-1266 | BZX 排气阀 | MODEL + TABLE + DRAWING + TEXT | MEDIUM | 螺纹语法、35 MPa 限制、力矩、兼容性、堵头旋松限制及低压排气 | WP2 `MODEL` / `TABLE`；WP3 `CAUTION`；附属范围 |
+| LSA-LSE-SI-014 | 27-28 / 1267-1268 | 带排气功能的 JZG G 螺纹堵头 | MODEL + TABLE + DRAWING + TEXT | MEDIUM | 螺纹语法、35 MPa 限制、力矩/材质规则、兼容性及低压排气 | WP2 `MODEL` / `TABLE`；WP3 `CAUTION`；附属范围 |
+| LSA-LSE-SI-015 | 29-30 / 1269-1270 | BZS 直装式顺序阀型号与规格 | MODEL + TABLE + DRAWING + TEXT | HIGH | 螺纹/设计语法、压力范围、通路、力矩、兼容性、污染、压差、重复使用及流量控制 | WP2 `MODEL` / `TABLE`；WP3 `CAUTION` |
+| LSA-LSE-SI-016 | 31-32 / 1271-1272 | BZS 尺寸、设定与动作顺序 | DRAWING + TABLE + CHART + PROCEDURE | HIGH | 调整范围、油口方向、压力设定、防转套力矩、动作顺序、多阀压差、空气及调试 | WP3 `PROCEDURE` / `CHART` / `CAUTION`；仅在布局关系不明确时选择性视觉核验 |
+| LSA-LSE-SI-017 | 33-34 / 无印刷页码 | 销售地址与网络 | TEXT + DRAWING | NON-TEST | 联系方式和销售区域 | 排除；不属于耐久的 LSA/LSE 技术知识 |
+| LSA-LSE-SI-018 | 1-32 / 全部收录印刷页 | 重复导航及成对跨页呈现 | TEXT | NON-TEST | 侧栏导航、章节标签、页面重复和交叉引用界面 | 作为导航/呈现重复排除；来源清单以本地技术内容为准 |
 
 ## 3. Question Statistics
 
@@ -117,7 +110,7 @@ as new evidence.
 
 - Binding: MODEL_FAMILY
 - Product: LSA/LSE 油压复动式侧向夹紧器
-- Model / Scope: LSA0360-C□ standard family and LSE0360-C□ high-power family
+- Model / Scope: LSA0360-C□ 标准系列和 LSE0360-C□ 高能力系列
 
 ### Question
 
@@ -128,7 +121,7 @@ as new evidence.
 ### Standard Answer
 
 `LSA` 表示标准侧向夹紧器系列；`LSE` 表示带机械自锁机构的高能力侧向夹紧器
-系列。两个型号中的 `036` 都表示夹紧器本体夹紧部分外径为 phi 36 mm，末位
+系列。两个型号中的 `036` 都表示夹紧器本体夹紧部分外径为 φ36 mm，末位
 `0` 是本 PDF 列出的设计编号，`C` 表示板式配管型并配有 G 螺纹堵头。面向
 供油口观察时，`L` 表示压板向左，`R` 表示压板向右。因此 `LSA0360-CL` 和
 `LSE0360-CR` 的字段顺序与取值均合法。
@@ -137,7 +130,7 @@ as new evidence.
 
 - P1 [10]: 正确说明 `LSA` 是标准侧向夹紧器系列。
 - P2 [15]: 正确说明 `LSE` 是带机械自锁机构的高能力侧向夹紧器系列。
-- P3 [15]: 正确说明 `036` 表示夹紧器本体夹紧部分外径 phi 36 mm。
+- P3 [15]: 正确说明 `036` 表示夹紧器本体夹紧部分外径 φ36 mm。
 - P4 [10]: 正确说明末位 `0` 是设计编号。
 - P5 [15]: 正确说明 `C` 为配有 G 螺纹堵头的板式配管型。
 - P6 [10]: 正确限定压板方向的观察视角为面向供油口。
@@ -146,9 +139,9 @@ as new evidence.
 
 ### Accepted Variants
 
-- `phi 36 mm` 可写为 `φ36 mm`、`Φ36 mm` 或 `直径 36 mm`。
-- `板式配管型` 可写为 `板式连接型` 或 `manifold connection`。
-- `机械自锁机构` 可写为语义等价的 `mechanical self-lock mechanism`。
+- `φ36 mm` 可写为 `Φ36 mm` 或 `直径 36 mm`。
+- `板式配管型` 可写为 `板式连接型`。
+- `机械自锁机构` 可写为 `机械式自锁机构`。
 
 ### Forbidden Errors
 
@@ -161,7 +154,7 @@ as new evidence.
 
 ### Tolerance
 
-- Exact family boundary, phi 36 mm body class, design number `0`, piping value `C`, and direction meanings are required.
+- 必须准确给出系列边界、φ36 mm 主体尺寸等级、设计编号 `0`、配管方式 `C` 和方向含义。
 
 ### Source
 
@@ -171,4 +164,4 @@ as new evidence.
 - Section: LSA/LSE 特点 / 型号表示 / 规格
 - Local scope path: LSA 标准侧向夹紧器与 LSE 高能力自锁侧向夹紧器；LSA0360-C□ / LSE0360-C□ 型号字段
 - Evidence type: TEXT + MODEL + TABLE + DRAWING
-- Evidence: LSA/LSE 特点页区分标准和高能力自锁系列；型号页给出 Family-036-0-C-Direction 顺序，将 036 定义为 phi 36 mm 本体尺寸、0 定义为设计编号、C 定义为配有 G 螺纹堵头的板式配管，并以面向供油口的视角定义 L/C/R。
+- Evidence: LSA/LSE 特点页区分标准和高能力自锁系列；型号页给出“系列-036-0-C-方向”的顺序，将 036 定义为 φ36 mm 本体尺寸、0 定义为设计编号、C 定义为配有 G 螺纹堵头的板式配管，并以面向供油口的视角定义 L/C/R。
