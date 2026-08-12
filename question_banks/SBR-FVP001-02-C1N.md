@@ -94,37 +94,38 @@ Negative grammar cases and reasons:
 - `BZL0100-B`: BZL design number `0` is not listed; the printed design number is `1`.
 - `BZL0201-B`: BZL thread code `20` is not listed in this PDF.
 
-### 2.3 Source-first inventory and initial dispositions
+### 2.3 Source inventory and coverage
 
-`HIGH` and `MEDIUM` items remain open until their mapped questions and
-construction audits are complete. The disposition column identifies planned
-Work Packages and does not claim coverage in advance.
+The inventory maps durable source objects to representative questions or an explicit
+coverage disposition. Repeated numeric grids, illustrations, and ancillary material
+remain direct source evidence where a standalone question would add little
+discrimination.
 
-| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Initial disposition |
+| Inventory ID | Physical / printed page | Local scope | Evidence type | Priority | Testable object | Coverage disposition |
 |---|---|---|---|---|---|---|
-| FVP-FVH-SI-001 | 2 / 1 | FVP/FVH overview | TEXT + DRAWING | HIGH | Split-clamp placement freedom, workpiece-following positioning, and contrast with self-centering clamps | WP2 `FACT`; product-series scope |
-| FVP-FVH-SI-002 | 3 / 2 | Features and application examples | TEXT + TABLE + DRAWING | MEDIUM | 8 mm stroke, 75 mm maximum platen height, 50 mm allowable eccentricity, family combinations, and representative applications | WP2 `FACT` / `TABLE`; avoid application-drawing duplicates |
-| FVP-FVH-SI-003 | 4 / 3 | FVP pusher operation and construction | STATE_DIAGRAM + DRAWING + TEXT | HIGH | Release/clamp port behavior, slide direction, continuous pushing action, opposed-use synchronization, and internal construction | WP2 `FACT`; WP3 `PROCEDURE` / `CAUTION` |
-| FVP-FVH-SI-004 | 5 / 4 | FVH support operation and construction | STATE_DIAGRAM + DRAWING + TEXT | HIGH | Release, platen advance, wedge locking, holding-force state, FVP/FVH sequencing, and approximately 50 N spring force during release | WP2 `FACT`; WP3 `PROCEDURE` / `CAUTION` |
-| FVP-FVH-SI-005 | 6 / 5 | Product model designation and specifications | TABLE + DRAWING | HIGH | FVP/FVH model fields, family boundary, stroke, force/support values, platen-height range, eccentricity, capacities, pressure, temperature, fluid, and mass | Grammar and representative model question in Section 2.2 / `FVP-FVH-Q-0001`; WP2 `TABLE` |
-| FVP-FVH-SI-006 | 7 / 6 | Force and load/displacement relationships | FORMULA + TABLE + CHART + DRAWING | HIGH | FVP height-dependent pusher-force formulae, FVH support-force formula, pressure limits, and FVH load/displacement curve | WP2 `TABLE`; WP3 `CALCULATION` / `CHART` |
-| FVP-FVH-SI-007 | 8-11 / 7-10 | FVP/FVH dimensions, mounting, and platen design | DRAWING + TABLE + TEXT | HIGH | External dimensions, oil/air/lubrication ports, mounting surfaces, Rz6.3 sealing face, fastener paths, platen geometry, load position, and positive/negative platen-height orientation | WP2 `TABLE`; WP3 `PROCEDURE` / `CAUTION`; repeated dimension grids remain direct lookup evidence |
-| FVP-FVH-SI-008 | 12 / 11 | Product design cautions | TEXT + TABLE + DRAWING | HIGH | Circuit design, simultaneous-pressure prohibition, opposed-use sequencing, collision avoidance, platen-height/eccentricity limits, bolt-position selection, continuous air cleaning, and FVH equal-pressure requirement | WP3 `CAUTION` / `PROCEDURE` |
-| FVP-FVH-SI-009 | 13 / 12 | Reference hydraulic circuits | STATE_DIAGRAM + TEXT | HIGH | Opposed FVP synchronization and FVP/FVH sequence-valve circuit order | WP3 `PROCEDURE`; preserve circuit-local conditions |
-| FVP-FVH-SI-010 | 14 / 13 | Product installation and speed adjustment | TEXT + TABLE + DRAWING | HIGH | Fluid selection, platen/body fastener strength and torque, gap-free installation, 0.5-1 s stroke target, low-flow startup, abnormal-pressure check, air effects, and temperature adjustment | WP2 `TABLE`; WP3 `PROCEDURE` / `CAUTION` |
-| FVP-FVH-SI-011 | 15 / 14 | Product maintenance and inspection | TEXT + TABLE + DRAWING | HIGH | FVP/FVH lubrication frequencies, 1 mL amount, molybdenum-disulfide grease, excess-grease consequences, and cleaning | WP2 `TABLE`; WP3 `PROCEDURE` / `CAUTION` |
-| FVP-FVH-SI-012 | 16 / 15 | BZL0101-B model and specifications | MODEL + TABLE + DRAWING | MEDIUM | BZL field grammar, meter-out symbol, pressure/temperature/flow specifications, tightening torque, FVP compatibility, and FVH exclusion | Grammar in Section 2.2; WP2 `MODEL` / `TABLE` |
-| FVP-FVH-SI-013 | 17 / 16 | BZL0101-B flow curves, dimensions, and cautions | CHART + DRAWING + TEXT | MEDIUM | Adjusted flow versus turns/pressure loss, pre-adjustment flow, port orientation, dimensions, circuit-design warning, and low-pressure air bleeding | WP3 `CHART` / `CAUTION`; dimensions remain direct lookup evidence |
-| FVP-FVH-SI-014 | 18 / 17 | Common hydraulic installation and fluid reference | TEXT + TABLE + DRAWING | HIGH | Fluid selection, contamination control, sealing tape, air-bleeding sequence and 2 MPa limit, tightening checks, and ISO-VG32 oil table | WP3 `PROCEDURE` / `CAUTION`; page-bounded `DOCUMENT_COMMON` |
-| FVP-FVH-SI-015 | 19 / 18 | Common hydraulic speed-control circuits | STATE_DIAGRAM + TEXT | HIGH | Double-acting meter-out requirement, meter-in instability, single/double-acting circuit separation, back-pressure coupling, and internal-pressure controls | WP3 `PROCEDURE` / `CAUTION`; page-bounded `DOCUMENT_COMMON` |
-| FVP-FVH-SI-016 | 20 / 19 | Common operation and maintenance safety | TEXT + DRAWING | HIGH | Qualified staff, fall/unintended-motion protection, pressure/power isolation, zero-pressure checks, cooldown, restart inspection, no-touch, and no-modification requirements | WP3 `CAUTION`; page-bounded `DOCUMENT_COMMON` |
+| FVP-FVH-SI-001 | 2 / 1 | FVP/FVH overview | TEXT + DRAWING | HIGH | Split-clamp placement freedom, workpiece-following positioning, and contrast with self-centering clamps | Product positioning and workpiece-following behavior in `FVP-FVH-Q-0002` |
+| FVP-FVH-SI-002 | 3 / 2 | Features and application examples | TEXT + TABLE + DRAWING | MEDIUM | 8 mm stroke, 75 mm maximum platen height, 50 mm allowable eccentricity, family combinations, and representative applications | Headline envelope in `FVP-FVH-Q-0002`; repeated application drawings remain illustrative context rather than duplicate questions |
+| FVP-FVH-SI-003 | 4 / 3 | FVP pusher operation and construction | STATE_DIAGRAM + DRAWING + TEXT | HIGH | Release/clamp port behavior, slide direction, continuous pushing action, opposed-use synchronization, and internal construction | FVP action sequence in `FVP-FVH-Q-0012` and opposed-use controls in `FVP-FVH-Q-0013`; labeled internal parts remain explanatory drawing context |
+| FVP-FVH-SI-004 | 5 / 4 | FVH support operation and construction | STATE_DIAGRAM + DRAWING + TEXT | HIGH | Release, platen advance, wedge locking, holding-force state, FVP/FVH sequencing, and approximately 50 N spring force during release | FVH action, wedge locking, family boundary, and 50 N release behavior in `FVP-FVH-Q-0012`; opposed sequence in `FVP-FVH-Q-0013` |
+| FVP-FVH-SI-005 | 6 / 5 | Product model designation and specifications | TABLE + DRAWING | HIGH | FVP/FVH model fields, family boundary, stroke, force/support values, platen-height range, eccentricity, capacities, pressure, temperature, fluid, and mass | Grammar and family boundary in Section 2.2 and `FVP-FVH-Q-0001`; shared limits in `FVP-FVH-Q-0003`; capacities/mass in `FVP-FVH-Q-0004`; formulas in `FVP-FVH-Q-0005`; listed fluid remains direct selection evidence |
+| FVP-FVH-SI-006 | 7 / 6 | Force and load/displacement relationships | FORMULA + TABLE + CHART + DRAWING | HIGH | FVP height-dependent pusher-force formulae, FVH support-force formula, pressure limits, and FVH load/displacement curve | Formula table in `FVP-FVH-Q-0005`, deterministic calculations in `FVP-FVH-Q-0009` and `FVP-FVH-Q-0010`, and genuine chart read in `FVP-FVH-Q-0011` |
+| FVP-FVH-SI-007 | 8-11 / 7-10 | FVP/FVH dimensions, mounting, and platen design | DRAWING + TABLE + TEXT | HIGH | External dimensions, oil/air/lubrication ports, mounting surfaces, Rz6.3 sealing face, fastener paths, platen geometry, load position, and positive/negative platen-height orientation | Fastener paths in `FVP-FVH-Q-0006` and platen geometry/load-position controls in `FVP-FVH-Q-0018`; repeated external, port, and sealing-face dimension grids remain direct design lookup evidence |
+| FVP-FVH-SI-008 | 12 / 11 | Product design cautions | TEXT + TABLE + DRAWING | HIGH | Circuit design, simultaneous-pressure prohibition, opposed-use sequencing, collision avoidance, platen-height/eccentricity limits, bolt-position selection, continuous air cleaning, and FVH equal-pressure requirement | Hydraulic, opposed-use, air-cleaning, and equal-pressure controls in `FVP-FVH-Q-0013`; platen limits and bolt positions in `FVP-FVH-Q-0018`; collision illustration remains direct handling context |
+| FVP-FVH-SI-009 | 13 / 12 | Reference hydraulic circuits | STATE_DIAGRAM + TEXT | HIGH | Opposed FVP synchronization and FVP/FVH sequence-valve circuit order | Opposed FVP synchronization and FVH-before-FVP order in `FVP-FVH-Q-0013`; connection-count and piping-dependent timing remains an equipment-specific commissioning adjustment |
+| FVP-FVH-SI-010 | 14 / 13 | Product installation and speed adjustment | TEXT + TABLE + DRAWING | HIGH | Fluid selection, platen/body fastener strength and torque, gap-free installation, 0.5-1 s stroke target, low-flow startup, abnormal-pressure check, air effects, and temperature adjustment | Fasteners and gap-free mounting in `FVP-FVH-Q-0006`; complete speed adjustment in `FVP-FVH-Q-0014`; fluid list remains direct installation selection evidence |
+| FVP-FVH-SI-011 | 15 / 14 | Product maintenance and inspection | TEXT + TABLE + DRAWING | HIGH | FVP/FVH lubrication frequencies, 1 mL amount, molybdenum-disulfide grease, excess-grease consequences, and cleaning | Lubrication schedule/material in `FVP-FVH-Q-0007`; excess-grease and contamination consequences in `FVP-FVH-Q-0021` |
+| FVP-FVH-SI-012 | 16 / 15 | BZL0101-B model and specifications | MODEL + TABLE + DRAWING | MEDIUM | BZL field grammar, meter-out symbol, pressure/temperature/flow specifications, tightening torque, FVP compatibility, and FVH exclusion | BZL grammar in Section 2.2; specifications and compatibility in `FVP-FVH-Q-0008`; installation torque consequence in `FVP-FVH-Q-0017` |
+| FVP-FVH-SI-013 | 17 / 16 | BZL0101-B flow curves, dimensions, and cautions | CHART + DRAWING + TEXT | MEDIUM | Adjusted flow versus turns/pressure loss, pre-adjustment flow, port orientation, dimensions, circuit-design warning, and low-pressure air bleeding | Adjusted-flow chart in `FVP-FVH-Q-0019` and circuit/bleeding cautions in `FVP-FVH-Q-0017`; pre-adjustment curve, ports, and dimensions remain direct selection/installation evidence |
+| FVP-FVH-SI-014 | 18 / 17 | Common hydraulic installation and fluid reference | TEXT + TABLE + DRAWING | HIGH | Fluid selection, contamination control, sealing tape, air-bleeding sequence and 2 MPa limit, tightening checks, and ISO-VG32 oil table | Page-bounded air-bleeding procedure in `FVP-FVH-Q-0015`; fluid table, contamination, sealing tape, and tightening checks remain common installation reference context |
+| FVP-FVH-SI-015 | 19 / 18 | Common hydraulic speed-control circuits | STATE_DIAGRAM + TEXT | HIGH | Double-acting meter-out requirement, meter-in instability, single/double-acting circuit separation, back-pressure coupling, and internal-pressure controls | Page-bounded double-acting speed-control, circuit-separation, back-pressure, and internal-pressure safeguards in `FVP-FVH-Q-0020` |
+| FVP-FVH-SI-016 | 20 / 19 | Common operation and maintenance safety | TEXT + DRAWING | HIGH | Qualified staff, fall/unintended-motion protection, pressure/power isolation, zero-pressure checks, cooldown, restart inspection, no-touch, and no-modification requirements | Page-bounded operation and maintenance controls in `FVP-FVH-Q-0016` |
 | FVP-FVH-SI-017 | 21 / 20 | Warranty | TEXT | LOW | Warranty term, coverage, and exclusions | Exclude from core capability bank; commercial policy |
 | FVP-FVH-SI-018 | 1 and 22 / unnumbered | Cover, catalog metadata, and sales network | TEXT + DRAWING | NON-TEST | Product identity, catalog number, publication history, contact details, and sales geography | Product identity retained; commercial/contact material excluded |
 | FVP-FVH-SI-019 | 2-21 / 1-20 | Navigation and repeated sidebars | TEXT | NON-TEST | Repeated section navigation, accessory links, and caution navigation | Exclude as navigation chrome; inventory follows the local technical content |
 
 ## 3. Question Statistics
 
-- Total: 19
+- Total: 21
 - FACT: 1
 - SPEC_LOOKUP: 2
 - TABLE: 4
@@ -132,7 +133,7 @@ Work Packages and does not claim coverage in advance.
 - CALCULATION: 2
 - CHART: 2
 - PROCEDURE: 3
-- CAUTION: 4
+- CAUTION: 6
 
 ## 4. Questions
 
@@ -458,12 +459,14 @@ FVH0600 的支撑力公式为 `Fk = 0.57 × P`。`P` 是供给油压，单位为
 - P1 [10]: 正确说明压板螺栓强度等级为 12.9。
 - P2 [10]: 正确给出压板安装螺栓 M6。
 - P3 [10]: 正确给出压板安装紧固力矩 10 N·m。
-- P4 [10]: 正确说明本体使用 6 根强度等级 12.9 的内六角螺栓。
-- P5 [10]: 正确给出法兰上部安装使用 M6。
-- P6 [10]: 正确给出法兰上部安装紧固力矩 10 N·m。
-- P7 [10]: 正确给出法兰下部安装使用 M8。
-- P8 [10]: 正确给出法兰下部安装紧固力矩 25 N·m。
-- P9 [20]: 正确说明压板应顶住限位块并无间隙安装。
+- P4 [5]: 正确说明本体使用 6 根内六角螺栓。
+- P5 [5]: 正确说明本体螺栓强度等级为 12.9。
+- P6 [10]: 正确给出法兰上部安装使用 M6。
+- P7 [10]: 正确给出法兰上部安装紧固力矩 10 N·m。
+- P8 [10]: 正确给出法兰下部安装使用 M8。
+- P9 [10]: 正确给出法兰下部安装紧固力矩 25 N·m。
+- P10 [10]: 正确说明压板应顶住限位块。
+- P11 [10]: 正确说明压板必须无间隙安装。
 
 ### Accepted Variants
 
@@ -636,10 +639,11 @@ FVP/FVH 型号。
 ### Scoring Standard
 
 - P1 [20]: 正确选择 H=50 mm 对应的系数 0.39。
-- P2 [20]: 正确写出并代入 `F = 0.39 × 4.5`。
-- P3 [25]: 正确给出未舍入结果 1.755 kN。
-- P4 [25]: 正确按 ROUND_HALF_UP 得到 1.76 kN。
-- P5 [10]: 正确保留两位小数并标注 kN。
+- P2 [15]: 正确写出并代入 `F = 0.39 × 4.5`。
+- P3 [20]: 正确给出未舍入结果 1.755 kN。
+- P4 [20]: 正确给出舍入结果 1.76 kN。
+- P5 [15]: 正确使用 ROUND_HALF_UP 并保留两位小数。
+- P6 [10]: 正确标注最终单位 kN。
 
 ### Accepted Variants
 
@@ -690,10 +694,11 @@ FVP/FVH 型号。
 ### Scoring Standard
 
 - P1 [20]: 正确选择公式 Fk=0.57×P。
-- P2 [20]: 正确代入 P=5 MPa。
-- P3 [25]: 正确给出未舍入结果 2.85 kN。
-- P4 [25]: 正确按 ROUND_HALF_UP 得到 2.9 kN。
-- P5 [10]: 正确保留一位小数并标注 kN。
+- P2 [15]: 正确代入 P=5 MPa。
+- P3 [20]: 正确给出未舍入结果 2.85 kN。
+- P4 [20]: 正确给出舍入结果 2.9 kN。
+- P5 [15]: 正确使用 ROUND_HALF_UP 并保留一位小数。
+- P6 [10]: 正确标注最终单位 kN。
 
 ### Accepted Variants
 
@@ -857,9 +862,13 @@ FVP/FVH 型号。
 
 - P1 [20]: 正确说明不得同时向夹紧侧和释放侧供压。
 - P2 [20]: 正确说明 FVP/FVH 对向时 FVH 必须先锁紧。
-- P3 [20]: 正确说明两个 FVP 应同步接触并给出单侧压力风险。
-- P4 [20]: 正确说明 FVH 两侧压力相同及低释放压力风险。
-- P5 [20]: 正确说明持续供气、0.2-0.3 MPa 和断气风险。
+- P3 [15]: 正确说明两个 FVP 应同步接触工件。
+- P4 [10]: 正确说明单侧先接触可能使工件变形。
+- P5 [15]: 正确说明 FVH 夹紧侧与释放侧应使用相同压力。
+- P6 [10]: 正确说明释放侧压力较低时 FVH 可能无法释放。
+- P7 [5]: 正确说明喷气清洁供气必须持续保持。
+- P8 [3]: 正确给出推荐空气压力 0.2-0.3 MPa。
+- P9 [2]: 正确说明断气会使异物侵入并导致动作不良。
 
 ### Accepted Variants
 
@@ -908,14 +917,15 @@ FVP/FVH 型号。
 
 ### Scoring Standard
 
-- P1 [15]: 正确说明安装流量调节阀并从低速/小流量开始。
-- P2 [15]: 正确说明逐渐增加至规定速度。
-- P3 [20]: 正确给出全行程目标 0.5-1 s。
-- P4 [15]: 正确说明高速起调会产生异常脉动高压或过载损坏风险。
-- P5 [10]: 正确说明调整时检查异常高压。
-- P6 [10]: 正确说明大量空气会使速度调整失效并应排气。
-- P7 [10]: 正确说明在实际使用温度下调整及油温影响。
-- P8 [5]: 正确说明 FVH 过慢会延长保持力建立。
+- P1 [10]: 正确说明使用流量调节阀调整速度。
+- P2 [10]: 正确说明从低速/小流量状态开始。
+- P3 [10]: 正确说明逐渐增加流量至规定速度。
+- P4 [20]: 正确给出全行程目标 0.5-1 s。
+- P5 [15]: 正确说明从高速起调可能产生异常脉动高压或过载损坏。
+- P6 [10]: 正确说明调整时检查异常高压。
+- P7 [10]: 正确说明大量空气会使速度调整失效并应排气。
+- P8 [10]: 正确说明应在实际使用温度下调整及油温影响。
+- P9 [5]: 正确说明 FVH 过慢会延长保持力建立。
 
 ### Accepted Variants
 
@@ -971,7 +981,8 @@ FVP/FVH 型号。
 - P2 [20]: 正确说明旋松最近接头螺母一圈。
 - P3 [20]: 正确说明左右摇动配管并排出含气液压油。
 - P4 [20]: 正确说明排净后复紧接头螺母。
-- P5 [20]: 正确说明最上端/最末端排气位置及最上端排气阀。
+- P5 [10]: 正确说明在回路最上端和最末端附近排气效果更好。
+- P6 [10]: 正确说明应在回路最上端附近设置排气阀。
 
 ### Accepted Variants
 
@@ -1019,13 +1030,17 @@ FVP/FVH 型号。
 
 ### Scoring Standard
 
-- P1 [15]: 正确限定由有知识和专业经验的人员操作维护。
-- P2 [15]: 正确说明防坠落和防误动作措施。
-- P3 [20]: 正确说明切断压力源、电源并确认回路零压。
-- P4 [10]: 正确说明等待设备完全冷却。
-- P5 [15]: 正确说明重新启动前检查螺栓等连接部位。
-- P6 [10]: 正确说明运行中不得接触工件、配件和夹钳。
-- P7 [15]: 正确说明不得擅自拆解/改造/修理且大修委托厂家。
+- P1 [12]: 正确限定由有知识和专业经验的人员操作维护。
+- P2 [12]: 正确说明对被驱动物体采取防坠落措施。
+- P3 [12]: 正确说明采取防止误动作的措施。
+- P4 [10]: 正确说明拆卸前切断压力源。
+- P5 [10]: 正确说明拆卸前切断电源。
+- P6 [10]: 正确说明确认油压/气压回路为零压。
+- P7 [8]: 正确说明等待设备完全冷却。
+- P8 [8]: 正确说明重新启动前检查螺栓等连接部位。
+- P9 [8]: 正确说明运行中不得接触工件、配件和夹钳。
+- P10 [5]: 正确说明不得擅自拆解、改造或修理。
+- P11 [5]: 正确说明大修应委托厂家。
 
 ### Accepted Variants
 
@@ -1077,10 +1092,18 @@ FVP/FVH 型号。
 
 ### Scoring Standard
 
-- P1 [25]: 正确给出 10 N·m、金属密封和力矩不足风险。
-- P2 [25]: 正确禁止跨夹钳再使用并说明螺纹底面深度/密封风险。
-- P3 [25]: 正确说明按速度控制回路规则设计及错误设计风险。
-- P4 [25]: 正确说明低压排气、高压危险及最低动作压力参考。
+- P1 [10]: 正确给出本体推荐紧固力矩 10 N·m。
+- P2 [8]: 正确说明端面采用金属密封。
+- P3 [7]: 正确说明力矩不足会导致无法调节流量。
+- P4 [10]: 正确禁止将已使用的 BZL 转装到另一夹钳。
+- P5 [10]: 正确说明不同夹钳 G 螺纹底面深度可能不同。
+- P6 [5]: 正确说明跨夹钳转装可能导致密封不严、流量无法调节。
+- P7 [10]: 正确说明必须按夹紧器速度控制回路规则设计。
+- P8 [5]: 正确说明错误回路设计可能导致误动作。
+- P9 [5]: 正确说明错误回路设计可能导致设备损坏。
+- P10 [10]: 正确说明排气必须在低压下进行。
+- P11 [10]: 正确说明高压排气危险。
+- P12 [10]: 正确说明排气压力参考回路内机器的最低动作压力。
 
 ### Accepted Variants
 
@@ -1129,12 +1152,13 @@ FVP/FVH 型号。
 ### Scoring Standard
 
 - P1 [20]: 正确说明必须在最大压板高度和容许偏心量内使用。
-- P2 [15]: 正确说明超限损坏风险及能力随高度/偏心量变化。
-- P3 [20]: 正确说明偏心量大于 12 mm 时按 25g7 滑块宽度定位。
-- P4 [15]: 正确说明安装部共有 6 个螺栓孔。
-- P5 [10]: 正确说明正高度使用前方 4 孔。
-- P6 [10]: 正确说明负高度使用后方 4 孔。
-- P7 [10]: 正确说明大偏移量推荐全部 6 孔。
+- P2 [10]: 正确说明超限可能损坏机器。
+- P3 [5]: 正确说明能力随压板高度和偏心量变化。
+- P4 [20]: 正确说明偏心量大于 12 mm 时按 25g7 滑块宽度定位。
+- P5 [15]: 正确说明安装部共有 6 个螺栓孔。
+- P6 [10]: 正确说明正高度使用前方 4 孔。
+- P7 [10]: 正确说明负高度使用后方 4 孔。
+- P8 [10]: 正确说明大偏移量推荐全部 6 孔。
 
 ### Accepted Variants
 
@@ -1217,3 +1241,121 @@ FVP/FVH 型号。
 - Local scope path: BZL0101-B 回油节流，ISO-VG32 25-35 °C，打开 4 圈，压力损失 1/3/5 MPa 曲线
 - Evidence type: CHART + TEXT
 - Evidence: 调整后流量图以开启圈数为横轴、L/min 为纵轴，绿色/红色/蓝色曲线分别标示 1/3/5 MPa；4 圈端点约为 3.2/4.8/7.0 L/min。
+
+## FVP-FVH-Q-0020
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: KOSMEK 油压系列通用事项
+- Model / Scope: SBR-FVP001-02-C1N.pdf :: physical page 19 / printed page 18, double-acting clamp speed-control circuits applicable to FVP/FVH
+
+### Question
+
+按本 PDF 第 18 印刷页的通用回路要求，为 FVP/FVH 复动夹紧器设计速度控制时，
+夹紧侧和释放侧应采用什么节流方式？为什么不推荐进油节流？复动与单动夹紧器
+并用时回路应如何处理，并需防范哪些背压和内压上升风险？
+
+### Standard Answer
+
+FVP/FVH 属于复动夹紧器，夹紧侧和释放侧都应采用回油节流。进油节流容易受
+回路内混入空气的影响，难以稳定控制速度。复动与单动夹紧器并用时，原则上
+不要在同一回路中进行速度控制，应将控制回路各自分开。即使分开，共通油箱
+管路存在背压时，仍可能出现复动夹紧器动作后带动单动夹紧器动作。回油节流
+过程中还可能因供油量造成回路内压上升，超过顺序阀或动作确认压力开关的设定
+压力后使系统无法动作；应通过流量调节阀预先减少供油量等措施抑制内压上升。
+
+### Scoring Standard
+
+- P1 [20]: 正确说明夹紧侧采用回油节流。
+- P2 [20]: 正确说明释放侧也采用回油节流。
+- P3 [15]: 正确说明进油节流易受回路内空气影响而难以稳定控制速度。
+- P4 [20]: 正确说明复动与单动夹紧器的速度控制回路原则上应分开。
+- P5 [15]: 正确说明共通油箱管路背压可能造成意外联动。
+- P6 [5]: 正确指出回油节流可能造成回路内压上升并影响压力控制元件。
+- P7 [5]: 正确提出预先减少供油量等流量控制措施。
+
+### Accepted Variants
+
+- `回油节流` 可写为 `meter-out`；`进油节流` 可写为 `meter-in`。
+- `各自分开` 可写为 `使用独立控制回路`。
+
+### Forbidden Errors
+
+- 将夹紧侧或释放侧设置为进油节流。
+- 声称复动与单动夹紧器在同一速度控制回路中不会相互影响。
+- 忽略共通回油背压导致的意外联动风险。
+- 把供油流量控制写成增加供油量以提高内压。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SBR-FVP001-02-C1N.pdf
+- Physical page: 19
+- Printed page: 18
+- Section: 油压夹紧器的速度控制回路及注意事项
+- Local scope path: 本 PDF 第18印刷页 > 复动夹紧器速度控制回路；复动与单动夹紧器并用注意事项 1-2
+- Evidence type: STATE_DIAGRAM + TEXT
+- Evidence: 通用页要求复动夹紧器两侧均采用回油节流，图示进油节流受空气影响，并说明混用系统的回路分离、背压联动、内压上升和供油量调整措施。
+
+## FVP-FVH-Q-0021
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: FVP/FVH 油压复动式分体式夹钳
+- Model / Scope: FVP0600/FVH0600 maintenance, excess-grease, and contamination controls
+
+### Question
+
+对 FVP0600/FVH0600 进行保养时，FVH 给油过多会产生什么后果？为什么要定期
+清洁夹钳周围环境，污垢附着状态下继续使用会带来哪些风险？
+
+### Standard Answer
+
+FVH 给油过多会使支撑力下降，填充过多的润滑脂还可能在动作过程中从夹钳本体
+和滑块之间的间隙溢出。应定期清洁分体式夹钳周围环境；本产品不是完全密封
+结构，切粉和冷却液可能从零件间隙侵入。污垢附着状态下继续使用可能造成定位
+精度不良、动作不良和漏油。
+
+### Scoring Standard
+
+- P1 [20]: 正确说明 FVH 给油过多会使支撑力下降。
+- P2 [10]: 正确说明过量润滑脂可能从本体与滑块间隙溢出。
+- P3 [15]: 正确说明应定期清洁夹钳周围环境。
+- P4 [10]: 正确说明产品不是完全密封结构且异物可能从间隙侵入。
+- P5 [15]: 正确说明污垢会造成定位精度不良。
+- P6 [15]: 正确说明污垢会造成动作不良。
+- P7 [15]: 正确说明污垢会造成漏油。
+
+### Accepted Variants
+
+- `支撑力下降` 可写为 `holding/support force decreases`。
+- `切粉` 可写为 `切屑`。
+
+### Forbidden Errors
+
+- 声称增加润滑脂会提高 FVH 支撑力。
+- 声称本产品为完全密封、无需清洁。
+- 忽略污垢导致的定位、动作或漏油风险。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: SBR-FVP001-02-C1N.pdf
+- Physical page: 15
+- Printed page: 14
+- Section: 保养・检查
+- Local scope path: 给油量过多的 FVH 后果；定期清洁及非完全密封结构注意事项
+- Evidence type: TEXT
+- Evidence: 保养页说明过量给油会降低 FVH 支撑力并可能溢脂；同页要求定期清洁，并列出异物侵入导致定位精度不良、动作不良和漏油的后果。
