@@ -75,22 +75,23 @@ class LsaLseSourceTruthRegressionTests(unittest.TestCase):
         ):
             self.assertIn(required, self.text)
 
-    def test_high_medium_inventory_rows_have_final_dispositions(self):
-        rows = [
-            line
-            for line in self.text.splitlines()
-            if line.startswith("| LSA-LSE-SI-")
-            and ("| HIGH |" in line or "| MEDIUM |" in line)
-        ]
-        self.assertEqual(len(rows), 16)
-        for row in rows:
-            disposition = row.rsplit("|", 2)[1]
-            self.assertRegex(
-                disposition,
-                r"Q-\d{4}|不另设|明确排除|不作为独立|不属于核心",
-            )
-        self.assertNotIn("initial dispositions", self.text)
-        self.assertNotIn("初始处置", self.text)
+    def test_delivery_has_no_construction_only_inventory_or_checkpoint(self):
+        forbidden = (
+            "Source-first inventory",
+            "coverage dispositions",
+            "Inventory ID",
+            "LSA-LSE-SI-",
+            "初始处置",
+            "覆盖处置",
+            "developer notes",
+            "internal checkpoint",
+            "next work package",
+        )
+        for marker in forbidden:
+            self.assertNotIn(marker, self.text)
+
+        question_ids = re.findall(r"^## (LSA-LSE-Q-\d{4})$", self.text, re.MULTILINE)
+        self.assertEqual(question_ids, [f"LSA-LSE-Q-{index:04d}" for index in range(1, 16)])
 
 
 if __name__ == "__main__":
