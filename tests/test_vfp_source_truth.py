@@ -1,4 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP
+from difflib import SequenceMatcher
 from pathlib import Path
 import re
 import unittest
@@ -70,6 +71,75 @@ class VfpSourceTruthRegressionTests(unittest.TestCase):
             "VFP0600-DC",
         ):
             self.assertIn(required, self.text)
+
+    def test_question_ids_and_scoring_are_atomic_and_complete(self):
+        blocks = re.findall(
+            r"^## (VFP-Q-(\d{4}))\n(.*?)(?=^## VFP-Q-|\Z)",
+            self.text,
+            flags=re.MULTILINE | re.DOTALL,
+        )
+        self.assertEqual([int(number) for _, number, _ in blocks], list(range(1, 14)))
+
+        for question_id, _, block in blocks:
+            points = re.findall(r"^- P(\d+) \[(\d+)\]:", block, flags=re.MULTILINE)
+            self.assertTrue(points, question_id)
+            self.assertEqual(
+                [int(point_id) for point_id, _ in points],
+                list(range(1, len(points) + 1)),
+                question_id,
+            )
+            self.assertEqual(sum(int(weight) for _, weight in points), 100, question_id)
+
+    def test_high_and_medium_inventory_rows_have_final_dispositions(self):
+        rows = [
+            [cell.strip() for cell in line.strip().strip("|").split("|")]
+            for line in self.text.splitlines()
+            if line.startswith("| VFP-SI-")
+        ]
+        self.assertEqual(len(rows), 16)
+
+        for inventory_id, _, _, _, priority, _, disposition in rows:
+            if priority in {"HIGH", "MEDIUM"}:
+                self.assertTrue(
+                    "VFP-Q-" in disposition
+                    or "排除" in disposition
+                    or "不单独设题" in disposition,
+                    inventory_id,
+                )
+
+    def test_document_common_questions_are_page_bounded(self):
+        expected = {
+            "VFP-Q-0011": ("1725-1726", "25-26"),
+            "VFP-Q-0012": ("1727-1728", "27-28"),
+            "VFP-Q-0013": ("1729-1730", "29-30"),
+        }
+        for question_id, (printed_pages, physical_pages) in expected.items():
+            block = question_block(self.text, question_id)
+            self.assertIn("- Binding: DOCUMENT_COMMON", block)
+            self.assertIn(
+                "- Model / Scope: VFP_R03_2023KW_C1N.pdf :: 印刷页 ", block
+            )
+            self.assertIn(f"Printed page: {printed_pages}", block)
+            self.assertIn(f"Physical page: {physical_pages}", block)
+
+    def test_questions_do_not_repeat_the_same_semantic_prompt(self):
+        questions = re.findall(
+            r"^## (VFP-Q-\d{4}).*?^### Question\n\n(.*?)\n\n### Standard Answer",
+            self.text,
+            flags=re.MULTILINE | re.DOTALL,
+        )
+        normalized = {
+            question_id: re.sub(r"[^\w]", "", question)
+            for question_id, question in questions
+        }
+        self.assertEqual(len(normalized), 13)
+
+        for left_id, left in normalized.items():
+            for right_id, right in normalized.items():
+                if left_id >= right_id:
+                    continue
+                similarity = SequenceMatcher(None, left, right).ratio()
+                self.assertLess(similarity, 0.65, f"{left_id}/{right_id}: {similarity}")
 
 
 if __name__ == "__main__":
