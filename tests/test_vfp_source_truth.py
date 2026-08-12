@@ -90,22 +90,25 @@ class VfpSourceTruthRegressionTests(unittest.TestCase):
             )
             self.assertEqual(sum(int(weight) for _, weight in points), 100, question_id)
 
-    def test_high_and_medium_inventory_rows_have_final_dispositions(self):
-        rows = [
-            [cell.strip() for cell in line.strip().strip("|").split("|")]
-            for line in self.text.splitlines()
-            if line.startswith("| VFP-SI-")
-        ]
-        self.assertEqual(len(rows), 16)
-
-        for inventory_id, _, _, _, priority, _, disposition in rows:
-            if priority in {"HIGH", "MEDIUM"}:
-                self.assertTrue(
-                    "VFP-Q-" in disposition
-                    or "排除" in disposition
-                    or "不单独设题" in disposition,
-                    inventory_id,
-                )
+    def test_delivery_has_no_construction_only_inventory_or_checkpoint(self):
+        forbidden = (
+            "Source-first inventory",
+            "coverage dispositions",
+            "Inventory ID",
+            "VFP-SI-",
+            "初始处置",
+            "覆盖处置",
+            "developer notes",
+            "internal checkpoint",
+            "next work package",
+            "WP1",
+            "WP2",
+            "WP3",
+            "WP4",
+            "WP5",
+        )
+        for marker in forbidden:
+            self.assertNotIn(marker, self.text)
 
     def test_document_common_questions_are_page_bounded(self):
         expected = {
