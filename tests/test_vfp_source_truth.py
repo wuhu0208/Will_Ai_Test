@@ -125,6 +125,32 @@ class VfpSourceTruthRegressionTests(unittest.TestCase):
             self.assertIn(f"Printed page: {printed_pages}", block)
             self.assertIn(f"Physical page: {physical_pages}", block)
 
+    def test_installation_bolts_do_not_claim_universal_inclusion(self):
+        block = question_block(self.text, "VFP-Q-0009")
+        self.assertIn("使用全部 4 根安装螺栓", block)
+        self.assertIn("未附带安装螺栓", block)
+        self.assertIn("不把“附带”冻结为全系列事实", block)
+        self.assertNotIn("全部 4 根附带", block)
+        self.assertNotIn("附带安装螺栓的数量", block)
+
+    def test_common_bleed_step_keeps_clamp_supporter_subject(self):
+        block = question_block(self.text, "VFP-Q-0011")
+        self.assertIn("离夹紧器或支撑器最近的配管接头", block)
+        self.assertNotIn("离 VFP 最近", block)
+
+    def test_common_safety_keeps_qualification_and_clamp_scopes(self):
+        block = question_block(self.text, "VFP-Q-0012")
+        normalized = re.sub(r"\s+", "", block)
+        for required in (
+            "液压装置的操作必须由具备丰富知识和专业经验的人员进行",
+            "液压/气动机械设备的操作和维护，应由具备丰富知识和经验的人员进行",
+            "禁止接触动作中的夹紧器",
+        ):
+            self.assertIn(re.sub(r"\s+", "", required), normalized)
+        self.assertNotIn("液压装置的操作和维护必须由", block)
+        self.assertNotIn("不得触摸运动部件", block)
+        self.assertNotIn("禁止触摸运转中的运动部件", block)
+
     def test_questions_do_not_repeat_the_same_semantic_prompt(self):
         questions = re.findall(
             r"^## (VFP-Q-\d{4}).*?^### Question\n\n(.*?)\n\n### Standard Answer",
