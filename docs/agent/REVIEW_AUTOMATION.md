@@ -6,7 +6,26 @@
 2. Find open PRs labeled `waiting-review` and choose one meaningful review scope.
 3. If none exists, output `NO_ACTION` and stop.
 4. Read the Issue, PR body, complete diff, CI, relevant source PDF, canonical
-   Markdown, validator output, and prior review/checkpoint history.
+   Markdown, validator output, and prior review/checkpoint history only for the
+   selected review.
+
+## Developer overlap interpretation
+
+The principal Developer state is the PR's unique comment marked
+`<!-- CODEX_CYCLE_STATE_V1 -->`, together with workflow labels and the latest
+meaningful Checkpoint. A later scheduler collision that returns
+`ACTIVE_INVOCATION_SKIP` is healthy overlap prevention when the principal lease
+is still ACTIVE, fresh, boundary-compatible, and unchanged by Review or workflow
+events.
+
+The Reviewer must not treat that collision terminal output as the principal
+Developer execution state. A skip that does not overwrite the ACTIVE Cycle
+State is not orphan, stale, failure, or lack of progress and must not trigger
+resume, recovery, or duplicate implementation.
+
+Recovery is considered only when the principal lease is expired, inconsistent,
+or orphaned, or when labels, Independent Review, CI, PR head, or completion state
+actually changed. Scheduler cadence alone is not evidence of failure.
 
 ## Review scope
 
@@ -17,7 +36,9 @@ compliance. Confirm the PR delivers one PDF to one self-contained Markdown and
 does not prescribe recipient test execution.
 
 For a large PR, checkpoint evidence and resume the same review next cycle. Do
-not issue a final result from a partial sample.
+not issue a final result from a partial sample. Update a full review checkpoint
+only after meaningful review progress or state change; `NO_ACTION` and collision
+observations do not require a repeated full checkpoint.
 
 ## Outcomes
 
@@ -37,11 +58,11 @@ acting as the independent reviewer.
 
 ## Lifecycle authority
 
-GitHub Issue and PR labels are the sole authoritative workflow state. Before
-adding `agent-ready`, remove `blocked` and `product-decision`, verify neither is
-present, and verify there is no other principal `agent-ready` product Issue.
-`agent-ready` must never coexist with either stop label. Canonical question-bank
-front matter and the Source Catalog contain no mutable workflow status.
+GitHub Issue and PR labels are the sole authoritative workflow state. The Cycle
+Lease is operational evidence only. Before adding `agent-ready`, remove
+`blocked` and `product-decision`, verify neither is present, and verify there is
+no other principal `agent-ready` product Issue. Canonical question-bank front
+matter and the Source Catalog contain no mutable workflow status.
 
 ## Bootstrap handoff
 
