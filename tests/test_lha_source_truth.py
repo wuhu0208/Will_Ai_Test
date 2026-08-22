@@ -133,6 +133,58 @@ class LhaSourceTruthRegressionTests(unittest.TestCase):
             for phrase in phrases:
                 self.assertIn(phrase, block)
 
+    def test_document_common_evidence_covers_scored_facts(self):
+        expected = {
+            "LHA-Q-0063": ("动作时间异常变长", "2 MPa以下", "排净后紧固"),
+            "LHA-Q-0064": ("ISO VG 32",),
+            "LHA-Q-0065": ("不要擅自", "分解或改造"),
+            "LHA-Q-0066": ("异物或切削屑", "漏油", "动作不良", "彻底清洁"),
+            "LHA-Q-0120": ("Rz 25", "Ra 6.3"),
+            "LHA-Q-0123": ("OR NBR-70-1 P7-N", "1AP7"),
+            "LHA-Q-0178": ("1至2个螺纹牙", "漏油", "动作不正常"),
+            "LHA-Q-0179": ("配管作业后", "泵油箱排空", "排气"),
+            "LHA-Q-0180": ("内置单向阀", "释放动作脉动", "异常变长"),
+            "LHA-Q-0181": ("回油节流回路", "空气", "速度控制"),
+            "LHA-Q-0182": ("进油节流回路", "异常高压", "漏油或损坏"),
+            "LHA-Q-0183": ("切断压力源和电源", "压力均为零"),
+            "LHA-Q-0184": ("严禁接触动作中的夹紧器", "手指夹伤"),
+            "LHA-Q-0185": ("定期清扫", "损伤密封材料", "漏油"),
+            "LHA-Q-0186": (
+                "配管、安装螺栓、螺母、固定环和夹紧器",
+                "及时加固",
+            ),
+            "LHA-Q-0187": ("发货后1年半", "开始使用后1年", "较短者"),
+            "LHA-Q-0188": ("本公司责任", "更换或修理"),
+            "LHA-Q-0189": ("定期检查维护", "判断失误", "第三方", "产品质量", "改造、修理", "自然灾害", "磨损老化"),
+            "LHA-Q-0190": ("间接损失", "不在质保范围"),
+            "LHA-Q-0192": ("NBR-70-1", "NBR-90", "P：滑动用", "N：一般用"),
+        }
+        for question_id, phrases in expected.items():
+            evidence = question_block(self.text, question_id).split("- Evidence: ", 1)[1]
+            for phrase in phrases:
+                self.assertIn(phrase, evidence)
+
+    def test_q0066_matches_common_page_predicate_and_consequence(self):
+        block = question_block(self.text, "LHA-Q-0066")
+        self.assertIn("异物或切削屑会导致漏油", block)
+        self.assertIn("异物或切削屑会导致动作不良", block)
+        self.assertIn("配管、管接头及配件油孔在使用前彻底清洁", block)
+        self.assertNotIn("阀和夹紧器动作不良或损伤", block)
+
+    def test_q0189_evidence_contains_all_seven_warranty_exclusions(self):
+        block = question_block(self.text, "LHA-Q-0189")
+        evidence = block.split("- Evidence: ", 1)[1]
+        for phrase in (
+            "定期检查维护",
+            "判断失误或使用不当",
+            "用户或第三方不当使用",
+            "非本公司产品质量原因",
+            "未经本公司同意改造、修理",
+            "自然灾害等非本公司责任",
+            "磨损老化备件及其更换费用",
+        ):
+            self.assertIn(phrase, evidence)
+
     def test_scope_statistics_match_rebound_targets(self):
         self.assertIn("- Direct LHA: 72", self.text)
         self.assertIn("- Accessory / Related Product: 35", self.text)
