@@ -47,8 +47,8 @@ LHA 主体尺寸代码为 `036`、`040`、`048`、`055`、`065`、`075`、`090`�
 | 物理页 | 印刷页 | 局部范围 | 题目覆盖 |
 |---|---|---|---|
 | 1 | 499 | 产品总览 | `LHA-Q-0005`-`LHA-Q-0007` |
-| 5 | 503 | 压板设计 | `LHA-Q-0015` |
-| 6 | 504 | LHA产品说明、压板设计 | `LHA-Q-0001`-`LHA-Q-0004`、`LHA-Q-0014` |
+| 5 | 503 | LHA产品说明、压板设计 | `LHA-Q-0001`、`LHA-Q-0003`、`LHA-Q-0014`-`LHA-Q-0015` |
+| 6 | 504 | LHA产品说明 | `LHA-Q-0002`、`LHA-Q-0004` |
 | 7 | 505 | LHA附件、型号表示 | `LHA-Q-0022`、`LHA-Q-0024`、`LHA-Q-0026`-`LHA-Q-0031`、`LHA-Q-0067` |
 | 8 | 506、508 | LHA规格、Q型夹紧行程范围、夹紧力与规格计算、能力曲线 | `LHA-Q-0017`、`LHA-Q-0055`、`LHA-Q-0098`、`LHA-Q-0206`、`LHA-Q-0212`、`LHA-Q-0214`、`LHA-Q-0228`、`LHA-Q-0230` |
 | 9 | 507 | 夹紧力与规格计算、能力曲线 | `LHA-Q-0018`、`LHA-Q-0199`-`LHA-Q-0201`、`LHA-Q-0203`、`LHA-Q-0231` |
@@ -67,8 +67,8 @@ LHA 主体尺寸代码为 `036`、`040`、`048`、`055`、`065`、`075`、`090`�
 | 33 | 531 | 推荐空气传感器、注意事项、空气传感器 | `LHA-Q-0009`-`LHA-Q-0013`、`LHA-Q-0100`-`LHA-Q-0101`、`LHA-Q-0167` |
 | 35 | 533 | 压板设计尺寸 | `LHA-Q-0105` |
 | 36 | 534 | F型压板设计尺寸 | `LHA-Q-0103` |
-| 37 | 535 | LZH-A附件表、LZH-T附件表、其他压板附件表 | `LHA-Q-0109`、`LHA-Q-0112`、`LHA-Q-0117`-`LHA-Q-0118` |
-| 38 | 536 | LZH-F附件表 | `LHA-Q-0115` |
+| 37 | 535 | LZH-A附件表、LZH-T附件表、其他压板附件表 | `LHA-Q-0109`、`LHA-Q-0112`、`LHA-Q-0117` |
+| 38 | 536 | LZH-F附件表、其他压板附件表 | `LHA-Q-0115`、`LHA-Q-0118` |
 | 39 | 745 | LHA专项注意事项、注意事项 | `LHA-Q-0032`、`LHA-Q-0034`-`LHA-Q-0035`、`LHA-Q-0169`-`LHA-Q-0171` |
 | 40 | 746 | LHA专项注意事项、注意事项 | `LHA-Q-0033`、`LHA-Q-0172`-`LHA-Q-0173` |
 | 41 | 747 | 注意事项 | `LHA-Q-0174` |
@@ -98,9 +98,9 @@ LHA 主体尺寸代码为 `036`、`040`、`048`、`055`、`065`、`075`、`090`�
 ## 3. Question Statistics
 
 - Total: 127
-- Direct LHA: 63
-- Accessory / Related Product: 33
-- Document Common: 31
+- Direct LHA: 72
+- Accessory / Related Product: 35
+- Document Common: 20
 - FACT: 24
 - SPEC_LOOKUP: 1
 - MODEL: 7
@@ -151,12 +151,12 @@ LHA快换压板A型更换压板时需要拆装几根螺栓？
 ### Source
 
 - PDF: LHA_R00_2023KW_C1N.pdf
-- Physical page: 6
-- Printed page: 504
+- Physical page: 5
+- Printed page: 503
 - Section: LHA产品说明
 - Local scope path: LHA产品说明 > 压板更换
 - Evidence type: TEXT
-- Evidence: 选配件中的快换型压板，只需一把扳手即能迅速地完成压板的装卸。 | 采用专用的密封设计，能防止高压冷却液侵入，实现了高密封性。 | TLA-1 | TMA-1 | １ | 钢球挡环部位 | 通过楔形结构
+- Evidence: LHA快换压板A型页面标注：压板更换仅需1根螺栓。
 
 ## LHA-Q-0002
 
@@ -250,12 +250,12 @@ LHA的钢球挡环旋转结构如何提高旋转性能和耐久性？
 ### Source
 
 - PDF: LHA_R00_2023KW_C1N.pdf
-- Physical page: 6
-- Printed page: 504
+- Physical page: 5
+- Printed page: 503
 - Section: LHA产品说明
 - Local scope path: LHA产品说明 > 旋转机构
 - Evidence type: DRAWING
-- Evidence: 并且扩大了活塞杆直径，有效抑制了扭矩，还通过大钢球、旋转槽形状的 | 采用高性能的耐腐蚀防尘材料，即使使用氯系冷却液也能保证其高耐久性。 | 采用专用的密封设计，能防止高压冷却液侵入，实现了高密封性。 | 钢球挡环部位 | 的阻力降至极限。 | 方型直线夹紧器 | 钢球挡环旋转结构是，挡环随着活塞杆与钢球的旋转而旋转，将旋转时 旋转槽
+- Evidence: 钢球挡环随活塞杆与钢球一起旋转，将旋转阻力降至极限；扩大活塞杆直径，并采用大钢球和优化的旋转槽形状以提高耐久性。
 
 ## LHA-Q-0004
 
@@ -731,12 +731,12 @@ LHA快换压板A型通过什么结构降低压板紧固操作量？
 ### Source
 
 - PDF: LHA_R00_2023KW_C1N.pdf
-- Physical page: 6
-- Printed page: 504
+- Physical page: 5
+- Printed page: 503
 - Section: 压板设计
 - Local scope path: 压板设计 > 快换A型
 - Evidence type: DRAWING
-- Evidence: 选配件中的快换型压板，只需一把扳手即能迅速地完成压板的装卸。 | 采用专用的密封设计，能防止高压冷却液侵入，实现了高密封性。 | TLA-1 | TMA-1 | １ | 钢球挡环部位 | 通过楔形结构
+- Evidence: LHA快换压板A型采用楔形结构，以小力矩实现压板紧固；压板更换仅需1根螺栓，且因紧固力矩小而不需要固定活塞杆。
 
 ## LHA-Q-0015
 
@@ -785,7 +785,7 @@ LHA标准锥形夹紧压板如何便于自制压板和调整相位？
 - Section: 压板设计
 - Local scope path: 压板设计 > 锥形压板
 - Evidence type: DRAWING
-- Evidence: 油压复动旋转式夹紧器 model LHA 旋转夹紧器 剖面结构 规格 能力曲线图 外形尺寸 空气传感器 压板设计尺寸 附件 P.745
+- Evidence: LHA锥套为标准配置，便于用户自制旋转压板；压板定位专用槽用于调整压板相位。
 
 ## LHA-Q-0017
 
@@ -1169,7 +1169,7 @@ LHA动作确认代码无符号、D、M、N分别表示什么？
 - Section: 型号表示
 - Local scope path: 型号表示 > 完整编码
 - Evidence type: MODEL + TABLE
-- Evidence: C ： 板式连接型 (附带G螺纹堵头) 最低动作压力※3 MPa 1.5 请参照第1257页。 板式连接型 外配管型 型号 LHA0650 LHA0750 LHA0900 LHA1050
+- Evidence: 型号表示依次为LHA、主体尺寸048、设计编号0、配管方式C、夹紧时旋转方向L；无动作确认代码和选配代码时组成LHA0480-CL。
 
 ## LHA-Q-0028
 
@@ -1263,7 +1263,7 @@ A为快换压板A型，F为快换压板F型，P为双压臂型。
 - Section: 型号表示
 - Local scope path: 型号表示 > 选配件
 - Evidence type: MODEL + TABLE
-- Evidence: LHA 048 0 - C R - | 1 2 3 4 5 6 | 036 ： φD=36mm | 065 ： φD=65mm | 048 ： φD=48mm | 105 ： φD=105mm | ( Y30：30° / Y45：45° / Y60：60°) | 油压复动旋转式夹紧器
+- Evidence: 型号表示的选配代码：A为快换压板A型，F为快换压板F型，P为双压臂型。
 
 ## LHA-Q-0030
 
@@ -1312,7 +1312,7 @@ Q后的数字表示夹紧行程值；Y30、Y45、Y60分别表示30°、45°、60
 - Section: 型号表示
 - Local scope path: 型号表示 > 选配件
 - Evidence type: MODEL + TABLE
-- Evidence: ( Y30：30° / Y45：45° / Y60：60°) | 请参照第1257页。 | 1 2 3 4 5 6 | 040 ： φD=40mm | 075 ： φD=75mm | 055 ： φD=55mm | LHA 048 0 - C R -
+- Evidence: 型号表示的选配代码：Q后数字为夹紧行程值；Y30、Y45、Y60分别表示30°、45°、60°特殊旋转角度。
 
 ## LHA-Q-0031
 
@@ -1650,7 +1650,7 @@ LHA旋转压板惯性力矩过大可能造成什么后果？
 - Section: LHA专项注意事项
 - Local scope path: LHA专项注意事项 > 速度调整
 - Evidence type: TEXT
-- Evidence: ● 调整速度时，请将速度控制阀从低速侧(小流量)慢慢向高速侧 | 回路中混有空气的状态下无法进行准确的速度调整。 | ● 请参考“容许动作时间表”调整旋转动作时间。 | 4) 调整旋转速度 | ● 速度调整前必须排净回路中的空气。 | ※ 通用注意事项请参照第1725页。 | 全般 P.499
+- Evidence: 调整速度时，将速度控制阀从低速侧（小流量）慢慢向高速侧（大流量）调整；夹紧动作特别快会加剧各部位磨耗和损伤并导致故障。
 
 ## LHA-Q-0038
 
@@ -2216,7 +2216,7 @@ BZS直装式顺序阀的主要用途是什么？
 - Section: BZX
 - Local scope path: BZX > 排气安全
 - Evidence type: TEXT
-- Evidence: 型号 BZX010 BZX020 BZX030 单动 最高使用压力 MPa 35 杠杆式夹紧器 LKV 使用流体 相当于ISO粘度等级的ISO-VG-32一般液压油 TMA-1 注意事项 1. 排气作业时不得过度旋松堵头。 LFA/LFW 单动 复动 (从完全关闭状态不得旋松2周以上。)
+- Evidence: BZX注意事项：排气作业时不得从完全关闭状态旋松堵头2周以上；高压排气非常危险，必须在相当于回路内机器最低动作压力的低压条件下排气。
 
 ## LHA-Q-0051
 
@@ -2362,7 +2362,7 @@ LHA0360夹紧器内径是多少？
 - Section: 液压通用注意事项
 - Local scope path: 液压通用注意事项 > 回路排气
 - Evidence type: TEXT + PROCEDURE
-- Evidence: ● 若在油压回路内混有大量空气的状态下投入使用，动作时间将会 (旋转夹紧器释放时压板重量负载对夹紧器的影响也属于这种情况。) ② 请将离夹紧器、支撑器最近的配管接头的螺母再旋松一圈。 ③ 请左右摇动配管，使配管连接部位松动，排出混入空气的液压油。 索引 ④ 将空气排净后拧紧管接头螺母。 请将夹紧侧和释放侧均设置为进油节流回路。
+- Evidence: 液压回路混入大量空气会使动作时间异常变长。排气时将供油压力调至2 MPa以下，旋松离夹紧器或支撑器最近的管接头螺母一圈，左右摇动配管排出混有空气的液压油，排净后紧固螺母；在回路最上端及最末端附近排气效果更佳。
 
 ## LHA-Q-0064
 
@@ -3380,7 +3380,7 @@ LZH-W快换A型压板紧固组件由哪些零件组成？
 - Section: 其他压板附件表
 - Local scope path: 其他压板附件表 > LZH-W
 - Evidence type: TABLE
-- Evidence: 3. 请参考快换压板A型的设计尺寸，在需要的相位上加工挡销兼相位调整销孔。 4. 快换压板A型用紧固套件(LZH□-W)为另售品 附件：快换压板A型用紧固套件 快换压板A型的安装用紧固套件 尺寸 设计编号 【紧固件内容】
+- Evidence: 快换压板A型用紧固套件（LZH□-W）为另售品；紧固件内容为楔形块1、楔形块2和紧固螺栓。
 
 ## LHA-Q-0118
 
@@ -3421,12 +3421,12 @@ LZH-B在LHA附件中属于什么产品？
 ### Source
 
 - PDF: LHA_R00_2023KW_C1N.pdf
-- Physical page: 37
-- Printed page: 535
-- Section: 其他压板附件表
-- Local scope path: 其他压板附件表 > LZH-B
+- Physical page: 38
+- Printed page: 536
+- Section: LHA附件：快换压板F型用安装螺栓
+- Local scope path: LHA附件 > 快换压板F型用安装螺栓 > LZH-B
 - Evidence type: TABLE
-- Evidence: 油压复动旋转式夹紧器 附件 model LHA 旋转夹紧器 剖面结构 规格 能力曲线图 外形尺寸 空气传感器 压板设计尺寸 附件 P.745 附件：锥形夹紧压板专用毛坯压板 附件：快换压板F型用毛坯旋转压板
+- Evidence: 附件：快换压板F型用安装螺栓；型号LZH□-B。快换压板F型用固定螺栓由用户另行购买。
 
 ## LHA-Q-0120
 
@@ -3654,9 +3654,9 @@ BZT在直装控制阀对应表中属于哪类产品？
 - Physical page: 50
 - Printed page: 1258
 - Section: 直装控制阀对应表
-- Local scope path: 直装控制阀对应表 > BZT
+- Local scope path: 直装控制阀对应表 > 速度控制阀（高压用） > Model BZT
 - Evidence type: TABLE
-- Evidence: 旋松速度控制阀本体，即可排除回路中的空气。 | → P.1259 | → P.1263 | → P.1265 | → P.1267 | → P.1269 | 1258 | 旋松Ｇ螺纹堵头本体，即可排除回路中的空气。
+- Evidence: 直装控制阀对应表将Model BZT标为速度控制阀（高压用），最高使用压力为35 MPa以下。
 
 ## LHA-Q-0133
 
@@ -4170,9 +4170,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: MODEL_FAMILY
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA-M 系列
 
 ### Question
 
@@ -4211,7 +4211,7 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 - Section: 注意事项
 - Local scope path: 注意事项 > 检测用O形密封圈润滑
 - Evidence type: TEXT
-- Evidence: 屑粉尘等侵入。排气口一旦堵塞，空气传感 涂布适量的甘油。 旋转行程 mm 5.5 6.5 7.5 8.5 10 12 14 16 器就会出现误动作。 如在干燥状态下安装，容易导致Ｏ型密封圈扭曲或损坏。 夹紧行程 mm 8 8 8 10 10 12 12 16 但是，若润滑油涂抹过多，润滑油就会溢出并堵塞检测口，
+- Evidence: LHA-M安装时应在空气传感器O形密封圈部涂布适量甘油；干燥安装容易使O形密封圈扭曲或损坏，润滑油过多会溢出并堵塞检测口，导致空气传感器误动作。
 
 ## LHA-Q-0169
 
@@ -4219,9 +4219,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA 系列
 
 ### Question
 
@@ -4257,10 +4257,10 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 - PDF: LHA_R00_2023KW_C1N.pdf
 - Physical page: 39
 - Printed page: 745
-- Section: 注意事项
-- Local scope path: 注意事项 > 焊接夹具
+- Section: LHA专项注意事项
+- Local scope path: LHA专项注意事项 > 设计方面 > 用于焊接夹具
 - Evidence type: TEXT
-- Evidence: LHD0400 / LHS0400 M5×0.8 | LHA0400 / LHC0400 LHD0400 / LHS0400 LHV0400 / LHW0401 | LHA0400 / LHC0400 | LHA0360 / LHC0360 LHS0360 | 内六角螺栓(强度等级12.9)。 | LHA0360 / LHC0360 | LHV0400 / LHW0401
+- Evidence: LHA设计注意事项：用于焊接夹具时应保护活塞杆滑动面；滑动面沾上焊渣会导致动作不正常、漏油等故障。
 
 ## LHA-Q-0170
 
@@ -4268,9 +4268,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA 系列
 
 ### Question
 
@@ -4314,9 +4314,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA 系列
 
 ### Question
 
@@ -4364,9 +4364,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA 系列
 
 ### Question
 
@@ -4404,7 +4404,7 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 - Section: 注意事项
 - Local scope path: 注意事项 > 压板紧固力矩
 - Evidence type: TEXT
-- Evidence: 如果紧固力矩超出推荐力矩，会导致螺栓的胶着，压板紧固机构 | ● 安装旋转压板时，请务必按照以下表的力矩紧固螺栓 | 紧固螺栓标称 紧固力矩(N･m) | 紧固螺栓标称 紧固力矩(N･m) 直线夹紧器 | 螺纹尺寸 紧固力矩(N･m) | TMV-2 复动 | 注意事项・其他
+- Evidence: 安装LHA旋转压板时必须按对应型号表的推荐力矩紧固螺栓；超过推荐力矩会导致螺栓胶着或压板紧固机构破损。
 
 ## LHA-Q-0173
 
@@ -4412,9 +4412,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA 系列
 
 ### Question
 
@@ -4461,9 +4461,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA 系列
 
 ### Question
 
@@ -4513,9 +4513,9 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: MODEL_FAMILY
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA-D 系列
 
 ### Question
 
@@ -4696,7 +4696,7 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 - Section: 注意事项
 - Local scope path: 注意事项 > 单动夹紧器速度回路
 - Evidence type: TEXT
-- Evidence: 不正常(脉动或停止动作)，或导致释放时间异常得长。因此， ① 在同时使用复动夹紧器和单动夹紧器的系统中，原则上不要在 | 另外，对动作速度有限制的夹紧器(旋转夹紧器、小型外螺纹式单动 否则，可能会导致单动夹紧器的释放动作不正常或释放动作时间 | 请使用内置单向阀的流量调整阀，只对锁紧动作时的流量进行控制。 同一回路中进行速度控制。 | 但是，采用回油节流回路进行速度控制时，在设计液压回路 | 1726 | ● 单动夹紧器的速度控制回路 | 请使用内置单向阀的流量调整阀，对释放侧的流量也进行控制。
+- Evidence: 单动夹紧器应使用内置单向阀的流量调整阀，原则上只控制锁紧动作流量；释放流量过小会使释放动作脉动、停止或释放时间异常变长。
 
 ## LHA-Q-0181
 
@@ -4937,10 +4937,10 @@ TMZ-1MB板式安装座适用于哪种机器型号？
 - PDF: LHA_R00_2023KW_C1N.pdf
 - Physical page: 45
 - Printed page: 1727
-- Section: 注意事项
-- Local scope path: 注意事项 > 活塞杆与柱塞清洁
+- Section: 液压通用注意事项
+- Local scope path: 液压通用注意事项 > 保养、检查 > 活塞杆和柱塞周围清扫
 - Evidence type: TEXT
-- Evidence: ③ 严禁对刚停止运转的设备进行拆卸作业，必须等到设备完全降温 ① 没有按规定条款进行定期检查及维护时。 安装施工方面的注意事项 3) 应定期清扫定位设备(VS/VT/VFH/VFL/VFM/VFJ/VFK/VFP/WVS/ (橡胶、塑料、密封材料以及部分电器部件等)
+- Evidence: 保养、检查要求定期清扫活塞杆和柱塞周围；表面附有污物会损伤密封材料，导致动作不正常、漏油等故障。
 
 ## LHA-Q-0186
 
@@ -5192,9 +5192,9 @@ PDF列出的不属于保修范围的七类情形是什么？
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: EXACT_MODEL
+- Product: KOSMEK BZS 直装式顺序阀
+- Model / Scope: BZS0200
 
 ### Question
 
@@ -5227,8 +5227,8 @@ BZS0200的推荐紧固力矩是多少？
 - PDF: LHA_R00_2023KW_C1N.pdf
 - Physical page: 59
 - Printed page: 1269
-- Section: 注意事项
-- Local scope path: 注意事项 > BZS安装与设定 > BZS规格
+- Section: BZS规格
+- Local scope path: BZS规格 > 紧固力矩 > BZS0200
 - Evidence type: TABLE
 - Evidence: 表名：BZS规格；行：紧固力矩；列：BZS0200；原值：25 N·m。
 
@@ -5287,9 +5287,9 @@ NBR-70-1或旧代码1A表示一般用丁腈橡胶、A型硬度70；NBR-90或旧�
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: MODEL_FAMILY
+- Product: KOSMEK LZ-MP 板式安装座
+- Model / Scope: LZ-MP 系列
 
 ### Question
 
@@ -5322,8 +5322,8 @@ LC和TC。
 - PDF: LHA_R00_2023KW_C1N.pdf
 - Physical page: 64
 - Printed page: 1698
-- Section: 注意事项
-- Local scope path: 注意事项 > 板式安装座适用关系 > 板式安装座适用型号
+- Section: 板式安装座适用型号
+- Local scope path: 板式安装座适用型号 > LZ-MP > LC、TC
 - Evidence type: TABLE
 - Evidence: 表名：板式安装座适用型号；行：适用机器型号；列：LZ-MP；原值：LC和TC。
 
@@ -5333,9 +5333,9 @@ LC和TC。
 
 ### Target
 
-- Binding: DOCUMENT_COMMON
-- Product: KOSMEK 液压产品通用内容
-- Model / Scope: LHA_R00_2023KW_C1N.pdf :: 注意事项
+- Binding: MODEL_FAMILY
+- Product: KOSMEK LHA 油压复动旋转式夹紧器
+- Model / Scope: LHA0650-D 系列
 
 ### Question
 
@@ -5368,8 +5368,8 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - PDF: LHA_R00_2023KW_C1N.pdf
 - Physical page: 42
 - Printed page: 748
-- Section: 注意事项
-- Local scope path: 注意事项 > 探头螺纹紧固力矩 > 探头安装表
+- Section: LHA专项注意事项
+- Local scope path: LHA专项注意事项 > 探头安装用双出杆型（-D） > LHA0650-D
 - Evidence type: TABLE
 - Evidence: 表名：探头安装表；行：探头螺纹紧固力矩；列：LHA0650-D；原值：25 N·m。
 
@@ -5417,7 +5417,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 能力曲线
 - Local scope path: 能力曲线 > 最大压板长度 > LHA1050夹紧力表
 - Evidence type: TABLE
-- Evidence: LHA1050，供给油压2 MPa，最大压板长度L。
+- Evidence: LHA夹紧力表：LHA1050在供给油压2 MPa时，最大压板长度L为380 mm。
 
 ## LHA-Q-0199
 
@@ -5465,7 +5465,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 能力曲线
 - Local scope path: 能力曲线 > 夹紧力能力曲线估读 > LHA0360夹紧力能力曲线
 - Evidence type: CHART
-- Evidence: LHA0360，L=100 mm，P=2.25 MPa。
+- Evidence: LHA0360夹紧力能力曲线图：L=100 mm、P=2.25 MPa时，视觉估读F约0.5 kN，图表读数容差为±0.25 kN。
 
 ## LHA-Q-0200
 
@@ -5513,7 +5513,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 能力曲线
 - Local scope path: 能力曲线 > 夹紧力能力曲线估读 > LHA0480夹紧力能力曲线
 - Evidence type: CHART
-- Evidence: LHA0480，L=140 mm，P=4.25 MPa。
+- Evidence: LHA0480夹紧力能力曲线图：L=140 mm、P=4.25 MPa时，视觉估读F约2.1 kN，图表读数容差为±0.25 kN。
 
 ## LHA-Q-0201
 
@@ -5561,7 +5561,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 能力曲线
 - Local scope path: 能力曲线 > 夹紧力能力曲线估读 > LHA0550夹紧力能力曲线
 - Evidence type: CHART
-- Evidence: LHA0550，L=140 mm，P=6.25 MPa。
+- Evidence: LHA0550夹紧力能力曲线图：L=140 mm、P=6.25 MPa时，视觉估读F约4.6 kN，图表读数容差为±0.25 kN。
 
 ## LHA-Q-0203
 
@@ -5611,7 +5611,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > SINGLE_ARM_FORWARD > F=P×(1-0.0011×L)/(1.0039+0.0011×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: F=P×(1-0.0011×L)/(1.0039+0.0011×L)
+- Evidence: LHA0550适用公式F=P×(1-0.0011×L)/(1.0039+0.0011×L)，其中F为夹紧力（kN）、P为供给油压（MPa）、L为压板长度（mm）。
 
 ## LHA-Q-0206
 
@@ -5664,7 +5664,7 @@ LHA0750采用压板长度L=160 mm。若目标夹紧力为9.987 kN，按PDF公式
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > INVERSE_REQUIRED_PRESSURE > F=P×(1-0.0007×L)/(0.5175+0.0006×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: F=P×(1-0.0007×L)/(0.5175+0.0006×L)
+- Evidence: LHA0750适用公式F=P×(1-0.0007×L)/(0.5175+0.0006×L)，其中F为夹紧力（kN）、P为供给油压（MPa）、L为压板长度（mm）；最高使用压力为7 MPa。
 
 ## LHA-Q-0209
 
@@ -5717,7 +5717,7 @@ LHA1050在P=5.0 MPa时若需达到11.073 kN夹紧力，按PDF公式反求压板�
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > INVERSE_REQUIRED_ARM_LENGTH > F=P×(1-0.0008×L)/(0.2495+0.0002×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: F=P×(1-0.0008×L)/(0.2495+0.0002×L)
+- Evidence: LHA1050适用公式F=P×(1-0.0008×L)/(0.2495+0.0002×L)，其中F为夹紧力（kN）、P为供给油压（MPa）、L为压板长度（mm）；P=5 MPa时最大压板长度为380 mm。
 
 ## LHA-Q-0212
 
@@ -5772,7 +5772,7 @@ LHA1050在P=5.0 MPa时若需达到11.073 kN夹紧力，按PDF公式反求压板�
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > DOUBLE_ARM_F1_F2 > F1=(L2/L3)×2.03×P；F2=(L1/L3)×2.03×P
 - Evidence type: FORMULA + TABLE
-- Evidence: F1=(L2/L3)×2.03×P；F2=(L1/L3)×2.03×P
+- Evidence: LHA0750-P双压臂型适用公式F1=(L2/L3)×2.03×P、F2=(L1/L3)×2.03×P；F1、F2单位为kN，P单位为MPa，L1、L2、L3单位为mm。
 
 ## LHA-Q-0214
 
@@ -5829,7 +5829,7 @@ LHA0480-P在P=5.5 MPa、L1=45 mm、L2=75 mm、L3=120 mm时，先按PDF公式求F
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > DOUBLE_ARM_COMPARISON > F1=(L2/L3)×0.695×P；F2=(L1/L3)×0.695×P
 - Evidence type: FORMULA + TABLE
-- Evidence: F1=(L2/L3)×0.695×P；F2=(L1/L3)×0.695×P
+- Evidence: LHA0480-P双压臂型适用公式F1=(L2/L3)×0.695×P、F2=(L1/L3)×0.695×P；F1、F2单位为kN，P单位为MPa，L1、L2、L3单位为mm。
 
 ## LHA-Q-0217
 
@@ -5884,7 +5884,7 @@ LHA0480-P在P=5.5 MPa、L1=45 mm、L2=75 mm、L3=120 mm时，先按PDF公式求F
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > MODEL_SIZE_COMPARISON > F=P×(1-0.0009×L)/(0.7822+0.0010×L)；F=P×(1-0.0008×L)/(0.2495+0.0002×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: 分别使用LHA0650与LHA1050的PDF夹紧力公式
+- Evidence: LHA0650适用公式F=P×(1-0.0009×L)/(0.7822+0.0010×L)；LHA1050适用公式F=P×(1-0.0008×L)/(0.2495+0.0002×L)。F单位为kN，P单位为MPa，L单位为mm。
 
 ## LHA-Q-0221
 
@@ -5939,7 +5939,7 @@ LHA0480-P在P=5.5 MPa、L1=45 mm、L2=75 mm、L3=120 mm时，先按PDF公式求F
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > PRESSURE_SENSITIVITY > F=P×(1-0.0008×L)/(0.2495+0.0002×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: F=P×(1-0.0008×L)/(0.2495+0.0002×L)
+- Evidence: LHA1050适用公式F=P×(1-0.0008×L)/(0.2495+0.0002×L)，其中F为夹紧力（kN）、P为供给油压（MPa）、L为压板长度（mm）。
 
 ## LHA-Q-0223
 
@@ -5994,7 +5994,7 @@ LHA0480-P在P=5.5 MPa、L1=45 mm、L2=75 mm、L3=120 mm时，先按PDF公式求F
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > ARM_LENGTH_SENSITIVITY > F=P×(1-0.0009×L)/(0.3547+0.0004×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: F=P×(1-0.0009×L)/(0.3547+0.0004×L)
+- Evidence: LHA0900适用公式F=P×(1-0.0009×L)/(0.3547+0.0004×L)，其中F为夹紧力（kN）、P为供给油压（MPa）、L为压板长度（mm）。
 
 ## LHA-Q-0225
 
@@ -6043,7 +6043,7 @@ PDF夹紧力表给出LHA0650在P=5.0 MPa时最大压板长度为187 mm。若设�
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > MAXIMUM_ARM_LENGTH_MARGIN > PDF表格值的题目指定算术关系
 - Evidence type: FORMULA + TABLE
-- Evidence: 最大压板长度表
+- Evidence: LHA夹紧力表：LHA0650在供给油压5 MPa时，最大压板长度L为187 mm。
 
 ## LHA-Q-0228
 
@@ -6092,7 +6092,7 @@ PDF规格表中LHA0650（选择无符号/A/F/P时）的全行程为20.0 mm、旋
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > TABLE_DERIVED_SPECIFICATION > PDF表格值的题目指定算术关系
 - Evidence type: FORMULA + TABLE
-- Evidence: PDF第8页规格表
+- Evidence: LHA规格表：LHA0650在无符号、A、F或P选配时，全行程为20.0 mm，旋转行程为10.0 mm。
 
 ## LHA-Q-0230
 
@@ -6145,7 +6145,7 @@ LHA0900在压板长度L=250 mm时若要求夹紧力达到12.272 kN，反求所�
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > BOUNDARY_FEASIBILITY > F=P×(1-0.0009×L)/(0.3547+0.0004×L)
 - Evidence type: FORMULA + TABLE
-- Evidence: F=P×(1-0.0009×L)/(0.3547+0.0004×L)
+- Evidence: LHA0900适用公式F=P×(1-0.0009×L)/(0.3547+0.0004×L)，其中F为夹紧力（kN）、P为供给油压（MPa）、L为压板长度（mm）；最高使用压力为7 MPa。
 
 ## LHA-Q-0231
 
@@ -6203,4 +6203,4 @@ LHA0900在压板长度L=250 mm时若要求夹紧力达到12.272 kN，反求所�
 - Section: 夹紧力与规格计算
 - Local scope path: 夹紧力与规格计算 > CHART_FORMULA_CROSS_VALIDATION > F=P×(1-0.0021×L)/(2.9379+0.0052×L) > R6-TRUTH-0004
 - Evidence type: CHART + FORMULA
-- Evidence: F=P×(1-0.0021×L)/(2.9379+0.0052×L)
+- Evidence: LHA0360夹紧力能力曲线在L=100 mm、P=2.25 MPa时视觉估读F约0.5 kN；对应公式为F=P×(1-0.0021×L)/(2.9379+0.0052×L)，图表读数容差为±0.25 kN。

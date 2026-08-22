@@ -61,10 +61,82 @@ class LhaSourceTruthRegressionTests(unittest.TestCase):
         self.assertIn("ROUND_HALF_UP", inverse)
 
     def test_chart_gold_keeps_visual_evidence_and_tolerance(self):
-        for question_id in ("LHA-Q-0199", "LHA-Q-0200", "LHA-Q-0201"):
+        expected_reads = {
+            "LHA-Q-0199": "约0.5 kN",
+            "LHA-Q-0200": "约2.1 kN",
+            "LHA-Q-0201": "约4.6 kN",
+        }
+        for question_id, expected_read in expected_reads.items():
             block = question_block(self.text, question_id)
             self.assertIn("- Evidence type: CHART", block)
             self.assertIn("图表读数允许误差", block)
+            self.assertIn(expected_read, block)
+
+    def test_document_common_binding_is_limited_to_true_common_material(self):
+        common_ids = {
+            question_id
+            for question_id in re.findall(r"(?m)^## (LHA-Q-\d{4})$", self.text)
+            if "- Binding: DOCUMENT_COMMON" in question_block(self.text, question_id)
+        }
+        self.assertEqual(
+            common_ids,
+            {
+                "LHA-Q-0063",
+                "LHA-Q-0064",
+                "LHA-Q-0065",
+                "LHA-Q-0066",
+                "LHA-Q-0120",
+                "LHA-Q-0123",
+                "LHA-Q-0178",
+                "LHA-Q-0179",
+                "LHA-Q-0180",
+                "LHA-Q-0181",
+                "LHA-Q-0182",
+                "LHA-Q-0183",
+                "LHA-Q-0184",
+                "LHA-Q-0185",
+                "LHA-Q-0186",
+                "LHA-Q-0187",
+                "LHA-Q-0188",
+                "LHA-Q-0189",
+                "LHA-Q-0190",
+                "LHA-Q-0192",
+            },
+        )
+        self.assertNotIn("LHA/液压通用", self.text)
+
+    def test_lha_and_accessory_targets_keep_local_identity(self):
+        expected = {
+            "LHA-Q-0167": ("MODEL_FAMILY", "LHA-M 系列"),
+            "LHA-Q-0169": ("PRODUCT_SERIES", "LHA 系列"),
+            "LHA-Q-0175": ("MODEL_FAMILY", "LHA-D 系列"),
+            "LHA-Q-0191": ("EXACT_MODEL", "BZS0200"),
+            "LHA-Q-0193": ("MODEL_FAMILY", "LZ-MP 系列"),
+            "LHA-Q-0194": ("MODEL_FAMILY", "LHA0650-D 系列"),
+        }
+        for question_id, (binding, scope) in expected.items():
+            block = question_block(self.text, question_id)
+            self.assertIn(f"- Binding: {binding}", block)
+            self.assertIn(f"- Model / Scope: {scope}", block)
+            self.assertNotIn("KOSMEK 液压产品通用内容", block)
+
+    def test_reviewed_source_evidence_binds_scored_fact(self):
+        expected = {
+            "LHA-Q-0118": ("Physical page: 38", "快换压板F型用安装螺栓", "LZH□-B"),
+            "LHA-Q-0131": ("Model BZT", "速度控制阀（高压用）", "35 MPa"),
+            "LHA-Q-0169": ("焊渣", "动作不正常", "漏油"),
+            "LHA-Q-0185": ("活塞杆和柱塞周围", "密封材料", "漏油"),
+            "LHA-Q-0193": ("LZ-MP", "LC、TC", "板式安装座适用型号"),
+        }
+        for question_id, phrases in expected.items():
+            block = question_block(self.text, question_id)
+            for phrase in phrases:
+                self.assertIn(phrase, block)
+
+    def test_scope_statistics_match_rebound_targets(self):
+        self.assertIn("- Direct LHA: 72", self.text)
+        self.assertIn("- Accessory / Related Product: 35", self.text)
+        self.assertIn("- Document Common: 20", self.text)
 
     def test_scope_excludes_nontechnical_contact_questions(self):
         self.assertNotIn("LHA-Q-0068", self.text)
