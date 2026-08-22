@@ -5513,7 +5513,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 能力曲线
 - Local scope path: 能力曲线 > 夹紧力能力曲线估读 > LHA0480夹紧力能力曲线
 - Evidence type: CHART
-- Evidence: LHA0480夹紧力能力曲线图：L=140 mm、P=4.25 MPa时，视觉估读F约2.1 kN，图表读数容差为±0.25 kN。
+- Evidence: LHA0480夹紧力能力曲线图：L=140 mm、P=4.25 MPa时，视觉估读F约2.1 kN，图表读数容差为±0.5 kN。
 
 ## LHA-Q-0201
 
@@ -5561,7 +5561,7 @@ LHA0650系列D型探头螺纹的紧固力矩是多少？
 - Section: 能力曲线
 - Local scope path: 能力曲线 > 夹紧力能力曲线估读 > LHA0550夹紧力能力曲线
 - Evidence type: CHART
-- Evidence: LHA0550夹紧力能力曲线图：L=140 mm、P=6.25 MPa时，视觉估读F约4.6 kN，图表读数容差为±0.25 kN。
+- Evidence: LHA0550夹紧力能力曲线图：L=140 mm、P=6.25 MPa时，视觉估读F约4.6 kN，图表读数容差为±0.5 kN。
 
 ## LHA-Q-0203
 

@@ -61,16 +61,26 @@ class LhaSourceTruthRegressionTests(unittest.TestCase):
         self.assertIn("ROUND_HALF_UP", inverse)
 
     def test_chart_gold_keeps_visual_evidence_and_tolerance(self):
-        expected_reads = {
-            "LHA-Q-0199": "约0.5 kN",
-            "LHA-Q-0200": "约2.1 kN",
-            "LHA-Q-0201": "约4.6 kN",
+        expected = {
+            "LHA-Q-0199": ("约0.5 kN", "0.25至0.75 kN", "±0.25 kN"),
+            "LHA-Q-0200": ("约2.1 kN", "1.6至2.6 kN", "±0.5 kN"),
+            "LHA-Q-0201": ("约4.6 kN", "4.1至5.1 kN", "±0.5 kN"),
         }
-        for question_id, expected_read in expected_reads.items():
+        for question_id, (expected_read, expected_range, expected_tolerance) in expected.items():
             block = question_block(self.text, question_id)
             self.assertIn("- Evidence type: CHART", block)
-            self.assertIn("图表读数允许误差", block)
             self.assertIn(expected_read, block)
+            self.assertIn(expected_range, block)
+            self.assertIn(
+                f"- 图表读数允许误差：{expected_tolerance}。",
+                block,
+            )
+            evidence = block.split("- Evidence: ", 1)[1]
+            self.assertIn(f"图表读数容差为{expected_tolerance}", evidence)
+
+        self.assertNotIn("±0.5 kN", question_block(self.text, "LHA-Q-0199"))
+        for question_id in ("LHA-Q-0200", "LHA-Q-0201"):
+            self.assertNotIn("±0.25 kN", question_block(self.text, question_id))
 
     def test_document_common_binding_is_limited_to_true_common_material(self):
         common_ids = {
