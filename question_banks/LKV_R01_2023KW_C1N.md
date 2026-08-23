@@ -65,16 +65,16 @@ LKV 型号表示的规范结构为：
 | LKV-SI-002 | 3-4 / 751-752 | 杠杆式夹紧器产品类型 | TABLE + TEXT | MEDIUM | 纳入 LKV 单回路双向检知、低压复动及附件关系；其他型号规格不迁移。 |
 | LKV-SI-003 | 5-6 / 807-808 | LKV 特点、目录与使用范例 | TEXT + DRAWING | HIGH | `LKV-Q-0002` 至 `LKV-Q-0004` 覆盖单气路双向检知、防冷却液密封、薄型夹具和直装速度控制阀边界。 |
 | LKV-SI-004 | 7-8 / 809-810 | LKV 液压与空气动作原理 | STATE_DIAGRAM + TEXT | HIGH | 纳入夹紧、动作途中、释放状态及夹紧/释放确认输出关系。 |
-| LKV-SI-005 | 9-10 / 811-812 | 空气传感流程与使用注意 | CHART + STATE_DIAGRAM + CAUTION | HIGH | `LKV-Q-0005` 覆盖空气传感器类型、连接数量和供气范围；流程图与排气、清洁注意事项留待对应题型。 |
+| LKV-SI-005 | 9-10 / 811-812 | 空气传感流程与使用注意 | CHART + STATE_DIAGRAM + CAUTION | HIGH | `LKV-Q-0005`、`LKV-Q-0013` 覆盖空气传感器条件及排气孔防侵入要求；流程图状态映射保留为覆盖审计对象。 |
 | LKV-SI-006 | 11-12 / 813-814 | 型号表示与规格 | MODEL + TABLE + DRAWING | HIGH | `LKV-Q-0001`、`LKV-Q-0006` 至 `LKV-Q-0008` 覆盖型号语法、通用压力与油液边界、代表型号规格及跨列选型。 |
-| LKV-SI-007 | 13-14 / 815-816 | 夹紧力表、曲线与公式 | TABLE + CHART + FORMULA | HIGH | 纳入代表型号确定性计算及真实曲线视觉读取，避免仅替换型号或数值。 |
+| LKV-SI-007 | 13-14 / 815-816 | 夹紧力表、曲线与公式 | TABLE + CHART + FORMULA | HIGH | `LKV-Q-0009`、`LKV-Q-0010` 分别覆盖确定性公式计算和非离散表格点的真实曲线视觉读取。 |
 | LKV-SI-008 | 15-16 / 817-818 | 标准/A/K 型容许偏心量 | TABLE + CHART + CAUTION | HIGH | 纳入代表工况视觉读取和超范围导致变形、卡住、漏油的后果。 |
 | LKV-SI-009 | 17-18 / 819-820 | H 型容许偏心量 | TABLE + CHART + CAUTION | MEDIUM | 与标准/A/K 同类，保留一个能体现 H 型边界差异的代表对象。 |
 | LKV-SI-010 | 19-20 / 821-822 | 标准/H/K 型外形与安装 | DRAWING + TABLE + CAUTION | HIGH | 纳入安装口、排气孔、单向阀、安装螺栓和选配结构边界；尺寸数值仅取代表项。 |
 | LKV-SI-011 | 21-22 / 823-824 | A 型快换压板外形与安装 | DRAWING + TABLE + CAUTION | MEDIUM | 纳入 A 型压板方向、安装和拆卸限制；重复尺寸不逐型号设题。 |
 | LKV-SI-012 | 23-24 / 825-826 | 压板设计与 LZK 毛坯压板 | DRAWING + TABLE + FORMULA + CAUTION | HIGH | 纳入压板长度、强度、加工尺寸和超范围故障；附件采购尺寸不扩展。 |
-| LKV-SI-013 | 25-26 / 943-944 | 油压杠杆式夹紧器专用注意事项 | TEXT + PROCEDURE + CAUTION | HIGH | 纳入回路设计、偏心载荷、速度调整、本体和压板安装；其他型号专属条款排除。 |
-| LKV-SI-014 | 27-28 / 1725-1726 | 液压安装、油液与速度回路 | TEXT + PROCEDURE + STATE_DIAGRAM | HIGH | 纳入页内明确适用于 LKV 的排气、油液和复动夹紧器速度回路；不得迁移例外型号规则。 |
+| LKV-SI-013 | 25-26 / 943-944 | 油压杠杆式夹紧器专用注意事项 | TEXT + PROCEDURE + CAUTION | HIGH | `LKV-Q-0011`、`LKV-Q-0014`、`LKV-Q-0015` 覆盖速度调整、双侧同时供压禁令和载荷边界；其他型号专属条款排除。 |
+| LKV-SI-014 | 27-28 / 1725-1726 | 液压安装、油液与速度回路 | TEXT + PROCEDURE + STATE_DIAGRAM | HIGH | `LKV-Q-0012` 覆盖通用液压回路排气；复动速度回路保留为覆盖审计对象且不得迁移例外型号规则。 |
 | LKV-SI-015 | 29-30 / 1727-1728 | 操作、维护与质量保证 | TEXT + PROCEDURE + CAUTION | MEDIUM | 纳入通用安全操作和维护检查；商业保证条款不作为产品能力题。 |
 | LKV-SI-016 | 31-32 / 1729-1730 | 表面粗糙度与 O 形圈标示 | TABLE + MODEL | LOW | 仅作跨产品标示参考，不改变 LKV 核心答案，排除。 |
 | LKV-SI-017 | 33-34 / 1257-1258 | 控制阀总览 | TABLE + TEXT | MEDIUM | 纳入 LKV 可直接安装控制阀的功能边界；独立附件规格仅在明确绑定时使用。 |
@@ -90,11 +90,15 @@ LKV 型号表示的规范结构为：
 
 ## 3. Question Statistics
 
-- Total: 8
+- Total: 15
 - FACT: 2
 - SPEC_LOOKUP: 3
 - TABLE: 2
 - MODEL: 1
+- CALCULATION: 1
+- CHART: 1
+- PROCEDURE: 2
+- CAUTION: 3
 
 ## 4. Questions
 
@@ -519,3 +523,370 @@ LKV0480 的重量分别为 0.8 kg、1.2 kg，但全行程只有 20.5 mm、23.5 m
 - Local scope path: LKV > 规格表 > 五个主体尺寸型号列 > 全行程与重量行
 - Evidence type: TABLE
 - Evidence: 五个型号的全行程依次为 20.5、23.5、26、29.5、35 mm，重量依次为 0.8、1.2、1.6、2.7、3.8 kg；表下注明重量不含压板。
+
+## LKV-Q-0009
+
+**Type: CALCULATION**
+
+### Target
+
+- Binding: EXACT_MODEL
+- Product: KOSMEK LKV 单回路双向检知型杠杆式夹紧器
+- Model / Scope: LKV0550，供给油压 P=4.0 MPa，压板长度 L=70 mm
+
+### Question
+
+LKV0550 在供给油压 `P=4.0 MPa`、压板长度 `L=70 mm` 时，按资料公式
+`F=(16.70×P)/(L-21)` 计算夹紧力。请给出代入过程、未舍入结果、按
+`ROUND_HALF_UP` 保留 1 位小数的最终结果及单位，并用未舍入结果反代油压。
+
+### Standard Answer
+
+代入公式：
+
+`F=(16.70×4.0)/(70-21)=66.80/49=1.363265306122448979591836735 kN`
+
+按 `ROUND_HALF_UP` 保留 1 位小数，最终夹紧力为 `1.4 kN`。用未舍入结果反代：
+
+`P=F×(L-21)/16.70=1.363265306122448979591836735×49/16.70≈4.0 MPa`
+
+反代结果与输入油压一致。
+
+### Scoring Standard
+
+- P1 [15]: 正确使用 LKV0550 公式 `F=(16.70×P)/(L-21)`。
+- P2 [15]: 正确代入 `P=4.0 MPa` 和 `L=70 mm`。
+- P3 [15]: 正确计算分母 `70-21=49 mm`。
+- P4 [20]: 正确给出未舍入结果 `1.363265306122448979591836735 kN`，或足以得到相同舍入值的等价高精度结果。
+- P5 [20]: 按 `ROUND_HALF_UP` 给出最终结果 `1.4 kN`。
+- P6 [15]: 使用未舍入结果反代并得到约 `4.0 MPa`。
+
+### Accepted Variants
+
+- 未舍入值可写为 `1.3632653061 kN` 或更多有效位。
+- `ROUND_HALF_UP` 可写为 `四舍五入`，但最终结果必须为 1 位小数。
+
+### Forbidden Errors
+
+- 把分母写成 `L`，漏掉支点偏移量 `21 mm`。
+- 使用其他主体尺寸型号的系数或偏移量。
+- 用曲线目测值代替公式计算，或只给最终值而无代入过程。
+- 反代时使用已舍入的 `1.4 kN` 并声称其应精确还原 `4.0 MPa`。
+
+### Tolerance
+
+- 最终结果必须按 `ROUND_HALF_UP` 精确舍入为 `1.4 kN`；反代使用未舍入值，接受 `4.0 MPa` 或与其绝对误差不超过 `0.000001 MPa` 的结果。
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 13
+- Printed page: 815
+- Section: 夹紧力曲线图
+- Local scope path: LKV > 夹紧力曲线图 > LKV0550 > 夹紧力计算公式
+- Evidence type: FORMULA + TABLE
+- Evidence: LKV0550 区块规定 `F=(16.70×P)/(L-21)`，并定义 F 为夹紧力 kN、P 为供给油压 MPa、L 为压板长度 mm；表格包含 L=70 mm 且 4.0 MPa 未超过该列最高使用压力。
+
+## LKV-Q-0010
+
+**Type: CHART**
+
+### Target
+
+- Binding: MODEL_FAMILY
+- Product: KOSMEK LKV 单回路双向检知型杠杆式夹紧器
+- Model / Scope: LKV0400 夹紧力曲线，压板长度 L=50 mm
+
+### Question
+
+在 LKV0400 夹紧力曲线图上，沿 `L=50 mm` 曲线读取供给油压 `P=4.25 MPa`
+时的夹紧力。请给出约值和单位；该压力不是表格中的离散行，必须按曲线读取。
+
+### Standard Answer
+
+在横轴 `4.25 MPa` 处与 `L=50 mm` 曲线相交，纵轴读数约为 `0.9 kN`。
+
+### Scoring Standard
+
+- P1 [20]: 正确选择 LKV0400 的 `L=50 mm` 曲线。
+- P2 [20]: 正确在供给油压横轴定位 `4.25 MPa`。
+- P3 [40]: 正确读得夹紧力约 `0.9 kN`。
+- P4 [20]: 明确结果是曲线约读值并保留 `kN` 单位。
+
+### Accepted Variants
+
+- `约 0.9 kN` 可写为 `大约 0.9 千牛`。
+
+### Forbidden Errors
+
+- 改用其他压板长度曲线或其他主体尺寸型号的图。
+- 把横轴 MPa 当成纵轴 kN。
+- 声称 `4.25 MPa` 是表格中已有的离散压力行。
+
+### Tolerance
+
+- CHART tolerance: 接受 `0.8-1.0 kN`；必须说明为曲线约读值。
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 13
+- Printed page: 815
+- Section: 夹紧力曲线图
+- Local scope path: LKV > 夹紧力曲线图 > LKV0400 > L=50 mm 系列
+- Evidence type: CHART
+- Evidence: 图表横轴为供给油压 MPa、纵轴为夹紧力 kN；LKV0400 图中的 `L=50 mm` 曲线在 4.25 MPa 处约对应 0.9 kN。该点由页面视觉读取，公式仅用于合理性校验。
+
+## LKV-Q-0011
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LKV 单回路双向检知型杠杆式夹紧器
+- Model / Scope: LKV 速度调整步骤与动作时间限制
+
+### Question
+
+调整 LKV 动作速度时，资料规定的动作时间标准、调整前准备、速度控制阀旋转方向和过快动作的后果分别是什么？
+
+### Standard Answer
+
+应按全部动作时间超过 1 秒的标准调整速度。调整前必须排净回路中的空气，否则无法
+准确调速。调整时应将速度控制阀从低速侧（小流量）慢慢向高速侧（大流量）旋转；
+若动作过快，会加速各部件的磨耗或损伤。
+
+### Scoring Standard
+
+- P1 [25]: 正确说明全部动作时间应超过 1 秒。
+- P2 [25]: 正确说明调速前必须排净回路中的空气。
+- P3 [25]: 正确说明从低速侧、小流量慢慢向高速侧、大流量调整。
+- P4 [25]: 正确说明动作过快会加速部件磨耗或损伤。
+
+### Accepted Variants
+
+- `超过 1 秒` 可写为 `大于 1 秒`。
+- `磨耗` 可写为 `磨损`。
+
+### Forbidden Errors
+
+- 从高速侧直接向低速侧作为资料规定的起始调整方法。
+- 在回路仍混有空气时进行最终速度设定。
+- 将动作时间标准写成不超过 1 秒。
+
+### Tolerance
+
+- 动作时间边界必须为超过 1 秒；无数值容差。
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 26
+- Printed page: 944
+- Section: 油压杠杆式夹紧器注意事项
+- Local scope path: 油压杠杆式夹紧器 > 注意事项 > 5) 调整速度
+- Evidence type: PROCEDURE + CAUTION
+- Evidence: 该项依次规定全部动作时间超过 1 秒、调速前排净回路空气、从低速小流量慢慢向高速大流量调整，并警告动作过快会加速磨耗或损伤。
+
+## LKV-Q-0012
+
+**Type: PROCEDURE**
+
+### Target
+
+- Binding: DOCUMENT_COMMON
+- Product: KOSMEK 液压系列通用安装施工资料，适用于 LKV
+- Model / Scope: LKV_R01_2023KW_C1N.pdf :: 安装施工方面的注意事项 > 排净油压回路内的空气
+
+### Question
+
+LKV 液压回路在配管施工结束后或因泵油箱变空而进入空气时，应按什么顺序排气？请给出供油压力限制、接头操作、排出空气的方法、复紧步骤和优先排气位置。
+
+### Standard Answer
+
+先将油压回路供油压力调整到 2 MPa 以下；将离夹紧器、支撑器最近的配管接头螺母
+再旋松一圈；左右摇动配管，使连接部位松动并排出混有空气的液压油；空气排净后拧紧
+管接头螺母。在油压回路最上端以及最末端附近进行排气，效果更佳；板式配管时可在
+回路最上端附近设置排气阀。
+
+### Scoring Standard
+
+- P1 [20]: 正确将供油压力调整到 2 MPa 以下。
+- P2 [20]: 正确将离夹紧器、支撑器最近的配管接头螺母再旋松一圈。
+- P3 [20]: 正确说明左右摇动配管并排出混有空气的液压油。
+- P4 [20]: 正确说明空气排净后拧紧管接头螺母。
+- P5 [20]: 正确说明最上端和最末端附近优先排气，或板式配管在最上端附近设置排气阀。
+
+### Accepted Variants
+
+- `2 MPa 以下` 可写为 `不高于 2 MPa`。
+- `左右摇动配管` 可写为 `来回轻摇配管`。
+
+### Forbidden Errors
+
+- 在高于 2 MPa 的供油压力下执行资料所述排气步骤。
+- 完成排气后仍保持管接头螺母松开。
+- 把空气传感器清洁回路误作液压油路排气步骤。
+
+### Tolerance
+
+- 供油压力必须为 2 MPa 以下；步骤顺序和关键动作必须保持一致。
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 27
+- Printed page: 1725
+- Section: 安装施工方面的注意事项（液压系列通用）
+- Local scope path: 液压系列通用事项 > 安装施工方面的注意事项 > 4) 排净油压回路内的空气
+- Evidence type: PROCEDURE + TEXT
+- Evidence: 编号 4 明确给出 2 MPa 以下、松开最近接头螺母一圈、摇动配管排油、排净后复紧，以及在回路最上端和最末端附近排气更有效的顺序与条件。
+
+## LKV-Q-0013
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LKV 单回路双向检知型杠杆式夹紧器
+- Model / Scope: LKV 动作确认系统的排气孔
+
+### Question
+
+LKV 的排气孔在设计、施工和使用时必须怎样处理？应防止哪些物质进入，堵塞会导致什么后果，资料推荐用什么开启压力的单向阀防止侵入？
+
+### Standard Answer
+
+排气孔必须向大气开放，并防止冷却液和切削屑侵入；若排气孔被堵塞，会导致空气
+传感器误动作。资料推荐设置低开启压力单向阀，推荐开启压力为 0.005 MPa，以防止
+冷却液和切削屑侵入。
+
+### Scoring Standard
+
+- P1 [25]: 正确说明排气孔必须向大气开放。
+- P2 [25]: 正确说明必须防止冷却液和切削屑侵入。
+- P3 [25]: 正确说明堵塞会导致空气传感器误动作。
+- P4 [25]: 正确给出低开启压力单向阀及推荐开启压力 0.005 MPa。
+
+### Accepted Variants
+
+- `误动作` 可写为 `错误动作` 或 `误检`。
+- `0.005 MPa` 可写为 `5 kPa`。
+
+### Forbidden Errors
+
+- 封堵排气孔或把排气孔接成封闭回路。
+- 声称冷却液可经排气孔进入而不影响传感。
+- 把 0.005 MPa 写成动作确认用供气压力。
+
+### Tolerance
+
+- 推荐开启压力必须精确为 0.005 MPa；无数值容差。
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 9
+- Printed page: 811
+- Section: 设计时、施工时、使用时的注意事项
+- Local scope path: LKV > 空气传感元件 > 排气孔的大气开放与防侵入实例
+- Evidence type: CAUTION + TEXT + DRAWING
+- Evidence: 页面要求排气孔向大气开放、防止冷却液和切削屑侵入，说明堵塞会导致空气传感器误动作，并推荐开启压力 0.005 MPa 的低开启压力单向阀。
+
+## LKV-Q-0014
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LKV 单回路双向检知型杠杆式夹紧器
+- Model / Scope: LKV 液压回路设计中的夹紧侧与释放侧供压
+
+### Question
+
+设计 LKV 油压回路时，夹紧侧和释放侧能否同时供给油压？油压回路设计错误会造成什么后果？
+
+### Standard Answer
+
+严禁同时向夹紧侧和释放侧供给油压。油压回路设计错误会导致机器误动作、破损等事故。
+
+### Scoring Standard
+
+- P1 [60]: 明确说明严禁同时向夹紧侧和释放侧供给油压。
+- P2 [40]: 正确说明设计错误会导致机器误动作、破损等事故。
+
+### Accepted Variants
+
+- `释放侧` 可写为 `松开侧`。
+- `误动作` 可写为 `错误动作`。
+
+### Forbidden Errors
+
+- 声称可通过同时向两侧供压实现正常夹紧或保压。
+- 省略禁令而只描述一般性的回路设计建议。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 25
+- Printed page: 943
+- Section: 油压杠杆式夹紧器注意事项
+- Local scope path: 油压杠杆式夹紧器 > 设计方面的注意事项 > 2) 设计回路时的注意事项
+- Evidence type: CAUTION + TEXT
+- Evidence: 该条警告油压回路设计错误会导致误动作、破损等事故，并明确严禁同时向夹紧侧和释放侧供给油压；页首适用型号包含 LKV。
+
+## LKV-Q-0015
+
+**Type: CAUTION**
+
+### Target
+
+- Binding: PRODUCT_SERIES
+- Product: KOSMEK LKV 单回路双向检知型杠杆式夹紧器
+- Model / Scope: LKV 活塞杆受力方向与压板偏心载荷设计
+
+### Question
+
+设计 LKV 压板时，对活塞杆受力方向和压板偏心载荷分别有什么限制？错误施加非轴向力会产生什么机械风险？
+
+### Standard Answer
+
+不得向夹紧器活塞杆施加轴向以外的作用力，否则会使活塞杆产生极大的弯曲应力。
+压板承受偏心载荷时，必须在 LKV 容许偏心量表给出的范围内使用。
+
+### Scoring Standard
+
+- P1 [35]: 正确说明不得向活塞杆施加轴向以外的作用力。
+- P2 [30]: 正确说明非轴向力会使活塞杆产生极大的弯曲应力。
+- P3 [35]: 正确说明压板偏心载荷必须处于 LKV 容许偏心量表范围内。
+
+### Accepted Variants
+
+- `轴向以外的作用力` 可写为 `横向力` 或 `非轴向力`。
+- `弯曲应力` 可写为 `弯曲载荷`，但必须保留风险显著增大的含义。
+
+### Forbidden Errors
+
+- 声称 LKV 可无条件承受任意横向力或偏心载荷。
+- 把资料中其他型号禁止偏心压板的规则直接改写为 LKV 一律禁止偏心。
+
+### Tolerance
+
+- N/A
+
+### Source
+
+- PDF: LKV_R01_2023KW_C1N.pdf
+- Physical page: 25
+- Printed page: 943
+- Section: 油压杠杆式夹紧器注意事项
+- Local scope path: 油压杠杆式夹紧器 > 设计方面的注意事项 > 3) 压板设计方面的注意事项
+- Evidence type: CAUTION + TEXT + DRAWING
+- Evidence: 该条禁止向活塞杆施加轴向以外的力并说明会产生极大弯曲应力，同时要求压板偏心载荷在容许偏心量表范围内；页首适用型号包含 LKV。
