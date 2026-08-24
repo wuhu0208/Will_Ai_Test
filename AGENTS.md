@@ -29,6 +29,10 @@ on `main` are authoritative.
   then one `agent-ready` Issue. Stop on workflow conflict.
 - Continue the same Issue, branch, and PR across cycles. A healthy ACTIVE Cycle
   Lease prevents a second Developer invocation from modifying that boundary.
+- Work Packages are durable checkpoint/recovery units, not mandatory invocation
+  stop boundaries. After completing and checkpointing one Work Package, continue
+  the next adjacent executable Work Package in the same invocation when scope,
+  lease ownership, resource policy, and remaining execution budget are healthy.
 - Run relevant tests and update the PR checkpoint only after meaningful work or
   state change. `NO_ACTION` and `ACTIVE_INVOCATION_SKIP` do not create a full
   checkpoint.
