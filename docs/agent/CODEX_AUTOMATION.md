@@ -226,9 +226,11 @@ Do not rewrite unchanged Checkpoint content every scheduler cycle.
 Before a working invocation stops, update the Cycle State comment with the
 latest checkpoint reference and exact next action. Set it to `TERMINAL` when the
 invocation no longer owns active work. If the Issue remains incomplete, preserve
-`agent-working`. A later invocation resumes from the latest completed checkpoint
-and must not re-bootstrap or repeat completed Work Packages merely because a new
-scheduler trigger occurred.
+`agent-working`. Every later invocation still performs mandatory fresh Stage 0,
+applicable Stage 1, and conditional Stage 2. After Stage 2 proves the resume is
+authorized, continue from the latest completed checkpoint without repeating
+completed Work Packages or reparsing, rerendering, or reloading unchanged
+business evidence merely because a new scheduler trigger occurred.
 
 If all acceptance criteria and final-head CI pass, transition to
 `waiting-review`, provide the Review Handoff, set the lease `TERMINAL`, and stop.

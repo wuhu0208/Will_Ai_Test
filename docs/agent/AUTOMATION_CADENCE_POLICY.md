@@ -55,5 +55,8 @@ or repair as required. Final-head CI remains mandatory before `waiting-review`.
 
 Stop at a durable checkpoint when remaining budget is insufficient, an external
 result must be awaited, a blocker/product decision appears, scope/risk changes,
-lease ownership is lost, or the Issue is complete. A later invocation resumes
-from the latest completed Work Package rather than re-bootstrap or repeat it.
+lease ownership is lost, or the Issue is complete. Every later invocation still
+performs mandatory fresh Stage 0, Stage 1 when applicable, and conditional Stage
+2 for genuine resume/recovery work. Once Stage 2 authorizes the resume, continue
+from the latest durable checkpoint without repeating completed Work Packages or
+reloading/reprocessing unchanged business evidence unnecessarily.
