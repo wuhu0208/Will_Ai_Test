@@ -69,12 +69,35 @@ not issue a final result from a partial sample. Update a full review checkpoint
 only after meaningful review progress or state change; `NO_ACTION` and collision
 observations do not require a repeated full checkpoint.
 
+## PASS merge-first invariant
+
+A `PASS` decision does not by itself authorize `accepted` or Issue closure.
+The lifecycle order is strict:
+
+1. record durable Independent Review evidence on the exact current PR head;
+2. discover/use the available PR merge capability and merge that exact reviewed
+   head;
+3. re-read the PR and accepted `main` state and require the merge to be proven;
+4. only then remove incompatible workflow labels, mark the Issue `accepted`,
+   close it completed, and activate the next eligible product Issue.
+
+When the connected GitHub identity cannot self-APPROVE, use a GitHub review
+`COMMENT` to record the Independent Review result instead of substituting a
+self-approval.
+
+Before claiming that merge capability is unavailable, perform real tool/action
+discovery and attempt the supported merge path. If merge cannot be completed,
+fail closed as `PASS_AWAITING_MERGE`: leave the Issue open, keep the unique
+Issue/PR pair in `waiting-review` (unless a future explicit reviewed-awaiting-
+merge state is defined), leave the PR open, do not apply `accepted`, do not
+close the Issue, and do not activate the next source Issue. Never let Issue
+lifecycle state outrun merge state.
+
 ## Outcomes
 
-- `PASS`: approve and merge; remove workflow-incompatible labels, mark the Issue
-  `accepted`, and close it; then create or activate only the next source Issue as
-  `agent-ready`. Do not edit `main` after merge to mirror lifecycle state in a
-  Markdown file, and do not create a bookkeeping PR for label transitions.
+- `PASS`: follow the merge-first invariant above. Do not edit `main` after merge
+  merely to mirror lifecycle state in Markdown, and do not create a bookkeeping
+  PR for label transitions.
 - `PARTIAL_PASS` or `FAIL`: do not merge; give concrete findings, evidence, and
   repair requirements; remove `waiting-review` from both the Issue and PR; apply
   `repair-needed` to both the Issue and PR; keep the same Issue, branch, and PR;
@@ -93,7 +116,8 @@ open PR exists for a principal product Issue, lifecycle transitions that apply
 to the in-flight work (`agent-working`, `repair-needed`, `waiting-review`,
 `blocked`, `product-decision`) must be synchronized across the unique Issue/PR
 pair and read back. `agent-ready` may exist only on the Issue before the PR is
-created; `accepted` is the terminal Issue state after merge.
+created; `accepted` is the terminal Issue state only after the reviewed PR is
+successfully merged and merge read-back succeeds.
 
 Before adding `agent-ready`, remove `blocked` and `product-decision`, verify
 neither is present, and verify there is no other principal `agent-ready` product
