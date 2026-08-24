@@ -166,9 +166,56 @@ rules, PDFs, or source files.
 
 ## Work cycle and Checkpoint
 
-Execute only the next incomplete Work Package. Reuse valid artifacts, run only
-necessary deterministic validation, commit meaningful progress, and update the
-same PR.
+A Work Package is a durable checkpoint/recovery unit, not a mandatory invocation
+stop boundary. Start with the next incomplete Work Package. Reuse valid
+artifacts, run only necessary deterministic validation, commit/push meaningful
+progress, and update the same PR.
+
+After each completed Work Package:
+
+1. run focused/local deterministic validation appropriate to that package;
+2. commit and push the meaningful completed boundary;
+3. write/update a recoverable Checkpoint with completed scope, evidence reused,
+   validation performed, current head, and the exact next incomplete package;
+4. refresh the Cycle State while keeping the same invocation `ACTIVE` if it will
+   continue;
+5. decide whether the adjacent next Work Package is safe to execute immediately.
+
+Continue directly into the next adjacent Work Package in the SAME invocation
+when all are true:
+
+- the same Issue, branch, and PR remain authoritative;
+- the current invocation still owns the healthy Cycle Lease;
+- the next package is inside the already-approved Issue scope and has no unmet
+  external dependency or product decision;
+- there is no new Independent Review, stop/intervention label, conflicting owner,
+  or known branch/head conflict;
+- existing source/cache/render/calculation evidence can be reused safely and the
+  continuation will not repeat completed work;
+- enough execution budget remains to reach another durable checkpoint without
+  rushing validation, commit/push, or lifecycle handoff.
+
+Do not stop merely because one Work Package completed. In particular, do not
+turn a 5-15 minute package into scheduler idle time when an adjacent package is
+immediately executable. Use the cadence policy's substantive-work budget as
+planning guidance, not as a requirement to consume time.
+
+Intermediate CI is asynchronous evidence, not a mandatory barrier between
+adjacent Work Packages when focused/local deterministic validation passes and no
+known CI failure exists. Do not sit idle waiting for intermediate CI solely to
+end an invocation. If a CI failure becomes known, reconcile it before relying on
+that head for later completion. Final-head CI remains mandatory before
+`waiting-review`.
+
+Stop at the latest durable checkpoint when any of these is true:
+
+- remaining execution budget is insufficient to complete another coherent
+  package plus validation/checkpoint/handoff safely;
+- an external result must be awaited;
+- `blocked`, `product-decision`, Review intervention, scope/risk change, or
+  conflicting ownership appears;
+- lease ownership can no longer be proven;
+- the Issue is complete and final-head validation/CI/handoff must be finalized.
 
 Write a full recoverable Checkpoint only when actual work occurred or when the
 Work Package, commit/head, Review, CI, or recovery state meaningfully changed.
@@ -179,8 +226,12 @@ Do not rewrite unchanged Checkpoint content every scheduler cycle.
 Before a working invocation stops, update the Cycle State comment with the
 latest checkpoint reference and exact next action. Set it to `TERMINAL` when the
 invocation no longer owns active work. If the Issue remains incomplete, preserve
-`agent-working`. If all acceptance criteria and final-head CI pass, transition
-to `waiting-review`, provide the Review Handoff, set the lease `TERMINAL`, and stop.
+`agent-working`. A later invocation resumes from the latest completed checkpoint
+and must not re-bootstrap or repeat completed Work Packages merely because a new
+scheduler trigger occurred.
+
+If all acceptance criteria and final-head CI pass, transition to
+`waiting-review`, provide the Review Handoff, set the lease `TERMINAL`, and stop.
 
 ### Completion transition invariant
 
@@ -212,6 +263,8 @@ and leave the state recoverable; never start the next Issue or self-review.
 | G | multiple `agent-ready` candidates | `BLOCKED_WORKFLOW_STATE_CONFLICT`; no selection |
 | H | collision skips while principal lease stays ACTIVE | Reviewer treats skip as healthy; no recovery |
 | I | completed Issue is `waiting-review` but PR is not | Developer handoff is incomplete; synchronize and read back both labels before terminal success |
+| J | WP1 completes quickly and WP2 is immediately executable under the same healthy lease | checkpoint WP1, keep the same invocation ACTIVE, and continue WP2 without waiting for another scheduler trigger |
+| K | a completed WP is durably checkpointed but the invocation must stop before the next WP | set Cycle State TERMINAL with exact next package; next invocation resumes that package without repeating the completed WP |
 
 ## Hard stops
 
