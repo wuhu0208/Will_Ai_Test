@@ -21,6 +21,52 @@ GitHub Issue and PR labels are the sole authoritative workflow state. Generic
 Issue templates add no workflow-state label. Only an explicit state transition
 may add one.
 
+## Issue/PR state-pair invariant
+
+Before a PR exists, `agent-ready` is an Issue-only state. Once a unique open PR
+exists for a principal product Issue, every in-flight lifecycle transition must
+keep the unique Issue/PR pair synchronized for `agent-working`, `repair-needed`,
+`waiting-review`, `blocked`, and `product-decision`.
+
+A transition is complete only after the writer re-reads both objects and proves
+that the intended principal label is present on both and incompatible principal
+labels are absent. A Cycle State or Review Handoff does not substitute for this
+label read-back.
+
+If exactly one side of a unique completed Issue/PR pair is `waiting-review`, the
+Reviewer may repair the missing label only when the Developer Cycle State is
+TERMINAL, the Review Handoff is complete for the current PR head, final-head CI
+is complete, no Independent Review exists, and no incompatible workflow/stop
+label or active Developer owner exists. The Reviewer then re-reads both labels
+and continues the review in the same invocation.
+
+Ambiguous mappings, multiple candidates, incomplete completion evidence, active
+leases, head/Handoff mismatch, or conflicting workflow labels are not safe
+reconciliation cases. They must fail closed as workflow conflicts.
+
+## PASS / merge ordering invariant
+
+`accepted`, Issue closure, and activation of the next product Issue are all
+post-merge states. They MUST NOT occur merely because Independent Review returned
+`PASS`.
+
+After `PASS`, the Reviewer must first persist durable review evidence for the
+exact current PR head, merge that exact reviewed head, and re-read GitHub to prove
+the PR is merged and the accepted result is on `main`. Only after successful
+merge read-back may the current Issue become `accepted`/closed and the next
+eligible product Issue become `agent-ready`.
+
+If merge cannot be completed, the workflow fails closed as
+`PASS_AWAITING_MERGE`: keep the current Issue open and the Issue/PR pair in
+`waiting-review`, do not apply `accepted`, do not close the Issue, and do not
+activate the next product Issue. Before declaring merge capability unavailable,
+the Reviewer must perform real supported-action discovery/attempt rather than
+infer tool absence from narration or prior sessions.
+
+The invariant is one-way: lifecycle state may lag a successful merge briefly
+while reconciliation finishes, but lifecycle state must never advance beyond an
+unmerged PR.
+
 ## Operational Cycle Lease
 
 The PR comment marked `<!-- CODEX_CYCLE_STATE_V1 -->` is operational
@@ -49,6 +95,10 @@ waiting-review
   -> CI
   -> waiting-review
 ```
+
+The `waiting-review -> repair-needed` transition and the later
+`repair-needed -> waiting-review` transition both follow the Issue/PR state-pair
+invariant above.
 
 ## Stop states
 

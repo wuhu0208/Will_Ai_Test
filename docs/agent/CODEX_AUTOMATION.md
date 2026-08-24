@@ -182,6 +182,23 @@ invocation no longer owns active work. If the Issue remains incomplete, preserve
 `agent-working`. If all acceptance criteria and final-head CI pass, transition
 to `waiting-review`, provide the Review Handoff, set the lease `TERMINAL`, and stop.
 
+### Completion transition invariant
+
+A completed handoff is not valid until the workflow-state pair is synchronized.
+For the unique selected Issue and its unique open PR:
+
+1. remove incompatible principal workflow labels from both sides;
+2. add `waiting-review` to both the Issue and the PR;
+3. re-read both objects and require both to contain `waiting-review` and neither
+   to contain `agent-ready`, `agent-working`, `repair-needed`, `blocked`, or
+   `product-decision`;
+4. only after that read-back succeeds may the Developer publish its terminal
+   `next_action` for Independent Review and stop.
+
+If either label write or read-back fails, do not report a successful handoff.
+Keep the same Issue/PR mapping, record the exact workflow transition failure,
+and leave the state recoverable; never start the next Issue or self-review.
+
 ## Deterministic state simulations
 
 | Case | Input | Required outcome |
@@ -194,6 +211,7 @@ to `waiting-review`, provide the Review Handoff, set the lease `TERMINAL`, and s
 | F | `blocked` + `agent-ready` | `BLOCKED`; no execution |
 | G | multiple `agent-ready` candidates | `BLOCKED_WORKFLOW_STATE_CONFLICT`; no selection |
 | H | collision skips while principal lease stays ACTIVE | Reviewer treats skip as healthy; no recovery |
+| I | completed Issue is `waiting-review` but PR is not | Developer handoff is incomplete; synchronize and read back both labels before terminal success |
 
 ## Hard stops
 
