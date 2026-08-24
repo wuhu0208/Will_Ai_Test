@@ -55,39 +55,6 @@ LKW 型号表示的规范结构为：
 资料要求选配件组合详情另行询问，因此字段值和顺序成立不代表任意组合均已被批准。
 特别是字母 `H` 在传感阀字段中表示夹紧动作确认，在末尾选配件字段中则表示高强度链接板。
 
-### 2.3 来源覆盖索引
-
-下表按相邻物理页形成的印刷跨页记录来源对象、优先级和题库范围初始处置。
-
-| Coverage ID | 物理页 / 印刷页 | 局部范围 | 证据类型 | 优先级 | 可测试对象与范围处置 |
-|---|---|---|---|---|---|
-| LKW-SI-001 | 1-2 / 749-750 | 油压杠杆式夹紧器总览 | TEXT + DRAWING | MEDIUM | `LKW-Q-0002`、`LKW-Q-0017` 覆盖 LKW 的传感器内置产品类别和复动边界；其他系列仅作范围排除。 |
-| LKW-SI-002 | 3-4 / 751-752 | 杠杆式夹紧器产品类型 | TABLE + TEXT | MEDIUM | `LKW-Q-0001`、`LKW-Q-0002`、`LKW-Q-0005`、`LKW-Q-0013` 覆盖传感器内置、0.5-7.0 MPa 低压复动和动作确认类型；其他型号规格不迁移。 |
-| LKW-SI-003 | 5-6 / 827-828 | LKW 特点、目录与应用范例 | TEXT + DRAWING | HIGH | `LKW-Q-0002`、`LKW-Q-0003` 覆盖内置传感阀、零泄气、供气口高度和超薄夹具边界。 |
-| LKW-SI-004 | 7-8 / 829-830 | 液压动作与内置传感阀原理 | STATE_DIAGRAM + TEXT | HIGH | `LKW-Q-0013` 覆盖夹紧/释放供油、活塞杆动作、确认状态和弹簧微动边界。 |
-| LKW-SI-005 | 9-10 / 831-832 | 空气传感流程与使用注意 | CHART + STATE_DIAGRAM + CAUTION | HIGH | `LKW-Q-0004`、`LKW-Q-0014` 覆盖供气配置、排气孔防侵入、气管长度和检出压差风险；E/H/J 功能边界由 `LKW-Q-0001` 覆盖。 |
-| LKW-SI-006 | 11-12 / 833-834 | 型号表示与规格 | MODEL + TABLE + DRAWING | HIGH | `LKW-Q-0001`、`LKW-Q-0005` 至 `LKW-Q-0007` 覆盖型号语法、通用规格、代表型号列和传感类型重量差异。 |
-| LKW-SI-007 | 13-14 / 835-836 | 夹紧力曲线、表与公式 | TABLE + CHART + FORMULA | HIGH | `LKW-Q-0010`、`LKW-Q-0011` 分别覆盖确定性公式计算与非离散点真实曲线读取。 |
-| LKW-SI-008 | 15-16 / 837-838 | 标准/A/K 型容许偏心量 | TABLE + CHART + CAUTION | HIGH | `LKW-Q-0012` 覆盖标准/A/K 型非离散点曲线读取，并与 H 型边界对比。 |
-| LKW-SI-009 | 17-18 / 839-840 | H 高强度链接板型容许偏心量 | TABLE + CHART + CAUTION | MEDIUM | `LKW-Q-0012` 覆盖 H 型代表曲线读取及相对标准型的偏心能力差异。 |
-| LKW-SI-010 | 19-20 / 841-842 | E 夹紧/释放确认型外形与安装 | DRAWING + TABLE + CAUTION | HIGH | `LKW-Q-0009` 覆盖代表型号的 G 螺纹接口与速度阀选型；重复安装尺寸不扩展。 |
-| LKW-SI-011 | 21-22 / 843-844 | H 夹紧动作确认型外形 | DRAWING + TABLE + CAUTION | MEDIUM | `LKW-Q-0001` 覆盖 H 单夹紧确认字段边界；与 E 型重复的本体尺寸不扩展。 |
-| LKW-SI-012 | 23-24 / 845-846 | J 释放动作确认型外形 | DRAWING + TABLE + CAUTION | MEDIUM | `LKW-Q-0001` 覆盖 J 单释放确认字段边界；与 E 型重复的本体尺寸不扩展。 |
-| LKW-SI-013 | 25-26 / 847-848 | A 快换压板型外形与安装 | DRAWING + TABLE + CAUTION | MEDIUM | `LKW-Q-0008` 覆盖 A 型销钉、本体尺寸引用和另售快换套件边界。 |
-| LKW-SI-014 | 27-28 / 849-850 | 压板设计与 LZK 毛坯压板 | DRAWING + TABLE + FORMULA + CAUTION | HIGH | `LKW-Q-0015` 覆盖毛坯压板长度和加工尺寸边界及超范围后果；采购尺寸不逐型号设题。 |
-| LKW-SI-015 | 29-30 / 943-944 | 油压杠杆式夹紧器专用注意事项 | TEXT + PROCEDURE + CAUTION | HIGH | `LKW-Q-0016`、`LKW-Q-0017` 覆盖速度调整和双侧同时供压禁令；其他型号专属条款排除。 |
-| LKW-SI-016 | 31-32 / 1725-1726 | 液压安装、油液与速度回路 | TEXT + PROCEDURE + STATE_DIAGRAM | HIGH | `LKW-Q-0017` 覆盖适用 LKW 的复动回油节流速度回路，不迁移例外型号规则。 |
-| LKW-SI-017 | 33-34 / 1727-1728 | 操作、保养与质量保证 | TEXT + PROCEDURE + CAUTION | MEDIUM | `LKW-Q-0018` 覆盖拆卸安全和代表性保养检查；商业保证条款排除。 |
-| LKW-SI-018 | 35-36 / 1729-1730 | 表面粗糙度与 O 形圈标示 | TABLE + MODEL | LOW | 仅作跨产品标示参考，不改变 LKW 核心答案，排除。 |
-| LKW-SI-019 | 37-38 / 1257-1258 | 控制阀总览 | TABLE + TEXT | MEDIUM | `LKW-Q-0009` 覆盖 LKW 可直接安装 BZL 速度控制阀的功能边界；无关独立附件规格不扩展。 |
-| LKW-SI-020 | 39-40 / 1259-1260 | BZL 低压速度控制阀 | MODEL + TABLE + CAUTION | HIGH | `LKW-Q-0009`、`LKW-Q-0019` 覆盖型号、回油节流、安装紧固和复用禁令。 |
-| LKW-SI-021 | 41-42 / 1261-1262 | BZL 外形与流量特性 | DRAWING + CHART | LOW | 独立附件尺寸和流量曲线不属于 LKW 核心能力，排除。 |
-| LKW-SI-022 | 43-44 / 1265-1266 | BZX 排气阀 | MODEL + TABLE + CAUTION | LOW | 独立排气阀规格和操作不属于 LKW 核心产品，排除。 |
-| LKW-SI-023 | 45-46 / 1267-1268 | JZG G 螺纹堵头 | MODEL + TABLE + CAUTION | LOW | 独立堵头规格排除；低压排气原则由通用施工对象覆盖。 |
-| LKW-SI-024 | 47-48 / 1269-1270 | BZS 直装式顺序阀 | MODEL + TABLE + CAUTION | LOW | 独立顺序阀并非 LKW 专用必需件，排除。 |
-| LKW-SI-025 | 49-50 / 1271-1272 | BZS 外形、动作与安装 | DRAWING + TEXT + CAUTION | LOW | 独立顺序阀的 P1/P2 和调压范围不迁移为 LKW 本体要求，排除。 |
-| LKW-SI-026 | 51-52 / 1749-1750 | 公司地址与销售网络 | TEXT + DRAWING | LOW | 非耐久技术联系信息，排除。 |
-
 ## 3. Question Statistics
 
 - Total: 19
