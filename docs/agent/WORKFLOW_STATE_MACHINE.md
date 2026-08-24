@@ -56,6 +56,14 @@ the PR is merged and the accepted result is on `main`. Only after successful
 merge read-back may the current Issue become `accepted`/closed and the next
 eligible product Issue become `agent-ready`.
 
+For a product Issue, the post-merge transition is complete only after the
+Reviewer also re-reads the immediate eligible successor and proves that
+`agent-ready` is present with no incompatible principal/stop label. If the
+completed product is the final item, the Reviewer must instead prove that the
+ordered product queue has no successor. A merge plus `accepted` predecessor with
+an unactivated eligible successor is an incomplete lifecycle transition, not a
+terminal success.
+
 If merge cannot be completed, the workflow fails closed as
 `PASS_AWAITING_MERGE`: keep the current Issue open and the Issue/PR pair in
 `waiting-review`, do not apply `accepted`, do not close the Issue, and do not
@@ -66,6 +74,28 @@ infer tool absence from narration or prior sessions.
 The invariant is one-way: lifecycle state may lag a successful merge briefly
 while reconciliation finishes, but lifecycle state must never advance beyond an
 unmerged PR.
+
+## Missing-successor reconciliation
+
+A later Reviewer invocation may repair an omitted product successor activation
+without reopening accepted work when all of these are true:
+
+- there is no open product PR in `waiting-review` and no product Issue in
+  `repair-needed`, `agent-working`, or `agent-ready`;
+- exactly one open product Issue is the immediate successor, according to the
+  explicit predecessor chain, of an Issue that is already `accepted` and closed;
+- all prerequisite predecessors are accepted/closed;
+- the successor has no incompatible workflow or stop label;
+- no other principal product Issue could legally be activated.
+
+The Reviewer may then add `agent-ready` to exactly that successor and must
+re-read it to prove the label transition. Do not infer order from issue numbers,
+skip predecessors, activate more than one product Issue, or use this recovery to
+activate control/governance work. Any ambiguity fails closed.
+
+This reconciliation must run before a Reviewer concludes `NO_ACTION`; otherwise
+an omitted final label write can deadlock the Developer even though the product
+queue has a uniquely eligible next item.
 
 ## Operational Cycle Lease
 

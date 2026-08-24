@@ -27,16 +27,49 @@ is incomplete, the Cycle State is ACTIVE, the current head differs from the
 Handoff, or an intervention/stop label exists, fail closed and report the exact
 workflow conflict rather than guessing or modifying labels.
 
+## Post-merge successor reconciliation
+
+A product PASS lifecycle is not complete merely because the reviewed PR merged
+and the completed Issue became `accepted`/closed. The immediate eligible product
+successor must also be activated and read back, unless the ordered product queue
+is truly terminal.
+
+Before returning `NO_ACTION`, when there is no open product PR in
+`waiting-review`, no product Issue in `repair-needed`, `agent-working`, or
+`agent-ready`, and no conflicting product work, inspect only the ordered product
+Issue predecessor chain. A missing-successor recovery is safe only when all are
+true:
+
+- exactly one open product Issue is the immediate successor of an Issue that is
+  already `accepted` and closed;
+- every earlier predecessor required by that Issue is already accepted/closed;
+- the successor has no `blocked`, `product-decision`, `repair-needed`,
+  `agent-working`, `waiting-review`, or other incompatible workflow state;
+- there is no other principal product Issue that could legally be activated.
+
+When those conditions hold, add `agent-ready` to that one successor and re-read
+it. Recovery is complete only when readback proves `agent-ready` is present and
+no incompatible principal/stop label exists. Do not return `NO_ACTION` after a
+successful recovery.
+
+Never skip a predecessor, activate more than one product Issue, activate a
+control/governance Issue as product work, or infer queue order from issue number
+alone when predecessor evidence is ambiguous. Ambiguity or conflicting state
+fails closed.
+
 ## Cycle entry
 
 1. Read the latest `main` rules.
 2. Run the lifecycle reconciliation preflight above using only lightweight Issue,
    PR, label, Cycle State, Handoff, head, and CI metadata.
 3. Find open PRs labeled `waiting-review` and choose one meaningful review scope.
-4. If none exists after reconciliation, output `NO_ACTION` and stop.
-5. Read the Issue, PR body, complete diff, CI, relevant source PDF, canonical
-   Markdown, validator output, and prior review/checkpoint history only for the
-   selected review.
+4. If none exists after Issue/PR reconciliation, run the post-merge successor
+   reconciliation above before deciding there is no action.
+5. If no review or successor-reconciliation action exists, output `NO_ACTION` and
+   stop.
+6. For a selected review, read the Issue, PR body, complete diff, CI, relevant
+   source PDF, canonical Markdown, validator output, and prior review/checkpoint
+   history only for that selected review.
 
 ## Developer overlap interpretation
 
@@ -78,8 +111,18 @@ The lifecycle order is strict:
 2. discover/use the available PR merge capability and merge that exact reviewed
    head;
 3. re-read the PR and accepted `main` state and require the merge to be proven;
-4. only then remove incompatible workflow labels, mark the Issue `accepted`,
-   close it completed, and activate the next eligible product Issue.
+4. only then remove incompatible workflow labels and mark the completed Issue
+   `accepted`/closed;
+5. for a product Issue, activate only the immediate eligible successor as
+   `agent-ready`, then re-read it and require the activation to be proven; if no
+   successor exists, prove the ordered product queue is terminal.
+
+A product PASS lifecycle must not be reported complete until step 5 succeeds.
+If successor activation or readback fails after merge/acceptance, preserve the
+accepted predecessor and classify the remaining state as an incomplete
+post-merge lifecycle transition. Do not reactivate the predecessor or invent
+another successor; the next Reviewer invocation must use the bounded successor
+reconciliation path above.
 
 When the connected GitHub identity cannot self-APPROVE, use a GitHub review
 `COMMENT` to record the Independent Review result instead of substituting a
@@ -121,8 +164,10 @@ successfully merged and merge read-back succeeds.
 
 Before adding `agent-ready`, remove `blocked` and `product-decision`, verify
 neither is present, and verify there is no other principal `agent-ready` product
-Issue. Canonical question-bank front matter and the Source Catalog contain no
-mutable workflow status.
+Issue. After adding `agent-ready`, re-read the successor and require the intended
+label to be present with no incompatible principal/stop label before declaring
+the transition complete. Canonical question-bank front matter and the Source
+Catalog contain no mutable workflow status.
 
 ## Bootstrap handoff
 
