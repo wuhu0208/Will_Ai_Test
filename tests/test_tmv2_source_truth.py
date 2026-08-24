@@ -82,6 +82,12 @@ class Tmv2SourceTruthRegressionTests(unittest.TestCase):
             self.assertIn(required, question_block(self.text, "TMV2-Q-0011"))
         for required in ("21.833... MPa", "21.8 MPa", "35 MPa"):
             self.assertIn(required, question_block(self.text, "TMV2-Q-0012"))
+        forward_block = question_block(self.text, "TMV2-Q-0011")
+        inverse_block = question_block(self.text, "TMV2-Q-0012")
+        self.assertIn("必须精确为 3.6 kN", forward_block)
+        self.assertIn("必须精确为 21.8 MPa", inverse_block)
+        self.assertNotIn("±0.05", forward_block)
+        self.assertNotIn("±0.05", inverse_block)
 
     def test_model_outputs_and_chart_values_are_frozen(self):
         model = question_block(self.text, "TMV2-Q-0001")
@@ -111,6 +117,10 @@ class Tmv2SourceTruthRegressionTests(unittest.TestCase):
         for required in ("BZT0101-A", "G1/8A", "2.6 mm²", "10 N·m", "12 g"):
             self.assertIn(required, bzt)
 
+        bzt_caution = question_block(self.text, "TMV2-Q-0024")
+        self.assertIn("不得换装到其他夹紧器上重复使用", bzt_caution)
+        self.assertIn("不得把来源限定的跨夹紧器限制扩大", bzt_caution)
+
         sensor = question_block(self.text, "TMV2-Q-0025")
         for required in ("LZV0010-C2HA", "0.200 MPa", "NPN", "E 双向确认型"):
             self.assertIn(required, sensor)
@@ -118,6 +128,11 @@ class Tmv2SourceTruthRegressionTests(unittest.TestCase):
         fitting = question_block(self.text, "TMV2-Q-0027")
         self.assertIn("包层密封件", fitting)
         self.assertIn("O 形圈密封", fitting)
+
+        elbow = question_block(self.text, "TMV2-Q-0028")
+        self.assertIn("不得作为旋转接头的代用品", elbow)
+        for unsupported in ("只在安装紧固时", "破坏包层密封件", "松动或漏油", "另选专用旋转接头"):
+            self.assertNotIn(unsupported, elbow)
 
     def test_coverage_rows_and_delivery_are_reconciled(self):
         rows = {
