@@ -23,6 +23,27 @@ on `main` are authoritative.
 - Stage 0 reads only latest `AGENTS.md`, latest `CODEX_AUTOMATION.md`, open
   Issues, open PRs, workflow labels, and the smallest metadata needed to map
   them. Do not load the full project rules before task discovery.
+- Stage 0 workflow-state authority is the live remote GitHub state for exactly
+  `wuhu0208/Will_Ai_Test`. A local checkout, local branch state, cached search,
+  previous tool result, or conversation memory cannot prove that no executable
+  Issue exists. Before returning `NO_EXECUTABLE_ISSUE`, the invocation must prove
+  that live reads of open Issues, open PRs, and current workflow labels for that
+  exact repository succeeded. A successful empty result is different from a
+  failed, unavailable, stale, wrong-repository, or otherwise unproven read.
+- If the live remote workflow-state read cannot be proven, fail closed instead of
+  converting the failure into an empty Issue set. Output:
+
+  ```text
+  STATUS: RETRYABLE_FAILURE
+  WORK_CLASS: CONTROL_PLANE
+  ISSUE: UNKNOWN
+  STOP_REASON: REMOTE_WORKFLOW_STATE_UNAVAILABLE
+  ```
+
+  Then stop before Stage 1/2 and do not mutate labels, branches, PRs, or product
+  files. `NO_EXECUTABLE_ISSUE` is legal only after successful remote readback.
+- One legal open `agent-ready` Issue is executable even when it has no PR yet;
+  the PR is created only after the Developer claims the Issue and begins work.
 - A scheduler trigger is a discovery opportunity, not an execution timeout or
   an instruction to restart or resume work.
 - Prefer `repair-needed`, then the unique recoverable `agent-working` Issue,
