@@ -42,9 +42,9 @@ class Tlv2SourceTruthRegressionTests(unittest.TestCase):
             {
                 "MODEL": 4,
                 "FACT": 3,
-                "TABLE": 3,
+                "TABLE": 4,
                 "CALCULATION": 3,
-                "CHART": 2,
+                "CHART": 1,
                 "PROCEDURE": 2,
                 "CAUTION": 4,
             }
@@ -125,17 +125,51 @@ class Tlv2SourceTruthRegressionTests(unittest.TestCase):
             for token in tokens:
                 self.assertIn(token, block)
 
-    def test_chart_gold_keeps_visual_evidence_and_tolerances(self):
+    def test_table_and_chart_classifications_match_source_evidence(self):
         force = question_block(self.text, "TLV2-Q-0011")
         action = question_block(self.text, "TLV2-Q-0012")
-        for block in (force, action):
-            self.assertIn("**Type: CHART**", block)
-            self.assertRegex(block, r"- Evidence type: CHART")
-            self.assertIn("视觉", block)
-        for token in ("约 **2.9 kN**", "2.8～3.0 kN", "±0.1 kN"):
+        self.assertIn("**Type: TABLE**", force)
+        self.assertRegex(force, r"- Evidence type: TABLE")
+        for token in ("离散表", "**2.9 kN**", "必须精确为 2.9 kN"):
             self.assertIn(token, force)
+        self.assertNotIn("视觉读图公差", force)
+        self.assertIn("**Type: CHART**", action)
+        self.assertRegex(action, r"- Evidence type: CHART")
+        self.assertIn("视觉", action)
         for token in ("约 **0.43 秒以上**", "0.38～0.48 秒", "±0.05 秒"):
             self.assertIn(token, action)
+
+    def test_calculation_tolerances_are_exact_rounding_rules(self):
+        expected = {
+            "TLV2-Q-0009": ("ROUND_HALF_UP", "0.1 kN"),
+            "TLV2-Q-0010": ("ROUND_HALF_UP", "0.1 MPa", "0.1 kN"),
+            "TLV2-Q-0013": ("ROUND_HALF_UP", "0.01 s"),
+        }
+        for question_id, tokens in expected.items():
+            block = question_block(self.text, question_id)
+            tolerance = re.search(
+                r"(?ms)^### Tolerance\s*$\n(.*?)(?=^### Source)", block
+            ).group(1)
+            self.assertNotRegex(tolerance, r"±0\.0")
+            for token in tokens:
+                self.assertIn(token, tolerance)
+
+    def test_reviewed_atomic_repairs_remain_split(self):
+        arm = question_block(self.text, "TLV2-Q-0015")
+        self.assertIn("- P3 [30]: 自制连接螺栓最低为 12.9 级", arm)
+        self.assertNotIn("明确是 12.9 级以上", arm)
+
+        maintenance = question_block(self.text, "TLV2-Q-0018")
+        self.assertIn("- P10 [3]: 定期清扫活塞杆周围", maintenance)
+        self.assertIn("- P11 [3]: 定期检查配管和紧固件是否松动", maintenance)
+
+        sensor = question_block(self.text, "TLV2-Q-0020")
+        for token in (
+            "- P9 [4]: H 对应 0.200 MPa",
+            "- P10 [3]: M 对应 0.150 MPa",
+            "- P11 [3]: L 对应 0.100 MPa",
+        ):
+            self.assertIn(token, sensor)
 
     def test_source_inventory_is_complete_and_mapped(self):
         rows = {
