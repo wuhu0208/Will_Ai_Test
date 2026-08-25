@@ -87,7 +87,7 @@ class TcSourceTruthRegressionTests(unittest.TestCase):
             )
             self.assertEqual(sum(int(weight) for _, weight, _ in points), 100)
 
-    def test_reviewed_scoring_points_are_split_by_independent_fact(self):
+    def test_reviewed_scoring_repair_structure_is_frozen(self):
         expected_point_counts = {
             "TC-Q-0001": 6,
             "TC-Q-0002": 8,
@@ -98,18 +98,18 @@ class TcSourceTruthRegressionTests(unittest.TestCase):
             "TC-Q-0007": 7,
             "TC-Q-0008": 7,
             "TC-Q-0009": 8,
-            "TC-Q-0010": 7,
+            "TC-Q-0010": 10,
             "TC-Q-0011": 20,
             "TC-Q-0012": 5,
             "TC-Q-0013": 4,
             "TC-Q-0014": 13,
-            "TC-Q-0015": 7,
+            "TC-Q-0015": 8,
             "TC-Q-0016": 5,
             "TC-Q-0017": 8,
-            "TC-Q-0018": 6,
+            "TC-Q-0018": 10,
             "TC-Q-0019": 10,
-            "TC-Q-0020": 6,
-            "TC-Q-0021": 12,
+            "TC-Q-0020": 7,
+            "TC-Q-0021": 15,
             "TC-Q-0022": 11,
             "TC-Q-0023": 7,
             "TC-Q-0024": 5,
@@ -140,6 +140,33 @@ class TcSourceTruthRegressionTests(unittest.TestCase):
                 "Q/EQ 型有效行程为 31.5 mm",
                 "弹簧完全压缩长度不大于 FG",
             ),
+            "TC-Q-0015": (
+                "说明可减少切削液吸入",
+                "说明可减少异物吸入",
+            ),
+            "TC-Q-0010": (
+                "反弹可能使柱塞与工件之间留下间隙",
+                "反弹可能形成冲击",
+                "冲击可能损坏内部零件",
+            ),
+            "TC-Q-0018": (
+                "螺纹不符会改变弹簧力",
+                "螺纹不符会改变有效行程",
+                "螺纹不符可能引起动作不良",
+                "螺纹不符可能造成损坏",
+                "缺少 O 形圈会使冷却液等异物进入内部",
+                "进入内部的异物可能导致故障",
+            ),
+            "TC-Q-0020": (
+                "摇动配管",
+                "排出含气液压油",
+            ),
+            "TC-Q-0021": (
+                "定期检查配管连接是否松动",
+                "定期检查安装螺栓、螺母是否松动",
+                "紧固松动的配管连接",
+                "紧固松动的安装螺栓、螺母",
+            ),
             "TC-Q-0022": (
                 "最高使用压力为 35 MPa",
                 "最低使用压力为 10 MPa",
@@ -158,6 +185,12 @@ class TcSourceTruthRegressionTests(unittest.TestCase):
             "共通 FA、FB、FE 三值正确",
             "最高 35 MPa、最低 10 MPa",
             "适用 TC0553/0653/0753-C",
+            "反弹可能造成间隙或冲击损伤",
+            "螺纹不符会改变弹簧力或有效行程并引起动作不良或损坏",
+            "缺少 O 形圈会使异物进入并导致故障",
+            "摇动配管并排出含气液压油",
+            "定期检查并紧固配管和安装连接件",
+            "说明可减少切削液或异物吸入",
         ):
             self.assertNotIn(forbidden_compound, self.text)
 
