@@ -35,12 +35,12 @@ class Tlv2SourceTruthRegressionTests(unittest.TestCase):
         self.assertIn("source_pages: 46", self.text)
         self.assertEqual(hashlib.sha256(SOURCE.read_bytes()).hexdigest(), expected_hash)
         ids = re.findall(r"(?m)^## (TLV2-Q-\d{4})$", self.text)
-        self.assertEqual(ids, [f"TLV2-Q-{index:04d}" for index in range(1, 21)])
+        self.assertEqual(ids, [f"TLV2-Q-{index:04d}" for index in range(1, 22)])
 
     def test_statistics_match_question_types(self):
         expected = Counter(
             {
-                "MODEL": 3,
+                "MODEL": 4,
                 "FACT": 3,
                 "TABLE": 3,
                 "CALCULATION": 3,
@@ -51,7 +51,7 @@ class Tlv2SourceTruthRegressionTests(unittest.TestCase):
         )
         actual = Counter(re.findall(r"(?m)^\*\*Type: ([A-Z_]+)\*\*$", self.text))
         self.assertEqual(actual, expected)
-        self.assertIn("- Total: 20", self.text)
+        self.assertIn("- Total: 21", self.text)
         for question_type, count in expected.items():
             self.assertIn(f"- {question_type}: {count}", self.text)
 
@@ -66,7 +66,7 @@ class Tlv2SourceTruthRegressionTests(unittest.TestCase):
             "### Tolerance",
             "### Source",
         )
-        for index in range(1, 21):
+        for index in range(1, 22):
             question_id = f"TLV2-Q-{index:04d}"
             block = question_block(self.text, question_id)
             for heading in required:
@@ -166,6 +166,15 @@ class Tlv2SourceTruthRegressionTests(unittest.TestCase):
         circuit = question_block(self.text, "TLV2-Q-0018")
         for token in ("夹紧侧采用进油节流", "释放侧采用进油节流", "异常高压", "漏油或损坏"):
             self.assertIn(token, circuit)
+        grammar = question_block(self.text, "TLV2-Q-0021")
+        for token in (
+            "TLV0800-2CRE",
+            "TLV1600-2CLJ",
+            "TLV1000-2BRE",
+            "TLV2000-2CRK",
+            "TLV0801-2CRE",
+        ):
+            self.assertIn(token, grammar)
 
 
 if __name__ == "__main__":
