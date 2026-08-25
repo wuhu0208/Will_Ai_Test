@@ -13,6 +13,10 @@ on `main` are authoritative.
 5. Stop on `blocked` or `product-decision`. Do not invent source truth or change
    product scope, delivery format, or scoring principles without user approval.
 6. Never expose credentials, cookies, tokens, session storage, or `.env` data.
+7. Follow [LOCAL_WORKSPACE_POLICY.md](docs/agent/LOCAL_WORKSPACE_POLICY.md):
+   keep the primary user-visible checkout on `main`, isolate Issue branches in
+   linked worktrees, and safely fast-forward the primary checkout after a
+   reviewed merge when local access is available.
 
 ## Codex Developer
 
@@ -74,6 +78,10 @@ on `main` are authoritative.
 - Follow all files under `docs/question-bank/` after Stage 2 determines they are
   applicable to the selected work.
 - One source PDF maps to one canonical Markdown file with the identical stem.
+- Source PDF identity is the delivery boundary. Keep every model and option from
+  the same PDF in that PDF's single canonical Markdown; keep distinct PDFs in
+  distinct canonical Markdown files even when they share a product family or
+  common appendix pages.
 - Intermediate JSON, JSONL, CSV, render caches, and calculation artifacts are
   build materials, not additional final business deliverables.
 - Do not generate or modify a product question bank unless its Issue is

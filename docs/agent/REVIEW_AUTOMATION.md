@@ -124,6 +124,14 @@ post-merge lifecycle transition. Do not reactivate the predecessor or invent
 another successor; the next Reviewer invocation must use the bounded successor
 reconciliation path above.
 
+After merge readback proves the reviewed result is on remote `main`, apply the
+post-merge local synchronization procedure in
+[LOCAL_WORKSPACE_POLICY.md](LOCAL_WORKSPACE_POLICY.md) when the primary
+user-visible checkout is available. This local mirror step never substitutes
+for remote merge/readback and never authorizes force-reset, cleanup, or loss of
+user files. If safe fast-forward synchronization cannot be completed, report the
+local sync as pending while preserving the successful remote lifecycle state.
+
 When the connected GitHub identity cannot self-APPROVE, use a GitHub review
 `COMMENT` to record the Independent Review result instead of substituting a
 self-approval.
