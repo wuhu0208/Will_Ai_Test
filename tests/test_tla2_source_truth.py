@@ -56,6 +56,38 @@ class Tla2SourceTruthRegressionTests(unittest.TestCase):
             self.assertIn(f"- {question_type}: {count}", self.text)
 
     def test_question_scoring_is_atomic_and_totals_100(self):
+        expected_point_counts = {
+            1: 9,
+            2: 4,
+            3: 7,
+            4: 5,
+            5: 10,
+            6: 10,
+            7: 8,
+            8: 5,
+            9: 15,
+            10: 6,
+            11: 6,
+            12: 8,
+            13: 4,
+            14: 4,
+            15: 7,
+            16: 10,
+            17: 11,
+            18: 10,
+            19: 11,
+            20: 17,
+            21: 8,
+            22: 7,
+            23: 8,
+            24: 9,
+            25: 6,
+            26: 14,
+            27: 7,
+            28: 10,
+            29: 6,
+            30: 6,
+        }
         for index in range(1, 31):
             question_id = f"TLA2-Q-{index:04d}"
             block = question_block(self.text, question_id)
@@ -68,6 +100,7 @@ class Tla2SourceTruthRegressionTests(unittest.TestCase):
                 r"(?m)^- P(\d+) \[(\d+)]\s*:\s*(\S.*)$", scoring.group(1)
             )
             self.assertTrue(points, question_id)
+            self.assertEqual(len(points), expected_point_counts[index], question_id)
             self.assertEqual(
                 [int(point_id) for point_id, _, _ in points],
                 list(range(1, len(points) + 1)),
@@ -76,6 +109,56 @@ class Tla2SourceTruthRegressionTests(unittest.TestCase):
             self.assertEqual(
                 sum(int(weight) for _, weight, _ in points), 100, question_id
             )
+
+    def test_reviewed_compound_scoring_facts_stay_split(self):
+        required_atomic_points = {
+            "TLA2-Q-0001": (
+                "C 为板式连接",
+                "C 型附 G 堵头",
+                "C 型可安装另购 BZT",
+            ),
+            "TLA2-Q-0018": (
+                "压板由用户自备",
+                "螺栓由用户自备",
+                "压板销由用户自备",
+                "固定环由用户自备",
+                "保持姿态用板簧由用户自备",
+            ),
+            "TLA2-Q-0024": (
+                "优先在回路最高端排气",
+                "优先在回路末端附近排气",
+                "板式配管可在最高处设置排气阀",
+            ),
+            "TLA2-Q-0026": (
+                "动作中不得接触夹紧器",
+                "不得擅自拆解夹紧器",
+                "不得擅自改造夹紧器",
+            ),
+            "TLA2-Q-0028": (
+                "螺纹为 G1/8A",
+                "控制方式为进油节流 A 型",
+                "BZT 无回油节流规格",
+            ),
+            "TLA2-Q-0029": (
+                "最高使用压力为 35 MPa",
+                "耐压为 42 MPa",
+            ),
+        }
+        for question_id, required_points in required_atomic_points.items():
+            block = question_block(self.text, question_id)
+            for point in required_points:
+                self.assertRegex(block, rf"(?m)^- P\d+ \[\d+]\: {re.escape(point)}$")
+
+        retired_compound_points = (
+            "C 为板式连接、附 G 堵头且可装另购 BZT",
+            "五类用户自备件完整",
+            "最高端/末端排气及板式最高处排气阀",
+            "不接触动作中夹紧器且不擅自拆改",
+            "G1/8A、进油节流 A 型且无回油节流规格",
+            "最高 35 MPa、耐压 42 MPa",
+        )
+        for retired in retired_compound_points:
+            self.assertNotIn(retired, self.text)
 
     def test_calculation_gold_is_deterministic(self):
         standard_force = Decimal("25.0") / (
