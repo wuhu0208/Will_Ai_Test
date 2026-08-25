@@ -55,7 +55,7 @@ class TcSourceTruthRegressionTests(unittest.TestCase):
         for question_type, count in expected.items():
             self.assertIn(f"- {question_type}: {count}", self.text)
 
-    def test_every_question_has_atomic_hundred_point_scoring(self):
+    def test_every_question_has_required_sections_and_hundred_point_scoring(self):
         required = (
             "### Target",
             "### Question",
@@ -86,6 +86,80 @@ class TcSourceTruthRegressionTests(unittest.TestCase):
                 question_id,
             )
             self.assertEqual(sum(int(weight) for _, weight, _ in points), 100)
+
+    def test_reviewed_scoring_points_are_split_by_independent_fact(self):
+        expected_point_counts = {
+            "TC-Q-0001": 6,
+            "TC-Q-0002": 8,
+            "TC-Q-0003": 4,
+            "TC-Q-0004": 12,
+            "TC-Q-0005": 10,
+            "TC-Q-0006": 5,
+            "TC-Q-0007": 7,
+            "TC-Q-0008": 7,
+            "TC-Q-0009": 8,
+            "TC-Q-0010": 7,
+            "TC-Q-0011": 20,
+            "TC-Q-0012": 5,
+            "TC-Q-0013": 4,
+            "TC-Q-0014": 13,
+            "TC-Q-0015": 7,
+            "TC-Q-0016": 5,
+            "TC-Q-0017": 8,
+            "TC-Q-0018": 6,
+            "TC-Q-0019": 10,
+            "TC-Q-0020": 6,
+            "TC-Q-0021": 12,
+            "TC-Q-0022": 11,
+            "TC-Q-0023": 7,
+            "TC-Q-0024": 5,
+        }
+        for question_id, expected_count in expected_point_counts.items():
+            block = question_block(self.text, question_id)
+            scoring = re.search(
+                r"(?ms)^### Scoring Standard\s*$\n(.*?)(?=^### Accepted Variants)",
+                block,
+            )
+            self.assertIsNotNone(scoring, question_id)
+            points = re.findall(r"(?m)^- P\d+ \[\d+]\s*:\s*(\S.*)$", scoring.group(1))
+            self.assertEqual(len(points), expected_count, question_id)
+
+        repaired_tokens = {
+            "TC-Q-0002": (
+                "无符号正确解释为液压上升标准型",
+                "Q 正确解释为液压上升行程加长型",
+                "D 型活塞杆由用户自备",
+            ),
+            "TC-Q-0004": (
+                "TC0403 在 25 MPa 下为 10 kN",
+                "TC0753 在 25 MPa 下为 65 kN",
+                "P 的单位正确写为 MPa",
+            ),
+            "TC-Q-0014": (
+                "共通 FA=10.5 mm",
+                "Q/EQ 型有效行程为 31.5 mm",
+                "弹簧完全压缩长度不大于 FG",
+            ),
+            "TC-Q-0022": (
+                "最高使用压力为 35 MPa",
+                "最低使用压力为 10 MPa",
+                "适用 TC0553-C",
+                "适用 TC0753-C",
+            ),
+        }
+        for question_id, tokens in repaired_tokens.items():
+            block = question_block(self.text, question_id)
+            for token in tokens:
+                self.assertIn(token, block, question_id)
+
+        for forbidden_compound in (
+            "正确说明无符号和 Q 的含义",
+            "五个 25 MPa 支撑力均与型号正确对应",
+            "共通 FA、FB、FE 三值正确",
+            "最高 35 MPa、最低 10 MPa",
+            "适用 TC0553/0653/0753-C",
+        ):
+            self.assertNotIn(forbidden_compound, self.text)
 
     def test_calculation_gold_is_deterministic(self):
         support = Decimal("1.86") * Decimal("18") - Decimal("6.51")
