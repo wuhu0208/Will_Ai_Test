@@ -59,7 +59,7 @@ class Tla2SourceTruthRegressionTests(unittest.TestCase):
         expected_point_counts = {
             1: 9,
             2: 4,
-            3: 7,
+            3: 8,
             4: 5,
             5: 10,
             6: 10,
@@ -112,6 +112,9 @@ class Tla2SourceTruthRegressionTests(unittest.TestCase):
 
     def test_reviewed_compound_scoring_facts_stay_split(self):
         required_atomic_points = {
+            "TLA2-Q-0003": (
+                "扩大加长型压板的使用范围",
+            ),
             "TLA2-Q-0001": (
                 "C 为板式连接",
                 "C 型附 G 堵头",
