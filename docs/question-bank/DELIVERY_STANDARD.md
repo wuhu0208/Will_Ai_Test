@@ -9,6 +9,14 @@ The only final business delivery for `doc/<PDF_STEM>.pdf` is:
 The stems must match exactly. Do not shorten, normalize, or rename a stem in a
 way that loses document version identity.
 
+The authoritative boundary is the identity of the source PDF, not the product
+family, number of models, Issue, branch, invocation, scheduler cycle, or
+conversation. If one PDF contains multiple models, variants, or option codes,
+keep all of them in that PDF's one canonical Markdown. If two PDFs cover related
+products or repeat common appendix pages, they still require two separate
+canonical Markdown files with their respective stems. Never split one PDF by
+model, and never merge distinct PDFs merely because their products are related.
+
 The canonical Markdown contains the question, standard answer, scoring,
 accepted variants, forbidden errors, tolerance, and source evidence. A recipient
 must not need a Gold JSONL, CSV, second Markdown, or private scoring file.
