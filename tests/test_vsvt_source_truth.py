@@ -92,7 +92,7 @@ class VsvtSourceTruthRegressionTests(unittest.TestCase):
             17: 8,
             18: 8,
             19: 7,
-            20: 9,
+            20: 8,
             21: 6,
             22: 10,
             23: 11,
@@ -221,7 +221,7 @@ class VsvtSourceTruthRegressionTests(unittest.TestCase):
             "VSVT-Q-0015": ("磨削垫片", "复测", "±0.003 mm"),
             "VSVT-Q-0018": ("带单向阀", "回油节流", "分开设置"),
             "VSVT-Q-0019": ("2 MPa 以下", "约一圈", "无气泡"),
-            "VSVT-Q-0020": ("1～2 个螺纹牙", "ISO VG32", "动作不良"),
+            "VSVT-Q-0020": ("1～2 个螺纹牙", "ISO VG32", "漏油", "动作不良"),
             "VSVT-Q-0023": ("液压油老化", "异常声音", "制造商"),
         }
         for question_id, tokens in expected_tokens.items():
@@ -232,6 +232,10 @@ class VsvtSourceTruthRegressionTests(unittest.TestCase):
             block = question_block(self.text, f"VSVT-Q-{question_id:04d}")
             self.assertIn("- Binding: DOCUMENT_COMMON", block)
             self.assertIn("VSVT_R00_2023KW_C1N.pdf ::", block)
+
+        leakage = question_block(self.text, "VSVT-Q-0020")
+        self.assertNotIn("异物可能造成内部泄漏", leakage)
+        self.assertNotIn("异物可能造成外部泄漏", leakage)
 
 
 if __name__ == "__main__":
