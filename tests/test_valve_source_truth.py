@@ -77,7 +77,7 @@ class ValveSourceTruthRegressionTests(unittest.TestCase):
             2: 6,
             3: 12,
             4: 10,
-            5: 15,
+            5: 20,
             6: 6,
             7: 6,
             8: 7,
@@ -96,7 +96,7 @@ class ValveSourceTruthRegressionTests(unittest.TestCase):
             21: 7,
             22: 7,
             23: 10,
-            24: 16,
+            24: 19,
         }
         for index, expected_count in expected_counts.items():
             question_id = f"VALVE-Q-{index:04d}"
@@ -131,6 +131,28 @@ class ValveSourceTruthRegressionTests(unittest.TestCase):
                 self.text,
             )
             self.assertNotIn(forbidden_compound, "\n".join(scoring_sections))
+
+    def test_reviewed_atomic_repairs_remain_split(self):
+        jss = question_block(self.text, "VALVE-Q-0005")
+        for code in range(2, 8):
+            self.assertRegex(
+                jss,
+                rf"(?m)^- P\d+ \[5]: JSS 基准压力代码 `{code}` 对应 {code} MPa。$",
+            )
+        self.assertNotIn("基准压力代码 `2`～`7` 对应 2～7 MPa", jss)
+
+        maintenance = question_block(self.text, "VALVE-Q-0024")
+        for expected_line in (
+            "检查安装螺栓。",
+            "检查螺母。",
+            "检查挡圈。",
+            "检查夹具。",
+        ):
+            self.assertRegex(
+                maintenance,
+                rf"(?m)^- P\d+ \[5]: {re.escape(expected_line)}$",
+            )
+        self.assertNotIn("检查安装螺栓、螺母、挡圈和夹具", maintenance)
 
     def test_source_inventory_covers_all_pages_with_disposition(self):
         rows = {
