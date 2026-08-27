@@ -178,6 +178,30 @@ class VfjvfkSourceTruthRegressionTests(unittest.TestCase):
             if "| HIGH：" in row or "| MEDIUM：" in row:
                 self.assertIn("VFJVFK-Q-", row, row_id)
 
+    def test_vertical_replacement_and_tilt_limits_remain_separate(self):
+        caution = question_block(self.text, "VFJVFK-Q-0014")
+        for required in (
+            "定位精度超出其容许范围时立即更换定位销",
+            "工件与扩径定位销之间的倾斜度应控制在 4/100～5/100（约 2～3°）",
+            "更换条件正确写为定位精度超出其容许范围",
+            "把 2～3° 倾斜限制误写成定位销的更换阈值",
+        ):
+            self.assertIn(required, caution)
+        self.assertNotIn("超出容许范围约 2～3° 时立即更换", caution)
+        self.assertNotIn("更换条件正确写为超出约 2～3°", caution)
+
+    def test_hydraulic_installation_prompt_answer_and_scoring_align(self):
+        common = question_block(self.text, "VFJVFK-Q-0019")
+        for required in (
+            "会产生什么后果",
+            "施工环境还应满足什么清洁要求",
+            "大量空气会使动作时间异常延长",
+            "施工环境应保持清洁，防止异物进入回路",
+            "正确指出大量空气会使动作时间异常延长",
+            "正确保持施工环境清洁以防异物进入",
+        ):
+            self.assertIn(required, common)
+
     def test_document_common_binding_and_delivery_hygiene_are_frozen(self):
         common = question_block(self.text, "VFJVFK-Q-0019")
         self.assertIn("- Binding: DOCUMENT_COMMON", common)
